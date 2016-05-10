@@ -12,7 +12,7 @@ PROJECT( ArborPFA )
 ### PACKAGE VERSIONS ########################################################
 SET( ${PROJECT_NAME}_VERSION_MAJOR 2 )
 SET( ${PROJECT_NAME}_VERSION_MINOR 1 )
-SET( ${PROJECT_NAME}_VERSION_PATCH 0 )
+SET( ${PROJECT_NAME}_VERSION_PATCH 1 )
 
 # versions of ArborPFA subpackages
 # don't forget to update when releasing ArborPFA
@@ -20,7 +20,7 @@ SET( ${PROJECT_NAME}_VERSION_PATCH 0 )
 SET( PandoraSDK_version           "v02-00-01" )
 SET( PandoraMonitoring_version    "v02-00-00" )
 SET( ArborContent_version         "v01-01-00" )
-SET( MarlinArbor_version          "v01-01-00" )
+SET( MarlinArbor_version          "v01-01-01" )
 
 
 ### DEPENDENCIES ############################################################
