@@ -19,8 +19,8 @@ SET( ${PROJECT_NAME}_VERSION_PATCH 3 )
 # e.g. SET( PandoraSDK_version "v01-00-00" )
 SET( PandoraSDK_version           "v02-00-01" )
 SET( PandoraMonitoring_version    "v02-00-00" )
-SET( ArborContent_version         "v01-01-02" )
-SET( MarlinArbor_version          "v01-01-02" )
+SET( ArborContent_version         "v01-01-03" )
+SET( MarlinArbor_version          "v01-01-03" )
 
 
 ### DEPENDENCIES ############################################################
