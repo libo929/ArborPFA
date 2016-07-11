@@ -22,6 +22,7 @@ SET( PandoraMonitoring_version    "v02-03-00" )
 SET( ArborContent_version         "v01-02-00" )
 SET( MarlinArbor_version          "v01-01-05" )
 
+LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmakemodules)
 
 ### DEPENDENCIES ############################################################
 
@@ -30,6 +31,7 @@ FIND_PACKAGE( ILCUTIL COMPONENTS ILCSOFT_CMAKE_MODULES REQUIRED )
 # load default settings from ILCSOFT_CMAKE_MODULES
 INCLUDE( ilcsoft_default_settings )
 INCLUDE( ExternalProject )
+INCLUDE( PandoraCMakeSettings )
 
 OPTION( PANDORA_MONITORING "Build PandoraMonitoring library (requires ROOT)" OFF )
 MESSAGE( STATUS "PANDORA_MONITORING: ${PANDORA_MONITORING}" )
