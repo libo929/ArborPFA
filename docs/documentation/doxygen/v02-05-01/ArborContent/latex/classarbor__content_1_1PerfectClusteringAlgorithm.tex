@@ -1,0 +1,575 @@
+\section{arbor\+\_\+content\+:\+:Perfect\+Clustering\+Algorithm Class Reference}
+\label{classarbor__content_1_1PerfectClusteringAlgorithm}\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+
+
+\doxyref{Perfect\+Clustering\+Algorithm}{p.}{classarbor__content_1_1PerfectClusteringAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$Perfect\+Clustering\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Perfect\+Clustering\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1PerfectClusteringAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1PerfectClusteringAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Perfect\+Clustering\+Algorithm} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bf Select\+M\+C\+Particles\+For\+Clustering} (const pandora\+::\+M\+C\+Particle $\ast$const p\+M\+C\+Particle) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ const \\*
+pandora\+::\+M\+C\+Particle \\*
+$\ast$, pandora\+::\+Calo\+Hit\+List $\ast$ $>$ {\bf M\+C\+Particle\+To\+Hit\+List\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\item 
+void {\bf Simple\+M\+C\+Particle\+Collection} (const pandora\+::\+Calo\+Hit $\ast$const p\+Calo\+Hit, {\bf M\+C\+Particle\+To\+Hit\+List\+Map} \&mc\+Particle\+To\+Hit\+List\+Map) const 
+\begin{DoxyCompactList}\small\item\em Simple mc particle collection, using main mc particle associated with each calo hit. \end{DoxyCompactList}\item 
+void {\bf Full\+M\+C\+Particle\+Collection} (const pandora\+::\+Calo\+Hit $\ast$const p\+Calo\+Hit, {\bf M\+C\+Particle\+To\+Hit\+List\+Map} \&mc\+Particle\+To\+Hit\+List\+Map) const 
+\begin{DoxyCompactList}\small\item\em Full mc particle collection, using map of mc particles to hit weights; fragment calo hits where necessary. \end{DoxyCompactList}\item 
+void {\bf Add\+To\+Hit\+List\+Map} (const pandora\+::\+Calo\+Hit $\ast$const p\+Calo\+Hit\+To\+Add, const pandora\+::\+M\+C\+Particle $\ast$const p\+M\+C\+Particle, {\bf M\+C\+Particle\+To\+Hit\+List\+Map} \&mc\+Particle\+To\+Hit\+List\+Map) const 
+\begin{DoxyCompactList}\small\item\em Add a calo hit to the mc particle to hit list map. \end{DoxyCompactList}\item 
+void {\bf Create\+Clusters} (const {\bf M\+C\+Particle\+To\+Hit\+List\+Map} \&mc\+Particle\+To\+Hit\+List\+Map) const 
+\begin{DoxyCompactList}\small\item\em Create clusters based on information in the mc particle to hit list map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Int\+Vector {\bf m\+\_\+particle\+Id\+List}
+\begin{DoxyCompactList}\small\item\em list of particle ids of M\+C\+P\+F\+Os to be selected \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+should\+Use\+Only\+E\+Cal\+Hits}
+\begin{DoxyCompactList}\small\item\em Whether to only use ecal hits in the clustering algorithm. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+should\+Use\+Isolated\+Hits}
+\begin{DoxyCompactList}\small\item\em Whether to use isolated hits in the clustering algorithm. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+simple\+M\+C\+Particle\+Collection}
+\begin{DoxyCompactList}\small\item\em Whether to use simple mc particle collection mechanism, or full mechanism. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+min\+Weight\+Fraction}
+\begin{DoxyCompactList}\small\item\em The minimum mc particle calo hit weight for clustering consideration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Perfect\+Clustering\+Algorithm}{p.}{classarbor__content_1_1PerfectClusteringAlgorithm} class. 
+
+Definition at line 21 of file Perfect\+Clustering\+Algorithm.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!M\+C\+Particle\+To\+Hit\+List\+Map@{M\+C\+Particle\+To\+Hit\+List\+Map}}
+\index{M\+C\+Particle\+To\+Hit\+List\+Map@{M\+C\+Particle\+To\+Hit\+List\+Map}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{M\+C\+Particle\+To\+Hit\+List\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<$const pandora\+::\+M\+C\+Particle$\ast$, pandora\+::\+Calo\+Hit\+List$\ast$$>$ {\bf arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::\+M\+C\+Particle\+To\+Hit\+List\+Map}\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectClusteringAlgorithm_ad5455cba4b6ad161a76d5f2d7cc659f9}
+
+
+Definition at line 45 of file Perfect\+Clustering\+Algorithm.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!Perfect\+Clustering\+Algorithm@{Perfect\+Clustering\+Algorithm}}
+\index{Perfect\+Clustering\+Algorithm@{Perfect\+Clustering\+Algorithm}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{Perfect\+Clustering\+Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::\+Perfect\+Clustering\+Algorithm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1PerfectClusteringAlgorithm_a0b02e64cca5555558596df7ea22f16cb}
+
+
+Default constructor. 
+
+
+
+Definition at line 20 of file Perfect\+Clustering\+Algorithm.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::\+Factory\+::\+Create\+Algorithm().
+
+
+\begin{DoxyCode}
+20                                                          :
+21         m_shouldUseOnlyECalHits(\textcolor{keyword}{false}),
+22         m_shouldUseIsolatedHits(\textcolor{keyword}{false}),
+23         m_simpleMCParticleCollection(\textcolor{keyword}{true}),
+24         m_minWeightFraction(0.01f)
+25   \{
+26   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!Add\+To\+Hit\+List\+Map@{Add\+To\+Hit\+List\+Map}}
+\index{Add\+To\+Hit\+List\+Map@{Add\+To\+Hit\+List\+Map}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{Add\+To\+Hit\+List\+Map}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::\+Add\+To\+Hit\+List\+Map (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Calo\+Hit $\ast$const}]{p\+Calo\+Hit\+To\+Add, }
+\item[{const pandora\+::\+M\+C\+Particle $\ast$const}]{p\+M\+C\+Particle, }
+\item[{{\bf M\+C\+Particle\+To\+Hit\+List\+Map} \&}]{mc\+Particle\+To\+Hit\+List\+Map}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectClusteringAlgorithm_a9c8058672216eb26c5c888f1735aaa45}
+
+
+Add a calo hit to the mc particle to hit list map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & address of the calo hit \\
+\hline
+{\em p\+M\+C\+Particle} & address of the mc particle \\
+\hline
+{\em mc\+Particle\+To\+Hit\+List\+Map} & the mc particle to hit list map \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 149 of file Perfect\+Clustering\+Algorithm.\+cc.
+
+
+
+Referenced by Full\+M\+C\+Particle\+Collection(), and Simple\+M\+C\+Particle\+Collection().
+
+
+\begin{DoxyCode}
+151   \{
+152     MCParticleToHitListMap::iterator iter(mcParticleToHitListMap.find(pMCParticle));
+153 
+154     \textcolor{keywordflow}{if} (mcParticleToHitListMap.end() == iter)
+155     \{
+156       CaloHitList *\textcolor{keyword}{const} pCaloHitList = \textcolor{keyword}{new} CaloHitList();
+157       pCaloHitList->insert(pCaloHitToAdd);
+158       (void) mcParticleToHitListMap.insert(MCParticleToHitListMap::value\_type(pMCParticle, pCaloHitList));
+159     \}
+160     \textcolor{keywordflow}{else}
+161     \{
+162       iter->second->insert(pCaloHitToAdd);
+163     \}
+164   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!Create\+Clusters@{Create\+Clusters}}
+\index{Create\+Clusters@{Create\+Clusters}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{Create\+Clusters}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::\+Create\+Clusters (
+\begin{DoxyParamCaption}
+\item[{const {\bf M\+C\+Particle\+To\+Hit\+List\+Map} \&}]{mc\+Particle\+To\+Hit\+List\+Map}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectClusteringAlgorithm_ac707f3ed49a8d61685925cd691e03d20}
+
+
+Create clusters based on information in the mc particle to hit list map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mc\+Particle\+To\+Hit\+List\+Map} & the mc particle to hit list map \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 168 of file Perfect\+Clustering\+Algorithm.\+cc.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+169   \{
+170     \textcolor{keywordflow}{for} (MCParticleToHitListMap::const\_iterator iter = mcParticleToHitListMap.begin(), iterEnd = 
+      mcParticleToHitListMap.end(); 
+171         iter != iterEnd; ++iter)
+172     \{
+173       \textcolor{keyword}{const} MCParticle *\textcolor{keyword}{const} pMCParticle = iter->first;
+174       CaloHitList *\textcolor{keyword}{const} pCaloHitList = iter->second;
+175 
+176       \textcolor{keywordflow}{if} (!pCaloHitList->empty())
+177       \{
+178         \textcolor{keyword}{const} Cluster *pCluster = NULL;
+179         PandoraContentApi::Cluster::Parameters parameters;
+180         parameters.m\_caloHitList = *pCaloHitList;
+181         PANDORA\_THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::Cluster::Create(*\textcolor{keyword}{this}, 
+      parameters, pCluster));
+182 
+183         PandoraContentApi::Cluster::Metadata metadata;
+184 
+185         \textcolor{keywordflow}{switch} (pMCParticle->GetParticleId())
+186         \{
+187         \textcolor{keywordflow}{case} PHOTON:
+188         \textcolor{keywordflow}{case} E\_PLUS:
+189         \textcolor{keywordflow}{case} E\_MINUS:
+190         \textcolor{keywordflow}{case} MU\_PLUS:
+191         \textcolor{keywordflow}{case} MU\_MINUS:
+192           metadata.m\_particleId = pMCParticle->GetParticleId();
+193           \textcolor{keywordflow}{break};
+194         \textcolor{keywordflow}{default}:
+195           \textcolor{keywordflow}{break};
+196         \}
+197 
+198         \textcolor{keywordflow}{if} (metadata.m\_particleId.IsInitialized())
+199           PANDORA\_THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::AlterMetadata(*\textcolor{keyword}{this}, pCluster
+      , metadata));
+200       \}
+201       \textcolor{keyword}{delete} pCaloHitList;
+202     \}
+203   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!Full\+M\+C\+Particle\+Collection@{Full\+M\+C\+Particle\+Collection}}
+\index{Full\+M\+C\+Particle\+Collection@{Full\+M\+C\+Particle\+Collection}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{Full\+M\+C\+Particle\+Collection}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::\+Full\+M\+C\+Particle\+Collection (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Calo\+Hit $\ast$const}]{p\+Calo\+Hit, }
+\item[{{\bf M\+C\+Particle\+To\+Hit\+List\+Map} \&}]{mc\+Particle\+To\+Hit\+List\+Map}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectClusteringAlgorithm_a9e550f24530f7da05c871de43d1524f0}
+
+
+Full mc particle collection, using map of mc particles to hit weights; fragment calo hits where necessary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & address of the calo hit \\
+\hline
+{\em mc\+Particle\+To\+Hit\+List\+Map} & the mc particle to hit list map \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file Perfect\+Clustering\+Algorithm.\+cc.
+
+
+
+References Add\+To\+Hit\+List\+Map(), m\+\_\+min\+Weight\+Fraction, Select\+M\+C\+Particles\+For\+Clustering(), and Simple\+M\+C\+Particle\+Collection().
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+103   \{
+104     \textcolor{keyword}{const} MCParticleWeightMap mcParticleWeightMap(pCaloHit->GetMCParticleWeightMap());
+105 
+106     \textcolor{keywordflow}{if} (mcParticleWeightMap.size() < 2)
+107       \textcolor{keywordflow}{return} this->SimpleMCParticleCollection(pCaloHit, mcParticleToHitListMap);
+108 
+109     \textcolor{keywordtype}{float} mcParticleWeightSum(0.f);
+110 
+111     \textcolor{keywordflow}{for} (MCParticleWeightMap::const\_iterator iter = mcParticleWeightMap.begin(), iterEnd = 
+      mcParticleWeightMap.end(); iter != iterEnd; ++iter)
+112       mcParticleWeightSum += iter->second;
+113 
+114     if (mcParticleWeightSum < std::numeric\_limits<float>::epsilon())
+115       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+116 
+117     \textcolor{keyword}{const} CaloHit *pLocalCaloHit = pCaloHit;
+118 
+119     \textcolor{keywordflow}{for} (MCParticleWeightMap::const\_iterator iter = mcParticleWeightMap.begin(), iterEnd = 
+      mcParticleWeightMap.end(); iter != iterEnd; ++iter)
+120     \{
+121       \textcolor{keyword}{const} MCParticle *\textcolor{keyword}{const} pMCParticle(iter->first);
+122       \textcolor{keyword}{const} \textcolor{keywordtype}{float} weight(iter->second);
+123 
+124       \textcolor{keywordflow}{if} (!this->SelectMCParticlesForClustering(pMCParticle))
+125         \textcolor{keywordflow}{continue};
+126 
+127       \textcolor{keyword}{const} CaloHit *pCaloHitToAdd = pLocalCaloHit;
+128 
+129       \textcolor{keywordflow}{if} (pCaloHitToAdd->GetWeight() < std::numeric\_limits<float>::epsilon())
+130         \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+131 
+132       \textcolor{keyword}{const} \textcolor{keywordtype}{float} weightFraction(weight / (mcParticleWeightSum * pCaloHitToAdd->GetWeight()));
+133       \textcolor{keyword}{const} \textcolor{keywordtype}{bool} isBelowThreshold((weightFraction - m_minWeightFraction) < 
+      std::numeric\_limits<float>::epsilon());
+134 
+135       \textcolor{keywordflow}{if} (isBelowThreshold)
+136         \textcolor{keywordflow}{continue};
+137 
+138       \textcolor{keyword}{const} \textcolor{keywordtype}{bool} shouldFragment(weightFraction + m_minWeightFraction - 1.f < 
+      std::numeric\_limits<float>::epsilon());
+139 
+140       \textcolor{keywordflow}{if} (shouldFragment)
+141         PANDORA\_THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::Fragment(*\textcolor{keyword}{this}, pLocalCaloHit, 
+      weightFraction, pCaloHitToAdd, pLocalCaloHit));
+142 
+143       this->AddToHitListMap(pCaloHitToAdd, pMCParticle, mcParticleToHitListMap);
+144     \}
+145   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}Status\+Code arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectClusteringAlgorithm_a63fd7a95cc01451236a33bd2abdbf5d7}
+
+
+Definition at line 207 of file Perfect\+Clustering\+Algorithm.\+cc.
+
+
+
+References m\+\_\+min\+Weight\+Fraction, m\+\_\+particle\+Id\+List, m\+\_\+should\+Use\+Isolated\+Hits, m\+\_\+should\+Use\+Only\+E\+Cal\+Hits, and m\+\_\+simple\+M\+C\+Particle\+Collection.
+
+
+\begin{DoxyCode}
+208   \{
+209     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, 
+      XmlHelper::ReadVectorOfValues(xmlHandle,
+210         \textcolor{stringliteral}{"ParticleIdList"}, m_particleIdList));
+211 
+212     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, XmlHelper::ReadValue(
+      xmlHandle,
+213         \textcolor{stringliteral}{"ShouldUseOnlyECalHits"}, m_shouldUseOnlyECalHits));
+214 
+215     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, XmlHelper::ReadValue(
+      xmlHandle,
+216         \textcolor{stringliteral}{"ShouldUseIsolatedHits"}, m_shouldUseIsolatedHits));
+217 
+218     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, XmlHelper::ReadValue(
+      xmlHandle,
+219         \textcolor{stringliteral}{"SimpleMCParticleCollection"}, m_simpleMCParticleCollection));
+220 
+221     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, XmlHelper::ReadValue(
+      xmlHandle,
+222         \textcolor{stringliteral}{"MinWeightFraction"}, m_minWeightFraction));
+223 
+224     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+225   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}Status\+Code arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectClusteringAlgorithm_a930c985272950457b4b347f3e99b71dc}
+
+
+Definition at line 46 of file Perfect\+Clustering\+Algorithm.\+cc.
+
+
+
+References Create\+Clusters(), Full\+M\+C\+Particle\+Collection(), m\+\_\+should\+Use\+Isolated\+Hits, m\+\_\+should\+Use\+Only\+E\+Cal\+Hits, m\+\_\+simple\+M\+C\+Particle\+Collection, and Simple\+M\+C\+Particle\+Collection().
+
+
+\begin{DoxyCode}
+47   \{
+48     \textcolor{keyword}{const} CaloHitList *pCaloHitList = NULL;
+49     PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, pCaloHitList
+      ));
+50 
+51     CaloHitList localCaloHitList(pCaloHitList->begin(), pCaloHitList->end());
+52     MCParticleToHitListMap mcParticleToHitListMap;
+53 
+54     \textcolor{keywordflow}{for} (CaloHitList::const\_iterator hitIter = localCaloHitList.begin(), hitIterEnd = localCaloHitList.end(
+      ); hitIter != hitIterEnd; ++hitIter)
+55     \{
+56       \textcolor{keywordflow}{try}
+57       \{
+58         \textcolor{keyword}{const} CaloHit *\textcolor{keyword}{const} pCaloHit = *hitIter;
+59 
+60         \textcolor{keywordflow}{if} (!PandoraContentApi::IsAvailable(*\textcolor{keyword}{this}, pCaloHit))
+61           \textcolor{keywordflow}{continue};
+62 
+63         \textcolor{keywordflow}{if} (m_shouldUseOnlyECalHits && (ECAL != pCaloHit->GetHitType()))
+64           \textcolor{keywordflow}{continue};
+65 
+66         \textcolor{keywordflow}{if} (!m_shouldUseIsolatedHits && pCaloHit->IsIsolated())
+67           \textcolor{keywordflow}{continue};
+68 
+69         \textcolor{keywordflow}{if} (m_simpleMCParticleCollection)
+70         \{
+71           this->SimpleMCParticleCollection(pCaloHit, mcParticleToHitListMap);
+72         \}
+73         \textcolor{keywordflow}{else}
+74         \{
+75           this->FullMCParticleCollection(pCaloHit, mcParticleToHitListMap);
+76         \}
+77       \}
+78       \textcolor{keywordflow}{catch} (StatusCodeException &)
+79       \{
+80       \}
+81     \}
+82 
+83     this->CreateClusters(mcParticleToHitListMap);
+84 
+85     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+86   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!Select\+M\+C\+Particles\+For\+Clustering@{Select\+M\+C\+Particles\+For\+Clustering}}
+\index{Select\+M\+C\+Particles\+For\+Clustering@{Select\+M\+C\+Particles\+For\+Clustering}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{Select\+M\+C\+Particles\+For\+Clustering}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::\+Select\+M\+C\+Particles\+For\+Clustering (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+M\+C\+Particle $\ast$const}]{p\+M\+C\+Particle}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classarbor__content_1_1PerfectClusteringAlgorithm_aada1884360cc19419c58a5816115a9e6}
+
+
+Definition at line 30 of file Perfect\+Clustering\+Algorithm.\+cc.
+
+
+
+References m\+\_\+particle\+Id\+List.
+
+
+
+Referenced by Full\+M\+C\+Particle\+Collection(), and Simple\+M\+C\+Particle\+Collection().
+
+
+\begin{DoxyCode}
+31   \{
+32     \textcolor{keywordflow}{if} (m_particleIdList.empty())
+33       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+34 
+35     \textcolor{keywordflow}{for} (IntVector::const\_iterator iter = m_particleIdList.begin(), iterEnd = 
+      m_particleIdList.end(); iter != iterEnd; ++iter)
+36     \{
+37       \textcolor{keywordflow}{if} (pMCParticle->GetParticleId() == *iter)
+38         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+39     \}
+40 
+41     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+42   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!Simple\+M\+C\+Particle\+Collection@{Simple\+M\+C\+Particle\+Collection}}
+\index{Simple\+M\+C\+Particle\+Collection@{Simple\+M\+C\+Particle\+Collection}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{Simple\+M\+C\+Particle\+Collection}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::\+Simple\+M\+C\+Particle\+Collection (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Calo\+Hit $\ast$const}]{p\+Calo\+Hit, }
+\item[{{\bf M\+C\+Particle\+To\+Hit\+List\+Map} \&}]{mc\+Particle\+To\+Hit\+List\+Map}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectClusteringAlgorithm_a5aa5e9cb21bef4b6fa1dc85d9001eb78}
+
+
+Simple mc particle collection, using main mc particle associated with each calo hit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & address of the calo hit \\
+\hline
+{\em mc\+Particle\+To\+Hit\+List\+Map} & the mc particle to hit list map \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 90 of file Perfect\+Clustering\+Algorithm.\+cc.
+
+
+
+References Add\+To\+Hit\+List\+Map(), and Select\+M\+C\+Particles\+For\+Clustering().
+
+
+
+Referenced by Full\+M\+C\+Particle\+Collection(), and Run().
+
+
+\begin{DoxyCode}
+91   \{
+92     \textcolor{keyword}{const} MCParticle *\textcolor{keyword}{const} pMCParticle(MCParticleHelper::GetMainMCParticle(pCaloHit));
+93 
+94     \textcolor{keywordflow}{if} (!this->SelectMCParticlesForClustering(pMCParticle))
+95       \textcolor{keywordflow}{return};
+96 
+97     this->AddToHitListMap(pCaloHit, pMCParticle, mcParticleToHitListMap);
+98   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!m\+\_\+min\+Weight\+Fraction@{m\+\_\+min\+Weight\+Fraction}}
+\index{m\+\_\+min\+Weight\+Fraction@{m\+\_\+min\+Weight\+Fraction}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{m\+\_\+min\+Weight\+Fraction}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::m\+\_\+min\+Weight\+Fraction\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectClusteringAlgorithm_aedd581bc0f549984b44951fb2dd6d6ce}
+
+
+The minimum mc particle calo hit weight for clustering consideration. 
+
+
+
+Definition at line 83 of file Perfect\+Clustering\+Algorithm.\+h.
+
+
+
+Referenced by Full\+M\+C\+Particle\+Collection(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!m\+\_\+particle\+Id\+List@{m\+\_\+particle\+Id\+List}}
+\index{m\+\_\+particle\+Id\+List@{m\+\_\+particle\+Id\+List}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{m\+\_\+particle\+Id\+List}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Int\+Vector arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::m\+\_\+particle\+Id\+List\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectClusteringAlgorithm_ae301f07b59710741f80ba1304493d2f0}
+
+
+list of particle ids of M\+C\+P\+F\+Os to be selected 
+
+
+
+Definition at line 79 of file Perfect\+Clustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Select\+M\+C\+Particles\+For\+Clustering().
+
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!m\+\_\+should\+Use\+Isolated\+Hits@{m\+\_\+should\+Use\+Isolated\+Hits}}
+\index{m\+\_\+should\+Use\+Isolated\+Hits@{m\+\_\+should\+Use\+Isolated\+Hits}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{m\+\_\+should\+Use\+Isolated\+Hits}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::m\+\_\+should\+Use\+Isolated\+Hits\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectClusteringAlgorithm_a2842831eb0240bcc9fe3f284fb7a61aa}
+
+
+Whether to use isolated hits in the clustering algorithm. 
+
+
+
+Definition at line 81 of file Perfect\+Clustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!m\+\_\+should\+Use\+Only\+E\+Cal\+Hits@{m\+\_\+should\+Use\+Only\+E\+Cal\+Hits}}
+\index{m\+\_\+should\+Use\+Only\+E\+Cal\+Hits@{m\+\_\+should\+Use\+Only\+E\+Cal\+Hits}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{m\+\_\+should\+Use\+Only\+E\+Cal\+Hits}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::m\+\_\+should\+Use\+Only\+E\+Cal\+Hits\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectClusteringAlgorithm_af7ce579f6f96762ee0376a890cb3a954}
+
+
+Whether to only use ecal hits in the clustering algorithm. 
+
+
+
+Definition at line 80 of file Perfect\+Clustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}!m\+\_\+simple\+M\+C\+Particle\+Collection@{m\+\_\+simple\+M\+C\+Particle\+Collection}}
+\index{m\+\_\+simple\+M\+C\+Particle\+Collection@{m\+\_\+simple\+M\+C\+Particle\+Collection}!arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm}}
+\subsubsection[{m\+\_\+simple\+M\+C\+Particle\+Collection}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Perfect\+Clustering\+Algorithm\+::m\+\_\+simple\+M\+C\+Particle\+Collection\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectClusteringAlgorithm_a53bac4788f7dd636112b796476d2313c}
+
+
+Whether to use simple mc particle collection mechanism, or full mechanism. 
+
+
+
+Definition at line 82 of file Perfect\+Clustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Perfect\+Clustering\+Algorithm.\+h}\item 
+{\bf Perfect\+Clustering\+Algorithm.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<meta name="description" content="ArborPFA : Arbor Particle Flow Algorithm">
+		
+		<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">		
+		<script src="http://www.jquery.info/scripts/jquery-1.0.1.pack.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		
+		$(document).ready(function () {
+			$("#header_wrap").load("base/header.html");
+			$("#nav_bar_wrap").load("base/navigation.html");
+			$("#footer_wrap").load("base/footer.html");
+		});
+		
+		</script>
+		
+		<title>ArborPFA : Arbor Particle Flow Algorithm</title>
+	</head>
+	
+	<body>
+		
+		<!-- HEADER -->
+	    <div id="header_wrap" class="outer">
+	    </div>
+
+	   	<!-- NAVIGATION -->
+		<div id="nav_bar_wrap" class="outer">
+		</div>
+
+		<div id="main_content_wrap" class="outer">
+			<section class="inner main_content">
+			
+	
+	<h2>Latest version</h2>
+	<a class="repository_box" href="https://github.com/ArborPFA/ArborPFA/releases/tag/v02-05-01">v02-05-01 (12th dec. 2016)</a>
+	<p>Version used for <i>uds</i> di-jets reconstruction to extract algorithm performance. See release notes for more details. Sub-packages version details :</p>
+	
+	<ul>
+		<li> <strong>PandoraSDK</strong> : v02-03-00 </li>
+		<li> <strong>PandoraMonitoring</strong> : v02-03-00 </li>
+		<li> <strong>ArborContent</strong> : v01-05-00 </li>
+		<li> <strong>MarlinArbor</strong> : v01-04-01 </li>
+	</ul>
+			
+	<h2> 
+		<a class="anchor" href="#download" aria-hidden="true">
+			<span aria-hidden="true" class="octicon octicon-link"> </span>
+		</a>
+		Download 
+	</h2>
+	
+	<p> The main package ArborPFA downloads and installs all sub packages for you. 
+	You can also download and install them one by one.
+	</p>
+	
+	<p> Use git command line tool to download it : </p>	
+	
+<div class="highlight highlight-source-shell">
+<pre>
+git clone https://github.com/ArborPFA/ArborPFA.git
+<span class="pl-c1">cd</span> ArborPFA
+</pre></div>
+
+	<p> You can choose your version using 'git tag' and set it </p>
+
+<div class="highlight highlight-source-shell">
+<pre> git tag
+<span style="font-style: italic;"> ... list of tags ... </span>
+git checkout <span style="font-style: italic;"> yourtag </span>
+</pre></div>
+	
+	<h2>
+		<a id="install" class="anchor" href="#install" aria-hidden="true">
+			<span aria-hidden="true" class="octicon octicon-link"> </span>
+		</a>
+		Install
+	</h2>
+
+	<p> The algorithms themselves don't need any dependency. If you need to run in the ILC framework, then you will need
+	<a href="http://ilcsoft.desy.de/portal">ilcsoft</a> installed in order to compile the MarlinArbor package.
+	<strong>Warning : </strong> note that the current version of MarlinArbor uses the Gear geometry interface to construct 
+	the PandoraSDK geometry. A DD4HEP interface is ongoing ...
+	
+	<p>The build procedure is managed by <a href="http://cmake.org">CMake</a></p>
+
+	<h3>
+		<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true">
+			<span aria-hidden="true" class="octicon octicon-link"></span>
+		</a>
+		Dependencies
+	</h3>
+
+	<p>All the needed packages are installed on-the-fly by CMake, except if you need to compile the MarlinArbor package.</p>
+	<p> In this case, you need the following packages installed within your ILCSOFT install :</p>
+
+	<ul>
+		<li> <strong>Marlin</strong> (version > 1.0) </li>
+		<li> <strong>MarlinUtil</strong> </li>
+	</ul>
+
+	<p>Note that the ROOT 3D event display monitoring can be built if ROOT is installed on your machine.</p>
+
+	<h3>
+		<a id="standalone-install" class="anchor" href="#standalone-install" aria-hidden="true">
+			<span aria-hidden="true" class="octicon octicon-link"></span>
+		</a>
+		Installation procedure
+	</h3>
+
+	<p>In the root directory :</p>
+	
+<div class="highlight highlight-source-shell">
+<pre>mkdir build
+<span class="pl-c1">cd</span> build
+cmake [-DOPTIONS<span class="pl-k">=</span>...]  [-C /path/to/ILCSOFT.cmake] .. 
+make</pre></div>
+	
+	<p>where OPTIONS can be :</p>
+	
+	<ul>
+		<li>PANDORA_MONITORING [ON/OFF] to install ROOT 3D Eve monitoring</li>
+		<li>MARLIN_ARBOR [ON/OFF] to install MarlinArbor package</li>
+		<li>INSTALL_DOC [ON/OFF] to install <a href="www.doxygen.org">doxygen</a> code documentation</li>
+	</ul>
+
+	<p>Example :</p>
+	
+	<div class="highlight highlight-source-shell"><pre>cmake -DPANDORA_MONITORING=ON -DINSTALL_DOC=OFF ..</pre></div>
+	
+	<p>For ILCSOFT setup :</p>
+	
+	<div class="highlight highlight-source-shell"><pre>cmake -DPANDORA_MONITORING=ON -DINSTALL_DOC=OFF -C ../ILCSOFT.cmake ..</pre></div>
+	
+	<h3>
+		<a id="bug-report" class="anchor" href="#bug-report" aria-hidden="true">
+			<span aria-hidden="true" class="octicon octicon-link"></span>
+		</a>
+		Bug report
+	</h3>
+	
+	<p>
+		You can send emails to <a href="mailto:remi.ete@gmail.com">remi.ete@gmail.com</a>
+		or use the <a href="https://github.com/ArborPFA/ArborPFA/issues">github issues interface</a>
+	</p>
+				
+			
+			</section>
+		</div>
+	</body>
+</html>

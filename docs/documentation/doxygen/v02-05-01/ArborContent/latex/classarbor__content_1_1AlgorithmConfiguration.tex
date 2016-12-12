@@ -1,0 +1,85 @@
+\section{arbor\+\_\+content\+:\+:Algorithm\+Configuration Class Reference}
+\label{classarbor__content_1_1AlgorithmConfiguration}\index{arbor\+\_\+content\+::\+Algorithm\+Configuration@{arbor\+\_\+content\+::\+Algorithm\+Configuration}}
+
+
+\doxyref{Algorithm\+Configuration}{p.}{classarbor__content_1_1AlgorithmConfiguration} class.  
+
+
+
+
+{\ttfamily \#include $<$Algorithm\+Configuration.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Algorithm\+Configuration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1AlgorithmConfiguration}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1AlgorithmConfiguration_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Algorithm\+Configuration}{p.}{classarbor__content_1_1AlgorithmConfiguration} class. 
+
+Definition at line 40 of file Algorithm\+Configuration.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Algorithm\+Configuration@{arbor\+\_\+content\+::\+Algorithm\+Configuration}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Algorithm\+Configuration@{arbor\+\_\+content\+::\+Algorithm\+Configuration}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Algorithm\+Configuration\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1AlgorithmConfiguration_a84a625228313be6c40e8f4e1926852fd}
+
+
+Definition at line 44 of file Algorithm\+Configuration.\+cc.
+
+
+\begin{DoxyCode}
+45 \{
+46   pandora::StringVector algorithmList;
+47     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ProcessAlgorithmList(*\textcolor{keyword}{
+      this}, xmlHandle, \textcolor{stringliteral}{"algorithms"},
+48         algorithmList));
+49 
+50   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+51 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Algorithm\+Configuration@{arbor\+\_\+content\+::\+Algorithm\+Configuration}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Algorithm\+Configuration@{arbor\+\_\+content\+::\+Algorithm\+Configuration}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Algorithm\+Configuration\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1AlgorithmConfiguration_a9c3bf15170b2ae56ca418a4360fa1c5a}
+
+
+Definition at line 36 of file Algorithm\+Configuration.\+cc.
+
+
+\begin{DoxyCode}
+37 \{
+38   \textcolor{comment}{/* nop */}
+39   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+40 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Algorithm\+Configuration.\+h}\item 
+{\bf Algorithm\+Configuration.\+cc}\end{DoxyCompactItemize}

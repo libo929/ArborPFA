@@ -1,0 +1,861 @@
+\section{arbor\+\_\+content\+:\+:Pfo\+Creation\+Algorithm Class Reference}
+\label{classarbor__content_1_1PfoCreationAlgorithm}\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+
+
+\doxyref{Pfo\+Creation\+Algorithm}{p.}{classarbor__content_1_1PfoCreationAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$Pfo\+Creation\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Pfo\+Creation\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1PfoCreationAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1PfoCreationAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Pfo\+Creation\+Algorithm} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \\*
+Pandora\+Content\+Api\+::\+Particle\+Flow\+Object\+::\+Parameters {\bf Pfo\+Parameters}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\item 
+pandora\+::\+Status\+Code {\bf Create\+Track\+Based\+Pfos} () const 
+\begin{DoxyCompactList}\small\item\em Create particle flow objects starting from tracks in the main tracker. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Populate\+Track\+Based\+Pfo} (const pandora\+::\+Track $\ast$const p\+Track, {\bf Pfo\+Parameters} \&pfo\+Parameters, const bool read\+Sibling\+Info=true) const 
+\begin{DoxyCompactList}\small\item\em Add relevant tracks and clusters to a track-\/based pfo. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Set\+Track\+Based\+Pfo\+Parameters} (const pandora\+::\+Track $\ast$const p\+Track, {\bf Pfo\+Parameters} \&pfo\+Parameters) const 
+\begin{DoxyCompactList}\small\item\em Set the basic parameters for a track-\/based pfo. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Set\+Sibling\+Track\+Based\+Pfo\+Parameters} (const pandora\+::\+Track $\ast$const p\+Track, {\bf Pfo\+Parameters} \&pfo\+Parameters) const 
+\begin{DoxyCompactList}\small\item\em Set the parameters for a track-\/based pfo, where pfo target consists of two or more sibling tracks. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Set\+Daughter\+Track\+Based\+Pfo\+Parameters} (const pandora\+::\+Track $\ast$const p\+Track, {\bf Pfo\+Parameters} \&pfo\+Parameters) const 
+\begin{DoxyCompactList}\small\item\em Set the parameters for a track-\/based pfo, where the pfo target has one or more daughter tracks. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Set\+Simple\+Track\+Based\+Pfo\+Parameters} (const pandora\+::\+Track $\ast$const p\+Track, {\bf Pfo\+Parameters} \&pfo\+Parameters) const 
+\begin{DoxyCompactList}\small\item\em Set the parameters for a simple track-\/based pfo, where the track has no associations with other tracks. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Create\+Neutral\+Pfos} () const 
+\begin{DoxyCompactList}\small\item\em Create particle flow objects corresponding to neutral particles, These pfos consist only of clusters that have no associated tracks. \end{DoxyCompactList}\item 
+const pandora\+::\+Cartesian\+Vector {\bf Get\+Energy\+Weighted\+Centroid} (const pandora\+::\+Cluster $\ast$const p\+Cluster, const unsigned int inner\+Pseudo\+Layer, const unsigned int outer\+Pseudo\+Layer) const 
+\begin{DoxyCompactList}\small\item\em Get the energy-\/weighted centroid for a specified cluster, calculated over a particular pseudo layer range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+output\+Pfo\+List\+Name}
+\begin{DoxyCompactList}\small\item\em The output pfo list name. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+should\+Create\+Track\+Based\+Pfos}
+\begin{DoxyCompactList}\small\item\em Whether to create track-\/based (charged) pfos. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+should\+Create\+Neutral\+Pfos}
+\begin{DoxyCompactList}\small\item\em Whether to create neutral pfos. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+min\+Cluster\+Hadronic\+Energy}
+\begin{DoxyCompactList}\small\item\em Min hadronic energy for neutral (non-\/photon) clusters to be added to pfos. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+min\+Cluster\+Electromagnetic\+Energy}
+\begin{DoxyCompactList}\small\item\em Min electromagnetic energy for neutral (photon) clusters to be added to pfos. \end{DoxyCompactList}\item 
+unsigned int {\bf m\+\_\+min\+Hits\+In\+Cluster}
+\begin{DoxyCompactList}\small\item\em Min number of calo hits for neutral cluster to be added to pfos. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+allow\+Single\+Layer\+Clusters}
+\begin{DoxyCompactList}\small\item\em Whether to allow neutral clusters spanning only a single pseudolayer. \end{DoxyCompactList}\item 
+unsigned int {\bf m\+\_\+photon\+Position\+Algorithm}
+\begin{DoxyCompactList}\small\item\em Identifies the algorithm used to calculate photon pfo position vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Pfo\+Creation\+Algorithm}{p.}{classarbor__content_1_1PfoCreationAlgorithm} class. 
+
+Definition at line 41 of file Pfo\+Creation\+Algorithm.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!Pfo\+Parameters@{Pfo\+Parameters}}
+\index{Pfo\+Parameters@{Pfo\+Parameters}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{Pfo\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}typedef Pandora\+Content\+Api\+::\+Particle\+Flow\+Object\+::\+Parameters {\bf arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::\+Pfo\+Parameters}\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_afe4a5b7fa228fa05830a88ecd6159e20}
+
+
+Definition at line 59 of file Pfo\+Creation\+Algorithm.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!Pfo\+Creation\+Algorithm@{Pfo\+Creation\+Algorithm}}
+\index{Pfo\+Creation\+Algorithm@{Pfo\+Creation\+Algorithm}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{Pfo\+Creation\+Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::\+Pfo\+Creation\+Algorithm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1PfoCreationAlgorithm_a174c190a69bbc7ab4a9c8fed970474d0}
+
+
+Default constructor. 
+
+
+
+Definition at line 34 of file Pfo\+Creation\+Algorithm.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::\+Factory\+::\+Create\+Algorithm().
+
+
+\begin{DoxyCode}
+34                                            :
+35     m_shouldCreateTrackBasedPfos(\textcolor{keyword}{true}),
+36     m_shouldCreateNeutralPfos(\textcolor{keyword}{true}),
+37     m_minClusterHadronicEnergy(0.1f),
+38     m_minClusterElectromagneticEnergy(0.1f),
+39     m_minHitsInCluster(5),
+40     m_allowSingleLayerClusters(\textcolor{keyword}{false}),
+41     m_photonPositionAlgorithm(2)
+42 \{
+43 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!Create\+Neutral\+Pfos@{Create\+Neutral\+Pfos}}
+\index{Create\+Neutral\+Pfos@{Create\+Neutral\+Pfos}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{Create\+Neutral\+Pfos}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::\+Create\+Neutral\+Pfos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_a12962a99da4b6ea7da025679a8cbd0b3}
+
+
+Create particle flow objects corresponding to neutral particles, These pfos consist only of clusters that have no associated tracks. 
+
+
+
+Definition at line 241 of file Pfo\+Creation\+Algorithm.\+cc.
+
+
+
+References Get\+Energy\+Weighted\+Centroid(), m\+\_\+allow\+Single\+Layer\+Clusters, m\+\_\+min\+Cluster\+Electromagnetic\+Energy, m\+\_\+min\+Cluster\+Hadronic\+Energy, m\+\_\+min\+Hits\+In\+Cluster, and m\+\_\+photon\+Position\+Algorithm.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+242 \{
+243     \textcolor{keyword}{const} pandora::ClusterList *pClusterList = NULL;
+244     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, 
+      pClusterList));
+245 
+246     \textcolor{comment}{// Examine clusters with no associated tracks to form neutral pfos}
+247     \textcolor{keywordflow}{for} (pandora::ClusterList::const\_iterator iter = pClusterList->begin(), iterEnd = pClusterList->end(); 
+      iter != iterEnd; ++iter)
+248     \{
+249         \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pCluster = *iter;
+250 
+251         \textcolor{keywordflow}{if} (!pCluster->GetAssociatedTrackList().empty())
+252             \textcolor{keywordflow}{continue};
+253 
+254         \textcolor{keywordflow}{if} (pCluster->GetNCaloHits() < m_minHitsInCluster)
+255             \textcolor{keywordflow}{continue};
+256 
+257         \textcolor{keyword}{const} \textcolor{keywordtype}{bool} isPhoton(pCluster->IsPhotonFast(this->GetPandora()));
+258         \textcolor{keywordtype}{float} clusterEnergy(isPhoton ? pCluster->GetCorrectedElectromagneticEnergy(this->GetPandora()) : 
+      pCluster->GetCorrectedHadronicEnergy(this->GetPandora()));
+259 
+260         \textcolor{comment}{// Veto non-photon clusters below hadronic energy threshold and those occupying a single layer}
+261         \textcolor{keywordflow}{if} (!isPhoton)
+262         \{
+263             \textcolor{keywordflow}{if} (clusterEnergy < m_minClusterHadronicEnergy)
+264                 \textcolor{keywordflow}{continue};
+265 
+266             \textcolor{keywordflow}{if} (!m_allowSingleLayerClusters && (pCluster->GetInnerPseudoLayer() == pCluster->
+      GetOuterPseudoLayer()))
+267                 \textcolor{keywordflow}{continue};
+268         \}
+269         \textcolor{keywordflow}{else}
+270         \{
+271             \textcolor{keywordflow}{if} (clusterEnergy < m_minClusterElectromagneticEnergy)
+272                 \textcolor{keywordflow}{continue};
+273         \}
+274 
+275         \textcolor{comment}{// Specify the pfo parameters}
+276         PandoraContentApi::ParticleFlowObject::Parameters pfoParameters;
+277         pfoParameters.m\_particleId = (isPhoton ? pandora::PHOTON : pandora::NEUTRON);
+278         pfoParameters.m\_charge = 0;
+279         pfoParameters.m\_mass = (isPhoton ? pandora::PdgTable::GetParticleMass(pandora::PHOTON) : 
+      pandora::PdgTable::GetParticleMass(pandora::NEUTRON));
+280         pfoParameters.m\_energy = clusterEnergy;
+281         pfoParameters.m\_clusterList.insert(pCluster);
+282 
+283         \textcolor{comment}{// Photon position: 0) unweighted inner centroid, 1) energy-weighted inner centroid, 2+)
+       energy-weighted centroid for all layers}
+284         pandora::CartesianVector positionVector(0.f, 0.f, 0.f);
+285         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} clusterInnerLayer(pCluster->GetInnerPseudoLayer());
+286 
+287         \textcolor{keywordflow}{if} (!isPhoton || (0 == m_photonPositionAlgorithm))
+288         \{
+289             positionVector = pCluster->GetCentroid(clusterInnerLayer);
+290         \}
+291         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (1 == m_photonPositionAlgorithm)
+292         \{
+293             positionVector = this->GetEnergyWeightedCentroid(pCluster, clusterInnerLayer, clusterInnerLayer
+      );
+294         \}
+295         \textcolor{keywordflow}{else}
+296         \{
+297             positionVector = this->GetEnergyWeightedCentroid(pCluster, clusterInnerLayer, pCluster->
+      GetOuterPseudoLayer());
+298         \}
+299 
+300         \textcolor{keyword}{const} pandora::CartesianVector momentum(positionVector.GetUnitVector() * clusterEnergy);
+301         pfoParameters.m\_momentum = momentum;
+302 
+303         \textcolor{keyword}{const} pandora::ParticleFlowObject *pPfo(NULL);
+304         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::ParticleFlowObject::Create(*\textcolor{keyword}{this}, pfoParameters, pPfo));
+305     \}
+306 
+307     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+308 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!Create\+Track\+Based\+Pfos@{Create\+Track\+Based\+Pfos}}
+\index{Create\+Track\+Based\+Pfos@{Create\+Track\+Based\+Pfos}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{Create\+Track\+Based\+Pfos}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::\+Create\+Track\+Based\+Pfos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_a11683c0a46ce05ac1dff421abad27a06}
+
+
+Create particle flow objects starting from tracks in the main tracker. 
+
+The pfos will account for associated daughter/sibling tracks and associated calorimeter clusters. 
+
+Definition at line 69 of file Pfo\+Creation\+Algorithm.\+cc.
+
+
+
+References Populate\+Track\+Based\+Pfo(), and Set\+Track\+Based\+Pfo\+Parameters().
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+70 \{
+71     \textcolor{comment}{// Current track list should contain those tracks selected as "good" by the track preparation algorithm}
+72     \textcolor{keyword}{const} pandora::TrackList *pTrackList = NULL;
+73     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::GetCurrentList<pandora::TrackList>(*\textcolor{keyword}{this}, pTrackList));
+74 
+75     \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator iter = pTrackList->begin(), iterEnd = pTrackList->end(); iter !
+      = iterEnd; ++iter)
+76     \{
+77         \textcolor{keyword}{const} pandora::Track *\textcolor{keyword}{const} pTrack = *iter;
+78         PandoraContentApi::ParticleFlowObject::Parameters pfoParameters;
+79 
+80         \textcolor{comment}{// Walk along list of associated daughter/sibling tracks and their cluster associations}
+81         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      PopulateTrackBasedPfo(pTrack, pfoParameters));
+82 
+83         \textcolor{comment}{// Specify the pfo parameters}
+84         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      SetTrackBasedPfoParameters(pTrack, pfoParameters));
+85 
+86         \textcolor{comment}{// Create the pfo}
+87         \textcolor{keyword}{const} pandora::ParticleFlowObject *pPfo(NULL);
+88         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::ParticleFlowObject::Create(*\textcolor{keyword}{this}, pfoParameters, pPfo));
+89     \}
+90 
+91     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+92 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!Get\+Energy\+Weighted\+Centroid@{Get\+Energy\+Weighted\+Centroid}}
+\index{Get\+Energy\+Weighted\+Centroid@{Get\+Energy\+Weighted\+Centroid}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{Get\+Energy\+Weighted\+Centroid}]{\setlength{\rightskip}{0pt plus 5cm}const pandora\+::\+Cartesian\+Vector arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::\+Get\+Energy\+Weighted\+Centroid (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{const unsigned int}]{inner\+Pseudo\+Layer, }
+\item[{const unsigned int}]{outer\+Pseudo\+Layer}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_a2ae03ceb8d8797e531371c275d37f666}
+
+
+Get the energy-\/weighted centroid for a specified cluster, calculated over a particular pseudo layer range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & address of the cluster to consider \\
+\hline
+{\em pseudo\+Layer} & the inner pseudo layer of interest \\
+\hline
+{\em pseudo\+Layer} & the outer pseudo layer of interest\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The energy-\/weighted centroid, returned by value 
+\end{DoxyReturn}
+
+
+Definition at line 312 of file Pfo\+Creation\+Algorithm.\+cc.
+
+
+
+Referenced by Create\+Neutral\+Pfos().
+
+
+\begin{DoxyCode}
+314 \{
+315     \textcolor{keywordtype}{float} energySum(0.f);
+316     pandora::CartesianVector energyPositionSum(0.f, 0.f, 0.f);
+317     \textcolor{keyword}{const} pandora::OrderedCaloHitList &orderedCaloHitList(pCluster->GetOrderedCaloHitList());
+318 
+319     \textcolor{keywordflow}{for} (pandora::OrderedCaloHitList::const\_iterator iter = orderedCaloHitList.begin(), iterEnd = 
+      orderedCaloHitList.end(); iter != iterEnd; ++iter)
+320     \{
+321         \textcolor{keywordflow}{if} (iter->first > outerPseudoLayer)
+322             \textcolor{keywordflow}{break};
+323 
+324         \textcolor{keywordflow}{if} (iter->first < innerPseudoLayer)
+325             \textcolor{keywordflow}{continue};
+326 
+327         \textcolor{keywordflow}{for} (pandora::CaloHitList::const\_iterator hitIter = iter->second->begin(), hitIterEnd = iter->
+      second->end(); hitIter != hitIterEnd; ++hitIter)
+328         \{
+329             \textcolor{keyword}{const} \textcolor{keywordtype}{float} electromagneticEnergy((*hitIter)->GetElectromagneticEnergy());
+330             energySum += electromagneticEnergy;
+331             energyPositionSum += ((*hitIter)->GetPositionVector() * electromagneticEnergy);
+332         \}
+333     \}
+334 
+335     \textcolor{keywordflow}{if} (energySum < std::numeric\_limits<float>::epsilon())
+336         \textcolor{keywordflow}{throw} pandora::StatusCodeException(pandora::STATUS\_CODE\_NOT\_INITIALIZED);
+337 
+338     \textcolor{keywordflow}{return} (energyPositionSum * (1.f / energySum));
+339 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!Populate\+Track\+Based\+Pfo@{Populate\+Track\+Based\+Pfo}}
+\index{Populate\+Track\+Based\+Pfo@{Populate\+Track\+Based\+Pfo}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{Populate\+Track\+Based\+Pfo}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::\+Populate\+Track\+Based\+Pfo (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Track $\ast$const}]{p\+Track, }
+\item[{{\bf Pfo\+Parameters} \&}]{pfo\+Parameters, }
+\item[{const bool}]{read\+Sibling\+Info = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_a339309b274f2248da1ad05ff32982ef6}
+
+
+Add relevant tracks and clusters to a track-\/based pfo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Track} & address of the track to consider \\
+\hline
+{\em pfo\+Parameters} & the pfo parameters to populate \\
+\hline
+{\em read\+Sibling\+Info} & whether to read sibling track information (set to false to avoid multiple counting) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 96 of file Pfo\+Creation\+Algorithm.\+cc.
+
+
+
+Referenced by Create\+Track\+Based\+Pfos().
+
+
+\begin{DoxyCode}
+97 \{
+98     \textcolor{comment}{// Add track to the pfo}
+99     pfoParameters.m\_trackList.insert(pTrack);
+100 
+101     \textcolor{comment}{// Add any cluster associated with this track to the pfo}
+102     \textcolor{keywordflow}{try}
+103     \{
+104         \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pAssociatedCluster(pTrack->GetAssociatedCluster());
+105         pfoParameters.m\_clusterList.insert(pAssociatedCluster);
+106     \}
+107     \textcolor{keywordflow}{catch} (pandora::StatusCodeException &)
+108     \{
+109     \}
+110 
+111     \textcolor{comment}{// Consider any sibling tracks}
+112     \textcolor{keywordflow}{if} (readSiblingInfo)
+113     \{
+114         \textcolor{keyword}{const} pandora::TrackList &siblingTrackList(pTrack->GetSiblingTrackList());
+115 
+116         \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator iter = siblingTrackList.begin(), iterEnd = siblingTrackList
+      .end(); iter != iterEnd; ++iter)
+117         \{
+118             PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      PopulateTrackBasedPfo(*iter, pfoParameters, \textcolor{keyword}{false}));
+119         \}
+120     \}
+121 
+122     \textcolor{comment}{// Consider any daughter tracks}
+123     \textcolor{keyword}{const} pandora::TrackList &daughterTrackList(pTrack->GetDaughterTrackList());
+124 
+125     \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator iter = daughterTrackList.begin(), iterEnd = daughterTrackList.
+      end(); iter != iterEnd; ++iter)
+126     \{
+127         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      PopulateTrackBasedPfo(*iter, pfoParameters));
+128     \}
+129 
+130     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+131 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_ac5a59cec85ef6b4e2e8f3516f9d2878d}
+
+
+Definition at line 343 of file Pfo\+Creation\+Algorithm.\+cc.
+
+
+
+References m\+\_\+allow\+Single\+Layer\+Clusters, m\+\_\+min\+Cluster\+Electromagnetic\+Energy, m\+\_\+min\+Cluster\+Hadronic\+Energy, m\+\_\+min\+Hits\+In\+Cluster, m\+\_\+output\+Pfo\+List\+Name, m\+\_\+photon\+Position\+Algorithm, m\+\_\+should\+Create\+Neutral\+Pfos, and m\+\_\+should\+Create\+Track\+Based\+Pfos.
+
+
+\begin{DoxyCode}
+344 \{
+345     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadValue(xmlHandle,
+346         \textcolor{stringliteral}{"OutputPfoListName"}, m_outputPfoListName));
+347 
+348     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+349         \textcolor{stringliteral}{"ShouldCreateTrackBasedPfos"}, m_shouldCreateTrackBasedPfos));
+350 
+351     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+352         \textcolor{stringliteral}{"ShouldCreateNeutralPfos"}, m_shouldCreateNeutralPfos));
+353 
+354     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+355         \textcolor{stringliteral}{"MinClusterHadronicEnergy"}, m_minClusterHadronicEnergy));
+356 
+357     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+358         \textcolor{stringliteral}{"MinClusterElectromagneticEnergy"}, m_minClusterElectromagneticEnergy));
+359 
+360     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+361         \textcolor{stringliteral}{"MinHitsInCluster"}, m_minHitsInCluster));
+362 
+363     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+364         \textcolor{stringliteral}{"AllowSingleLayerClusters"}, m_allowSingleLayerClusters));
+365 
+366     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+367         \textcolor{stringliteral}{"PhotonPositionAlgorithm"}, m_photonPositionAlgorithm));
+368 
+369     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+370 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_a5a93c1cab79e100742be86858222be59}
+
+
+Definition at line 47 of file Pfo\+Creation\+Algorithm.\+cc.
+
+
+
+References Create\+Neutral\+Pfos(), Create\+Track\+Based\+Pfos(), m\+\_\+output\+Pfo\+List\+Name, m\+\_\+should\+Create\+Neutral\+Pfos, and m\+\_\+should\+Create\+Track\+Based\+Pfos.
+
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keyword}{const} pandora::PfoList *pPfoList = NULL; std::string pfoListName;
+50     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::CreateTemporaryListAndSetCurrent(*\textcolor{keyword}{this}, pPfoList, pfoListName));
+51 
+52     \textcolor{keywordflow}{if} (m_shouldCreateTrackBasedPfos)
+53         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      CreateTrackBasedPfos());
+54 
+55     \textcolor{keywordflow}{if} (m_shouldCreateNeutralPfos)
+56         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      CreateNeutralPfos());
+57 
+58     \textcolor{keywordflow}{if} (!pPfoList->empty())
+59     \{
+60         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::SaveList<pandora::Pfo>(*\textcolor{keyword}{this}, m_outputPfoListName));
+61         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::ReplaceCurrentList<pandora::Pfo>(*\textcolor{keyword}{this}, m_outputPfoListName));
+62     \}
+63 
+64     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+65 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!Set\+Daughter\+Track\+Based\+Pfo\+Parameters@{Set\+Daughter\+Track\+Based\+Pfo\+Parameters}}
+\index{Set\+Daughter\+Track\+Based\+Pfo\+Parameters@{Set\+Daughter\+Track\+Based\+Pfo\+Parameters}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{Set\+Daughter\+Track\+Based\+Pfo\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::\+Set\+Daughter\+Track\+Based\+Pfo\+Parameters (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Track $\ast$const}]{p\+Track, }
+\item[{{\bf Pfo\+Parameters} \&}]{pfo\+Parameters}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_abeec02d5316cf65339f92ca1b66d8010}
+
+
+Set the parameters for a track-\/based pfo, where the pfo target has one or more daughter tracks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Track} & address of the track to consider \\
+\hline
+{\em pfo\+Parameters} & the pfo parameters to populate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 196 of file Pfo\+Creation\+Algorithm.\+cc.
+
+
+
+Referenced by Set\+Track\+Based\+Pfo\+Parameters().
+
+
+\begin{DoxyCode}
+197 \{
+198     \textcolor{keywordtype}{int} daughterCharge(0);
+199     \textcolor{keywordtype}{float} energy(0.f);
+200     pandora::CartesianVector momentum(0.f, 0.f, 0.f);
+201 
+202     \textcolor{keyword}{const} pandora::TrackList &daughterTrackList(pTrack->GetDaughterTrackList());
+203     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nDaughters(daughterTrackList.size());
+204 
+205     \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator iter = daughterTrackList.begin(), iterEnd = daughterTrackList.
+      end(); iter != iterEnd; ++iter)
+206     \{
+207         \textcolor{keyword}{const} pandora::Track *\textcolor{keyword}{const} pDaughterTrack = *iter;
+208 
+209         \textcolor{keywordflow}{if} (!pDaughterTrack->CanFormPfo() && !pDaughterTrack->CanFormClusterlessPfo())
+210             \textcolor{keywordflow}{continue};
+211 
+212         daughterCharge += pDaughterTrack->GetCharge();
+213         energy += pDaughterTrack->GetEnergyAtDca();
+214         momentum += pDaughterTrack->GetMomentumAtDca();
+215     \}
+216 
+217     pfoParameters.m\_energy = energy;
+218     pfoParameters.m\_momentum = momentum;
+219     pfoParameters.m\_mass = std::sqrt(std::max(energy * energy - momentum.GetDotProduct(momentum), 0.f));
+220     pfoParameters.m\_charge = (nDaughters > 1) ? pTrack->GetCharge() : daughterCharge;
+221     pfoParameters.m\_particleId = (pfoParameters.m\_charge.Get() > 0) ? pandora::PI\_PLUS : pandora::PI\_MINUS;
+222 
+223     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+224 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!Set\+Sibling\+Track\+Based\+Pfo\+Parameters@{Set\+Sibling\+Track\+Based\+Pfo\+Parameters}}
+\index{Set\+Sibling\+Track\+Based\+Pfo\+Parameters@{Set\+Sibling\+Track\+Based\+Pfo\+Parameters}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{Set\+Sibling\+Track\+Based\+Pfo\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::\+Set\+Sibling\+Track\+Based\+Pfo\+Parameters (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Track $\ast$const}]{p\+Track, }
+\item[{{\bf Pfo\+Parameters} \&}]{pfo\+Parameters}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_a7b945d542be4b98a2d7bd80b39e51857}
+
+
+Set the parameters for a track-\/based pfo, where pfo target consists of two or more sibling tracks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Track} & address of the track to consider \\
+\hline
+{\em pfo\+Parameters} & the pfo parameters to populate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 159 of file Pfo\+Creation\+Algorithm.\+cc.
+
+
+
+Referenced by Set\+Track\+Based\+Pfo\+Parameters().
+
+
+\begin{DoxyCode}
+160 \{
+161     \textcolor{keywordtype}{int} charge(0);
+162     \textcolor{keywordtype}{float} energy(0.f);
+163     pandora::CartesianVector momentum(0.f, 0.f, 0.f);
+164 
+165     pandora::TrackList fullSiblingTrackList(pTrack->GetSiblingTrackList());
+166     fullSiblingTrackList.insert(pTrack);
+167 
+168     \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator iter = fullSiblingTrackList.begin(), iterEnd = 
+      fullSiblingTrackList.end(); iter != iterEnd; ++iter)
+169     \{
+170         \textcolor{keyword}{const} pandora::Track *\textcolor{keyword}{const} pSiblingTrack = *iter;
+171         charge += pSiblingTrack->GetCharge();
+172 
+173         \textcolor{keywordflow}{if} (!pSiblingTrack->CanFormPfo() && !pSiblingTrack->CanFormClusterlessPfo())
+174             \textcolor{keywordflow}{continue};
+175 
+176         \textcolor{comment}{// ATTN Assume sibling-track-based pfos represent pair-production}
+177         \textcolor{keyword}{const} \textcolor{keywordtype}{float} electronMass(pandora::PdgTable::GetParticleMass(pandora::E\_MINUS));
+178         energy += std::sqrt(electronMass * electronMass + pSiblingTrack->GetMomentumAtDca().
+      GetMagnitudeSquared());
+179         momentum += pSiblingTrack->GetMomentumAtDca();
+180     \}
+181 
+182     \textcolor{keywordflow}{if} (energy < std::numeric\_limits<float>::epsilon())
+183         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_NOT\_INITIALIZED;
+184 
+185     pfoParameters.m\_energy = energy;
+186     pfoParameters.m\_momentum = momentum;
+187     pfoParameters.m\_mass = std::sqrt(std::max(energy * energy - momentum.GetDotProduct(momentum), 0.f));
+188     pfoParameters.m\_charge = charge;
+189     pfoParameters.m\_particleId = pandora::PHOTON;
+190 
+191     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+192 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!Set\+Simple\+Track\+Based\+Pfo\+Parameters@{Set\+Simple\+Track\+Based\+Pfo\+Parameters}}
+\index{Set\+Simple\+Track\+Based\+Pfo\+Parameters@{Set\+Simple\+Track\+Based\+Pfo\+Parameters}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{Set\+Simple\+Track\+Based\+Pfo\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::\+Set\+Simple\+Track\+Based\+Pfo\+Parameters (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Track $\ast$const}]{p\+Track, }
+\item[{{\bf Pfo\+Parameters} \&}]{pfo\+Parameters}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_a1739a9cba78519c660bb7b643a911092}
+
+
+Set the parameters for a simple track-\/based pfo, where the track has no associations with other tracks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Track} & address of the track to consider \\
+\hline
+{\em pfo\+Parameters} & the pfo parameters to populate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 228 of file Pfo\+Creation\+Algorithm.\+cc.
+
+
+
+Referenced by Set\+Track\+Based\+Pfo\+Parameters().
+
+
+\begin{DoxyCode}
+229 \{
+230     pfoParameters.m\_energy = pTrack->GetEnergyAtDca();
+231     pfoParameters.m\_momentum = pTrack->GetMomentumAtDca();
+232     pfoParameters.m\_mass = pTrack->GetMass();
+233     pfoParameters.m\_charge = pTrack->GetCharge();
+234     pfoParameters.m\_particleId = (pTrack->GetCharge() > 0) ? pandora::PI\_PLUS : pandora::PI\_MINUS;
+235 
+236     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+237 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!Set\+Track\+Based\+Pfo\+Parameters@{Set\+Track\+Based\+Pfo\+Parameters}}
+\index{Set\+Track\+Based\+Pfo\+Parameters@{Set\+Track\+Based\+Pfo\+Parameters}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{Set\+Track\+Based\+Pfo\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::\+Set\+Track\+Based\+Pfo\+Parameters (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Track $\ast$const}]{p\+Track, }
+\item[{{\bf Pfo\+Parameters} \&}]{pfo\+Parameters}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_a087a3f80a965842681ba2b3350f40777}
+
+
+Set the basic parameters for a track-\/based pfo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Track} & address of the track to consider \\
+\hline
+{\em pfo\+Parameters} & the pfo parameters to populate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 135 of file Pfo\+Creation\+Algorithm.\+cc.
+
+
+
+References Set\+Daughter\+Track\+Based\+Pfo\+Parameters(), Set\+Sibling\+Track\+Based\+Pfo\+Parameters(), and Set\+Simple\+Track\+Based\+Pfo\+Parameters().
+
+
+
+Referenced by Create\+Track\+Based\+Pfos().
+
+
+\begin{DoxyCode}
+136 \{
+137     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} hasParent(!pTrack->GetParentTrackList().empty());
+138 
+139     \textcolor{keywordflow}{if} (hasParent)
+140         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_NOT\_ALLOWED;
+141 
+142     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} hasSibling(!pTrack->GetSiblingTrackList().empty());
+143     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} hasDaughter(!pTrack->GetDaughterTrackList().empty());
+144 
+145     \textcolor{keywordflow}{if} (hasSibling && hasDaughter)
+146         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_NOT\_ALLOWED;
+147 
+148     \textcolor{keywordflow}{if} (hasSibling)
+149         \textcolor{keywordflow}{return} this->SetSiblingTrackBasedPfoParameters(pTrack, pfoParameters);
+150 
+151     \textcolor{keywordflow}{if} (hasDaughter)
+152         \textcolor{keywordflow}{return} this->SetDaughterTrackBasedPfoParameters(pTrack, pfoParameters);
+153 
+154     \textcolor{keywordflow}{return} this->SetSimpleTrackBasedPfoParameters(pTrack, pfoParameters);
+155 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!m\+\_\+allow\+Single\+Layer\+Clusters@{m\+\_\+allow\+Single\+Layer\+Clusters}}
+\index{m\+\_\+allow\+Single\+Layer\+Clusters@{m\+\_\+allow\+Single\+Layer\+Clusters}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{m\+\_\+allow\+Single\+Layer\+Clusters}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::m\+\_\+allow\+Single\+Layer\+Clusters\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_a5fd18f0bcb8ce2bcf784734f6386b8a9}
+
+
+Whether to allow neutral clusters spanning only a single pseudolayer. 
+
+
+
+Definition at line 135 of file Pfo\+Creation\+Algorithm.\+h.
+
+
+
+Referenced by Create\+Neutral\+Pfos(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!m\+\_\+min\+Cluster\+Electromagnetic\+Energy@{m\+\_\+min\+Cluster\+Electromagnetic\+Energy}}
+\index{m\+\_\+min\+Cluster\+Electromagnetic\+Energy@{m\+\_\+min\+Cluster\+Electromagnetic\+Energy}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{m\+\_\+min\+Cluster\+Electromagnetic\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::m\+\_\+min\+Cluster\+Electromagnetic\+Energy\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_a8ddeb7bd78d22f43fb163447432185f2}
+
+
+Min electromagnetic energy for neutral (photon) clusters to be added to pfos. 
+
+
+
+Definition at line 133 of file Pfo\+Creation\+Algorithm.\+h.
+
+
+
+Referenced by Create\+Neutral\+Pfos(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!m\+\_\+min\+Cluster\+Hadronic\+Energy@{m\+\_\+min\+Cluster\+Hadronic\+Energy}}
+\index{m\+\_\+min\+Cluster\+Hadronic\+Energy@{m\+\_\+min\+Cluster\+Hadronic\+Energy}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{m\+\_\+min\+Cluster\+Hadronic\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::m\+\_\+min\+Cluster\+Hadronic\+Energy\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_a90baa76c1f7b0bb7ee6a0983ffbea983}
+
+
+Min hadronic energy for neutral (non-\/photon) clusters to be added to pfos. 
+
+
+
+Definition at line 132 of file Pfo\+Creation\+Algorithm.\+h.
+
+
+
+Referenced by Create\+Neutral\+Pfos(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!m\+\_\+min\+Hits\+In\+Cluster@{m\+\_\+min\+Hits\+In\+Cluster}}
+\index{m\+\_\+min\+Hits\+In\+Cluster@{m\+\_\+min\+Hits\+In\+Cluster}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{m\+\_\+min\+Hits\+In\+Cluster}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::m\+\_\+min\+Hits\+In\+Cluster\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_abe60c0dfec848817f067fec39df78721}
+
+
+Min number of calo hits for neutral cluster to be added to pfos. 
+
+
+
+Definition at line 134 of file Pfo\+Creation\+Algorithm.\+h.
+
+
+
+Referenced by Create\+Neutral\+Pfos(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!m\+\_\+output\+Pfo\+List\+Name@{m\+\_\+output\+Pfo\+List\+Name}}
+\index{m\+\_\+output\+Pfo\+List\+Name@{m\+\_\+output\+Pfo\+List\+Name}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{m\+\_\+output\+Pfo\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::m\+\_\+output\+Pfo\+List\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_ad78a47819dbc368298f5e6eb9953a0e9}
+
+
+The output pfo list name. 
+
+
+
+Definition at line 129 of file Pfo\+Creation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!m\+\_\+photon\+Position\+Algorithm@{m\+\_\+photon\+Position\+Algorithm}}
+\index{m\+\_\+photon\+Position\+Algorithm@{m\+\_\+photon\+Position\+Algorithm}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{m\+\_\+photon\+Position\+Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::m\+\_\+photon\+Position\+Algorithm\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_a5463c23d0735863c93441602859c8fd8}
+
+
+Identifies the algorithm used to calculate photon pfo position vectors. 
+
+
+
+Definition at line 136 of file Pfo\+Creation\+Algorithm.\+h.
+
+
+
+Referenced by Create\+Neutral\+Pfos(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!m\+\_\+should\+Create\+Neutral\+Pfos@{m\+\_\+should\+Create\+Neutral\+Pfos}}
+\index{m\+\_\+should\+Create\+Neutral\+Pfos@{m\+\_\+should\+Create\+Neutral\+Pfos}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{m\+\_\+should\+Create\+Neutral\+Pfos}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::m\+\_\+should\+Create\+Neutral\+Pfos\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_ab77cfec8849a446d412cdc6b52695a91}
+
+
+Whether to create neutral pfos. 
+
+
+
+Definition at line 131 of file Pfo\+Creation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}!m\+\_\+should\+Create\+Track\+Based\+Pfos@{m\+\_\+should\+Create\+Track\+Based\+Pfos}}
+\index{m\+\_\+should\+Create\+Track\+Based\+Pfos@{m\+\_\+should\+Create\+Track\+Based\+Pfos}!arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm@{arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm}}
+\subsubsection[{m\+\_\+should\+Create\+Track\+Based\+Pfos}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Pfo\+Creation\+Algorithm\+::m\+\_\+should\+Create\+Track\+Based\+Pfos\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PfoCreationAlgorithm_aaf1f2db5c296becd1ff17c3dab522f0a}
+
+
+Whether to create track-\/based (charged) pfos. 
+
+
+
+Definition at line 130 of file Pfo\+Creation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Pfo\+Creation\+Algorithm.\+h}\item 
+{\bf Pfo\+Creation\+Algorithm.\+cc}\end{DoxyCompactItemize}

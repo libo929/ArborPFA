@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<meta name="description" content="ArborPFA : Arbor Particle Flow Algorithm">
+		
+		<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+		
+		<script src="http://www.jquery.info/scripts/jquery-1.0.1.pack.js" type="text/javascript"></script>
+		
+		<script type="text/javascript">
+		
+		$(document).ready(function () {
+			$("#header_wrap").load("base/header.html");
+			$("#nav_bar_wrap").load("base/navigation.html");
+			$("#footer_wrap").load("base/footer.html");
+		});
+		
+		</script>
+		
+		<title>ArborPFA : Arbor Particle Flow Algorithm</title>
+	</head>
+
+	<body>
+  
+  	    <!-- HEADER -->
+	    <div id="header_wrap" class="outer">
+	    </div>
+	    
+	    		<!-- NAVIGATION -->
+		<div id="nav_bar_wrap" class="outer">
+		</div>
+
+		<!-- MAIN CONTENT -->
+		<div id="main_content_wrap" class="outer">
+			<section id="main_content" class="inner">
+			
+				ArborPFA is a C++ implementation of a Particle Flow Algorithm (PFA) developed with the <a href="https://github.com/PandoraPFA/PandoraSDK">PandoraSDK</a> framework.
+				
+				<p> The idea under this clustering algorithm is based on the topological development of hadronic showers in high granularity
+				sampling calorimeters follows an oriented-tree structure. The goal of this algorithm is to use the energy deposits in calorimeters
+				as vertexes to connect and thus create an oriented tree-topology, in the sense of the graph theory. The implementation do not depend 
+				on any event data model since the use of the PandoraSDK framework. This library can be used by any experiment in high energy physics
+				if the detector granularity allows it.</p> 
+				
+	            <p class="project_description">The project is composed of the following libraries :
+	            <ul>
+	              <li> <a href="https://github.com/ArborPFA/ArborContent">ArborContent</a> : The algorithms implementation using the PandoraSDK framework</li>
+	              <li> <a href="https://github.com/ArborPFA/MarlinArbor">MarlinArbor</a> : the Marlin interface that loads and runs the algorithms (require <a href="https://github.com/iLCSoft">ILCSOFT</a>)</li>
+	              <li> <a href="https://github.com/ArborPFA/ArborPFA">ArborPFA</a> : the installation package</li>
+	            </ul>
+	
+				<p class="project_description">The project was initiated by Henri Videau for the ALEPH experiment and then adapted by 
+				Manqi Ruan for the ILC project.</p>
+				<p>All packages are free and open source, released under the GPL license.</p>            
+	            <br/>
+
+			</section>
+		</div>
+		
+		<!-- FOOTER  -->
+		<div id="footer_wrap" class="outer">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,841 @@
+\section{arbor\+\_\+content\+:\+:Perfect\+Particle\+Flow\+Algorithm Class Reference}
+\label{classarbor__content_1_1PerfectParticleFlowAlgorithm}\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+
+
+\doxyref{Perfect\+Particle\+Flow\+Algorithm}{p.}{classarbor__content_1_1PerfectParticleFlowAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$Perfect\+Particle\+Flow\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Perfect\+Particle\+Flow\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1PerfectParticleFlowAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1PerfectParticleFlowAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Perfect\+Particle\+Flow\+Algorithm} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \\*
+Pandora\+Content\+Api\+::\+Particle\+Flow\+Object\+::\+Parameters {\bf Pfo\+Parameters}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\item 
+void {\bf Calo\+Hit\+Collection} (const pandora\+::\+M\+C\+Particle $\ast$const p\+Pfo\+Target, {\bf Pfo\+Parameters} \&pfo\+Parameters) const 
+\begin{DoxyCompactList}\small\item\em Collection of calo hits. \end{DoxyCompactList}\item 
+void {\bf Simple\+Calo\+Hit\+Collection} (const pandora\+::\+M\+C\+Particle $\ast$const p\+Pfo\+Target, const pandora\+::\+Calo\+Hit $\ast$const p\+Calo\+Hit, pandora\+::\+Calo\+Hit\+List \&calo\+Hit\+List) const 
+\begin{DoxyCompactList}\small\item\em Simple collection of calo hits, using only hits for which pfo target is the main mc particle. \end{DoxyCompactList}\item 
+void {\bf Full\+Calo\+Hit\+Collection} (const pandora\+::\+M\+C\+Particle $\ast$const p\+Pfo\+Target, const pandora\+::\+Calo\+Hit $\ast$const p\+Calo\+Hit, pandora\+::\+Calo\+Hit\+List \&calo\+Hit\+List) const 
+\begin{DoxyCompactList}\small\item\em Full collection of calo hits, using map of mc particles to hit weights; fragment calo hits where necessary. \end{DoxyCompactList}\item 
+void {\bf Track\+Collection} (const pandora\+::\+M\+C\+Particle $\ast$const p\+Pfo\+Target, {\bf Pfo\+Parameters} \&pfo\+Parameters) const 
+\begin{DoxyCompactList}\small\item\em Collection of tracks, using only tracks for which pfo target is the main mc particle. \end{DoxyCompactList}\item 
+void {\bf Set\+Pfo\+Parameters\+From\+Tracks} (const pandora\+::\+M\+C\+Particle $\ast$const p\+Pfo\+Target, int \&n\+Tracks\+Used, {\bf Pfo\+Parameters} \&pfo\+Parameters) const 
+\begin{DoxyCompactList}\small\item\em Set the pfo parameters using tracks that have been collected together. \end{DoxyCompactList}\item 
+void {\bf Set\+Pfo\+Parameters\+From\+Clusters} (const pandora\+::\+M\+C\+Particle $\ast$const p\+Pfo\+Target, const int n\+Tracks\+Used, {\bf Pfo\+Parameters} \&pfo\+Parameters) const 
+\begin{DoxyCompactList}\small\item\em Set the pfo parameters using clusters that have been collected together. \end{DoxyCompactList}\item 
+const pandora\+::\+Cartesian\+Vector {\bf Get\+Energy\+Weighted\+Centroid} (const pandora\+::\+Cluster $\ast$const p\+Cluster, const unsigned int inner\+Pseudo\+Layer, const unsigned int outer\+Pseudo\+Layer) const 
+\begin{DoxyCompactList}\small\item\em Get the energy-\/weighted centroid for a specified cluster, calculated over a particular pseudo layer range. \end{DoxyCompactList}\item 
+void {\bf Pfo\+Parameter\+Debug\+Information} (const pandora\+::\+M\+C\+Particle $\ast$const p\+Pfo\+Target, const int n\+Tracks\+Used, {\bf Pfo\+Parameters} \&pfo\+Parameters) const 
+\begin{DoxyCompactList}\small\item\em Print relevant pfo parameter debug information, if required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+output\+Pfo\+List\+Name}
+\begin{DoxyCompactList}\small\item\em The output pfo list name. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+output\+Cluster\+List\+Name}
+\begin{DoxyCompactList}\small\item\em The output cluster list name. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+simple\+Calo\+Hit\+Collection}
+\begin{DoxyCompactList}\small\item\em Whether to use simple calo hit collection mechanism, or full mechanism. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+min\+Weight\+Fraction}
+\begin{DoxyCompactList}\small\item\em The minimum mc particle calo hit weight for hit fragmentation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Perfect\+Particle\+Flow\+Algorithm}{p.}{classarbor__content_1_1PerfectParticleFlowAlgorithm} class. 
+
+Definition at line 23 of file Perfect\+Particle\+Flow\+Algorithm.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!Pfo\+Parameters@{Pfo\+Parameters}}
+\index{Pfo\+Parameters@{Pfo\+Parameters}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{Pfo\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}typedef Pandora\+Content\+Api\+::\+Particle\+Flow\+Object\+::\+Parameters {\bf arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::\+Pfo\+Parameters}\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_ac8cc7dac21ae8a5fa74a423f673764af}
+
+
+Definition at line 44 of file Perfect\+Particle\+Flow\+Algorithm.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!Perfect\+Particle\+Flow\+Algorithm@{Perfect\+Particle\+Flow\+Algorithm}}
+\index{Perfect\+Particle\+Flow\+Algorithm@{Perfect\+Particle\+Flow\+Algorithm}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{Perfect\+Particle\+Flow\+Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::\+Perfect\+Particle\+Flow\+Algorithm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_a8d00eb4d7de138bc3822e21b37b46da2}
+
+
+Default constructor. 
+
+
+
+Definition at line 21 of file Perfect\+Particle\+Flow\+Algorithm.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::\+Factory\+::\+Create\+Algorithm().
+
+
+\begin{DoxyCode}
+21                                                              :
+22         m_simpleCaloHitCollection(\textcolor{keyword}{true}),
+23         m_minWeightFraction(0.01f)
+24   \{
+25   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!Calo\+Hit\+Collection@{Calo\+Hit\+Collection}}
+\index{Calo\+Hit\+Collection@{Calo\+Hit\+Collection}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{Calo\+Hit\+Collection}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::\+Calo\+Hit\+Collection (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+M\+C\+Particle $\ast$const}]{p\+Pfo\+Target, }
+\item[{{\bf Pfo\+Parameters} \&}]{pfo\+Parameters}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_acfdded10b8278c497f267991faacf03d}
+
+
+Collection of calo hits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Pfo\+Target} & address of the pfo target \\
+\hline
+{\em pfo\+Parameters} & the pfo parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 83 of file Perfect\+Particle\+Flow\+Algorithm.\+cc.
+
+
+
+References Full\+Calo\+Hit\+Collection(), m\+\_\+simple\+Calo\+Hit\+Collection, and Simple\+Calo\+Hit\+Collection().
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+84   \{
+85     \textcolor{keyword}{const} CaloHitList *pCaloHitList = NULL;
+86     PANDORA\_THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, pCaloHitList)
+      );
+87 
+88     \textcolor{keyword}{const} Cluster *pCluster = NULL;
+89     \textcolor{keyword}{const} CaloHitList localCaloHitList(pCaloHitList->begin(), pCaloHitList->end());
+90 
+91     \textcolor{keywordflow}{for} (CaloHitList::const\_iterator iter = localCaloHitList.begin(), iterEnd = localCaloHitList.end(); 
+      iter != iterEnd; ++iter)
+92     \{
+93       \textcolor{keywordflow}{try}
+94       \{
+95         \textcolor{keyword}{const} CaloHit *\textcolor{keyword}{const} pCaloHit = *iter;
+96 
+97         \textcolor{keywordflow}{if} (!PandoraContentApi::IsAvailable(*\textcolor{keyword}{this}, pCaloHit))
+98           \textcolor{keywordflow}{continue};
+99 
+100         PandoraContentApi::Cluster::Parameters parameters;
+101         CaloHitList &caloHitList(parameters.m\_caloHitList);
+102 
+103         \textcolor{keywordflow}{if} (m_simpleCaloHitCollection)
+104         \{
+105           this->SimpleCaloHitCollection(pPfoTarget, pCaloHit, caloHitList);
+106         \}
+107         \textcolor{keywordflow}{else}
+108         \{
+109           this->FullCaloHitCollection(pPfoTarget, pCaloHit, caloHitList);
+110         \}
+111 
+112         \textcolor{keywordflow}{if} (caloHitList.empty())
+113           \textcolor{keywordflow}{continue};
+114 
+115         \textcolor{keywordflow}{if} (NULL == pCluster)
+116         \{
+117           PANDORA\_THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::Cluster::Create(*\textcolor{keyword}{this}, 
+      parameters, pCluster));
+118           pfoParameters.m\_clusterList.insert(pCluster);
+119         \}
+120         \textcolor{keywordflow}{else}
+121         \{
+122           \textcolor{keywordflow}{for} (CaloHitList::const\_iterator hitIter = caloHitList.begin(), hitIterEnd = caloHitList.end(); 
+      hitIter != hitIterEnd; ++hitIter)
+123             PANDORA\_THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::AddToCluster(*\textcolor{keyword}{this}, 
+      pCluster, *hitIter));
+124         \}
+125       \}
+126       \textcolor{keywordflow}{catch} (StatusCodeException &)
+127       \{
+128       \}
+129     \}
+130   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!Full\+Calo\+Hit\+Collection@{Full\+Calo\+Hit\+Collection}}
+\index{Full\+Calo\+Hit\+Collection@{Full\+Calo\+Hit\+Collection}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{Full\+Calo\+Hit\+Collection}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::\+Full\+Calo\+Hit\+Collection (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+M\+C\+Particle $\ast$const}]{p\+Pfo\+Target, }
+\item[{const pandora\+::\+Calo\+Hit $\ast$const}]{p\+Calo\+Hit, }
+\item[{pandora\+::\+Calo\+Hit\+List \&}]{calo\+Hit\+List}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_aa0e23a7ad7b5d643f1bc2f3a7b5cd9d9}
+
+
+Full collection of calo hits, using map of mc particles to hit weights; fragment calo hits where necessary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Pfo\+Target} & address of the pfo target \\
+\hline
+{\em p\+Calo\+Hit} & address of the calo hit to consider \\
+\hline
+{\em calo\+Hit\+List} & to receive selected calo hits, which may include a list of fragments of the original input hit \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 147 of file Perfect\+Particle\+Flow\+Algorithm.\+cc.
+
+
+
+References m\+\_\+min\+Weight\+Fraction, and Simple\+Calo\+Hit\+Collection().
+
+
+
+Referenced by Calo\+Hit\+Collection().
+
+
+\begin{DoxyCode}
+148   \{
+149     \textcolor{keyword}{const} MCParticleWeightMap mcParticleWeightMap(pCaloHit->GetMCParticleWeightMap());
+150 
+151     \textcolor{keywordflow}{if} (mcParticleWeightMap.size() < 2)
+152       \textcolor{keywordflow}{return} this->SimpleCaloHitCollection(pPfoTarget, pCaloHit, caloHitList);
+153 
+154     \textcolor{keywordtype}{float} mcParticleWeightSum(0.f);
+155 
+156     \textcolor{keywordflow}{for} (MCParticleWeightMap::const\_iterator wtIter = mcParticleWeightMap.begin(), wtIterEnd = 
+      mcParticleWeightMap.end(); wtIter != wtIterEnd; ++wtIter)
+157       mcParticleWeightSum += wtIter->second;
+158 
+159     if (mcParticleWeightSum < std::numeric\_limits<float>::epsilon())
+160       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+161 
+162     \textcolor{keyword}{const} CaloHit *pLocalCaloHit = pCaloHit;
+163 
+164     \textcolor{keywordflow}{for} (MCParticleWeightMap::const\_iterator wtIter = mcParticleWeightMap.begin(), wtIterEnd = 
+      mcParticleWeightMap.end(); wtIter != wtIterEnd; ++wtIter)
+165     \{
+166       \textcolor{keyword}{const} MCParticle *\textcolor{keyword}{const} pHitMCParticle(wtIter->first);
+167       \textcolor{keyword}{const} MCParticle *\textcolor{keyword}{const} pHitPfoTarget(pHitMCParticle->GetPfoTarget());
+168       \textcolor{keyword}{const} \textcolor{keywordtype}{float} weight(wtIter->second);
+169 
+170       \textcolor{keywordflow}{if} (pHitPfoTarget != pPfoTarget)
+171         \textcolor{keywordflow}{continue};
+172 
+173       \textcolor{keyword}{const} CaloHit *pCaloHitToAdd = pLocalCaloHit;
+174 
+175       \textcolor{keywordflow}{if} (pCaloHitToAdd->GetWeight() < std::numeric\_limits<float>::epsilon())
+176         \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+177 
+178       \textcolor{keyword}{const} \textcolor{keywordtype}{float} weightFraction(weight / (mcParticleWeightSum * pCaloHitToAdd->GetWeight()));
+179       \textcolor{keyword}{const} \textcolor{keywordtype}{bool} isBelowThreshold((weightFraction - m_minWeightFraction) < 
+      std::numeric\_limits<float>::epsilon());
+180 
+181       \textcolor{keywordflow}{if} (isBelowThreshold)
+182         \textcolor{keywordflow}{continue};
+183 
+184       \textcolor{keyword}{const} \textcolor{keywordtype}{bool} shouldFragment(weightFraction + m_minWeightFraction - 1.f < 
+      std::numeric\_limits<float>::epsilon());
+185 
+186       \textcolor{keywordflow}{if} (shouldFragment)
+187         PANDORA\_THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::Fragment(*\textcolor{keyword}{this}, pLocalCaloHit, 
+      weightFraction, pCaloHitToAdd, pLocalCaloHit));
+188 
+189       caloHitList.insert(pCaloHitToAdd);
+190     \}
+191   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!Get\+Energy\+Weighted\+Centroid@{Get\+Energy\+Weighted\+Centroid}}
+\index{Get\+Energy\+Weighted\+Centroid@{Get\+Energy\+Weighted\+Centroid}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{Get\+Energy\+Weighted\+Centroid}]{\setlength{\rightskip}{0pt plus 5cm}const Cartesian\+Vector arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::\+Get\+Energy\+Weighted\+Centroid (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{const unsigned int}]{inner\+Pseudo\+Layer, }
+\item[{const unsigned int}]{outer\+Pseudo\+Layer}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_aa7421c865d688a16b4e8942f1d0b244f}
+
+
+Get the energy-\/weighted centroid for a specified cluster, calculated over a particular pseudo layer range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & address of the cluster to consider \\
+\hline
+{\em pseudo\+Layer} & the inner pseudo layer of interest \\
+\hline
+{\em pseudo\+Layer} & the outer pseudo layer of interest\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The energy-\/weighted centroid, returned by value 
+\end{DoxyReturn}
+
+
+Definition at line 307 of file Perfect\+Particle\+Flow\+Algorithm.\+cc.
+
+
+
+Referenced by Set\+Pfo\+Parameters\+From\+Clusters().
+
+
+\begin{DoxyCode}
+309   \{
+310     \textcolor{keywordtype}{float} energySum(0.f);
+311     CartesianVector energyPositionSum(0.f, 0.f, 0.f);
+312     \textcolor{keyword}{const} OrderedCaloHitList &orderedCaloHitList(pCluster->GetOrderedCaloHitList());
+313 
+314     \textcolor{keywordflow}{for} (OrderedCaloHitList::const\_iterator iter = orderedCaloHitList.begin(), iterEnd = orderedCaloHitList
+      .end(); iter != iterEnd; ++iter)
+315     \{
+316       \textcolor{keywordflow}{if} (iter->first > outerPseudoLayer)
+317         \textcolor{keywordflow}{break};
+318 
+319       \textcolor{keywordflow}{if} (iter->first < innerPseudoLayer)
+320         \textcolor{keywordflow}{continue};
+321 
+322       \textcolor{keywordflow}{for} (CaloHitList::const\_iterator hitIter = iter->second->begin(), hitIterEnd = iter->second->end(); 
+      hitIter != hitIterEnd; ++hitIter)
+323       \{
+324         \textcolor{keyword}{const} \textcolor{keywordtype}{float} electromagneticEnergy((*hitIter)->GetElectromagneticEnergy());
+325         energySum += electromagneticEnergy;
+326         energyPositionSum += ((*hitIter)->GetPositionVector() * electromagneticEnergy);
+327       \}
+328     \}
+329 
+330     \textcolor{keywordflow}{if} (energySum < std::numeric\_limits<float>::epsilon())
+331       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_NOT\_INITIALIZED);
+332 
+333     \textcolor{keywordflow}{return} (energyPositionSum * (1.f / energySum));
+334   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!Pfo\+Parameter\+Debug\+Information@{Pfo\+Parameter\+Debug\+Information}}
+\index{Pfo\+Parameter\+Debug\+Information@{Pfo\+Parameter\+Debug\+Information}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{Pfo\+Parameter\+Debug\+Information}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::\+Pfo\+Parameter\+Debug\+Information (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+M\+C\+Particle $\ast$const}]{p\+Pfo\+Target, }
+\item[{const int}]{n\+Tracks\+Used, }
+\item[{{\bf Pfo\+Parameters} \&}]{pfo\+Parameters}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_a7401b65174a5f4e913f863285832fd22}
+
+
+Print relevant pfo parameter debug information, if required. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Pfo\+Target} & address of the pfo target \\
+\hline
+{\em n\+Tracks\+Used} & the number of tracks used for setting pfo properties \\
+\hline
+{\em pfo\+Parameters} & the pfo parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 338 of file Perfect\+Particle\+Flow\+Algorithm.\+cc.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+339   \{
+340     \textcolor{keywordflow}{if} ((0 == nTracksUsed) && pfoParameters.m\_clusterList.empty())
+341     \{
+342       std::cout << pPfoTarget << \textcolor{stringliteral}{" No energy deposits for pfo target "} << pPfoTarget->GetParticleId() << \textcolor{stringliteral}{",
+       E: "} << pPfoTarget->GetEnergy() << std::endl;
+343       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_INVALID\_PARAMETER);
+344     \}
+345 
+346     \textcolor{keywordflow}{if} (std::fabs(pfoParameters.m\_energy.Get() - pPfoTarget->GetEnergy()) > 2.f)
+347     \{
+348       std::cout << pPfoTarget << \textcolor{stringliteral}{" Did not match pfo target energy, target: "} << pPfoTarget->GetParticleId(
+      ) << \textcolor{stringliteral}{", E: "} << pPfoTarget->GetEnergy()
+349                       << \textcolor{stringliteral}{" (reco: "} << pfoParameters.m\_particleId.Get() << \textcolor{stringliteral}{", E: "} << pfoParameters.
+      m\_energy.Get() << \textcolor{stringliteral}{", nTrk: "} << pfoParameters.m\_trackList.size()
+350                       << \textcolor{stringliteral}{", nTrkUsed: "} << nTracksUsed << \textcolor{stringliteral}{", nCls: "} << pfoParameters.m\_clusterList.size() 
+      << \textcolor{stringliteral}{")"} << std::endl;
+351     \}
+352   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}Status\+Code arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_a12db662013d430bcba6a5781b2445278}
+
+
+Definition at line 356 of file Perfect\+Particle\+Flow\+Algorithm.\+cc.
+
+
+
+References m\+\_\+min\+Weight\+Fraction, m\+\_\+output\+Cluster\+List\+Name, m\+\_\+output\+Pfo\+List\+Name, and m\+\_\+simple\+Calo\+Hit\+Collection.
+
+
+\begin{DoxyCode}
+357   \{
+358     PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, XmlHelper::ReadValue(xmlHandle,
+359         \textcolor{stringliteral}{"OutputPfoListName"}, m_outputPfoListName));
+360 
+361     PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, XmlHelper::ReadValue(xmlHandle,
+362         \textcolor{stringliteral}{"OutputClusterListName"}, m_outputClusterListName));
+363 
+364     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, XmlHelper::ReadValue(
+      xmlHandle,
+365         \textcolor{stringliteral}{"SimpleCaloHitCollection"}, m_simpleCaloHitCollection));
+366 
+367     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, XmlHelper::ReadValue(
+      xmlHandle,
+368         \textcolor{stringliteral}{"MinWeightFraction"}, m_minWeightFraction));
+369 
+370     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+371   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}Status\+Code arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_ae5d5a6d00886bc81b82b0ceaee13ac20}
+
+
+Definition at line 29 of file Perfect\+Particle\+Flow\+Algorithm.\+cc.
+
+
+
+References Calo\+Hit\+Collection(), m\+\_\+output\+Cluster\+List\+Name, m\+\_\+output\+Pfo\+List\+Name, Pfo\+Parameter\+Debug\+Information(), Set\+Pfo\+Parameters\+From\+Clusters(), Set\+Pfo\+Parameters\+From\+Tracks(), and Track\+Collection().
+
+
+\begin{DoxyCode}
+30   \{
+31     \textcolor{keyword}{const} MCParticleList *pMCParticleList = NULL;
+32     PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, 
+      pMCParticleList));
+33 
+34     \textcolor{keywordflow}{if} (pMCParticleList->empty())
+35       \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+36 
+37     \textcolor{keyword}{const} ClusterList *pClusterList = NULL; std::string clusterListName;
+38     PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::CreateTemporaryListAndSetCurrent(*\textcolor{keyword}{
+      this}, pClusterList, clusterListName));
+39 
+40     \textcolor{keyword}{const} PfoList *pPfoList = NULL; std::string pfoListName;
+41     PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::CreateTemporaryListAndSetCurrent(*\textcolor{keyword}{
+      this}, pPfoList, pfoListName));
+42 
+43     \textcolor{keywordflow}{for} (MCParticleList::const\_iterator iterMC = pMCParticleList->begin(), iterMCEnd = pMCParticleList->end
+      (); iterMC != iterMCEnd; ++iterMC)
+44     \{
+45       \textcolor{keywordflow}{try}
+46       \{
+47         \textcolor{keyword}{const} MCParticle *\textcolor{keyword}{const} pPfoTarget = *iterMC;
+48         PfoParameters pfoParameters;
+49 
+50         this->CaloHitCollection(pPfoTarget, pfoParameters);
+51         this->TrackCollection(pPfoTarget, pfoParameters);
+52 
+53         \textcolor{keywordtype}{int} nTracksUsed(0);
+54         this->SetPfoParametersFromTracks(pPfoTarget, nTracksUsed, pfoParameters);
+55         this->SetPfoParametersFromClusters(pPfoTarget, nTracksUsed, pfoParameters);
+56         this->PfoParameterDebugInformation(pPfoTarget, nTracksUsed, pfoParameters);
+57 
+58         \textcolor{keyword}{const} ParticleFlowObject *pPfo = NULL;
+59         PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::ParticleFlowObject::Create(*\textcolor{keyword}{
+      this}, pfoParameters, pPfo));
+60       \}
+61       \textcolor{keywordflow}{catch} (StatusCodeException &)
+62       \{
+63       \}
+64     \}
+65 
+66     \textcolor{keywordflow}{if} (!pClusterList->empty())
+67     \{
+68       PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::SaveList<Cluster>(*\textcolor{keyword}{this}, 
+      m_outputClusterListName));
+69       PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::ReplaceCurrentList<Cluster>(*\textcolor{keyword}{
+      this}, m_outputClusterListName));
+70     \}
+71 
+72     \textcolor{keywordflow}{if} (!pPfoList->empty())
+73     \{
+74       PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::SaveList<Pfo>(*\textcolor{keyword}{this}, 
+      m_outputPfoListName));
+75       PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::ReplaceCurrentList<Pfo>(*\textcolor{keyword}{this}, 
+      m_outputPfoListName));
+76     \}
+77 
+78     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+79   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!Set\+Pfo\+Parameters\+From\+Clusters@{Set\+Pfo\+Parameters\+From\+Clusters}}
+\index{Set\+Pfo\+Parameters\+From\+Clusters@{Set\+Pfo\+Parameters\+From\+Clusters}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{Set\+Pfo\+Parameters\+From\+Clusters}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::\+Set\+Pfo\+Parameters\+From\+Clusters (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+M\+C\+Particle $\ast$const}]{p\+Pfo\+Target, }
+\item[{const int}]{n\+Tracks\+Used, }
+\item[{{\bf Pfo\+Parameters} \&}]{pfo\+Parameters}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_ade16ae780d9b2ef3fe65ffe9593069e3}
+
+
+Set the pfo parameters using clusters that have been collected together. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Pfo\+Target} & address of the pfo target \\
+\hline
+{\em n\+Tracks\+Used} & the number of tracks used for setting pfo properties \\
+\hline
+{\em pfo\+Parameters} & the pfo parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 269 of file Perfect\+Particle\+Flow\+Algorithm.\+cc.
+
+
+
+References Get\+Energy\+Weighted\+Centroid().
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+270   \{
+271     \textcolor{keyword}{const} Cluster *pCluster = NULL;
+272 
+273     \textcolor{keywordflow}{if} (!pfoParameters.m\_clusterList.empty())
+274     \{
+275       \textcolor{keywordflow}{if} (1 != pfoParameters.m\_clusterList.size())
+276         \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+277 
+278       pCluster = *(pfoParameters.m\_clusterList.begin());
+279     \}
+280 
+281     \textcolor{keywordflow}{if} ((0 == nTracksUsed) && !pfoParameters.m\_clusterList.empty())
+282     \{
+283       \textcolor{keyword}{const} \textcolor{keywordtype}{bool} isPhoton(PHOTON == pPfoTarget->GetParticleId());
+284 
+285       \textcolor{keyword}{const} \textcolor{keywordtype}{float} clusterEnergy(isPhoton ? pCluster->GetCorrectedElectromagneticEnergy(this->GetPandora()) 
+      :
+286           pCluster->GetCorrectedHadronicEnergy(this->GetPandora()));
+287       \textcolor{keyword}{const} CartesianVector positionVector(!isPhoton ? pCluster->GetCentroid(pCluster->GetInnerPseudoLayer(
+      )) :
+288           this->GetEnergyWeightedCentroid(pCluster, pCluster->GetInnerPseudoLayer(), pCluster->
+      GetOuterPseudoLayer()));
+289 
+290       pfoParameters.m\_particleId = (isPhoton ? PHOTON : NEUTRON);
+291       pfoParameters.m\_charge = 0;
+292       pfoParameters.m\_mass = (isPhoton ? PdgTable::GetParticleMass(PHOTON) : PdgTable::GetParticleMass(
+      NEUTRON));
+293       pfoParameters.m\_energy = clusterEnergy;
+294       pfoParameters.m\_momentum = positionVector.GetUnitVector() * clusterEnergy;
+295     \}
+296 
+297     \textcolor{comment}{// Track-cluster associations hack}
+298     \textcolor{keywordflow}{if} (NULL != pCluster)
+299     \{
+300       \textcolor{keywordflow}{for} (TrackList::const\_iterator iterTrk = pfoParameters.m\_trackList.begin(), iterTrkEnd = 
+      pfoParameters.m\_trackList.end(); iterTrk != iterTrkEnd; ++iterTrk)
+301         PANDORA\_THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::AddTrackClusterAssociation(*\textcolor{keyword}{
+      this}, *iterTrk, pCluster));
+302     \}
+303   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!Set\+Pfo\+Parameters\+From\+Tracks@{Set\+Pfo\+Parameters\+From\+Tracks}}
+\index{Set\+Pfo\+Parameters\+From\+Tracks@{Set\+Pfo\+Parameters\+From\+Tracks}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{Set\+Pfo\+Parameters\+From\+Tracks}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::\+Set\+Pfo\+Parameters\+From\+Tracks (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+M\+C\+Particle $\ast$const}]{p\+Pfo\+Target, }
+\item[{int \&}]{n\+Tracks\+Used, }
+\item[{{\bf Pfo\+Parameters} \&}]{pfo\+Parameters}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_a07ff990c7dc697ed99e75d171abde500}
+
+
+Set the pfo parameters using tracks that have been collected together. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Pfo\+Target} & address of the pfo target \\
+\hline
+{\em n\+Tracks\+Used} & to receive the number of tracks used for setting pfo properties \\
+\hline
+{\em pfo\+Parameters} & the pfo parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 221 of file Perfect\+Particle\+Flow\+Algorithm.\+cc.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+222   \{
+223     \textcolor{keywordflow}{if} (!pfoParameters.m\_trackList.empty())
+224     \{
+225       \textcolor{keywordtype}{int} charge(0);
+226       \textcolor{keywordtype}{float} energyWithPionMass(0.f), energyWithElectronMass(0.f);
+227       CartesianVector momentum(0.f, 0.f, 0.f);
+228 
+229       \textcolor{keywordflow}{for} (TrackList::const\_iterator iter = pfoParameters.m\_trackList.begin(), iterEnd = pfoParameters.
+      m\_trackList.end(); iter != iterEnd; ++iter)
+230       \{
+231         \textcolor{keyword}{const} Track *\textcolor{keyword}{const} pTrack = *iter;
+232 
+233         \textcolor{keywordflow}{if} (!pTrack->CanFormPfo() && !pTrack->CanFormClusterlessPfo())
+234         \{
+235           std::cout << pPfoTarget << \textcolor{stringliteral}{" Drop track, E: "} << pTrack->GetEnergyAtDca() << \textcolor{stringliteral}{" cfp: "} << pTrack->
+      CanFormPfo() << \textcolor{stringliteral}{" cfcp: "} << pTrack->CanFormClusterlessPfo() << std::endl;
+236           \textcolor{keywordflow}{continue};
+237         \}
+238 
+239         \textcolor{keywordflow}{if} (!pTrack->GetParentTrackList().empty())
+240         \{
+241           std::cout << pPfoTarget << \textcolor{stringliteral}{" Drop track, E: "} << pTrack->GetEnergyAtDca() << \textcolor{stringliteral}{" nParents: "} << 
+      pTrack->GetParentTrackList().size() << std::endl;
+242           \textcolor{keywordflow}{continue};
+243         \}
+244 
+245         ++nTracksUsed;
+246 
+247         \textcolor{comment}{// ATTN Assume neutral track-based pfos represent pair-production}
+248         \textcolor{keyword}{const} \textcolor{keywordtype}{float} electronMass(PdgTable::GetParticleMass(E\_MINUS));
+249 
+250         charge += pTrack->GetCharge();
+251         momentum += pTrack->GetMomentumAtDca();
+252         energyWithPionMass += pTrack->GetEnergyAtDca();
+253         energyWithElectronMass += std::sqrt(electronMass * electronMass + pTrack->GetMomentumAtDca().
+      GetMagnitudeSquared());
+254       \}
+255 
+256       \textcolor{keywordflow}{if} (0 == nTracksUsed)
+257         \textcolor{keywordflow}{return};
+258 
+259       pfoParameters.m\_charge = charge;
+260       pfoParameters.m\_momentum = momentum;
+261       pfoParameters.m\_particleId = (pfoParameters.m\_charge.Get() == 0) ? PHOTON : (pfoParameters.m\_charge.
+      Get() < 0) ? PI\_MINUS : PI\_PLUS;
+262       pfoParameters.m\_energy = (pfoParameters.m\_particleId.Get() == PHOTON) ? energyWithElectronMass : 
+      energyWithPionMass;
+263       pfoParameters.m\_mass = std::sqrt(std::max(pfoParameters.m\_energy.Get() * pfoParameters.m\_energy.Get()
+       - pfoParameters.m\_momentum.Get().GetDotProduct(pfoParameters.m\_momentum.Get()), 0.f));
+264     \}
+265   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!Simple\+Calo\+Hit\+Collection@{Simple\+Calo\+Hit\+Collection}}
+\index{Simple\+Calo\+Hit\+Collection@{Simple\+Calo\+Hit\+Collection}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{Simple\+Calo\+Hit\+Collection}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::\+Simple\+Calo\+Hit\+Collection (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+M\+C\+Particle $\ast$const}]{p\+Pfo\+Target, }
+\item[{const pandora\+::\+Calo\+Hit $\ast$const}]{p\+Calo\+Hit, }
+\item[{pandora\+::\+Calo\+Hit\+List \&}]{calo\+Hit\+List}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_ab13a5f8c135ea6d189263833a5e2bcc2}
+
+
+Simple collection of calo hits, using only hits for which pfo target is the main mc particle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Pfo\+Target} & address of the pfo target \\
+\hline
+{\em p\+Calo\+Hit} & address of the calo hit to consider \\
+\hline
+{\em calo\+Hit\+List} & to receive selected calo hits \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 134 of file Perfect\+Particle\+Flow\+Algorithm.\+cc.
+
+
+
+Referenced by Calo\+Hit\+Collection(), and Full\+Calo\+Hit\+Collection().
+
+
+\begin{DoxyCode}
+135   \{
+136     \textcolor{keyword}{const} MCParticle *\textcolor{keyword}{const} pHitMCParticle(MCParticleHelper::GetMainMCParticle(pCaloHit));
+137     \textcolor{keyword}{const} MCParticle *\textcolor{keyword}{const} pHitPfoTarget(pHitMCParticle->GetPfoTarget());
+138 
+139     \textcolor{keywordflow}{if} (pHitPfoTarget != pPfoTarget)
+140       \textcolor{keywordflow}{return};
+141 
+142     caloHitList.insert(pCaloHit);
+143   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!Track\+Collection@{Track\+Collection}}
+\index{Track\+Collection@{Track\+Collection}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{Track\+Collection}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::\+Track\+Collection (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+M\+C\+Particle $\ast$const}]{p\+Pfo\+Target, }
+\item[{{\bf Pfo\+Parameters} \&}]{pfo\+Parameters}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_a5823ec905d6296161d1ee862efc9db32}
+
+
+Collection of tracks, using only tracks for which pfo target is the main mc particle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Pfo\+Target} & address of the pfo target \\
+\hline
+{\em pfo\+Parameters} & the pfo parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 195 of file Perfect\+Particle\+Flow\+Algorithm.\+cc.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+196   \{
+197     \textcolor{keyword}{const} TrackList *pTrackList = NULL;
+198     PANDORA\_THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, pTrackList));
+199 
+200     \textcolor{keywordflow}{for} (TrackList::const\_iterator iter = pTrackList->begin(), iterEnd = pTrackList->end(); iter != iterEnd
+      ; ++iter)
+201     \{
+202       \textcolor{keywordflow}{try}
+203       \{
+204         \textcolor{keyword}{const} Track *\textcolor{keyword}{const} pTrack = *iter;
+205         \textcolor{keyword}{const} MCParticle *\textcolor{keyword}{const} pTrkMCParticle(pTrack->GetMainMCParticle());
+206         \textcolor{keyword}{const} MCParticle *\textcolor{keyword}{const} pTrkPfoTarget(pTrkMCParticle->GetPfoTarget());
+207 
+208         \textcolor{keywordflow}{if} (pTrkPfoTarget != pPfoTarget)
+209           \textcolor{keywordflow}{continue};
+210 
+211         pfoParameters.m\_trackList.insert(pTrack);
+212       \}
+213       \textcolor{keywordflow}{catch} (StatusCodeException &)
+214       \{
+215       \}
+216     \}
+217   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!m\+\_\+min\+Weight\+Fraction@{m\+\_\+min\+Weight\+Fraction}}
+\index{m\+\_\+min\+Weight\+Fraction@{m\+\_\+min\+Weight\+Fraction}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{m\+\_\+min\+Weight\+Fraction}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::m\+\_\+min\+Weight\+Fraction\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_a5be9b68f337117b7e63bae2d7b081745}
+
+
+The minimum mc particle calo hit weight for hit fragmentation. 
+
+
+
+Definition at line 122 of file Perfect\+Particle\+Flow\+Algorithm.\+h.
+
+
+
+Referenced by Full\+Calo\+Hit\+Collection(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!m\+\_\+output\+Cluster\+List\+Name@{m\+\_\+output\+Cluster\+List\+Name}}
+\index{m\+\_\+output\+Cluster\+List\+Name@{m\+\_\+output\+Cluster\+List\+Name}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{m\+\_\+output\+Cluster\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::m\+\_\+output\+Cluster\+List\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_a5cf315a361ebf49bcecdd3a207d7c9a3}
+
+
+The output cluster list name. 
+
+
+
+Definition at line 120 of file Perfect\+Particle\+Flow\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!m\+\_\+output\+Pfo\+List\+Name@{m\+\_\+output\+Pfo\+List\+Name}}
+\index{m\+\_\+output\+Pfo\+List\+Name@{m\+\_\+output\+Pfo\+List\+Name}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{m\+\_\+output\+Pfo\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::m\+\_\+output\+Pfo\+List\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_a7bc65722ec207060fd92bad05144ec6b}
+
+
+The output pfo list name. 
+
+
+
+Definition at line 119 of file Perfect\+Particle\+Flow\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}!m\+\_\+simple\+Calo\+Hit\+Collection@{m\+\_\+simple\+Calo\+Hit\+Collection}}
+\index{m\+\_\+simple\+Calo\+Hit\+Collection@{m\+\_\+simple\+Calo\+Hit\+Collection}!arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm@{arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm}}
+\subsubsection[{m\+\_\+simple\+Calo\+Hit\+Collection}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Perfect\+Particle\+Flow\+Algorithm\+::m\+\_\+simple\+Calo\+Hit\+Collection\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1PerfectParticleFlowAlgorithm_a7119b9eee9e9b6acb48f6ab2d892d86c}
+
+
+Whether to use simple calo hit collection mechanism, or full mechanism. 
+
+
+
+Definition at line 121 of file Perfect\+Particle\+Flow\+Algorithm.\+h.
+
+
+
+Referenced by Calo\+Hit\+Collection(), and Read\+Settings().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Perfect\+Particle\+Flow\+Algorithm.\+h}\item 
+{\bf Perfect\+Particle\+Flow\+Algorithm.\+cc}\end{DoxyCompactItemize}

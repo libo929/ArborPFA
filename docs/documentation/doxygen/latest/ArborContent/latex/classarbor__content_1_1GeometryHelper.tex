@@ -1,0 +1,929 @@
+\section{arbor\+\_\+content\+:\+:Geometry\+Helper Class Reference}
+\label{classarbor__content_1_1GeometryHelper}\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+
+
+\doxyref{Geometry\+Helper}{p.}{classarbor__content_1_1GeometryHelper} class.  
+
+
+
+
+{\ttfamily \#include $<$Geometry\+Helper.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static pandora\+::\+Status\+Code {\bf Get\+Closest\+Distance\+Between\+Lines} (const pandora\+::\+Cartesian\+Vector \&point1, const pandora\+::\+Cartesian\+Vector \&direction1, const pandora\+::\+Cartesian\+Vector \&point2, const pandora\+::\+Cartesian\+Vector \&direction2, float \&distance)
+\begin{DoxyCompactList}\small\item\em Get the closest distance between the two lines. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Closest\+Distance\+To\+Line} (const pandora\+::\+Cartesian\+Vector \&point1, const pandora\+::\+Cartesian\+Vector \&direction1, const pandora\+::\+Cartesian\+Vector \&point2, float \&impact\+Parameter)
+\begin{DoxyCompactList}\small\item\em Get the closest distance between a point and a line. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Projection\+On\+Line} (const pandora\+::\+Cartesian\+Vector \&line\+Point, const pandora\+::\+Cartesian\+Vector \&direction, const pandora\+::\+Cartesian\+Vector \&point, pandora\+::\+Cartesian\+Vector \&projection)
+\begin{DoxyCompactList}\small\item\em Get the projection of a point on the line. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Crossing\+Points\+Between\+Lines} (const pandora\+::\+Cartesian\+Vector \&point1, const pandora\+::\+Cartesian\+Vector \&direction1, const pandora\+::\+Cartesian\+Vector \&point2, const pandora\+::\+Cartesian\+Vector \&direction2, pandora\+::\+Cartesian\+Vector \&crossing\+Point1, pandora\+::\+Cartesian\+Vector \&crossing\+Point2)
+\begin{DoxyCompactList}\small\item\em Get the two crossing points of two lines at the closest distance approach. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Line\+Plane\+Crossing\+Point} (const pandora\+::\+Cartesian\+Vector \&line\+Point, const pandora\+::\+Cartesian\+Vector \&line\+Direction, float plane\+A, float plane\+B, float plane\+C, float plane\+D, pandora\+::\+Cartesian\+Vector \&crossing\+Point)
+\begin{DoxyCompactList}\small\item\em Get the crossing point between a line and a plane in space. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+E\+Cal\+H\+Cal\+End\+Cap\+Gap\+Size} (const pandora\+::\+Pandora \&pandora, float \&gap\+Size)
+\begin{DoxyCompactList}\small\item\em Get the gap size between the E\+Cal end cap and the H\+Cal end cap. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+E\+Cal\+H\+Cal\+Barrel\+Gap\+Size} (const pandora\+::\+Pandora \&pandora, float \&gap\+Size)
+\begin{DoxyCompactList}\small\item\em Get the gap size between the E\+Cal barrel and the H\+Cal barrel. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Tracker\+E\+Cal\+End\+Cap\+Gap\+Size} (const pandora\+::\+Pandora \&pandora, float \&gap\+Size)
+\begin{DoxyCompactList}\small\item\em Get the gap size between the tracker and E\+Cal end cap. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Tracker\+E\+Cal\+Barrel\+Gap\+Size} (const pandora\+::\+Pandora \&pandora, float \&gap\+Size)
+\begin{DoxyCompactList}\small\item\em Get the gap size between the tracker and E\+Cal barrel. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Endcap\+Gap\+Separation} (const pandora\+::\+Pandora \&pandora, const pandora\+::\+Calo\+Hit $\ast$const p\+Ecal\+Calo\+Hit, const pandora\+::\+Calo\+Hit $\ast$const p\+Hcal\+Calo\+Hit, float \&gap\+Separation)
+\begin{DoxyCompactList}\small\item\em Get the gap separation in the end cap region between two calo hits. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Barrel\+Gap\+Separation} (const pandora\+::\+Pandora \&pandora, const pandora\+::\+Calo\+Hit $\ast$const p\+Ecal\+Calo\+Hit, const pandora\+::\+Calo\+Hit $\ast$const p\+Hcal\+Calo\+Hit, float \&gap\+Separation)
+\begin{DoxyCompactList}\small\item\em Get the gap separation in the barrel region between two calo hits. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Outer\+Normale\+Vector} (const pandora\+::\+Pandora \&pandora, pandora\+::\+Sub\+Detector\+Type type, const pandora\+::\+Cartesian\+Vector \&point, pandora\+::\+Cartesian\+Vector \&normale\+Vector)
+\begin{DoxyCompactList}\small\item\em Get the normale vector at outer detector face in the phi region where the point is contained. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Inner\+Normale\+Vector} (const pandora\+::\+Pandora \&pandora, pandora\+::\+Sub\+Detector\+Type type, const pandora\+::\+Cartesian\+Vector \&point, pandora\+::\+Cartesian\+Vector \&normale\+Vector)
+\begin{DoxyCompactList}\small\item\em Get the normale vector at inner detector face in the phi region where the point is contained. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Projection\+On\+Helix} (const pandora\+::\+Helix \&helix, const pandora\+::\+Cartesian\+Vector \&point, pandora\+::\+Cartesian\+Vector \&projection)
+\begin{DoxyCompactList}\small\item\em Get the projection of a point on the helix. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Distance\+To\+Helix} (const pandora\+::\+Helix \&helix, const pandora\+::\+Cartesian\+Vector \&point, float \&distance\+To\+Helix)
+\begin{DoxyCompactList}\small\item\em Get the distance between a point and the helix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Geometry\+Helper}{p.}{classarbor__content_1_1GeometryHelper} class. 
+
+Definition at line 43 of file Geometry\+Helper.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+Barrel\+Gap\+Separation@{Get\+Barrel\+Gap\+Separation}}
+\index{Get\+Barrel\+Gap\+Separation@{Get\+Barrel\+Gap\+Separation}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+Barrel\+Gap\+Separation}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Barrel\+Gap\+Separation (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const pandora\+::\+Calo\+Hit $\ast$const}]{p\+Ecal\+Calo\+Hit, }
+\item[{const pandora\+::\+Calo\+Hit $\ast$const}]{p\+Hcal\+Calo\+Hit, }
+\item[{float \&}]{gap\+Separation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_a7bcc770b6cb710c8acaa2f2856e7dea9}
+
+
+Get the gap separation in the barrel region between two calo hits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access geometry parameters \\
+\hline
+{\em p\+Ecal\+Calo\+Hit} & the ecal calo hit address in the barrel region \\
+\hline
+{\em p\+Hcal\+Calo\+Hit} & the hcal calo hit address in the barrel region \\
+\hline
+{\em gap\+Separation} & the gap separation distance to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 267 of file Geometry\+Helper.\+cc.
+
+
+
+References Get\+Inner\+Normale\+Vector(), Get\+Line\+Plane\+Crossing\+Point(), and Get\+Outer\+Normale\+Vector().
+
+
+\begin{DoxyCode}
+269   \{
+270     \textcolor{keywordflow}{if}(pEcalCaloHit->GetHitRegion() != pandora::BARREL || pEcalCaloHit->GetHitType() != pandora::ECAL)
+271       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+272 
+273     \textcolor{keywordflow}{if}(pHcalCaloHit->GetHitRegion() != pandora::BARREL || pHcalCaloHit->GetHitType() != pandora::HCAL)
+274       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+275 
+276     \textcolor{keyword}{const} \textcolor{keywordtype}{float} ecalBarrelOuterRCoordinate = pandora.GetGeometry()->GetSubDetector(pandora::ECAL\_BARREL).
+      GetOuterRCoordinate();
+277     \textcolor{keyword}{const} \textcolor{keywordtype}{float} hcalBarrelInnerRCoordinate = pandora.GetGeometry()->GetSubDetector(pandora::HCAL\_BARREL).
+      GetInnerRCoordinate();
+278 
+279     \textcolor{keyword}{const} pandora::CartesianVector hitsDirection = (pHcalCaloHit->GetPositionVector() - pEcalCaloHit->
+      GetPositionVector()).GetUnitVector();
+280 
+281     \textcolor{comment}{// Get normale vectors to ecal and hcal in the gap region}
+282     pandora::CartesianVector ecalBarrelOuterNormaleVector(0.f, 0.f, 0.f);
+283     pandora::CartesianVector hcalBarrelInnerNormaleVector(0.f, 0.f, 0.f);
+284 
+285     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      GeometryHelper::GetOuterNormaleVector(
+286         pandora, pandora::ECAL\_BARREL, pEcalCaloHit->GetPositionVector(), ecalBarrelOuterNormaleVector));
+287 
+288     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      GeometryHelper::GetInnerNormaleVector(
+289         pandora, pandora::HCAL\_BARREL, pHcalCaloHit->GetPositionVector(), hcalBarrelInnerNormaleVector));
+290 
+291     \textcolor{comment}{// Get the crossing point with ecal and hcal in the gap region}
+292     pandora::CartesianVector ecalFrontFaceCrossingPoint(0.f, 0.f, 0.f);
+293     pandora::CartesianVector hcalFrontFaceCrossingPoint(0.f, 0.f, 0.f);
+294 
+295     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      GeometryHelper::GetLinePlaneCrossingPoint(
+296         pEcalCaloHit->GetPositionVector(), hitsDirection,
+297         ecalBarrelOuterNormaleVector.GetX(), ecalBarrelOuterNormaleVector.GetY(), 
+      ecalBarrelOuterNormaleVector.GetZ(),
+298         -1.f*ecalBarrelOuterRCoordinate, ecalFrontFaceCrossingPoint));
+299 
+300     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      GeometryHelper::GetLinePlaneCrossingPoint(
+301         pHcalCaloHit->GetPositionVector(), hitsDirection,
+302         hcalBarrelInnerNormaleVector.GetX(), hcalBarrelInnerNormaleVector.GetY(), 
+      hcalBarrelInnerNormaleVector.GetZ(),
+303         -1.f*hcalBarrelInnerRCoordinate, hcalFrontFaceCrossingPoint));
+304 
+305     gapSeparation = (ecalFrontFaceCrossingPoint - hcalFrontFaceCrossingPoint).GetMagnitude();
+306 
+307     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+308   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+Closest\+Distance\+Between\+Lines@{Get\+Closest\+Distance\+Between\+Lines}}
+\index{Get\+Closest\+Distance\+Between\+Lines@{Get\+Closest\+Distance\+Between\+Lines}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+Closest\+Distance\+Between\+Lines}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Closest\+Distance\+Between\+Lines (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{point1, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{direction1, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{point2, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{direction2, }
+\item[{float \&}]{distance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_a723a1eb92f901cadfa825a5f289e6747}
+
+
+Get the closest distance between the two lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point1} & on the line 1 \\
+\hline
+{\em direction1} & of the line1 \\
+\hline
+{\em point2} & on the line 2 \\
+\hline
+{\em direction2} & of the line 2 \\
+\hline
+{\em the} & closest distance to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Geometry\+Helper.\+cc.
+
+
+
+References Get\+Closest\+Distance\+To\+Line().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Pointing\+Cluster\+Association\+Algorithm\+::\+Find\+Best\+Parent\+Cluster().
+
+
+\begin{DoxyCode}
+40   \{
+41     distance = 0.f;
+42 
+43     \textcolor{keywordflow}{try}
+44     \{
+45       \textcolor{keyword}{const} pandora::CartesianVector unitDirection1 = direction1.GetUnitVector();
+46       \textcolor{keyword}{const} pandora::CartesianVector unitDirection2 = direction2.GetUnitVector();
+47       \textcolor{keyword}{const} pandora::CartesianVector w0 = point1 - point2;
+48       \textcolor{keyword}{const} \textcolor{keywordtype}{float} b = unitDirection1.GetCosOpeningAngle(unitDirection2);
+49       \textcolor{keyword}{const} \textcolor{keywordtype}{float} d = unitDirection1.GetDotProduct(w0);
+50       \textcolor{keyword}{const} \textcolor{keywordtype}{float} e = unitDirection2.GetDotProduct(w0);
+51       \textcolor{keyword}{const} \textcolor{keywordtype}{float} denom = 1 - b*b;
+52 
+53       \textcolor{comment}{// parallel lines}
+54       \textcolor{keywordflow}{if}(unitDirection1 == unitDirection2)
+55       \{
+56         \textcolor{comment}{// compute the distance from point2 to line1}
+57         \textcolor{keywordflow}{return} GeometryHelper::GetClosestDistanceToLine(point1, unitDirection1, point2, distance);
+58       \}
+59       \textcolor{keywordflow}{else}
+60       \{
+61         \textcolor{comment}{// compute the real impact parameter between the two lines}
+62         \textcolor{keyword}{const} pandora::CartesianVector impactParameterVector = w0 + ( unitDirection1*((b*e - d)/denom) - 
+      unitDirection2*((e - b*d)/denom) );
+63         distance = impactParameterVector.GetMagnitude();
+64       \}
+65     \}
+66     \textcolor{keywordflow}{catch}(pandora::StatusCodeException &statusCodeException)
+67     \{
+68       \textcolor{keywordflow}{return} statusCodeException.GetStatusCode();
+69     \}
+70 
+71     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+72   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+Closest\+Distance\+To\+Line@{Get\+Closest\+Distance\+To\+Line}}
+\index{Get\+Closest\+Distance\+To\+Line@{Get\+Closest\+Distance\+To\+Line}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+Closest\+Distance\+To\+Line}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Closest\+Distance\+To\+Line (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{point1, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{direction1, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{point2, }
+\item[{float \&}]{impact\+Parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_aa620cff3309e8397482a3829dcc8855b}
+
+
+Get the closest distance between a point and a line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point1} & on the line \\
+\hline
+{\em direction1} & of the line \\
+\hline
+{\em point2} & in the space \\
+\hline
+{\em the} & closest distance between the point and the line to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file Geometry\+Helper.\+cc.
+
+
+
+Referenced by Get\+Closest\+Distance\+Between\+Lines(), and arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Get\+Starting\+Pseudo\+Layer().
+
+
+\begin{DoxyCode}
+78   \{
+79     \textcolor{keywordflow}{try}
+80     \{
+81       \textcolor{comment}{// compute the distance from point2 to line1}
+82       \textcolor{keyword}{const} pandora::CartesianVector unitDirection1 = direction1.GetUnitVector();
+83       \textcolor{keywordtype}{float} k = unitDirection1.GetDotProduct(point2-point1);
+84       \textcolor{keyword}{const} pandora::CartesianVector normale = point1 + unitDirection1*k - point2;
+85       distance = normale.GetMagnitude();
+86     \}
+87     \textcolor{keywordflow}{catch}(pandora::StatusCodeException &statusCodeException)
+88     \{
+89       \textcolor{keywordflow}{return} statusCodeException.GetStatusCode();
+90     \}
+91 
+92     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+93   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+Crossing\+Points\+Between\+Lines@{Get\+Crossing\+Points\+Between\+Lines}}
+\index{Get\+Crossing\+Points\+Between\+Lines@{Get\+Crossing\+Points\+Between\+Lines}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+Crossing\+Points\+Between\+Lines}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Crossing\+Points\+Between\+Lines (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{point1, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{direction1, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{point2, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{direction2, }
+\item[{pandora\+::\+Cartesian\+Vector \&}]{crossing\+Point1, }
+\item[{pandora\+::\+Cartesian\+Vector \&}]{crossing\+Point2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_a5db306c0883489eef2e87d75d35d4774}
+
+
+Get the two crossing points of two lines at the closest distance approach. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point1} & on the line 1 \\
+\hline
+{\em direction1} & of the line 1 \\
+\hline
+{\em point2} & on the line 2 \\
+\hline
+{\em direction2} & of the line 2 \\
+\hline
+{\em crossing\+Point1} & the crossing point on the line 1 to receive \\
+\hline
+{\em crossing\+Point2} & the crossing point on the line 2 to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 114 of file Geometry\+Helper.\+cc.
+
+
+\begin{DoxyCode}
+117   \{
+118     \textcolor{keywordflow}{try}
+119     \{
+120       \textcolor{comment}{// parallel lines never cross}
+121       \textcolor{keywordflow}{if}(direction1.GetUnitVector() == direction2.GetUnitVector())
+122         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+123 
+124       \textcolor{keyword}{const} pandora::CartesianVector unitDirection1 = direction1.GetUnitVector();
+125       \textcolor{keyword}{const} pandora::CartesianVector unitDirection2 = direction2.GetUnitVector();
+126       \textcolor{keyword}{const} pandora::CartesianVector w0 = point1 - point2;
+127       \textcolor{keyword}{const} \textcolor{keywordtype}{float} b = unitDirection1.GetCosOpeningAngle(unitDirection2);
+128       \textcolor{keyword}{const} \textcolor{keywordtype}{float} d = unitDirection1.GetDotProduct(w0);
+129       \textcolor{keyword}{const} \textcolor{keywordtype}{float} e = unitDirection2.GetDotProduct(w0);
+130       \textcolor{keyword}{const} \textcolor{keywordtype}{float} denom = 1 - b*b;
+131 
+132       crossingPoint1 = point1 + unitDirection1*(b*e-d)*(1.f/denom);
+133       crossingPoint2 = point2 + unitDirection2*(e - b*d)*(1.f/denom);
+134     \}
+135     \textcolor{keywordflow}{catch}(pandora::StatusCodeException &statusCodeException)
+136     \{
+137       \textcolor{keywordflow}{return} statusCodeException.GetStatusCode();
+138     \}
+139 
+140     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+141   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+Distance\+To\+Helix@{Get\+Distance\+To\+Helix}}
+\index{Get\+Distance\+To\+Helix@{Get\+Distance\+To\+Helix}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+Distance\+To\+Helix}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Distance\+To\+Helix (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Helix \&}]{helix, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{point, }
+\item[{float \&}]{distance\+To\+Helix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_a6446de9c49583a37d9bca6e42774d3ac}
+
+
+Get the distance between a point and the helix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em helix} & the helix to consider \\
+\hline
+{\em point} & a point in space \\
+\hline
+{\em distance\+To\+Helix} & the distance to the helix to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 412 of file Geometry\+Helper.\+cc.
+
+
+
+References Get\+Projection\+On\+Helix().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Get\+Starting\+Pseudo\+Layer(), and arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+413   \{
+414     distanceToHelix = std::numeric\_limits<float>::max();
+415 
+416     pandora::CartesianVector projectionOnHelix(0.f, 0.f, 0.f);
+417     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      GeometryHelper::GetProjectionOnHelix(helix, point, projectionOnHelix));
+418 
+419     distanceToHelix = (point-projectionOnHelix).GetMagnitude();
+420 
+421     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+422   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+E\+Cal\+H\+Cal\+Barrel\+Gap\+Size@{Get\+E\+Cal\+H\+Cal\+Barrel\+Gap\+Size}}
+\index{Get\+E\+Cal\+H\+Cal\+Barrel\+Gap\+Size@{Get\+E\+Cal\+H\+Cal\+Barrel\+Gap\+Size}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+E\+Cal\+H\+Cal\+Barrel\+Gap\+Size}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+E\+Cal\+H\+Cal\+Barrel\+Gap\+Size (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{float \&}]{gap\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_aa0fb7469a9379fbdfd337ececdc53205}
+
+
+Get the gap size between the E\+Cal barrel and the H\+Cal barrel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access geometry parameters \\
+\hline
+{\em gap\+Size} & the gap size to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 182 of file Geometry\+Helper.\+cc.
+
+
+\begin{DoxyCode}
+183   \{
+184     \textcolor{keyword}{const} \textcolor{keywordtype}{float} ecalBarrelOuterRCoordinate = pandora.GetGeometry()->GetSubDetector(pandora::ECAL\_BARREL).
+      GetOuterRCoordinate();
+185     \textcolor{keyword}{const} \textcolor{keywordtype}{float} hcalBarrelInnerRCoordinate = pandora.GetGeometry()->GetSubDetector(pandora::HCAL\_BARREL).
+      GetInnerRCoordinate();
+186 
+187     \textcolor{keywordflow}{if}(ecalBarrelOuterRCoordinate > hcalBarrelInnerRCoordinate)
+188       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+189 
+190     gapSize = hcalBarrelInnerRCoordinate - ecalBarrelOuterRCoordinate;
+191 
+192     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+193   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+E\+Cal\+H\+Cal\+End\+Cap\+Gap\+Size@{Get\+E\+Cal\+H\+Cal\+End\+Cap\+Gap\+Size}}
+\index{Get\+E\+Cal\+H\+Cal\+End\+Cap\+Gap\+Size@{Get\+E\+Cal\+H\+Cal\+End\+Cap\+Gap\+Size}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+E\+Cal\+H\+Cal\+End\+Cap\+Gap\+Size}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+E\+Cal\+H\+Cal\+End\+Cap\+Gap\+Size (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{float \&}]{gap\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_a10c398a745924da50f3a7db351063790}
+
+
+Get the gap size between the E\+Cal end cap and the H\+Cal end cap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access geometry parameters \\
+\hline
+{\em gap\+Size} & the gap size to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file Geometry\+Helper.\+cc.
+
+
+\begin{DoxyCode}
+168   \{
+169     \textcolor{keyword}{const} \textcolor{keywordtype}{float} ecalEndCapOuterZCoordinate = pandora.GetGeometry()->GetSubDetector(pandora::ECAL\_ENDCAP).
+      GetOuterZCoordinate();
+170     \textcolor{keyword}{const} \textcolor{keywordtype}{float} hcalEndCapInnerZCoordinate = pandora.GetGeometry()->GetSubDetector(pandora::HCAL\_ENDCAP).
+      GetInnerZCoordinate();
+171 
+172     \textcolor{keywordflow}{if}(ecalEndCapOuterZCoordinate > hcalEndCapInnerZCoordinate)
+173       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+174 
+175     gapSize = hcalEndCapInnerZCoordinate - ecalEndCapOuterZCoordinate;
+176 
+177     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+178   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+Endcap\+Gap\+Separation@{Get\+Endcap\+Gap\+Separation}}
+\index{Get\+Endcap\+Gap\+Separation@{Get\+Endcap\+Gap\+Separation}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+Endcap\+Gap\+Separation}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Endcap\+Gap\+Separation (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const pandora\+::\+Calo\+Hit $\ast$const}]{p\+Ecal\+Calo\+Hit, }
+\item[{const pandora\+::\+Calo\+Hit $\ast$const}]{p\+Hcal\+Calo\+Hit, }
+\item[{float \&}]{gap\+Separation}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_abc4319ed14aa62f112eb9d73c7017fe1}
+
+
+Get the gap separation in the end cap region between two calo hits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access geometry parameters \\
+\hline
+{\em p\+Ecal\+Calo\+Hit} & the ecal calo hit address in the end cap region \\
+\hline
+{\em p\+Hcal\+Calo\+Hit} & the hcal calo hit address in the end cap region \\
+\hline
+{\em gap\+Separation} & the gap separation distance to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 227 of file Geometry\+Helper.\+cc.
+
+
+
+References Get\+Line\+Plane\+Crossing\+Point().
+
+
+\begin{DoxyCode}
+229   \{
+230     \textcolor{keywordflow}{if}(pEcalCaloHit->GetHitRegion() != pandora::ENDCAP || pEcalCaloHit->GetHitType() != pandora::ECAL)
+231       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+232 
+233     \textcolor{keywordflow}{if}(pHcalCaloHit->GetHitRegion() != pandora::ENDCAP || pHcalCaloHit->GetHitType() != pandora::HCAL)
+234       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+235 
+236     \textcolor{comment}{// same end cap side required}
+237     \textcolor{keywordflow}{if}(pEcalCaloHit->GetPositionVector().GetZ()*pHcalCaloHit->GetPositionVector().GetZ() < 0)
+238       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+239 
+240     \textcolor{keyword}{const} \textcolor{keywordtype}{float} hcalEndCapInnerZCoordinate = pandora.GetGeometry()->GetSubDetector(pandora::HCAL\_ENDCAP).
+      GetInnerZCoordinate();
+241     \textcolor{keyword}{const} \textcolor{keywordtype}{float} ecalEndCapOuterZCoordinate = pandora.GetGeometry()->GetSubDetector(pandora::ECAL\_ENDCAP).
+      GetOuterZCoordinate();
+242 
+243     \textcolor{keyword}{const} pandora::CartesianVector hitsDirection = (pHcalCaloHit->GetPositionVector() - pEcalCaloHit->
+      GetPositionVector()).GetUnitVector();
+244 
+245     pandora::CartesianVector ecalFrontFaceCrossingPoint(0.f, 0.f, 0.f);
+246     pandora::CartesianVector hcalFrontFaceCrossingPoint(0.f, 0.f, 0.f);
+247 
+248     \textcolor{keywordtype}{int} endCapSide = pEcalCaloHit->GetPositionVector().GetZ() > 0 ? 1 : -1;
+249 
+250     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      GeometryHelper::GetLinePlaneCrossingPoint(
+251         pEcalCaloHit->GetPositionVector(), hitsDirection,
+252         0.f, 0.f, \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(endCapSide), -1.f*endCapSide*ecalEndCapOuterZCoordinate,
+253         ecalFrontFaceCrossingPoint));
+254 
+255     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      GeometryHelper::GetLinePlaneCrossingPoint(
+256         pEcalCaloHit->GetPositionVector(), hitsDirection,
+257         0.f, 0.f, \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(endCapSide), -1.f*endCapSide*hcalEndCapInnerZCoordinate,
+258         hcalFrontFaceCrossingPoint));
+259 
+260     gapSeparation = (ecalFrontFaceCrossingPoint - hcalFrontFaceCrossingPoint).GetMagnitude();
+261 
+262     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+263   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+Inner\+Normale\+Vector@{Get\+Inner\+Normale\+Vector}}
+\index{Get\+Inner\+Normale\+Vector@{Get\+Inner\+Normale\+Vector}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+Inner\+Normale\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Inner\+Normale\+Vector (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{pandora\+::\+Sub\+Detector\+Type}]{type, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{point, }
+\item[{pandora\+::\+Cartesian\+Vector \&}]{normale\+Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_a7cb149811efca882ceee898f07a7579c}
+
+
+Get the normale vector at inner detector face in the phi region where the point is contained. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access geometry parameters \\
+\hline
+{\em type} & the sub detector type (requires access to inner symmetry order) \\
+\hline
+{\em point} & a point in space that fixes the phi region \\
+\hline
+{\em normale\+Vector} & the normal vector at the inner detector face to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 347 of file Geometry\+Helper.\+cc.
+
+
+
+Referenced by Get\+Barrel\+Gap\+Separation().
+
+
+\begin{DoxyCode}
+349   \{
+350     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} innerSymmetryOrder = pandora.GetGeometry()->GetSubDetector(type).
+      GetInnerSymmetryOrder();
+351 
+352     \textcolor{keywordflow}{if}(0 == innerSymmetryOrder)
+353     \{
+354       normaleVector.SetValues(point.GetX(), point.GetY(), 0.f);
+355       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+356     \}
+357 
+358     \textcolor{keyword}{const} \textcolor{keywordtype}{float} rPoint = std::sqrt(point.GetX()*point.GetX() + point.GetY()*point.GetY());
+359     \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiPoint = point.GetY() > 0 ?
+360         std::acos(point.GetX() / rPoint) : std::acos(-point.GetX() / rPoint) + M\_PI;
+361 
+362     \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiShift = (2 * M\_PI / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(innerSymmetryOrder)) / 2.f;
+363 
+364     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<innerSymmetryOrder ; i++)
+365     \{
+366       \textcolor{keyword}{const} \textcolor{keywordtype}{float} phi = 2 * M\_PI * (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i) / static\_cast<float>(innerSymmetryOrder));
+367       \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiMin = phi - phiShift;
+368       \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiMax = phi + phiShift;
+369 
+370       \textcolor{keywordflow}{if}(phiPoint > phiMin && phiPoint < phiMax)
+371       \{
+372         normaleVector.SetValues(std::cos(phi), std::sin(phi), 0.f);
+373         \textcolor{keywordflow}{break};
+374       \}
+375     \}
+376 
+377     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+378   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+Line\+Plane\+Crossing\+Point@{Get\+Line\+Plane\+Crossing\+Point}}
+\index{Get\+Line\+Plane\+Crossing\+Point@{Get\+Line\+Plane\+Crossing\+Point}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+Line\+Plane\+Crossing\+Point}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Line\+Plane\+Crossing\+Point (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{line\+Point, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{line\+Direction, }
+\item[{float}]{plane\+A, }
+\item[{float}]{plane\+B, }
+\item[{float}]{plane\+C, }
+\item[{float}]{plane\+D, }
+\item[{pandora\+::\+Cartesian\+Vector \&}]{crossing\+Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_a70642d36a840195c758054ce63ef5f17}
+
+
+Get the crossing point between a line and a plane in space. 
+
+The equation plane is defined as \+:
+
+P \+: a$\ast$x + b$\ast$y + c$\ast$z + d = 0
+
+
+\begin{DoxyParams}{Parameters}
+{\em line\+Point} & a point on the line \\
+\hline
+{\em line\+Direction} & the line direction vector \\
+\hline
+{\em plane\+A} & the a component in the plane equation \\
+\hline
+{\em plane\+B} & the b component in the plane equation \\
+\hline
+{\em plane\+C} & the c component in the plane equation \\
+\hline
+{\em plane\+D} & the d component in the plane equation \\
+\hline
+{\em crossing\+Point} & the crossing point vector position to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 145 of file Geometry\+Helper.\+cc.
+
+
+
+Referenced by Get\+Barrel\+Gap\+Separation(), and Get\+Endcap\+Gap\+Separation().
+
+
+\begin{DoxyCode}
+147   \{
+148     \textcolor{keyword}{const} \textcolor{keywordtype}{float} num = planeA*linePoint.GetX() + planeB*linePoint.GetY() + planeC*linePoint.GetZ() + planeD;
+149     \textcolor{keyword}{const} \textcolor{keywordtype}{float} denom = planeA*lineDirection.GetX() + planeB*lineDirection.GetY() + planeC*lineDirection.
+      GetZ();
+150 
+151     \textcolor{keywordflow}{if}(fabs(denom) < std::numeric\_limits<float>::epsilon())
+152       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+153 
+154     \textcolor{keyword}{const} \textcolor{keywordtype}{float} k = num/denom;
+155 
+156     \textcolor{keyword}{const} \textcolor{keywordtype}{float} xCrossingPoint = linePoint.GetX() + k*lineDirection.GetX();
+157     \textcolor{keyword}{const} \textcolor{keywordtype}{float} yCrossingPoint = linePoint.GetY() + k*lineDirection.GetY();
+158     \textcolor{keyword}{const} \textcolor{keywordtype}{float} zCrossingPoint = linePoint.GetZ() + k*lineDirection.GetZ();
+159 
+160     crossingPoint.SetValues(xCrossingPoint, yCrossingPoint, zCrossingPoint);
+161 
+162     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+163   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+Outer\+Normale\+Vector@{Get\+Outer\+Normale\+Vector}}
+\index{Get\+Outer\+Normale\+Vector@{Get\+Outer\+Normale\+Vector}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+Outer\+Normale\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Outer\+Normale\+Vector (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{pandora\+::\+Sub\+Detector\+Type}]{type, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{point, }
+\item[{pandora\+::\+Cartesian\+Vector \&}]{normale\+Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_a45dac59295b6d67f6ec12111fc941680}
+
+
+Get the normale vector at outer detector face in the phi region where the point is contained. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access geometry parameters \\
+\hline
+{\em type} & the sub detector type (requires access to outer symetry order) \\
+\hline
+{\em point} & a point in space that fixes the phi region \\
+\hline
+{\em normale\+Vector} & the normale vector at the outer detector face to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 312 of file Geometry\+Helper.\+cc.
+
+
+
+Referenced by Get\+Barrel\+Gap\+Separation(), and arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Is\+Cluster\+Leaving\+Detector().
+
+
+\begin{DoxyCode}
+314   \{
+315     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} outerSymmetryOrder = pandora.GetGeometry()->GetSubDetector(type).
+      GetOuterSymmetryOrder();
+316 
+317     \textcolor{keywordflow}{if}(0 == outerSymmetryOrder)
+318     \{
+319       normaleVector.SetValues(point.GetX(), point.GetY(), 0.f);
+320       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+321     \}
+322 
+323     \textcolor{keyword}{const} \textcolor{keywordtype}{float} rPoint = std::sqrt(point.GetX()*point.GetX() + point.GetY()*point.GetY());
+324     \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiPoint = point.GetY() > 0 ?
+325         std::acos(point.GetX() / rPoint) : std::acos(-point.GetX() / rPoint) + M\_PI;
+326 
+327     \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiShift = (2 * M\_PI / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(outerSymmetryOrder)) / 2.f;
+328 
+329     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<outerSymmetryOrder+1 ; i++)
+330     \{
+331       \textcolor{keyword}{const} \textcolor{keywordtype}{float} phi = 2 * M\_PI * (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i) / static\_cast<float>(outerSymmetryOrder));
+332       \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiMin = phi - phiShift;\textcolor{comment}{// + barrelOuterPhiCoordinate;}
+333       \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiMax = phi + phiShift;\textcolor{comment}{// + barrelOuterPhiCoordinate;}
+334 
+335       \textcolor{keywordflow}{if}(phiPoint > phiMin && phiPoint < phiMax)
+336       \{
+337         normaleVector.SetValues(std::cos(phi), std::sin(phi), 0.f);
+338         \textcolor{keywordflow}{break};
+339       \}
+340     \}
+341 
+342     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+343   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+Projection\+On\+Helix@{Get\+Projection\+On\+Helix}}
+\index{Get\+Projection\+On\+Helix@{Get\+Projection\+On\+Helix}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+Projection\+On\+Helix}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Projection\+On\+Helix (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Helix \&}]{helix, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{point, }
+\item[{pandora\+::\+Cartesian\+Vector \&}]{projection}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_a9fbbc942481023fd1a69e6bd995ed952}
+
+
+Get the projection of a point on the helix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em helix} & the helix to consider \\
+\hline
+{\em point} & the point in space to project on the helix \\
+\hline
+{\em projection} & the projection point to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 382 of file Geometry\+Helper.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Track\+Driven\+Seeding\+Tool\+::\+Connect\+Calo\+Hits(), arbor\+\_\+content\+::\+Pointing\+Cluster\+Association\+Algorithm\+::\+Find\+Best\+Parent\+Cluster(), arbor\+\_\+content\+::\+Track\+Driven\+Seeding\+Tool\+::\+Find\+Initial\+Calo\+Hits(), arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::\+Flag\+Isolated\+Hits\+With\+Tracks(), Get\+Distance\+To\+Helix(), arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Track\+Cluster\+Distance(), and arbor\+\_\+content\+::\+Nearby\+Track\+Photon\+Removal\+Alg\+::\+Remove\+Nearby\+Photon\+Hits().
+
+
+\begin{DoxyCode}
+383   \{
+384     pandora::CartesianVector pointInXY(0.f, 0.f, 0.f), pointInZ(0.f, 0.f, 0.f);
+385 
+386     \textcolor{keyword}{const} pandora::StatusCode statusCode1(helix.GetPointInXY(point.GetX(), point.GetY(), point.GetX(), 
+      point.GetY(), helix.GetReferencePoint(), pointInXY));
+387     \textcolor{keyword}{const} pandora::StatusCode statusCode2(helix.GetPointInZ(point.GetZ(), helix.GetReferencePoint(), 
+      pointInZ));
+388 
+389     \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != statusCode1 && pandora::STATUS\_CODE\_SUCCESS != statusCode2)
+390       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_NOT\_FOUND;
+391 
+392     \textcolor{keywordflow}{if}(statusCode2 != pandora::STATUS\_CODE\_SUCCESS)
+393     \{
+394       projection = pointInXY;
+395       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+396     \}
+397 
+398     \textcolor{keywordflow}{if}(statusCode1 != pandora::STATUS\_CODE\_SUCCESS)
+399     \{
+400       projection = pointInZ;
+401       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+402     \}
+403 
+404     \textcolor{keyword}{const} \textcolor{keywordtype}{float} distanceInXY((pointInXY-point).GetMagnitude()), distanceInZ((pointInZ-point).GetMagnitude()
+      );
+405     projection = distanceInXY < distanceInZ ? pointInXY : pointInZ;
+406 
+407     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+408   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+Projection\+On\+Line@{Get\+Projection\+On\+Line}}
+\index{Get\+Projection\+On\+Line@{Get\+Projection\+On\+Line}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+Projection\+On\+Line}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Projection\+On\+Line (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{line\+Point, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{direction, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{point, }
+\item[{pandora\+::\+Cartesian\+Vector \&}]{projection}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_afc9abbcf209bad4d824aaf0664aaca51}
+
+
+Get the projection of a point on the line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line\+Point} & on the line \\
+\hline
+{\em direction1} & of the line \\
+\hline
+{\em point} & in the space \\
+\hline
+{\em projection} & the projection vector on the line to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 97 of file Geometry\+Helper.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Pointing\+Cluster\+Association\+Algorithm\+::\+Find\+Best\+Parent\+Cluster(), and arbor\+\_\+content\+::\+Pointing\+Cluster\+Association\+Algorithm\+::\+Get\+Cluster\+Backward\+Direction().
+
+
+\begin{DoxyCode}
+99   \{
+100     \textcolor{keywordflow}{try}
+101     \{
+102       projection = linePoint + direction.GetUnitVector() * ((point-linePoint).GetMagnitude() * direction.
+      GetCosOpeningAngle(point-linePoint));
+103     \}
+104     \textcolor{keywordflow}{catch}(pandora::StatusCodeException &statusCodeException)
+105     \{
+106       \textcolor{keywordflow}{return} statusCodeException.GetStatusCode();
+107     \}
+108 
+109     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+110   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+Tracker\+E\+Cal\+Barrel\+Gap\+Size@{Get\+Tracker\+E\+Cal\+Barrel\+Gap\+Size}}
+\index{Get\+Tracker\+E\+Cal\+Barrel\+Gap\+Size@{Get\+Tracker\+E\+Cal\+Barrel\+Gap\+Size}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+Tracker\+E\+Cal\+Barrel\+Gap\+Size}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Tracker\+E\+Cal\+Barrel\+Gap\+Size (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{float \&}]{gap\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_a767d5bafe32a6f295ce144790da0d422}
+
+
+Get the gap size between the tracker and E\+Cal barrel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access geometry parameters \\
+\hline
+{\em gap\+Size} & the gap size to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 212 of file Geometry\+Helper.\+cc.
+
+
+\begin{DoxyCode}
+213   \{
+214     \textcolor{keyword}{const} \textcolor{keywordtype}{float} ecalBarrelInnerRCoordinate = pandora.GetGeometry()->GetSubDetector(pandora::ECAL\_BARREL).
+      GetInnerRCoordinate();
+215     \textcolor{keyword}{const} \textcolor{keywordtype}{float} trackerOuterRCoordinate = pandora.GetGeometry()->GetSubDetector(pandora::INNER\_TRACKER).
+      GetOuterRCoordinate();
+216 
+217     \textcolor{keywordflow}{if}(trackerOuterRCoordinate > ecalBarrelInnerRCoordinate)
+218       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+219 
+220     gapSize = ecalBarrelInnerRCoordinate - trackerOuterRCoordinate;
+221 
+222     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+223   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}!Get\+Tracker\+E\+Cal\+End\+Cap\+Gap\+Size@{Get\+Tracker\+E\+Cal\+End\+Cap\+Gap\+Size}}
+\index{Get\+Tracker\+E\+Cal\+End\+Cap\+Gap\+Size@{Get\+Tracker\+E\+Cal\+End\+Cap\+Gap\+Size}!arbor\+\_\+content\+::\+Geometry\+Helper@{arbor\+\_\+content\+::\+Geometry\+Helper}}
+\subsubsection[{Get\+Tracker\+E\+Cal\+End\+Cap\+Gap\+Size}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Tracker\+E\+Cal\+End\+Cap\+Gap\+Size (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{float \&}]{gap\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1GeometryHelper_a79887d7f7158616c5c76e75ee6b1ba04}
+
+
+Get the gap size between the tracker and E\+Cal end cap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access geometry parameters \\
+\hline
+{\em gap\+Size} & the gap size to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 197 of file Geometry\+Helper.\+cc.
+
+
+\begin{DoxyCode}
+198   \{
+199     \textcolor{keyword}{const} \textcolor{keywordtype}{float} ecalEndCapInnerZCoordinate = pandora.GetGeometry()->GetSubDetector(pandora::ECAL\_ENDCAP).
+      GetInnerZCoordinate();
+200     \textcolor{keyword}{const} \textcolor{keywordtype}{float} trackerOuterZCoordinate = pandora.GetGeometry()->GetSubDetector(pandora::INNER\_TRACKER).
+      GetOuterZCoordinate();
+201 
+202     \textcolor{keywordflow}{if}(trackerOuterZCoordinate > ecalEndCapInnerZCoordinate)
+203       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+204 
+205     gapSize = ecalEndCapInnerZCoordinate - trackerOuterZCoordinate;
+206 
+207     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+208   \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Geometry\+Helper.\+h}\item 
+{\bf Geometry\+Helper.\+cc}\end{DoxyCompactItemize}

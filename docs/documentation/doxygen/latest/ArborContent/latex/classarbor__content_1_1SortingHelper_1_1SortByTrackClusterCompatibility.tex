@@ -1,0 +1,119 @@
+\section{arbor\+\_\+content\+:\+:Sorting\+Helper\+:\+:Sort\+By\+Track\+Cluster\+Compatibility Class Reference}
+\label{classarbor__content_1_1SortingHelper_1_1SortByTrackClusterCompatibility}\index{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility}}
+
+
+\doxyref{Sort\+By\+Track\+Cluster\+Compatibility}{p.}{classarbor__content_1_1SortingHelper_1_1SortByTrackClusterCompatibility} class.  
+
+
+
+
+{\ttfamily \#include $<$Sorting\+Helper.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Sort\+By\+Track\+Cluster\+Compatibility} (const pandora\+::\+Pandora $\ast$const p\+Pandora)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool {\bf operator()} (const pandora\+::\+Cluster $\ast$const p\+Lhs, const pandora\+::\+Cluster $\ast$const p\+Rhs) const 
+\begin{DoxyCompactList}\small\item\em Functor to sort clusters by track-\/cluster compatibility. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const pandora\+::\+Pandora $\ast$const {\bf m\+\_\+p\+Pandora}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Sort\+By\+Track\+Cluster\+Compatibility}{p.}{classarbor__content_1_1SortingHelper_1_1SortByTrackClusterCompatibility} class. 
+
+Definition at line 98 of file Sorting\+Helper.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility}!Sort\+By\+Track\+Cluster\+Compatibility@{Sort\+By\+Track\+Cluster\+Compatibility}}
+\index{Sort\+By\+Track\+Cluster\+Compatibility@{Sort\+By\+Track\+Cluster\+Compatibility}!arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility}}
+\subsubsection[{Sort\+By\+Track\+Cluster\+Compatibility}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility\+::\+Sort\+By\+Track\+Cluster\+Compatibility (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora $\ast$const}]{p\+Pandora}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1SortingHelper_1_1SortByTrackClusterCompatibility_aaa84483e65aaa33719f8b2b2234d2a58}
+
+
+Constructor. 
+
+
+
+Definition at line 106 of file Sorting\+Helper.\+cc.
+
+
+\begin{DoxyCode}
+106                                                                                                            
+               :
+107         m_pPandora(pPandora)
+108   \{
+109   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility}!operator()@{operator()}}
+\index{operator()@{operator()}!arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Lhs, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Rhs}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1SortingHelper_1_1SortByTrackClusterCompatibility_a5b3df9779ed5f617a11c2f382bad56d6}
+
+
+Functor to sort clusters by track-\/cluster compatibility. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Lhs} & the left handed cluster to compare \\
+\hline
+{\em p\+Rhs} & the right handed cluster to compare \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 114 of file Sorting\+Helper.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Get\+Track\+Cluster\+Compatibility().
+
+
+\begin{DoxyCode}
+115   \{
+116     \textcolor{keywordflow}{if}(pLhs->GetAssociatedTrackList().empty())
+117       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+118 
+119     \textcolor{keywordflow}{if}(pRhs->GetAssociatedTrackList().empty())
+120       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+121 
+122     \textcolor{keyword}{const} pandora::TrackList lhsTrackList(pLhs->GetAssociatedTrackList()), rhsTrackList(pRhs->
+      GetAssociatedTrackList());
+123     \textcolor{keyword}{const} \textcolor{keywordtype}{float} lhsChi(ReclusterHelper::GetTrackClusterCompatibility(*m_pPandora, pLhs, lhsTrackList));
+124     \textcolor{keyword}{const} \textcolor{keywordtype}{float} rhsChi(ReclusterHelper::GetTrackClusterCompatibility(*m_pPandora, pRhs, rhsTrackList));
+125 
+126     \textcolor{keywordflow}{return} (lhsChi*lhsChi < rhsChi*rhsChi);
+127   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility}!m\+\_\+p\+Pandora@{m\+\_\+p\+Pandora}}
+\index{m\+\_\+p\+Pandora@{m\+\_\+p\+Pandora}!arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility}}
+\subsubsection[{m\+\_\+p\+Pandora}]{\setlength{\rightskip}{0pt plus 5cm}const pandora\+::\+Pandora$\ast$ const arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility\+::m\+\_\+p\+Pandora\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1SortingHelper_1_1SortByTrackClusterCompatibility_a293aeff7b33d2d54a289f22de43c1056}
+
+
+Definition at line 115 of file Sorting\+Helper.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Sorting\+Helper.\+h}\item 
+{\bf Sorting\+Helper.\+cc}\end{DoxyCompactItemize}

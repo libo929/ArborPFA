@@ -1,0 +1,642 @@
+\section{arbor\+\_\+content\+:\+:Connector\+Alignment\+Tool Class Reference}
+\label{classarbor__content_1_1ConnectorAlignmentTool}\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+
+
+\doxyref{Connector\+Alignment\+Tool}{p.}{classarbor__content_1_1ConnectorAlignmentTool} class.  
+
+
+
+
+{\ttfamily \#include $<$Connector\+Alignment\+Tool.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Connector\+Alignment\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classarbor__content_1_1ConnectorAlignmentTool}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1ConnectorAlignmentTool_1_1Factory} class for instantiating algorithm tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Process} (const pandora\+::\+Algorithm \&algorithm, const pandora\+::\+Calo\+Hit\+List $\ast$const p\+Calo\+Hit\+List)
+\begin{DoxyCompactList}\small\item\em Seed connectors from the calo hit list. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Read settings from the xml handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Get\+Ordered\+Calo\+Hit\+List} (const pandora\+::\+Algorithm \&algorithm, const pandora\+::\+Calo\+Hit\+List $\ast$const p\+Calo\+Hit\+List, pandora\+::\+Ordered\+Calo\+Hit\+List \&ordered\+Calo\+Hit\+List) const 
+\begin{DoxyCompactList}\small\item\em Get the ordered calo hit list. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Get\+Connector\+List} (const pandora\+::\+Ordered\+Calo\+Hit\+List \&ordered\+Calo\+Hit\+List, {\bf Connector\+List} \&connector\+List) const 
+\begin{DoxyCompactList}\small\item\em Get the connector list to align. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Connect\+Backward} (const pandora\+::\+Ordered\+Calo\+Hit\+List \&ordered\+Calo\+Hit\+List, const {\bf Connector} $\ast$const p\+Connector) const 
+\begin{DoxyCompactList}\small\item\em Create new connection in the forward direction of the target connector. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Connect\+Forward} (const pandora\+::\+Ordered\+Calo\+Hit\+List \&ordered\+Calo\+Hit\+List, const {\bf Connector} $\ast$const p\+Connector) const 
+\begin{DoxyCompactList}\small\item\em Create new connection in the backward direction of the target connector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\+\_\+connect\+Only\+Available}
+\begin{DoxyCompactList}\small\item\em Whether to connect only available hits. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+should\+Use\+Isolated\+Hits}
+\begin{DoxyCompactList}\small\item\em Whether to use isolated hits. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+should\+Connect\+Only\+Same\+Hit\+Type}
+\begin{DoxyCompactList}\small\item\em Whether to connect only hits with same type. \end{DoxyCompactList}\item 
+unsigned int {\bf m\+\_\+max\+Pseudo\+Layer\+Connection}
+\begin{DoxyCompactList}\small\item\em The maximum pseudo layer for a suitable connection. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+max\+Connection\+Angle\+Fine}
+\begin{DoxyCompactList}\small\item\em The maximum angle (fine granularity) for a suitable connection. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+max\+Connection\+Angle\+Coarse}
+\begin{DoxyCompactList}\small\item\em The maximum angle (coarse granularity) for a suitable connection. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+max\+Connection\+Distance\+Fine}
+\begin{DoxyCompactList}\small\item\em The maximum distance between hits (fine granularity) for a suitable connection. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+max\+Connection\+Distance\+Coarse}
+\begin{DoxyCompactList}\small\item\em The maximum distance between hits (coarse granularity) for a suitable connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Connector\+Alignment\+Tool}{p.}{classarbor__content_1_1ConnectorAlignmentTool} class. 
+
+Definition at line 41 of file Connector\+Alignment\+Tool.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!Connect\+Backward@{Connect\+Backward}}
+\index{Connect\+Backward@{Connect\+Backward}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{Connect\+Backward}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Connect\+Backward (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ordered\+Calo\+Hit\+List \&}]{ordered\+Calo\+Hit\+List, }
+\item[{const {\bf Connector} $\ast$const}]{p\+Connector}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorAlignmentTool_a076b6b52cd1e17dd25a5f1a233ff9568}
+
+
+Create new connection in the forward direction of the target connector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ordered\+Calo\+Hit\+List} & the input ordered calo hit list \\
+\hline
+{\em p\+Connector} & the target connector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file Connector\+Alignment\+Tool.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+B\+A\+C\+K\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, Arbor\+Content\+Api\+::\+Connect(), arbor\+\_\+content\+::\+Connector\+::\+Get\+From(), arbor\+\_\+content\+::\+Connector\+::\+Get\+Vector(), Arbor\+Content\+Api\+::\+Is\+Connected(), m\+\_\+max\+Connection\+Angle\+Coarse, m\+\_\+max\+Connection\+Angle\+Fine, m\+\_\+max\+Connection\+Distance\+Coarse, m\+\_\+max\+Connection\+Distance\+Fine, m\+\_\+max\+Pseudo\+Layer\+Connection, and m\+\_\+should\+Connect\+Only\+Same\+Hit\+Type.
+
+
+
+Referenced by Process().
+
+
+\begin{DoxyCode}
+127   \{
+128     \textcolor{keyword}{const} pandora::CartesianVector &connectorVector(pConnector->GetVector(
+      BACKWARD_DIRECTION));
+129 
+130     \textcolor{keyword}{const} pandora::Granularity fromGranularity(this->GetPandora().GetGeometry()->GetHitTypeGranularity(
+      pConnector->GetFrom()->GetHitType()));
+131     \textcolor{keyword}{const} \textcolor{keywordtype}{float} maxConnectionAngleFrom(fromGranularity <= pandora::FINE ? 
+      m_maxConnectionAngleFine : m_maxConnectionAngleCoarse);
+132     \textcolor{keyword}{const} \textcolor{keywordtype}{float} maxConnectionDistanceFrom(fromGranularity <= pandora::FINE ? 
+      m_maxConnectionDistanceFine : m_maxConnectionDistanceCoarse);
+133 
+134     \textcolor{keywordflow}{if}(0 == pConnector->GetFrom()->GetPseudoLayer())
+135       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+136 
+137     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} startFromPseudoLayer(pConnector->GetFrom()->GetPseudoLayer()-1);
+138     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} endFromPseudoLayer(pConnector->GetFrom()->GetPseudoLayer() <= 
+      m_maxPseudoLayerConnection+1 ? 0 : pConnector->GetFrom()->GetPseudoLayer()-(
+      m_maxPseudoLayerConnection+1));
+139 
+140     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pl = startFromPseudoLayer ; pl != endFromPseudoLayer ; --pl)
+141     \{
+142       pandora::OrderedCaloHitList::const\_iterator findIter = orderedCaloHitList.find(pl);
+143 
+144       \textcolor{keywordflow}{if}(orderedCaloHitList.end() == findIter)
+145         \textcolor{keywordflow}{continue};
+146 
+147       \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = findIter->second->begin(), endIter = findIter->second
+      ->end() ;
+148           endIter != iter ; ++iter)
+149       \{
+150         \textcolor{keyword}{const} CaloHit *\textcolor{keyword}{const} pCaloHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }CaloHit *const\textcolor{keyword}{>}(*iter);
+151 
+152         \textcolor{keywordflow}{if}(NULL == pCaloHit)
+153           \textcolor{keywordflow}{continue};
+154 
+155         \textcolor{comment}{// check types}
+156         \textcolor{keywordflow}{if}(m_shouldConnectOnlySameHitType && pConnector->GetFrom()->GetHitType() != pCaloHit->GetHitType())
+157           \textcolor{keywordflow}{continue};
+158 
+159         \textcolor{keyword}{const} pandora::CartesianVector differenceVector(pCaloHit->GetPositionVector() - pConnector->GetFrom
+      ()->GetPositionVector());
+160 
+161         \textcolor{keywordflow}{if}(maxConnectionDistanceFrom < differenceVector.GetMagnitude())
+162           \textcolor{keywordflow}{continue};
+163 
+164         \textcolor{keywordflow}{if}(maxConnectionAngleFrom > connectorVector.GetOpeningAngle(differenceVector))
+165           \textcolor{keywordflow}{continue};
+166 
+167         \textcolor{comment}{// check if already connected}
+168         \textcolor{keywordflow}{if}(ArborContentApi::IsConnected(pConnector->GetFrom(), pCaloHit, 
+      BACKWARD_DIRECTION))
+169           \textcolor{keywordflow}{continue};
+170 
+171         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::Connect(pConnector->GetFrom(), pCaloHit, BACKWARD_DIRECTION));
+172       \}
+173     \}
+174 
+175     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+176   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!Connect\+Forward@{Connect\+Forward}}
+\index{Connect\+Forward@{Connect\+Forward}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{Connect\+Forward}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Connect\+Forward (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ordered\+Calo\+Hit\+List \&}]{ordered\+Calo\+Hit\+List, }
+\item[{const {\bf Connector} $\ast$const}]{p\+Connector}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorAlignmentTool_a652b3dd5a8f14b125f816144f9b8d84b}
+
+
+Create new connection in the backward direction of the target connector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ordered\+Calo\+Hit\+List} & the input ordered calo hit list \\
+\hline
+{\em p\+Connector} & the target connector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 180 of file Connector\+Alignment\+Tool.\+cc.
+
+
+
+References Arbor\+Content\+Api\+::\+Connect(), arbor\+\_\+content\+::\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, arbor\+\_\+content\+::\+Connector\+::\+Get\+To(), arbor\+\_\+content\+::\+Connector\+::\+Get\+Vector(), Arbor\+Content\+Api\+::\+Is\+Connected(), m\+\_\+max\+Connection\+Angle\+Coarse, m\+\_\+max\+Connection\+Angle\+Fine, m\+\_\+max\+Connection\+Distance\+Coarse, m\+\_\+max\+Connection\+Distance\+Fine, m\+\_\+max\+Pseudo\+Layer\+Connection, and m\+\_\+should\+Connect\+Only\+Same\+Hit\+Type.
+
+
+
+Referenced by Process().
+
+
+\begin{DoxyCode}
+181   \{
+182     \textcolor{keyword}{const} pandora::CartesianVector &connectorVector(pConnector->GetVector(
+      FORWARD_DIRECTION));
+183 
+184     \textcolor{keyword}{const} pandora::Granularity toGranularity(this->GetPandora().GetGeometry()->GetHitTypeGranularity(
+      pConnector->GetTo()->GetHitType()));
+185     \textcolor{keyword}{const} \textcolor{keywordtype}{float} maxConnectionAngleTo(toGranularity <= pandora::FINE ? 
+      m_maxConnectionAngleFine : m_maxConnectionAngleCoarse);
+186     \textcolor{keyword}{const} \textcolor{keywordtype}{float} maxConnectionDistanceTo(toGranularity <= pandora::FINE ? 
+      m_maxConnectionDistanceFine : m_maxConnectionDistanceCoarse);
+187 
+188     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} startToPseudoLayer(pConnector->GetTo()->GetPseudoLayer()+1);
+189     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} endToPseudoLayer(pConnector->GetTo()->GetPseudoLayer()+
+      m_maxPseudoLayerConnection+1);
+190 
+191     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pl = startToPseudoLayer ; pl <= endToPseudoLayer ; ++pl)
+192     \{
+193       pandora::OrderedCaloHitList::const\_iterator findIter = orderedCaloHitList.find(pl);
+194 
+195       \textcolor{keywordflow}{if}(orderedCaloHitList.end() == findIter)
+196         \textcolor{keywordflow}{continue};
+197 
+198       \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = findIter->second->begin(), endIter = findIter->second
+      ->end() ;
+199           endIter != iter ; ++iter)
+200       \{
+201         \textcolor{keyword}{const} CaloHit *\textcolor{keyword}{const} pCaloHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }
+      arbor_content::CaloHit *const\textcolor{keyword}{>}(*iter);
+202 
+203         \textcolor{keywordflow}{if}(NULL == pCaloHit)
+204           \textcolor{keywordflow}{continue};
+205 
+206         \textcolor{comment}{// check types}
+207         \textcolor{keywordflow}{if}(m_shouldConnectOnlySameHitType && pConnector->GetTo()->GetHitType() != pCaloHit->GetHitType())
+208           \textcolor{keywordflow}{continue};
+209 
+210         \textcolor{keyword}{const} pandora::CartesianVector differenceVector(pCaloHit->GetPositionVector() - pConnector->GetTo()
+      ->GetPositionVector());
+211 
+212         \textcolor{keywordflow}{if}(maxConnectionDistanceTo < differenceVector.GetMagnitude())
+213           \textcolor{keywordflow}{continue};
+214 
+215         \textcolor{keywordflow}{if}(maxConnectionAngleTo > connectorVector.GetOpeningAngle(differenceVector))
+216           \textcolor{keywordflow}{continue};
+217 
+218         \textcolor{comment}{// check if already connected}
+219         \textcolor{keywordflow}{if}(ArborContentApi::IsConnected(pConnector->GetTo(), pCaloHit, 
+      FORWARD_DIRECTION))
+220           \textcolor{keywordflow}{continue};
+221 
+222         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::Connect(pConnector->GetTo(), pCaloHit, FORWARD_DIRECTION));
+223       \}
+224     \}
+225 
+226     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+227   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!Get\+Connector\+List@{Get\+Connector\+List}}
+\index{Get\+Connector\+List@{Get\+Connector\+List}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{Get\+Connector\+List}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Get\+Connector\+List (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ordered\+Calo\+Hit\+List \&}]{ordered\+Calo\+Hit\+List, }
+\item[{{\bf Connector\+List} \&}]{connector\+List}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorAlignmentTool_aa6e0e38c454c5c77b1894e4e9e1e62a3}
+
+
+Get the connector list to align. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ordered\+Calo\+Hit\+List} & the input ordered calo hit list \\
+\hline
+{\em connector\+List} & the connector list to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file Connector\+Alignment\+Tool.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+B\+A\+C\+K\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, and Arbor\+Content\+Api\+::\+Get\+Connector\+List().
+
+
+
+Referenced by Process().
+
+
+\begin{DoxyCode}
+102   \{
+103     \textcolor{keywordflow}{for}(pandora::OrderedCaloHitList::const\_iterator layerIter = orderedCaloHitList.begin(), layerEndIter = 
+      orderedCaloHitList.end() ;
+104         layerEndIter != layerIter ; ++layerIter)
+105     \{
+106       \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = layerIter->second->begin(), endIter = layerIter->
+      second->end() ;
+107           endIter != iter ; ++iter)
+108       \{
+109         \textcolor{keyword}{const} CaloHit *pCaloHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }CaloHit *\textcolor{keyword}{>}(*iter);
+110 
+111         \textcolor{keywordflow}{if}(NULL == pCaloHit)
+112           \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+113 
+114         \textcolor{keyword}{const} ConnectorList &backwardConnectorList(
+      ArborContentApi::GetConnectorList(pCaloHit, BACKWARD_DIRECTION));
+115 
+116         \textcolor{keywordflow}{if}(!backwardConnectorList.empty())
+117           connectorList.insert(backwardConnectorList.begin(), backwardConnectorList.end());
+118       \}
+119     \}
+120 
+121     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+122   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!Get\+Ordered\+Calo\+Hit\+List@{Get\+Ordered\+Calo\+Hit\+List}}
+\index{Get\+Ordered\+Calo\+Hit\+List@{Get\+Ordered\+Calo\+Hit\+List}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{Get\+Ordered\+Calo\+Hit\+List}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Get\+Ordered\+Calo\+Hit\+List (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const pandora\+::\+Calo\+Hit\+List $\ast$const}]{p\+Calo\+Hit\+List, }
+\item[{pandora\+::\+Ordered\+Calo\+Hit\+List \&}]{ordered\+Calo\+Hit\+List}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorAlignmentTool_ac521418366a822d8ef94deccc75ae4f1}
+
+
+Get the ordered calo hit list. 
+
+Filter on availability in specified
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit\+List} & the input calo hit list \\
+\hline
+{\em ordered\+Calo\+Hit\+List} & the ordered calo hit list to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file Connector\+Alignment\+Tool.\+cc.
+
+
+
+References m\+\_\+connect\+Only\+Available, and m\+\_\+should\+Use\+Isolated\+Hits.
+
+
+
+Referenced by Process().
+
+
+\begin{DoxyCode}
+75   \{
+76     \textcolor{comment}{// need filter ?}
+77     \textcolor{keywordflow}{if}(m_connectOnlyAvailable || !m_shouldUseIsolatedHits)
+78     \{
+79       \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = pCaloHitList->begin(), endIter = pCaloHitList->end() 
+      ;
+80           endIter != iter ; ++iter)
+81       \{
+82         \textcolor{keywordflow}{if}(m_connectOnlyAvailable && !PandoraContentApi::IsAvailable(algorithm, *iter))
+83           \textcolor{keywordflow}{continue};
+84 
+85         \textcolor{keywordflow}{if}(!m_shouldUseIsolatedHits && (*iter)->IsIsolated())
+86           \textcolor{keywordflow}{continue};
+87 
+88         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, orderedCaloHitList.Add(*iter));
+89       \}
+90     \}
+91     \textcolor{keywordflow}{else}
+92     \{
+93       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, orderedCaloHitList.Add(*pCaloHitList));
+94     \}
+95 
+96     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+97   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!Process@{Process}}
+\index{Process@{Process}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{Process}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Process (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const pandora\+::\+Calo\+Hit\+List $\ast$const}]{p\+Calo\+Hit\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classarbor__content_1_1ConnectorAlignmentTool_aeb784bdc1939d1145bafad13633623d2}
+
+
+Seed connectors from the calo hit list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the parent algorithm to access pandora content \\
+\hline
+{\em p\+Calo\+Hit\+List} & the calo hit list to process \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf arbor\+\_\+content\+::\+Connector\+Algorithm\+Tool} \doxyref{}{p.}{classarbor__content_1_1ConnectorAlgorithmTool_a38a9c564567e360c783928ed88117aac}.
+
+
+
+Definition at line 41 of file Connector\+Alignment\+Tool.\+cc.
+
+
+
+References Connect\+Backward(), Connect\+Forward(), Get\+Connector\+List(), arbor\+\_\+content\+::\+Connector\+::\+Get\+From(), Get\+Ordered\+Calo\+Hit\+List(), arbor\+\_\+content\+::\+Connector\+::\+Get\+To(), and m\+\_\+connect\+Only\+Available.
+
+
+\begin{DoxyCode}
+42   \{
+43     \textcolor{keywordflow}{if}(pCaloHitList->empty())
+44       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+45 
+46     pandora::OrderedCaloHitList orderedCaloHitList;
+47     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      GetOrderedCaloHitList(algorithm, pCaloHitList, orderedCaloHitList));
+48 
+49     ConnectorList connectorList;
+50     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      GetConnectorList(orderedCaloHitList, connectorList));
+51 
+52     \textcolor{keywordflow}{for}(ConnectorList::const\_iterator connectorIter = connectorList.begin(), connectorEndIter = 
+      connectorList.end() ;
+53         connectorEndIter != connectorIter ; ++connectorIter)
+54     \{
+55       \textcolor{keyword}{const} Connector *\textcolor{keyword}{const} pConnector = *connectorIter;
+56 
+57       \textcolor{keyword}{const} \textcolor{keywordtype}{bool} isFromAvailable(PandoraContentApi::IsAvailable<pandora::CaloHit>(algorithm, pConnector->
+      GetFrom()));
+58       \textcolor{keyword}{const} \textcolor{keywordtype}{bool} isToAvailable(PandoraContentApi::IsAvailable<pandora::CaloHit>(algorithm, pConnector->
+      GetTo()));
+59 
+60       \textcolor{comment}{// check for availability}
+61       \textcolor{keywordflow}{if}( (m_connectOnlyAvailable) && (!isFromAvailable || !isToAvailable) )
+62         \textcolor{keywordflow}{continue};
+63 
+64       \textcolor{comment}{// connect in forward and backward directions}
+65       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      ConnectForward(orderedCaloHitList, pConnector));
+66       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      ConnectBackward(orderedCaloHitList, pConnector));
+67     \}
+68 
+69     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+70   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1ConnectorAlignmentTool_a83b32898854453dae8605aded6ff550d}
+
+
+Read settings from the xml handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xml\+Handle} & the xml handle to settings \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 231 of file Connector\+Alignment\+Tool.\+cc.
+
+
+
+References m\+\_\+connect\+Only\+Available, m\+\_\+max\+Connection\+Angle\+Coarse, m\+\_\+max\+Connection\+Angle\+Fine, m\+\_\+max\+Connection\+Distance\+Coarse, m\+\_\+max\+Connection\+Distance\+Fine, m\+\_\+max\+Pseudo\+Layer\+Connection, m\+\_\+should\+Connect\+Only\+Same\+Hit\+Type, and m\+\_\+should\+Use\+Isolated\+Hits.
+
+
+\begin{DoxyCode}
+232   \{
+233     m_connectOnlyAvailable = \textcolor{keyword}{true};
+234     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+235         \textcolor{stringliteral}{"ConnectOnlyAvailable"}, m_connectOnlyAvailable));
+236 
+237     m_shouldUseIsolatedHits = \textcolor{keyword}{false};
+238     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+239         \textcolor{stringliteral}{"ShouldUseIsolatedHits"}, m_shouldUseIsolatedHits));
+240 
+241     m_shouldConnectOnlySameHitType = \textcolor{keyword}{true};
+242     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+243         \textcolor{stringliteral}{"ShouldConnectOnlySameHitType"}, m_shouldConnectOnlySameHitType));
+244 
+245     m_maxPseudoLayerConnection = 2;
+246     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+247         \textcolor{stringliteral}{"MaxPseudoLayerConnection"}, m_maxPseudoLayerConnection));
+248 
+249     m_maxConnectionAngleFine = M\_PI/4.f;
+250     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+251         \textcolor{stringliteral}{"MaxConnectionAngleFine"}, m_maxConnectionAngleFine));
+252 
+253     m_maxConnectionAngleCoarse = M\_PI/4.f;
+254     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+255         \textcolor{stringliteral}{"MaxConnectionAngleCoarse"}, m_maxConnectionAngleCoarse));
+256 
+257     m_maxConnectionDistanceFine = 30.f;
+258     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+259         \textcolor{stringliteral}{"MaxConnectionDistanceFine"}, m_maxConnectionDistanceFine));
+260 
+261     m_maxConnectionDistanceCoarse = 65.f;
+262     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+263         \textcolor{stringliteral}{"MaxConnectionDistanceCoarse"}, m_maxConnectionDistanceCoarse));
+264 
+265     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+266   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!m\+\_\+connect\+Only\+Available@{m\+\_\+connect\+Only\+Available}}
+\index{m\+\_\+connect\+Only\+Available@{m\+\_\+connect\+Only\+Available}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{m\+\_\+connect\+Only\+Available}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::m\+\_\+connect\+Only\+Available\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorAlignmentTool_a87b3d591fde425b61a6c37f339fe49dc}
+
+
+Whether to connect only available hits. 
+
+
+
+Definition at line 102 of file Connector\+Alignment\+Tool.\+h.
+
+
+
+Referenced by Get\+Ordered\+Calo\+Hit\+List(), Process(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!m\+\_\+max\+Connection\+Angle\+Coarse@{m\+\_\+max\+Connection\+Angle\+Coarse}}
+\index{m\+\_\+max\+Connection\+Angle\+Coarse@{m\+\_\+max\+Connection\+Angle\+Coarse}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{m\+\_\+max\+Connection\+Angle\+Coarse}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::m\+\_\+max\+Connection\+Angle\+Coarse\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorAlignmentTool_ae66ce688f84ae15510629568d38de935}
+
+
+The maximum angle (coarse granularity) for a suitable connection. 
+
+
+
+Definition at line 107 of file Connector\+Alignment\+Tool.\+h.
+
+
+
+Referenced by Connect\+Backward(), Connect\+Forward(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!m\+\_\+max\+Connection\+Angle\+Fine@{m\+\_\+max\+Connection\+Angle\+Fine}}
+\index{m\+\_\+max\+Connection\+Angle\+Fine@{m\+\_\+max\+Connection\+Angle\+Fine}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{m\+\_\+max\+Connection\+Angle\+Fine}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::m\+\_\+max\+Connection\+Angle\+Fine\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorAlignmentTool_acc18b39178726b54c4dc69d991a97ebc}
+
+
+The maximum angle (fine granularity) for a suitable connection. 
+
+
+
+Definition at line 106 of file Connector\+Alignment\+Tool.\+h.
+
+
+
+Referenced by Connect\+Backward(), Connect\+Forward(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!m\+\_\+max\+Connection\+Distance\+Coarse@{m\+\_\+max\+Connection\+Distance\+Coarse}}
+\index{m\+\_\+max\+Connection\+Distance\+Coarse@{m\+\_\+max\+Connection\+Distance\+Coarse}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{m\+\_\+max\+Connection\+Distance\+Coarse}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::m\+\_\+max\+Connection\+Distance\+Coarse\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorAlignmentTool_a9a8180a47339ccfe139d5aa09363296b}
+
+
+The maximum distance between hits (coarse granularity) for a suitable connection. 
+
+
+
+Definition at line 109 of file Connector\+Alignment\+Tool.\+h.
+
+
+
+Referenced by Connect\+Backward(), Connect\+Forward(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!m\+\_\+max\+Connection\+Distance\+Fine@{m\+\_\+max\+Connection\+Distance\+Fine}}
+\index{m\+\_\+max\+Connection\+Distance\+Fine@{m\+\_\+max\+Connection\+Distance\+Fine}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{m\+\_\+max\+Connection\+Distance\+Fine}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::m\+\_\+max\+Connection\+Distance\+Fine\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorAlignmentTool_af641f4cc35beb31cf41dab0ff27199b8}
+
+
+The maximum distance between hits (fine granularity) for a suitable connection. 
+
+
+
+Definition at line 108 of file Connector\+Alignment\+Tool.\+h.
+
+
+
+Referenced by Connect\+Backward(), Connect\+Forward(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!m\+\_\+max\+Pseudo\+Layer\+Connection@{m\+\_\+max\+Pseudo\+Layer\+Connection}}
+\index{m\+\_\+max\+Pseudo\+Layer\+Connection@{m\+\_\+max\+Pseudo\+Layer\+Connection}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{m\+\_\+max\+Pseudo\+Layer\+Connection}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::m\+\_\+max\+Pseudo\+Layer\+Connection\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorAlignmentTool_a764a42a788f5216642f81a2a09d6fd7c}
+
+
+The maximum pseudo layer for a suitable connection. 
+
+
+
+Definition at line 105 of file Connector\+Alignment\+Tool.\+h.
+
+
+
+Referenced by Connect\+Backward(), Connect\+Forward(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!m\+\_\+should\+Connect\+Only\+Same\+Hit\+Type@{m\+\_\+should\+Connect\+Only\+Same\+Hit\+Type}}
+\index{m\+\_\+should\+Connect\+Only\+Same\+Hit\+Type@{m\+\_\+should\+Connect\+Only\+Same\+Hit\+Type}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{m\+\_\+should\+Connect\+Only\+Same\+Hit\+Type}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::m\+\_\+should\+Connect\+Only\+Same\+Hit\+Type\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorAlignmentTool_a08d95edd6f36014bb1657c7e8692e47a}
+
+
+Whether to connect only hits with same type. 
+
+
+
+Definition at line 104 of file Connector\+Alignment\+Tool.\+h.
+
+
+
+Referenced by Connect\+Backward(), Connect\+Forward(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}!m\+\_\+should\+Use\+Isolated\+Hits@{m\+\_\+should\+Use\+Isolated\+Hits}}
+\index{m\+\_\+should\+Use\+Isolated\+Hits@{m\+\_\+should\+Use\+Isolated\+Hits}!arbor\+\_\+content\+::\+Connector\+Alignment\+Tool@{arbor\+\_\+content\+::\+Connector\+Alignment\+Tool}}
+\subsubsection[{m\+\_\+should\+Use\+Isolated\+Hits}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::m\+\_\+should\+Use\+Isolated\+Hits\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorAlignmentTool_a37f2db00f4b82b91270ed17611cc10a9}
+
+
+Whether to use isolated hits. 
+
+
+
+Definition at line 103 of file Connector\+Alignment\+Tool.\+h.
+
+
+
+Referenced by Get\+Ordered\+Calo\+Hit\+List(), and Read\+Settings().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Connector\+Alignment\+Tool.\+h}\item 
+{\bf Connector\+Alignment\+Tool.\+cc}\end{DoxyCompactItemize}

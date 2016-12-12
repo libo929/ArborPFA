@@ -1,0 +1,259 @@
+\section{arbor\+\_\+content\+:\+:Arbor\+B\+Field\+Plugin Class Reference}
+\label{classarbor__content_1_1ArborBFieldPlugin}\index{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}}
+
+
+\doxyref{Arbor\+B\+Field\+Plugin}{p.}{classarbor__content_1_1ArborBFieldPlugin} class.  
+
+
+
+
+{\ttfamily \#include $<$Arbor\+B\+Field\+Plugin.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Arbor\+B\+Field\+Plugin\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1ArborBFieldPlugin}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Arbor\+B\+Field\+Plugin} (const float inner\+B\+Field, const float muon\+Barrel\+B\+Field, const float muon\+End\+Cap\+B\+Field)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+float {\bf Get\+B\+Field} (const pandora\+::\+Cartesian\+Vector \&position\+Vector) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Initialize} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf m\+\_\+inner\+B\+Field}
+\begin{DoxyCompactList}\small\item\em The bfield in the main tracker, ecal and hcal, units Tesla. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+muon\+Barrel\+B\+Field}
+\begin{DoxyCompactList}\small\item\em The bfield in the muon barrel, units Tesla. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+muon\+End\+Cap\+B\+Field}
+\begin{DoxyCompactList}\small\item\em The bfield in the muon endcap, units Tesla. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+muon\+End\+Cap\+Inner\+Z}
+\begin{DoxyCompactList}\small\item\em The muon endcap inner z coordinate, units mm. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+coil\+Mid\+Point\+R}
+\begin{DoxyCompactList}\small\item\em The r coordinate at the coil midpoint, units mm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Arbor\+B\+Field\+Plugin}{p.}{classarbor__content_1_1ArborBFieldPlugin} class. 
+
+Definition at line 38 of file Arbor\+B\+Field\+Plugin.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}!Arbor\+B\+Field\+Plugin@{Arbor\+B\+Field\+Plugin}}
+\index{Arbor\+B\+Field\+Plugin@{Arbor\+B\+Field\+Plugin}!arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}}
+\subsubsection[{Arbor\+B\+Field\+Plugin}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin\+::\+Arbor\+B\+Field\+Plugin (
+\begin{DoxyParamCaption}
+\item[{const float}]{inner\+B\+Field, }
+\item[{const float}]{muon\+Barrel\+B\+Field, }
+\item[{const float}]{muon\+End\+Cap\+B\+Field}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1ArborBFieldPlugin_a60c3cca23a5adda8d170f99edcb6609a}
+
+
+Default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inner\+B\+Field} & the bfield in the main tracker, ecal and hcal, units Tesla \\
+\hline
+{\em muon\+Barrel\+B\+Field} & the bfield in the muon barrel, units Tesla \\
+\hline
+{\em muon\+End\+Cap\+B\+Field} & the bfield in the muon endcap, units Tesla \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 34 of file Arbor\+B\+Field\+Plugin.\+cc.
+
+
+\begin{DoxyCode}
+34                                                                                                            
+                     :
+35       m_innerBField(innerBField),
+36       m_muonBarrelBField(muonBarrelBField),
+37       m_muonEndCapBField(muonEndCapBField),
+38       m_muonEndCapInnerZ(std::numeric\_limits<float>::max()),
+39       m_coilMidPointR(std::numeric\_limits<float>::max())
+40   \{
+41   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}!Get\+B\+Field@{Get\+B\+Field}}
+\index{Get\+B\+Field@{Get\+B\+Field}!arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}}
+\subsubsection[{Get\+B\+Field}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin\+::\+Get\+B\+Field (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{position\+Vector}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1ArborBFieldPlugin_a5146b9d8b817d9c04cb5e56e3e7cca4c}
+
+
+Definition at line 45 of file Arbor\+B\+Field\+Plugin.\+cc.
+
+
+
+References m\+\_\+coil\+Mid\+Point\+R, m\+\_\+inner\+B\+Field, m\+\_\+muon\+Barrel\+B\+Field, m\+\_\+muon\+End\+Cap\+B\+Field, and m\+\_\+muon\+End\+Cap\+Inner\+Z.
+
+
+\begin{DoxyCode}
+46   \{
+47     \textcolor{keywordflow}{if} (std::fabs(positionVector.GetZ()) >= m_muonEndCapInnerZ)
+48       \textcolor{keywordflow}{return} m_muonEndCapBField;
+49 
+50     \textcolor{keywordflow}{if} (std::sqrt(positionVector.GetX() * positionVector.GetX() + positionVector.GetY() * positionVector.
+      GetY()) >= m_coilMidPointR)
+51       \textcolor{keywordflow}{return} m_muonBarrelBField;
+52 
+53     \textcolor{keywordflow}{return} m_innerBField;
+54   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin\+::\+Initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborBFieldPlugin_a9023009f5db1bea140ff1122c3c9314e}
+
+
+Definition at line 58 of file Arbor\+B\+Field\+Plugin.\+cc.
+
+
+
+References m\+\_\+coil\+Mid\+Point\+R, and m\+\_\+muon\+End\+Cap\+Inner\+Z.
+
+
+\begin{DoxyCode}
+59   \{
+60     \textcolor{keywordflow}{try}
+61     \{
+62       m_muonEndCapInnerZ = this->GetPandora().GetGeometry()->GetSubDetector(pandora::MUON\_ENDCAP).
+      GetInnerZCoordinate();
+63       m_coilMidPointR = (0.5f * (this->GetPandora().GetGeometry()->GetSubDetector(pandora::COIL).
+      GetInnerRCoordinate() +
+64           this->GetPandora().GetGeometry()->GetSubDetector(pandora::COIL).GetOuterRCoordinate()));
+65     \}
+66     \textcolor{keywordflow}{catch} (pandora::StatusCodeException &statusCodeException)
+67     \{
+68       std::cout << \textcolor{stringliteral}{"ArborBFieldPlugin: Unable to extract Muon EndCap and Coil geometry."} << std::endl;
+69       \textcolor{keywordflow}{return} statusCodeException.GetStatusCode();
+70     \}
+71 
+72     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+73   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborBFieldPlugin_a5af0d0fd5e94ddbe40484d085c3384f6}
+
+
+Definition at line 77 of file Arbor\+B\+Field\+Plugin.\+cc.
+
+
+\begin{DoxyCode}
+78   \{
+79     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+80   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}!m\+\_\+coil\+Mid\+Point\+R@{m\+\_\+coil\+Mid\+Point\+R}}
+\index{m\+\_\+coil\+Mid\+Point\+R@{m\+\_\+coil\+Mid\+Point\+R}!arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}}
+\subsubsection[{m\+\_\+coil\+Mid\+Point\+R}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin\+::m\+\_\+coil\+Mid\+Point\+R\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborBFieldPlugin_a753a9f5932faf5855f8b979cecc99075}
+
+
+The r coordinate at the coil midpoint, units mm. 
+
+
+
+Definition at line 61 of file Arbor\+B\+Field\+Plugin.\+h.
+
+
+
+Referenced by Get\+B\+Field(), and Initialize().
+
+\index{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}!m\+\_\+inner\+B\+Field@{m\+\_\+inner\+B\+Field}}
+\index{m\+\_\+inner\+B\+Field@{m\+\_\+inner\+B\+Field}!arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}}
+\subsubsection[{m\+\_\+inner\+B\+Field}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin\+::m\+\_\+inner\+B\+Field\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborBFieldPlugin_af4bf06bcbba30edbde743e34b84a2091}
+
+
+The bfield in the main tracker, ecal and hcal, units Tesla. 
+
+
+
+Definition at line 56 of file Arbor\+B\+Field\+Plugin.\+h.
+
+
+
+Referenced by Get\+B\+Field().
+
+\index{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}!m\+\_\+muon\+Barrel\+B\+Field@{m\+\_\+muon\+Barrel\+B\+Field}}
+\index{m\+\_\+muon\+Barrel\+B\+Field@{m\+\_\+muon\+Barrel\+B\+Field}!arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}}
+\subsubsection[{m\+\_\+muon\+Barrel\+B\+Field}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin\+::m\+\_\+muon\+Barrel\+B\+Field\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborBFieldPlugin_acc6d6745fdfb8de7ff79886584297b17}
+
+
+The bfield in the muon barrel, units Tesla. 
+
+
+
+Definition at line 57 of file Arbor\+B\+Field\+Plugin.\+h.
+
+
+
+Referenced by Get\+B\+Field().
+
+\index{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}!m\+\_\+muon\+End\+Cap\+B\+Field@{m\+\_\+muon\+End\+Cap\+B\+Field}}
+\index{m\+\_\+muon\+End\+Cap\+B\+Field@{m\+\_\+muon\+End\+Cap\+B\+Field}!arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}}
+\subsubsection[{m\+\_\+muon\+End\+Cap\+B\+Field}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin\+::m\+\_\+muon\+End\+Cap\+B\+Field\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborBFieldPlugin_ad32bd4a44a2c030b02b8a2abdec80de1}
+
+
+The bfield in the muon endcap, units Tesla. 
+
+
+
+Definition at line 58 of file Arbor\+B\+Field\+Plugin.\+h.
+
+
+
+Referenced by Get\+B\+Field().
+
+\index{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}!m\+\_\+muon\+End\+Cap\+Inner\+Z@{m\+\_\+muon\+End\+Cap\+Inner\+Z}}
+\index{m\+\_\+muon\+End\+Cap\+Inner\+Z@{m\+\_\+muon\+End\+Cap\+Inner\+Z}!arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin@{arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin}}
+\subsubsection[{m\+\_\+muon\+End\+Cap\+Inner\+Z}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Arbor\+B\+Field\+Plugin\+::m\+\_\+muon\+End\+Cap\+Inner\+Z\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborBFieldPlugin_ad9a1587ccd9702c6040a1d58464ccc91}
+
+
+The muon endcap inner z coordinate, units mm. 
+
+
+
+Definition at line 60 of file Arbor\+B\+Field\+Plugin.\+h.
+
+
+
+Referenced by Get\+B\+Field(), and Initialize().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Arbor\+B\+Field\+Plugin.\+h}\item 
+{\bf Arbor\+B\+Field\+Plugin.\+cc}\end{DoxyCompactItemize}

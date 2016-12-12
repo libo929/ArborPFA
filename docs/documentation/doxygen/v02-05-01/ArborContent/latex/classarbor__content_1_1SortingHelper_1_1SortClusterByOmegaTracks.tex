@@ -1,0 +1,123 @@
+\section{arbor\+\_\+content\+:\+:Sorting\+Helper\+:\+:Sort\+Cluster\+By\+Omega\+Tracks Class Reference}
+\label{classarbor__content_1_1SortingHelper_1_1SortClusterByOmegaTracks}\index{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks}}
+
+
+\doxyref{Sort\+Cluster\+By\+Omega\+Tracks}{p.}{classarbor__content_1_1SortingHelper_1_1SortClusterByOmegaTracks} class.  
+
+
+
+
+{\ttfamily \#include $<$Sorting\+Helper.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Sort\+Cluster\+By\+Omega\+Tracks} (const pandora\+::\+Pandora $\ast$const p\+Pandora)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool {\bf operator()} (const pandora\+::\+Cluster $\ast$const p\+Lhs, const pandora\+::\+Cluster $\ast$const p\+Rhs) const 
+\begin{DoxyCompactList}\small\item\em Functor to sort clusters by omega track parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const pandora\+::\+Pandora $\ast$const {\bf m\+\_\+p\+Pandora}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Sort\+Cluster\+By\+Omega\+Tracks}{p.}{classarbor__content_1_1SortingHelper_1_1SortClusterByOmegaTracks} class. 
+
+Definition at line 75 of file Sorting\+Helper.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks}!Sort\+Cluster\+By\+Omega\+Tracks@{Sort\+Cluster\+By\+Omega\+Tracks}}
+\index{Sort\+Cluster\+By\+Omega\+Tracks@{Sort\+Cluster\+By\+Omega\+Tracks}!arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks}}
+\subsubsection[{Sort\+Cluster\+By\+Omega\+Tracks}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks\+::\+Sort\+Cluster\+By\+Omega\+Tracks (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora $\ast$const}]{p\+Pandora}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1SortingHelper_1_1SortClusterByOmegaTracks_a938372e2645aea78a54e3af0ef1ad3af}
+
+
+Constructor. 
+
+
+
+Definition at line 72 of file Sorting\+Helper.\+cc.
+
+
+\begin{DoxyCode}
+72                                                                                                       :
+73         m_pPandora(pPandora)
+74   \{
+75   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks}!operator()@{operator()}}
+\index{operator()@{operator()}!arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Lhs, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Rhs}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1SortingHelper_1_1SortClusterByOmegaTracks_a18b021f4514426938efb17fd07322797}
+
+
+Functor to sort clusters by omega track parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Lhs} & the left handed cluster to compare \\
+\hline
+{\em p\+Rhs} & the right handed cluster to compare \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file Sorting\+Helper.\+cc.
+
+
+\begin{DoxyCode}
+81   \{
+82     \textcolor{keywordflow}{if}(pLhs->GetAssociatedTrackList().size() != 1)
+83       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+84 
+85     \textcolor{keywordflow}{if}(pRhs->GetAssociatedTrackList().size() != 1)
+86       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+87 
+88     \textcolor{keyword}{const} pandora::Track *\textcolor{keyword}{const} pLhsTrack(*pLhs->GetAssociatedTrackList().begin());
+89     \textcolor{keyword}{const} pandora::Track *\textcolor{keyword}{const} pRhsTrack(*pRhs->GetAssociatedTrackList().begin());
+90 
+91     \textcolor{keyword}{const} pandora::CartesianVector &lhsMom(pLhsTrack->GetTrackStateAtCalorimeter().GetMomentum());
+92     \textcolor{keyword}{const} pandora::CartesianVector &lhsProj(pLhsTrack->GetTrackStateAtCalorimeter().GetPosition());
+93     \textcolor{keyword}{const} pandora::CartesianVector &rhsMom(pRhsTrack->GetTrackStateAtCalorimeter().GetMomentum());
+94     \textcolor{keyword}{const} pandora::CartesianVector &rhsProj(pRhsTrack->GetTrackStateAtCalorimeter().GetPosition());
+95 
+96     \textcolor{keyword}{const} \textcolor{keywordtype}{float} bField(m_pPandora->GetPlugins()->GetBFieldPlugin()->GetBField(pandora::CartesianVector(0.f,
+       0.f, 0.f)));
+97 
+98     pandora::Helix lhsHelix(lhsProj, lhsMom, pLhsTrack->GetCharge(), bField), rhsHelix(rhsProj, rhsMom, 
+      pRhsTrack->GetCharge(), bField);
+99 
+100     \textcolor{keywordflow}{return} lhsHelix.GetOmega() > lhsHelix.GetOmega();
+101   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks}!m\+\_\+p\+Pandora@{m\+\_\+p\+Pandora}}
+\index{m\+\_\+p\+Pandora@{m\+\_\+p\+Pandora}!arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks@{arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks}}
+\subsubsection[{m\+\_\+p\+Pandora}]{\setlength{\rightskip}{0pt plus 5cm}const pandora\+::\+Pandora$\ast$ const arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Cluster\+By\+Omega\+Tracks\+::m\+\_\+p\+Pandora\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1SortingHelper_1_1SortClusterByOmegaTracks_a340fafb19c500f26b1d34506c289f079}
+
+
+Definition at line 92 of file Sorting\+Helper.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Sorting\+Helper.\+h}\item 
+{\bf Sorting\+Helper.\+cc}\end{DoxyCompactItemize}

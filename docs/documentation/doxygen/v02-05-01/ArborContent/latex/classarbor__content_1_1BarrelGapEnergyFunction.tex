@@ -1,0 +1,420 @@
+\section{arbor\+\_\+content\+:\+:Barrel\+Gap\+Energy\+Function Class Reference}
+\label{classarbor__content_1_1BarrelGapEnergyFunction}\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+
+
+\doxyref{Barrel\+Gap\+Energy\+Function}{p.}{classarbor__content_1_1BarrelGapEnergyFunction} class.  
+
+
+
+
+{\ttfamily \#include $<$Energy\+Correction\+Plugins.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Barrel\+Gap\+Energy\+Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1BarrelGapEnergyFunction}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Barrel\+Gap\+Energy\+Function} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Make\+Energy\+Corrections} (const pandora\+::\+Cluster $\ast$const p\+Cluster, float \&corrected\+Energy) const 
+\begin{DoxyCompactList}\small\item\em Make energy correction on this given cluster. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Read settings from the xml handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Approach} \{ {\bf I\+N\+N\+E\+R\+\_\+\+G\+A\+P\+\_\+\+A\+P\+P\+R\+O\+A\+C\+H} = -\/1, 
+{\bf F\+A\+R\+\_\+\+F\+R\+O\+M\+\_\+\+G\+A\+P} = 0, 
+{\bf O\+U\+T\+E\+R\+\_\+\+G\+A\+P\+\_\+\+A\+P\+P\+R\+O\+A\+C\+H} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Approach enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf Is\+Nearby\+Gap} (const pandora\+::\+Calo\+Hit $\ast$const p\+Calo\+Hit) const 
+\begin{DoxyCompactList}\small\item\em Whether the calo hit is near a detector gap. \end{DoxyCompactList}\item 
+{\bf Approach} {\bf Get\+Approach} (const pandora\+::\+Calo\+Hit $\ast$const p\+Calo\+Hit) const 
+\begin{DoxyCompactList}\small\item\em Get the calo hit approach to barrel module gap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Float\+Vector {\bf m\+\_\+ecal\+Z\+Gap\+Positions}
+\item 
+pandora\+::\+Float\+Vector {\bf m\+\_\+hcal\+Z\+Gap\+Positions}
+\item 
+float {\bf m\+\_\+ecal\+Distance\+To\+Gap}
+\item 
+float {\bf m\+\_\+hcal\+Distance\+To\+Gap}
+\item 
+float {\bf m\+\_\+ecal\+Gap\+Alpha}
+\item 
+float {\bf m\+\_\+ecal\+Gap\+Beta}
+\item 
+float {\bf m\+\_\+hcal\+Gap\+Alpha}
+\item 
+float {\bf m\+\_\+hcal\+Gap\+Beta}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Barrel\+Gap\+Energy\+Function}{p.}{classarbor__content_1_1BarrelGapEnergyFunction} class. 
+
+Definition at line 111 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!Approach@{Approach}}
+\index{Approach@{Approach}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{Approach}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::\+Approach}\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1BarrelGapEnergyFunction_ad3916e05602f2854a72ec50c4d8a6ca4}
+
+
+Approach enum. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\+N\+N\+E\+R\+\_\+\+G\+A\+P\+\_\+\+A\+P\+P\+R\+O\+A\+C\+H@{I\+N\+N\+E\+R\+\_\+\+G\+A\+P\+\_\+\+A\+P\+P\+R\+O\+A\+C\+H}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!I\+N\+N\+E\+R\+\_\+\+G\+A\+P\+\_\+\+A\+P\+P\+R\+O\+A\+C\+H@{I\+N\+N\+E\+R\+\_\+\+G\+A\+P\+\_\+\+A\+P\+P\+R\+O\+A\+C\+H}}\item[{\em 
+I\+N\+N\+E\+R\+\_\+\+G\+A\+P\+\_\+\+A\+P\+P\+R\+O\+A\+C\+H\label{classarbor__content_1_1BarrelGapEnergyFunction_ad3916e05602f2854a72ec50c4d8a6ca4a303bdce7cf3b5669a73093d6263d3183}
+}]\index{F\+A\+R\+\_\+\+F\+R\+O\+M\+\_\+\+G\+A\+P@{F\+A\+R\+\_\+\+F\+R\+O\+M\+\_\+\+G\+A\+P}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!F\+A\+R\+\_\+\+F\+R\+O\+M\+\_\+\+G\+A\+P@{F\+A\+R\+\_\+\+F\+R\+O\+M\+\_\+\+G\+A\+P}}\item[{\em 
+F\+A\+R\+\_\+\+F\+R\+O\+M\+\_\+\+G\+A\+P\label{classarbor__content_1_1BarrelGapEnergyFunction_ad3916e05602f2854a72ec50c4d8a6ca4adb1f57f35c39a233a221f4169f244e71}
+}]\index{O\+U\+T\+E\+R\+\_\+\+G\+A\+P\+\_\+\+A\+P\+P\+R\+O\+A\+C\+H@{O\+U\+T\+E\+R\+\_\+\+G\+A\+P\+\_\+\+A\+P\+P\+R\+O\+A\+C\+H}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!O\+U\+T\+E\+R\+\_\+\+G\+A\+P\+\_\+\+A\+P\+P\+R\+O\+A\+C\+H@{O\+U\+T\+E\+R\+\_\+\+G\+A\+P\+\_\+\+A\+P\+P\+R\+O\+A\+C\+H}}\item[{\em 
+O\+U\+T\+E\+R\+\_\+\+G\+A\+P\+\_\+\+A\+P\+P\+R\+O\+A\+C\+H\label{classarbor__content_1_1BarrelGapEnergyFunction_ad3916e05602f2854a72ec50c4d8a6ca4abc1336976150bd575042502b95c4ae6b}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 138 of file Energy\+Correction\+Plugins.\+h.
+
+
+\begin{DoxyCode}
+139     \{
+140       INNER_GAP_APPROACH = -1,
+141       FAR_FROM_GAP = 0,
+142       OUTER_GAP_APPROACH = 1
+143     \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!Barrel\+Gap\+Energy\+Function@{Barrel\+Gap\+Energy\+Function}}
+\index{Barrel\+Gap\+Energy\+Function@{Barrel\+Gap\+Energy\+Function}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{Barrel\+Gap\+Energy\+Function}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::\+Barrel\+Gap\+Energy\+Function (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1BarrelGapEnergyFunction_a54df565cf54038b76837c95307bdbc0d}
+
+
+Default constructor. 
+
+
+
+Definition at line 233 of file Energy\+Correction\+Plugins.\+cc.
+
+
+\begin{DoxyCode}
+233                                                    :
+234         m_ecalDistanceToGap(10.f),  \textcolor{comment}{// 8 mm + 2 mm}
+235         m_hcalDistanceToGap(30.f),  \textcolor{comment}{// 20 mm + 10 mm}
+236         m_ecalGapAlpha(0),
+237         m_ecalGapBeta(0),
+238         m_hcalGapAlpha(1.5254),
+239         m_hcalGapBeta(0)
+240   \{
+241   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!Get\+Approach@{Get\+Approach}}
+\index{Get\+Approach@{Get\+Approach}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{Get\+Approach}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Approach} arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::\+Get\+Approach (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Calo\+Hit $\ast$const}]{p\+Calo\+Hit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1BarrelGapEnergyFunction_af1cedb8c3393ae7f47c862d6646513c2}
+
+
+Get the calo hit approach to barrel module gap. 
+
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!Is\+Nearby\+Gap@{Is\+Nearby\+Gap}}
+\index{Is\+Nearby\+Gap@{Is\+Nearby\+Gap}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{Is\+Nearby\+Gap}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::\+Is\+Nearby\+Gap (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Calo\+Hit $\ast$const}]{p\+Calo\+Hit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1BarrelGapEnergyFunction_ac984415056b9f7823b97eed85eaab9a1}
+
+
+Whether the calo hit is near a detector gap. 
+
+
+
+Definition at line 282 of file Energy\+Correction\+Plugins.\+cc.
+
+
+
+References m\+\_\+ecal\+Distance\+To\+Gap, m\+\_\+ecal\+Z\+Gap\+Positions, m\+\_\+hcal\+Distance\+To\+Gap, and m\+\_\+hcal\+Z\+Gap\+Positions.
+
+
+
+Referenced by Make\+Energy\+Corrections().
+
+
+\begin{DoxyCode}
+283   \{
+284     \textcolor{keywordflow}{if}(pCaloHit->GetHitRegion() != pandora::BARREL)
+285       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+286 
+287     \textcolor{keywordflow}{if}(pCaloHit->GetHitType() != pandora::ECAL && pCaloHit->GetHitType() != pandora::HCAL)
+288       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+289 
+290     \textcolor{keyword}{const} pandora::FloatVector zGapPositions(pCaloHit->GetHitType() == pandora::ECAL ? 
+      m_ecalZGapPositions : m_hcalZGapPositions);
+291     \textcolor{keyword}{const} \textcolor{keywordtype}{float} distanceToGap(pCaloHit->GetHitType() == pandora::ECAL ? 
+      m_ecalDistanceToGap : m_hcalDistanceToGap);
+292     \textcolor{keyword}{const} \textcolor{keywordtype}{float} hitZ(pCaloHit->GetPositionVector().GetZ());
+293 
+294     \textcolor{keywordflow}{for}(pandora::FloatVector::const\_iterator iter = zGapPositions.begin(), endIter = zGapPositions.end() ;
+295         endIter != iter ; ++iter)
+296     \{
+297       \textcolor{keyword}{const} \textcolor{keywordtype}{float} gapZPosition(*iter);
+298 
+299       \textcolor{keywordflow}{if}( ((hitZ < gapZPosition) && (hitZ > gapZPosition-distanceToGap))
+300        || ((hitZ > gapZPosition) && (hitZ < gapZPosition+distanceToGap)) )
+301       \{
+302         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+303       \}
+304     \}
+305 
+306     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+307   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!Make\+Energy\+Corrections@{Make\+Energy\+Corrections}}
+\index{Make\+Energy\+Corrections@{Make\+Energy\+Corrections}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{Make\+Energy\+Corrections}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::\+Make\+Energy\+Corrections (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{float \&}]{corrected\+Energy}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1BarrelGapEnergyFunction_a97da7009bd82ca3f87bc0f62464e15e2}
+
+
+Make energy correction on this given cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the cluster address to correct the energy \\
+\hline
+{\em corrected\+Energy} & the energy to correct \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 245 of file Energy\+Correction\+Plugins.\+cc.
+
+
+
+References Is\+Nearby\+Gap(), m\+\_\+ecal\+Gap\+Alpha, m\+\_\+ecal\+Gap\+Beta, m\+\_\+ecal\+Z\+Gap\+Positions, m\+\_\+hcal\+Gap\+Alpha, m\+\_\+hcal\+Gap\+Beta, and m\+\_\+hcal\+Z\+Gap\+Positions.
+
+
+\begin{DoxyCode}
+246   \{
+247     \textcolor{keywordflow}{if}(m_ecalZGapPositions.empty() && m_hcalZGapPositions.empty())
+248       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+249 
+250     \textcolor{keywordflow}{if}(pCluster->GetNCaloHits() == 0)
+251       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+252 
+253     \textcolor{keywordtype}{float} ecalGapEnergy(0), hcalGapEnergy(0);
+254 
+255     pandora::CaloHitList clusterCaloHitList;
+256     pCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+257 
+258     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList.begin(), endIter = 
+      clusterCaloHitList.end() ;
+259         endIter != iter ; ++iter)
+260     \{
+261       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*iter);
+262       \textcolor{keyword}{const} \textcolor{keywordtype}{bool} nearbyGap(this->IsNearbyGap(pCaloHit));
+263 
+264       \textcolor{keywordflow}{if}(!nearbyGap)
+265         \textcolor{keywordflow}{continue};
+266 
+267       \textcolor{keywordflow}{if}(pCaloHit->GetHitType() == pandora::ECAL)
+268         ecalGapEnergy += pCaloHit->GetHadronicEnergy();
+269       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pCaloHit->GetHitType() == pandora::HCAL)
+270         hcalGapEnergy += pCaloHit->GetHadronicEnergy();
+271     \}
+272 
+273     correctedEnergy +=
+274         m_ecalGapAlpha * ecalGapEnergy + m_ecalGapBeta * ecalGapEnergy * ecalGapEnergy +
+275         m_hcalGapAlpha * hcalGapEnergy + m_hcalGapBeta * hcalGapEnergy * hcalGapEnergy;
+276 
+277     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+278   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1BarrelGapEnergyFunction_abb1b099776f9ed5eee06d6a5ce9992d6}
+
+
+Read settings from the xml handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xml\+Handle} & the xml handle to read settings from \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 311 of file Energy\+Correction\+Plugins.\+cc.
+
+
+
+References m\+\_\+ecal\+Distance\+To\+Gap, m\+\_\+ecal\+Gap\+Alpha, m\+\_\+ecal\+Gap\+Beta, m\+\_\+ecal\+Z\+Gap\+Positions, m\+\_\+hcal\+Distance\+To\+Gap, m\+\_\+hcal\+Gap\+Alpha, m\+\_\+hcal\+Gap\+Beta, and m\+\_\+hcal\+Z\+Gap\+Positions.
+
+
+\begin{DoxyCode}
+312   \{
+313     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadVectorOfValues(xmlHandle,
+314         \textcolor{stringliteral}{"EcalZGapPositions"}, m_ecalZGapPositions));
+315 
+316     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadVectorOfValues(xmlHandle,
+317         \textcolor{stringliteral}{"HcalZGapPositions"}, m_hcalZGapPositions));
+318 
+319     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+320         \textcolor{stringliteral}{"EcalDistanceToGap"}, m_ecalDistanceToGap));
+321 
+322     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+323         \textcolor{stringliteral}{"HcalDistanceToGap"}, m_hcalDistanceToGap));
+324 
+325     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+326         \textcolor{stringliteral}{"EcalGapAlpha"}, m_ecalGapAlpha));
+327 
+328     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+329         \textcolor{stringliteral}{"EcalGapBeta"}, m_ecalGapBeta));
+330 
+331     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+332         \textcolor{stringliteral}{"HcalGapAlpha"}, m_hcalGapAlpha));
+333 
+334     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+335         \textcolor{stringliteral}{"HcalGapBeta"}, m_hcalGapBeta));
+336 
+337     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+338   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!m\+\_\+ecal\+Distance\+To\+Gap@{m\+\_\+ecal\+Distance\+To\+Gap}}
+\index{m\+\_\+ecal\+Distance\+To\+Gap@{m\+\_\+ecal\+Distance\+To\+Gap}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{m\+\_\+ecal\+Distance\+To\+Gap}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::m\+\_\+ecal\+Distance\+To\+Gap\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1BarrelGapEnergyFunction_a416edfc44efbaa38932cf195a287b6b2}
+
+
+Definition at line 159 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Is\+Nearby\+Gap(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!m\+\_\+ecal\+Gap\+Alpha@{m\+\_\+ecal\+Gap\+Alpha}}
+\index{m\+\_\+ecal\+Gap\+Alpha@{m\+\_\+ecal\+Gap\+Alpha}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{m\+\_\+ecal\+Gap\+Alpha}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::m\+\_\+ecal\+Gap\+Alpha\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1BarrelGapEnergyFunction_a495b9389fffa56f9629deb8375f38dd2}
+
+
+Definition at line 162 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Make\+Energy\+Corrections(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!m\+\_\+ecal\+Gap\+Beta@{m\+\_\+ecal\+Gap\+Beta}}
+\index{m\+\_\+ecal\+Gap\+Beta@{m\+\_\+ecal\+Gap\+Beta}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{m\+\_\+ecal\+Gap\+Beta}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::m\+\_\+ecal\+Gap\+Beta\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1BarrelGapEnergyFunction_a6881340fae82c35ef0ed1aefb560381a}
+
+
+Definition at line 163 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Make\+Energy\+Corrections(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!m\+\_\+ecal\+Z\+Gap\+Positions@{m\+\_\+ecal\+Z\+Gap\+Positions}}
+\index{m\+\_\+ecal\+Z\+Gap\+Positions@{m\+\_\+ecal\+Z\+Gap\+Positions}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{m\+\_\+ecal\+Z\+Gap\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Float\+Vector arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::m\+\_\+ecal\+Z\+Gap\+Positions\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1BarrelGapEnergyFunction_aae60121bee37a26dbc8186d8d0406265}
+
+
+Definition at line 156 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Is\+Nearby\+Gap(), Make\+Energy\+Corrections(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!m\+\_\+hcal\+Distance\+To\+Gap@{m\+\_\+hcal\+Distance\+To\+Gap}}
+\index{m\+\_\+hcal\+Distance\+To\+Gap@{m\+\_\+hcal\+Distance\+To\+Gap}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{m\+\_\+hcal\+Distance\+To\+Gap}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::m\+\_\+hcal\+Distance\+To\+Gap\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1BarrelGapEnergyFunction_a6ec3aedbc959966dfdda7c321ea902e3}
+
+
+Definition at line 160 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Is\+Nearby\+Gap(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!m\+\_\+hcal\+Gap\+Alpha@{m\+\_\+hcal\+Gap\+Alpha}}
+\index{m\+\_\+hcal\+Gap\+Alpha@{m\+\_\+hcal\+Gap\+Alpha}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{m\+\_\+hcal\+Gap\+Alpha}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::m\+\_\+hcal\+Gap\+Alpha\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1BarrelGapEnergyFunction_a0d4f53c1b3e3bc492db6851d352843dd}
+
+
+Definition at line 164 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Make\+Energy\+Corrections(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!m\+\_\+hcal\+Gap\+Beta@{m\+\_\+hcal\+Gap\+Beta}}
+\index{m\+\_\+hcal\+Gap\+Beta@{m\+\_\+hcal\+Gap\+Beta}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{m\+\_\+hcal\+Gap\+Beta}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::m\+\_\+hcal\+Gap\+Beta\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1BarrelGapEnergyFunction_a740270c377675fde069f8b753c3b9440}
+
+
+Definition at line 165 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Make\+Energy\+Corrections(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}!m\+\_\+hcal\+Z\+Gap\+Positions@{m\+\_\+hcal\+Z\+Gap\+Positions}}
+\index{m\+\_\+hcal\+Z\+Gap\+Positions@{m\+\_\+hcal\+Z\+Gap\+Positions}!arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function@{arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function}}
+\subsubsection[{m\+\_\+hcal\+Z\+Gap\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Float\+Vector arbor\+\_\+content\+::\+Barrel\+Gap\+Energy\+Function\+::m\+\_\+hcal\+Z\+Gap\+Positions\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1BarrelGapEnergyFunction_a8e91769da28fcdd6dc2f1cfc54b42ad1}
+
+
+Definition at line 157 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Is\+Nearby\+Gap(), Make\+Energy\+Corrections(), and Read\+Settings().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Energy\+Correction\+Plugins.\+h}\item 
+{\bf Energy\+Correction\+Plugins.\+cc}\end{DoxyCompactItemize}

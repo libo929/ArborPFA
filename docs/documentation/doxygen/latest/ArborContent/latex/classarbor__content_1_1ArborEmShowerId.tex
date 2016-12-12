@@ -1,0 +1,462 @@
+\section{arbor\+\_\+content\+:\+:Arbor\+Em\+Shower\+Id Class Reference}
+\label{classarbor__content_1_1ArborEmShowerId}\index{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}}
+
+
+\doxyref{Arbor\+Em\+Shower\+Id}{p.}{classarbor__content_1_1ArborEmShowerId} class.  
+
+
+
+
+{\ttfamily \#include $<$Particle\+Id\+Plugins.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Arbor\+Em\+Shower\+Id\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1ArborEmShowerId}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Arbor\+Em\+Shower\+Id} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+bool {\bf Is\+Match} (const pandora\+::\+Cluster $\ast$const p\+Cluster) const 
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\item 
+const pandora\+::\+Cartesian\+Vector {\bf Get\+Energy\+Weighted\+Centroid} (const pandora\+::\+Cluster $\ast$const p\+Cluster, const unsigned int inner\+Pseudo\+Layer, const unsigned int outer\+Pseudo\+Layer) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings} {\bf m\+\_\+starting\+Layer\+Settings}
+\item 
+unsigned int {\bf m\+\_\+max\+Start\+Pseudo\+Layer}
+\item 
+unsigned int {\bf m\+\_\+max\+Pseudo\+Layer\+Extension}
+\item 
+float {\bf m\+\_\+max\+Angle\+With\+Origin}
+\item 
+float {\bf m\+\_\+max\+Hadronic\+Energy\+Fraction}
+\item 
+unsigned int {\bf m\+\_\+min\+Outer\+Ecal\+Pseudo\+Layer\+Energy\+Cut}
+\item 
+float {\bf m\+\_\+max\+Outer\+Ecal\+Energy\+Fraction}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Arbor\+Em\+Shower\+Id}{p.}{classarbor__content_1_1ArborEmShowerId} class. 
+
+Definition at line 79 of file Particle\+Id\+Plugins.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}!Arbor\+Em\+Shower\+Id@{Arbor\+Em\+Shower\+Id}}
+\index{Arbor\+Em\+Shower\+Id@{Arbor\+Em\+Shower\+Id}!arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}}
+\subsubsection[{Arbor\+Em\+Shower\+Id}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::\+Arbor\+Em\+Shower\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1ArborEmShowerId_ade108fd1d8e92e6d0a24c772e2748e5d}
+
+
+Default constructor. 
+
+
+
+Definition at line 214 of file Particle\+Id\+Plugins.\+cc.
+
+
+\begin{DoxyCode}
+214                                    :
+215         m_maxStartPseudoLayer(10),
+216         m_maxPseudoLayerExtension(20),
+217         m_maxAngleWithOrigin(M\_PI/4.f),
+218         m_maxHadronicEnergyFraction(0.2f),
+219         m_minOuterEcalPseudoLayerEnergyCut(25),
+220         m_maxOuterEcalEnergyFraction(0.1f)
+221   \{
+222   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}!Get\+Energy\+Weighted\+Centroid@{Get\+Energy\+Weighted\+Centroid}}
+\index{Get\+Energy\+Weighted\+Centroid@{Get\+Energy\+Weighted\+Centroid}!arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}}
+\subsubsection[{Get\+Energy\+Weighted\+Centroid}]{\setlength{\rightskip}{0pt plus 5cm}const pandora\+::\+Cartesian\+Vector arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::\+Get\+Energy\+Weighted\+Centroid (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{const unsigned int}]{inner\+Pseudo\+Layer, }
+\item[{const unsigned int}]{outer\+Pseudo\+Layer}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1ArborEmShowerId_a8ff41d2be5bb4f2537288bc8cca47aeb}
+
+
+Definition at line 365 of file Particle\+Id\+Plugins.\+cc.
+
+
+
+Referenced by Is\+Match().
+
+
+\begin{DoxyCode}
+367   \{
+368     \textcolor{keywordtype}{float} energySum(0.f);
+369     pandora::CartesianVector energyPositionSum(0.f, 0.f, 0.f);
+370     \textcolor{keyword}{const} pandora::OrderedCaloHitList &orderedCaloHitList(pCluster->GetOrderedCaloHitList());
+371 
+372     \textcolor{keywordflow}{for} (pandora::OrderedCaloHitList::const\_iterator iter = orderedCaloHitList.begin(), iterEnd = 
+      orderedCaloHitList.end(); iter != iterEnd; ++iter)
+373     \{
+374       \textcolor{keywordflow}{if} (iter->first > outerPseudoLayer)
+375         \textcolor{keywordflow}{break};
+376 
+377       \textcolor{keywordflow}{if} (iter->first < innerPseudoLayer)
+378         \textcolor{keywordflow}{continue};
+379 
+380       \textcolor{keywordflow}{for} (pandora::CaloHitList::const\_iterator hitIter = iter->second->begin(), hitIterEnd = iter->second
+      ->end(); hitIter != hitIterEnd; ++hitIter)
+381       \{
+382         \textcolor{keyword}{const} \textcolor{keywordtype}{float} electromagneticEnergy((*hitIter)->GetElectromagneticEnergy());
+383         energySum += electromagneticEnergy;
+384         energyPositionSum += ((*hitIter)->GetPositionVector() * electromagneticEnergy);
+385       \}
+386     \}
+387 
+388     \textcolor{keywordflow}{if} (energySum < std::numeric\_limits<float>::epsilon())
+389       \textcolor{keywordflow}{throw} pandora::StatusCodeException(pandora::STATUS\_CODE\_NOT\_INITIALIZED);
+390 
+391     \textcolor{keywordflow}{return} (energyPositionSum * (1.f / energySum));
+392   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}!Is\+Match@{Is\+Match}}
+\index{Is\+Match@{Is\+Match}!arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}}
+\subsubsection[{Is\+Match}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::\+Is\+Match (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1ArborEmShowerId_ab86b5fc8928a6cc2141e63f55575df3c}
+
+
+Definition at line 226 of file Particle\+Id\+Plugins.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Contains\+Hit\+Type(), Get\+Energy\+Weighted\+Centroid(), arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Get\+Starting\+Pseudo\+Layer(), m\+\_\+max\+Angle\+With\+Origin, m\+\_\+max\+Hadronic\+Energy\+Fraction, m\+\_\+max\+Outer\+Ecal\+Energy\+Fraction, m\+\_\+max\+Pseudo\+Layer\+Extension, m\+\_\+max\+Start\+Pseudo\+Layer, m\+\_\+min\+Outer\+Ecal\+Pseudo\+Layer\+Energy\+Cut, and m\+\_\+starting\+Layer\+Settings.
+
+
+\begin{DoxyCode}
+227   \{
+228     \textcolor{keywordflow}{if}(!ClusterHelper::ContainsHitType(pCluster, pandora::ECAL))
+229     \{
+230       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+231     \}
+232 
+233     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} endPseudoLayer(0);
+234 
+235     pandora::CaloHitList clusterCaloHitList;
+236     pCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+237 
+238     \textcolor{keywordtype}{float} totalEcalEnergy(0.f), totalHcalEnergy(0.f), totalOuterEmEnergy(0.f);
+239 
+240     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList.begin(), endIter = 
+      clusterCaloHitList.end() ;
+241         endIter != iter ; ++iter)
+242     \{
+243       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*iter);
+244 
+245       \textcolor{keywordflow}{if}(pCaloHit->IsIsolated())
+246       \{
+247         \textcolor{keywordflow}{continue};
+248       \}
+249 
+250       \textcolor{keywordflow}{if}(pCaloHit->GetHitType() == pandora::ECAL)
+251       \{
+252         \textcolor{keywordflow}{if}(pCaloHit->GetPseudoLayer() > m_minOuterEcalPseudoLayerEnergyCut)
+253         \{
+254           totalOuterEmEnergy += pCaloHit->GetElectromagneticEnergy();
+255         \}
+256 
+257         totalEcalEnergy += pCaloHit->GetElectromagneticEnergy();
+258       \}
+259 
+260       \textcolor{keywordflow}{if}(pCaloHit->GetHitType() == pandora::HCAL)
+261       \{
+262         totalHcalEnergy += pCaloHit->GetHadronicEnergy();
+263       \}
+264 
+265       \textcolor{keywordflow}{if}(pCaloHit->GetPseudoLayer() > endPseudoLayer)
+266       \{
+267         endPseudoLayer = pCaloHit->GetPseudoLayer();
+268       \}
+269     \}
+270 
+271     \textcolor{keyword}{const} \textcolor{keywordtype}{float} hadronicEnergyFraction(totalHcalEnergy / (totalEcalEnergy+totalHcalEnergy));
+272     \textcolor{keyword}{const} \textcolor{keywordtype}{float} outerEmEnergyFraction(totalOuterEmEnergy / (totalEcalEnergy));
+273 
+274     \textcolor{comment}{// cut on hadronic energy fraction}
+275     \textcolor{keywordflow}{if}(hadronicEnergyFraction > m_maxHadronicEnergyFraction)
+276     \{
+277       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+278     \}
+279 
+280     \textcolor{keywordflow}{if}(outerEmEnergyFraction > m_maxOuterEcalEnergyFraction)
+281     \{
+282       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+283     \}
+284 
+285     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} startPseudoLayer(0);
+286 
+287     \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != ParticleIdHelper::GetStartingPseudoLayer(this->GetPandora(), 
+      pCluster, m_startingLayerSettings, startPseudoLayer))
+288     \{
+289       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+290     \}
+291 
+292     \textcolor{keywordflow}{if}(startPseudoLayer > m_maxStartPseudoLayer)
+293     \{
+294       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+295     \}
+296 
+297     \textcolor{keywordflow}{if}(startPseudoLayer >= endPseudoLayer)
+298     \{
+299       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+300     \}
+301 
+302     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pseudoLayerExtension(endPseudoLayer-startPseudoLayer);
+303 
+304     \textcolor{keywordflow}{if}(pseudoLayerExtension > m_maxPseudoLayerExtension)
+305     \{
+306       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+307     \}
+308 
+309     \textcolor{comment}{// TODO add piece of code to cut on transverse ratio}
+310 
+311     \textcolor{keywordflow}{if}(pCluster->GetAssociatedTrackList().empty())
+312     \{
+313       pandora::CartesianVector centroid(0.f, 0.f, 0.f);
+314 
+315       \textcolor{keywordflow}{try}
+316       \{
+317         centroid = this->GetEnergyWeightedCentroid(pCluster, startPseudoLayer, endPseudoLayer);
+318       \}
+319       \textcolor{keywordflow}{catch}(...)
+320       \{
+321         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+322       \}
+323 
+324       pandora::ClusterFitPointList photonFitPoints;
+325 
+326       \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList.begin(), endIter = 
+      clusterCaloHitList.end() ;
+327           endIter != iter ; ++iter)
+328       \{
+329         \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*iter);
+330 
+331         \textcolor{keywordflow}{if}(pCaloHit->IsIsolated() || pCaloHit->GetHitType() != pandora::ECAL)
+332         \{
+333           \textcolor{keywordflow}{continue};
+334         \}
+335 
+336         \textcolor{keywordflow}{if}(pCaloHit->GetPseudoLayer() < startPseudoLayer || pCaloHit->GetPseudoLayer() > endPseudoLayer)
+337         \{
+338           \textcolor{keywordflow}{continue};
+339         \}
+340 
+341         photonFitPoints.push\_back(pandora::ClusterFitPoint(pCaloHit));
+342       \}
+343 
+344       pandora::ClusterFitResult clusterFitResult;
+345 
+346       \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != pandora::ClusterFitHelper::FitPoints(photonFitPoints, 
+      clusterFitResult))
+347         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+348 
+349       \textcolor{keywordflow}{if}(!clusterFitResult.IsFitSuccessful())
+350         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+351 
+352       \textcolor{keyword}{const} pandora::CartesianVector clusterDirection(clusterFitResult.GetDirection());
+353 
+354       \textcolor{keywordflow}{if}(clusterDirection.GetOpeningAngle(centroid) > m_maxAngleWithOrigin)
+355       \{
+356         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+357       \}
+358     \}
+359 
+360     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+361   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1ArborEmShowerId_a85b42531a44cfefa8a84b3d0a82c6eb7}
+
+
+Definition at line 396 of file Particle\+Id\+Plugins.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+low\+Energy\+Cluster\+Cut, m\+\_\+max\+Angle\+With\+Origin, arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+max\+Forward\+Pseudo\+Layer, m\+\_\+max\+Hadronic\+Energy\+Fraction, m\+\_\+max\+Outer\+Ecal\+Energy\+Fraction, m\+\_\+max\+Pseudo\+Layer\+Extension, m\+\_\+max\+Start\+Pseudo\+Layer, arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+min\+Fit\+Hit\+Distance\+Coarse, arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+min\+Fit\+Hit\+Distance\+Fine, arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+min\+N\+Interacting\+Layers, m\+\_\+min\+Outer\+Ecal\+Pseudo\+Layer\+Energy\+Cut, arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+min\+Pseudo\+Layer\+N\+Hits, and m\+\_\+starting\+Layer\+Settings.
+
+
+\begin{DoxyCode}
+397   \{
+398     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} maxForwardPseudoLayer = m_startingLayerSettings.
+      m_maxForwardPseudoLayer.Get();
+399     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+400         \textcolor{stringliteral}{"MaxForwardPseudoLayer"}, maxForwardPseudoLayer));
+401     m_startingLayerSettings.m_maxForwardPseudoLayer = maxForwardPseudoLayer;
+402 
+403     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} minPseudoLayerNHits = m_startingLayerSettings.
+      m_minPseudoLayerNHits.Get();
+404     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+405         \textcolor{stringliteral}{"MinPseudoLayerNHits"}, minPseudoLayerNHits));
+406     m_startingLayerSettings.m_minPseudoLayerNHits = minPseudoLayerNHits;
+407 
+408     \textcolor{keywordtype}{float} minFitHitDistanceFine = m_startingLayerSettings.
+      m_minFitHitDistanceFine.Get();
+409     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+410         \textcolor{stringliteral}{"MinFitHitDistanceFine"}, minFitHitDistanceFine));
+411     m_startingLayerSettings.m_minFitHitDistanceFine = minFitHitDistanceFine;
+412 
+413     \textcolor{keywordtype}{float} minFitHitDistanceCoarse = m_startingLayerSettings.
+      m_minFitHitDistanceCoarse.Get();
+414     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+415         \textcolor{stringliteral}{"MinFitHitDistanceCoarse"}, minFitHitDistanceCoarse));
+416     m_startingLayerSettings.m_minFitHitDistanceCoarse = minFitHitDistanceCoarse;
+417 
+418     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} minNInteractingLayers = m_startingLayerSettings.
+      m_minNInteractingLayers.Get();
+419     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+420         \textcolor{stringliteral}{"MinNInteractingLayers"}, minNInteractingLayers));
+421     m_startingLayerSettings.m_minNInteractingLayers = minNInteractingLayers;
+422 
+423     \textcolor{keywordtype}{float} lowEnergyClusterCut = m_startingLayerSettings.m_lowEnergyClusterCut.Get();
+424     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+425         \textcolor{stringliteral}{"LowEnergyClusterCut"}, lowEnergyClusterCut));
+426     m_startingLayerSettings.m_lowEnergyClusterCut = lowEnergyClusterCut;
+427 
+428     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+429         \textcolor{stringliteral}{"MaxStartPseudoLayer"}, m_maxStartPseudoLayer));
+430 
+431     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+432         \textcolor{stringliteral}{"MaxPseudoLayerExtension"}, m_maxPseudoLayerExtension));
+433 
+434     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+435         \textcolor{stringliteral}{"MaxAngleWithOrigin"}, m_maxAngleWithOrigin));
+436 
+437     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+438         \textcolor{stringliteral}{"MaxHadronicEnergyFraction"}, m_maxHadronicEnergyFraction));
+439 
+440     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+441         \textcolor{stringliteral}{"MinOuterEcalPseudoLayerEnergyCut"}, m_minOuterEcalPseudoLayerEnergyCut));
+442 
+443     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+444         \textcolor{stringliteral}{"MaxOuterEcalEnergyFraction"}, m_maxOuterEcalEnergyFraction));
+445 
+446     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+447   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}!m\+\_\+max\+Angle\+With\+Origin@{m\+\_\+max\+Angle\+With\+Origin}}
+\index{m\+\_\+max\+Angle\+With\+Origin@{m\+\_\+max\+Angle\+With\+Origin}!arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}}
+\subsubsection[{m\+\_\+max\+Angle\+With\+Origin}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::m\+\_\+max\+Angle\+With\+Origin\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborEmShowerId_ab319bcc4f8416ae941e8b4f6dbe427cd}
+
+
+Definition at line 100 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}!m\+\_\+max\+Hadronic\+Energy\+Fraction@{m\+\_\+max\+Hadronic\+Energy\+Fraction}}
+\index{m\+\_\+max\+Hadronic\+Energy\+Fraction@{m\+\_\+max\+Hadronic\+Energy\+Fraction}!arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}}
+\subsubsection[{m\+\_\+max\+Hadronic\+Energy\+Fraction}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::m\+\_\+max\+Hadronic\+Energy\+Fraction\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborEmShowerId_a72aa1a986a77fdbc094aca58d56d6d6d}
+
+
+Definition at line 101 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}!m\+\_\+max\+Outer\+Ecal\+Energy\+Fraction@{m\+\_\+max\+Outer\+Ecal\+Energy\+Fraction}}
+\index{m\+\_\+max\+Outer\+Ecal\+Energy\+Fraction@{m\+\_\+max\+Outer\+Ecal\+Energy\+Fraction}!arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}}
+\subsubsection[{m\+\_\+max\+Outer\+Ecal\+Energy\+Fraction}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::m\+\_\+max\+Outer\+Ecal\+Energy\+Fraction\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborEmShowerId_aa20a0c8336a2e76bdfcd6434d5e8c762}
+
+
+Definition at line 103 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}!m\+\_\+max\+Pseudo\+Layer\+Extension@{m\+\_\+max\+Pseudo\+Layer\+Extension}}
+\index{m\+\_\+max\+Pseudo\+Layer\+Extension@{m\+\_\+max\+Pseudo\+Layer\+Extension}!arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}}
+\subsubsection[{m\+\_\+max\+Pseudo\+Layer\+Extension}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::m\+\_\+max\+Pseudo\+Layer\+Extension\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborEmShowerId_a2a93b60a05af6d712464060ca935c10f}
+
+
+Definition at line 99 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}!m\+\_\+max\+Start\+Pseudo\+Layer@{m\+\_\+max\+Start\+Pseudo\+Layer}}
+\index{m\+\_\+max\+Start\+Pseudo\+Layer@{m\+\_\+max\+Start\+Pseudo\+Layer}!arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}}
+\subsubsection[{m\+\_\+max\+Start\+Pseudo\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::m\+\_\+max\+Start\+Pseudo\+Layer\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborEmShowerId_a20e8cc0d2a0786418903dab2b917c95f}
+
+
+Definition at line 98 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}!m\+\_\+min\+Outer\+Ecal\+Pseudo\+Layer\+Energy\+Cut@{m\+\_\+min\+Outer\+Ecal\+Pseudo\+Layer\+Energy\+Cut}}
+\index{m\+\_\+min\+Outer\+Ecal\+Pseudo\+Layer\+Energy\+Cut@{m\+\_\+min\+Outer\+Ecal\+Pseudo\+Layer\+Energy\+Cut}!arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}}
+\subsubsection[{m\+\_\+min\+Outer\+Ecal\+Pseudo\+Layer\+Energy\+Cut}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::m\+\_\+min\+Outer\+Ecal\+Pseudo\+Layer\+Energy\+Cut\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborEmShowerId_ab95a1cee47ab6b3c6da00ee2007ede27}
+
+
+Definition at line 102 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}!m\+\_\+starting\+Layer\+Settings@{m\+\_\+starting\+Layer\+Settings}}
+\index{m\+\_\+starting\+Layer\+Settings@{m\+\_\+starting\+Layer\+Settings}!arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id@{arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id}}
+\subsubsection[{m\+\_\+starting\+Layer\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings} arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::m\+\_\+starting\+Layer\+Settings\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborEmShowerId_aebef02964323e8e05afada2caf7efd2b}
+
+
+Definition at line 97 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Particle\+Id\+Plugins.\+h}\item 
+{\bf Particle\+Id\+Plugins.\+cc}\end{DoxyCompactItemize}

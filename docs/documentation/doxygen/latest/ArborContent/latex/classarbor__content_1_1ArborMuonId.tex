@@ -1,0 +1,357 @@
+\section{arbor\+\_\+content\+:\+:Arbor\+Muon\+Id Class Reference}
+\label{classarbor__content_1_1ArborMuonId}\index{arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}}
+
+
+\doxyref{Arbor\+Muon\+Id}{p.}{classarbor__content_1_1ArborMuonId} class.  
+
+
+
+
+{\ttfamily \#include $<$Particle\+Id\+Plugins.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Arbor\+Muon\+Id\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1ArborMuonId}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Arbor\+Muon\+Id} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+bool {\bf Is\+Match} (const pandora\+::\+Cluster $\ast$const p\+Cluster) const 
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf m\+\_\+low\+Momentum\+Muon\+Cut}
+\item 
+unsigned int {\bf m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Fine}
+\item 
+unsigned int {\bf m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Coarse}
+\item 
+unsigned int {\bf m\+\_\+max\+N\+High\+Density\+Pseudo\+Layer}
+\item 
+unsigned int {\bf m\+\_\+min\+Ecal\+Pseudo\+Layers}
+\item 
+unsigned int {\bf m\+\_\+min\+Ecal\+Layers}
+\item 
+unsigned int {\bf m\+\_\+min\+Hcal\+Pseudo\+Layers}
+\item 
+unsigned int {\bf m\+\_\+min\+Hcal\+Layers}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Arbor\+Muon\+Id}{p.}{classarbor__content_1_1ArborMuonId} class. 
+
+Definition at line 138 of file Particle\+Id\+Plugins.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}!Arbor\+Muon\+Id@{Arbor\+Muon\+Id}}
+\index{Arbor\+Muon\+Id@{Arbor\+Muon\+Id}!arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}}
+\subsubsection[{Arbor\+Muon\+Id}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Arbor\+Muon\+Id\+::\+Arbor\+Muon\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1ArborMuonId_a9940acb4620802ee16d6c4a09028f31b}
+
+
+Default constructor. 
+
+
+
+Definition at line 510 of file Particle\+Id\+Plugins.\+cc.
+
+
+\begin{DoxyCode}
+510                            :
+511         m_lowMomentumMuonCut(0.5),
+512         m_maxNCaloHitsInPseudoLayerFine(2),
+513         m_maxNCaloHitsInPseudoLayerCoarse(4),
+514         m_maxNHighDensityPseudoLayer(3),
+515         m_minEcalPseudoLayers(20),
+516         m_minEcalLayers(20),
+517         m_minHcalPseudoLayers(20),
+518         m_minHcalLayers(20)
+519   \{
+520   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}!Is\+Match@{Is\+Match}}
+\index{Is\+Match@{Is\+Match}!arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}}
+\subsubsection[{Is\+Match}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Arbor\+Muon\+Id\+::\+Is\+Match (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1ArborMuonId_a8151811deab655d7293fe0626c67e5d5}
+
+
+Definition at line 524 of file Particle\+Id\+Plugins.\+cc.
+
+
+
+References m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Coarse, m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Fine, m\+\_\+max\+N\+High\+Density\+Pseudo\+Layer, m\+\_\+min\+Ecal\+Layers, m\+\_\+min\+Ecal\+Pseudo\+Layers, m\+\_\+min\+Hcal\+Layers, and m\+\_\+min\+Hcal\+Pseudo\+Layers.
+
+
+\begin{DoxyCode}
+525   \{
+526     \textcolor{keywordflow}{if} (pandora::MU\_MINUS == std::abs(pCluster->GetParticleIdFlag()))
+527       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+528 
+529     \textcolor{keywordflow}{if}(pCluster->GetAssociatedTrackList().empty())
+530       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+531 
+532     \textcolor{keywordflow}{if}(pCluster->GetNCaloHits() == 0)
+533       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+534 
+535     \textcolor{keyword}{const} pandora::TrackList &trackList(pCluster->GetAssociatedTrackList());
+536     \textcolor{keywordtype}{float} energyAtDca(0.f);
+537 
+538     \textcolor{keywordflow}{for}(pandora::TrackList::const\_iterator iter = trackList.begin(), endIter = trackList.end() ;
+539         endIter != iter ; ++iter)
+540       energyAtDca += (*iter)->GetEnergyAtDca();
+541 
+542     \textcolor{comment}{//    const bool lowMometumMuon(energyAtDca < m\_lowMomentumMuonCut);}
+543     \textcolor{keyword}{const} pandora::OrderedCaloHitList orderedCaloHitList(pCluster->GetOrderedCaloHitList());
+544     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nHighDensityPseudoLayers(0);
+545     std::set<unsigned int> ecalPseudoLayerList, ecalLayerList, hcalPseudoLayerList, hcalLayerList;
+546 
+547     \textcolor{keywordflow}{try}
+548     \{
+549       \textcolor{keywordflow}{for}(pandora::OrderedCaloHitList::const\_iterator layerIter = orderedCaloHitList.begin(), layerEndIter 
+      = orderedCaloHitList.end() ;
+550           layerEndIter != layerIter ; ++layerIter)
+551       \{
+552         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nPseudoLayerCaloHitsFine(0), nPseudoLayerCaloHitsCoarse(0);
+553 
+554         \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = layerIter->second->begin(), endIter = layerIter->
+      second->end() ;
+555             endIter != iter ; ++iter)
+556         \{
+557           \textcolor{keyword}{const} arbor_content::CaloHit *\textcolor{keyword}{const} pCaloHit(dynamic\_cast<const arbor\_content::CaloHit *const>(*
+      iter));
+558 
+559           \textcolor{keywordflow}{if}(NULL == pCaloHit)
+560             \textcolor{keywordflow}{throw} pandora::StatusCodeException(pandora::STATUS\_CODE\_FAILURE);
+561 
+562           \textcolor{keywordflow}{if}(pCaloHit->IsIsolated())
+563             \textcolor{keywordflow}{continue};
+564 
+565           \textcolor{keyword}{const} pandora::Granularity granularity(this->GetPandora().GetGeometry()->GetHitTypeGranularity(
+      pCaloHit->GetHitType()));
+566 
+567           \textcolor{keywordflow}{if}(granularity <= pandora::FINE)
+568           \{
+569             ++nPseudoLayerCaloHitsFine;
+570           \}
+571           \textcolor{keywordflow}{else}
+572           \{
+573             ++nPseudoLayerCaloHitsCoarse;
+574           \}
+575 
+576           \textcolor{keywordflow}{if}(pCaloHit->GetHitType() == pandora::ECAL)
+577           \{
+578             ecalPseudoLayerList.insert(pCaloHit->GetPseudoLayer());
+579             ecalLayerList.insert(pCaloHit->GetLayer());
+580           \}
+581 
+582           \textcolor{keywordflow}{if}(pCaloHit->GetHitType() == pandora::HCAL)
+583           \{
+584             hcalPseudoLayerList.insert(pCaloHit->GetPseudoLayer());
+585             hcalLayerList.insert(pCaloHit->GetLayer());
+586           \}
+587         \}
+588 
+589         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nPseudoLayerCaloHits(nPseudoLayerCaloHitsFine+nPseudoLayerCaloHitsCoarse);
+590         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} maxNCaloHitsInPseudoLayer(nPseudoLayerCaloHitsCoarse >= nPseudoLayerCaloHitsFine
+       ?
+591             m_maxNCaloHitsInPseudoLayerCoarse : m_maxNCaloHitsInPseudoLayerFine);
+592 
+593         \textcolor{keywordflow}{if}(nPseudoLayerCaloHits > maxNCaloHitsInPseudoLayer)
+594           ++nHighDensityPseudoLayers;
+595       \}
+596     \}
+597     \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} pandora::StatusCodeException &exception)
+598     \{
+599       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+600     \}
+601 
+602     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nEcalPseudoLayers(ecalPseudoLayerList.size());
+603     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nEcalLayers(ecalLayerList.size());
+604     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nHcalPseudoLayers(hcalPseudoLayerList.size());
+605     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nHcalLayers(hcalLayerList.size());
+606 
+607     \textcolor{keywordflow}{if}(nEcalPseudoLayers < m_minEcalPseudoLayers && nEcalLayers < 
+      m_minEcalLayers)
+608       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+609 
+610     \textcolor{keywordflow}{if}(nHcalPseudoLayers < m_minHcalPseudoLayers && nHcalLayers < 
+      m_minHcalLayers)
+611       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+612 
+613     \textcolor{keywordflow}{if}(nHighDensityPseudoLayers < m_maxNHighDensityPseudoLayer)
+614     \{
+615       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+616     \}
+617 
+618     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+619   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Arbor\+Muon\+Id\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1ArborMuonId_aff82a54a77ba66415be31aebbe9ac8f8}
+
+
+Definition at line 623 of file Particle\+Id\+Plugins.\+cc.
+
+
+
+References m\+\_\+low\+Momentum\+Muon\+Cut, m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Coarse, m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Fine, m\+\_\+max\+N\+High\+Density\+Pseudo\+Layer, m\+\_\+min\+Ecal\+Layers, m\+\_\+min\+Ecal\+Pseudo\+Layers, m\+\_\+min\+Hcal\+Layers, and m\+\_\+min\+Hcal\+Pseudo\+Layers.
+
+
+\begin{DoxyCode}
+624   \{
+625     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+626         \textcolor{stringliteral}{"LowMomentumMuonCut"}, m_lowMomentumMuonCut));
+627 
+628     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+629         \textcolor{stringliteral}{"MaxNCaloHitsInPseudoLayerFine"}, m_maxNCaloHitsInPseudoLayerFine));
+630 
+631     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+632         \textcolor{stringliteral}{"MaxNCaloHitsInPseudoLayerCoarse"}, m_maxNCaloHitsInPseudoLayerCoarse));
+633 
+634     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+635         \textcolor{stringliteral}{"MaxNHighDensityPseudoLayer"}, m_maxNHighDensityPseudoLayer));
+636 
+637     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+638         \textcolor{stringliteral}{"MinEcalPseudoLayers"}, m_minEcalPseudoLayers));
+639 
+640     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+641         \textcolor{stringliteral}{"MinEcalLayers"}, m_minEcalLayers));
+642 
+643     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+644         \textcolor{stringliteral}{"MinHcalPseudoLayers"}, m_minHcalPseudoLayers));
+645 
+646     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+647         \textcolor{stringliteral}{"MinHcalLayers"}, m_minHcalLayers));
+648 
+649     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+650   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}!m\+\_\+low\+Momentum\+Muon\+Cut@{m\+\_\+low\+Momentum\+Muon\+Cut}}
+\index{m\+\_\+low\+Momentum\+Muon\+Cut@{m\+\_\+low\+Momentum\+Muon\+Cut}!arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}}
+\subsubsection[{m\+\_\+low\+Momentum\+Muon\+Cut}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Arbor\+Muon\+Id\+::m\+\_\+low\+Momentum\+Muon\+Cut\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborMuonId_a516e67aeb66c6ebe05163e0a3c1f8507}
+
+
+Definition at line 150 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}!m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Coarse@{m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Coarse}}
+\index{m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Coarse@{m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Coarse}!arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}}
+\subsubsection[{m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Coarse}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Arbor\+Muon\+Id\+::m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Coarse\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborMuonId_a85475bb36419d8a39aca3a4d8a17ca18}
+
+
+Definition at line 152 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}!m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Fine@{m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Fine}}
+\index{m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Fine@{m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Fine}!arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}}
+\subsubsection[{m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Fine}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Arbor\+Muon\+Id\+::m\+\_\+max\+N\+Calo\+Hits\+In\+Pseudo\+Layer\+Fine\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborMuonId_a3f9ed0c6df361169fd7abf531689d19e}
+
+
+Definition at line 151 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}!m\+\_\+max\+N\+High\+Density\+Pseudo\+Layer@{m\+\_\+max\+N\+High\+Density\+Pseudo\+Layer}}
+\index{m\+\_\+max\+N\+High\+Density\+Pseudo\+Layer@{m\+\_\+max\+N\+High\+Density\+Pseudo\+Layer}!arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}}
+\subsubsection[{m\+\_\+max\+N\+High\+Density\+Pseudo\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Arbor\+Muon\+Id\+::m\+\_\+max\+N\+High\+Density\+Pseudo\+Layer\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborMuonId_a979747e68b417696f8f2313ddca1f585}
+
+
+Definition at line 153 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}!m\+\_\+min\+Ecal\+Layers@{m\+\_\+min\+Ecal\+Layers}}
+\index{m\+\_\+min\+Ecal\+Layers@{m\+\_\+min\+Ecal\+Layers}!arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}}
+\subsubsection[{m\+\_\+min\+Ecal\+Layers}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Arbor\+Muon\+Id\+::m\+\_\+min\+Ecal\+Layers\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborMuonId_aeac6730d3eb79c6c2ad2fcb4394e01e4}
+
+
+Definition at line 155 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}!m\+\_\+min\+Ecal\+Pseudo\+Layers@{m\+\_\+min\+Ecal\+Pseudo\+Layers}}
+\index{m\+\_\+min\+Ecal\+Pseudo\+Layers@{m\+\_\+min\+Ecal\+Pseudo\+Layers}!arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}}
+\subsubsection[{m\+\_\+min\+Ecal\+Pseudo\+Layers}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Arbor\+Muon\+Id\+::m\+\_\+min\+Ecal\+Pseudo\+Layers\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborMuonId_a3238835bd571e59d282a28cc08976ed6}
+
+
+Definition at line 154 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}!m\+\_\+min\+Hcal\+Layers@{m\+\_\+min\+Hcal\+Layers}}
+\index{m\+\_\+min\+Hcal\+Layers@{m\+\_\+min\+Hcal\+Layers}!arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}}
+\subsubsection[{m\+\_\+min\+Hcal\+Layers}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Arbor\+Muon\+Id\+::m\+\_\+min\+Hcal\+Layers\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborMuonId_af4047f4d315acd08cdb27173f116ea7e}
+
+
+Definition at line 157 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}!m\+\_\+min\+Hcal\+Pseudo\+Layers@{m\+\_\+min\+Hcal\+Pseudo\+Layers}}
+\index{m\+\_\+min\+Hcal\+Pseudo\+Layers@{m\+\_\+min\+Hcal\+Pseudo\+Layers}!arbor\+\_\+content\+::\+Arbor\+Muon\+Id@{arbor\+\_\+content\+::\+Arbor\+Muon\+Id}}
+\subsubsection[{m\+\_\+min\+Hcal\+Pseudo\+Layers}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Arbor\+Muon\+Id\+::m\+\_\+min\+Hcal\+Pseudo\+Layers\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ArborMuonId_a5dc72fa27ea67383bdd581d99662eae3}
+
+
+Definition at line 156 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by Is\+Match(), and Read\+Settings().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Particle\+Id\+Plugins.\+h}\item 
+{\bf Particle\+Id\+Plugins.\+cc}\end{DoxyCompactItemize}

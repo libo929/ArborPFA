@@ -1,0 +1,247 @@
+\section{arbor\+\_\+content\+:\+:Analogic\+Energy\+Function Class Reference}
+\label{classarbor__content_1_1AnalogicEnergyFunction}\index{arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}}
+
+
+\doxyref{Analogic\+Energy\+Function}{p.}{classarbor__content_1_1AnalogicEnergyFunction}.  
+
+
+
+
+{\ttfamily \#include $<$Energy\+Correction\+Plugins.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Analogic\+Energy\+Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1AnalogicEnergyFunction}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Analogic\+Energy\+Function} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Make\+Energy\+Corrections} (const pandora\+::\+Cluster $\ast$const p\+Cluster, float \&corrected\+Energy) const 
+\begin{DoxyCompactList}\small\item\em Make energy correction on this given cluster. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Read settings from the xml handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf m\+\_\+ecal\+Energy\+Type}
+\item 
+unsigned int {\bf m\+\_\+hcal\+Energy\+Type}
+\item 
+unsigned int {\bf m\+\_\+muon\+Energy\+Type}
+\item 
+unsigned int {\bf m\+\_\+other\+Energy\+Type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Analogic\+Energy\+Function}{p.}{classarbor__content_1_1AnalogicEnergyFunction}. 
+
+Definition at line 40 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}!Analogic\+Energy\+Function@{Analogic\+Energy\+Function}}
+\index{Analogic\+Energy\+Function@{Analogic\+Energy\+Function}!arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}}
+\subsubsection[{Analogic\+Energy\+Function}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Analogic\+Energy\+Function\+::\+Analogic\+Energy\+Function (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1AnalogicEnergyFunction_a993db0106965df17f6d990d37f044e6b}
+
+
+Default constructor. 
+
+
+
+Definition at line 37 of file Energy\+Correction\+Plugins.\+cc.
+
+
+\begin{DoxyCode}
+37                                                  :
+38         m_ecalEnergyType(0),
+39         m_hcalEnergyType(0),
+40         m_muonEnergyType(0),
+41         m_otherEnergyType(0)
+42   \{
+43   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}!Make\+Energy\+Corrections@{Make\+Energy\+Corrections}}
+\index{Make\+Energy\+Corrections@{Make\+Energy\+Corrections}!arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}}
+\subsubsection[{Make\+Energy\+Corrections}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Analogic\+Energy\+Function\+::\+Make\+Energy\+Corrections (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{float \&}]{corrected\+Energy}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1AnalogicEnergyFunction_a4be77955556f3e34d31146060bd3d7c3}
+
+
+Make energy correction on this given cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the cluster address to correct the energy \\
+\hline
+{\em corrected\+Energy} & the energy to correct \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file Energy\+Correction\+Plugins.\+cc.
+
+
+
+References m\+\_\+ecal\+Energy\+Type, m\+\_\+hcal\+Energy\+Type, m\+\_\+muon\+Energy\+Type, and m\+\_\+other\+Energy\+Type.
+
+
+\begin{DoxyCode}
+48   \{
+49     pandora::CaloHitList clusterCaloHitList;
+50     pCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+51 
+52     correctedEnergy = 0.f;
+53 
+54     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList.begin(), endIter = 
+      clusterCaloHitList.end() ;
+55         endIter != iter ; ++iter)
+56     \{
+57       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit = *iter;
+58 
+59       \textcolor{keyword}{const} pandora::HitType hitType(pCaloHit->GetHitType());
+60 
+61       \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} energyType(
+62           (hitType == pandora::ECAL) ? m_ecalEnergyType :
+63               (hitType == pandora::HCAL) ? m_hcalEnergyType :
+64                   (hitType == pandora::MUON) ? m_muonEnergyType :
+65                       m_otherEnergyType);
+66 
+67       \textcolor{keywordflow}{switch}(energyType)
+68       \{
+69       \textcolor{keywordflow}{case} 0:
+70         correctedEnergy += pCaloHit->GetInputEnergy();
+71         \textcolor{keywordflow}{break};
+72       \textcolor{keywordflow}{case} 1:
+73         correctedEnergy += pCaloHit->GetElectromagneticEnergy();
+74         \textcolor{keywordflow}{break};
+75       \textcolor{keywordflow}{case} 2:
+76         correctedEnergy += pCaloHit->GetHadronicEnergy();
+77         \textcolor{keywordflow}{break};
+78       \textcolor{keywordflow}{default}:
+79         correctedEnergy += pCaloHit->GetInputEnergy();
+80         \textcolor{keywordflow}{break};
+81       \}
+82     \}
+83 
+84     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+85   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Analogic\+Energy\+Function\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1AnalogicEnergyFunction_a6d747cdcfa3623ec234b3afda87c6b75}
+
+
+Read settings from the xml handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xml\+Handle} & the xml handle to read settings from \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 89 of file Energy\+Correction\+Plugins.\+cc.
+
+
+
+References m\+\_\+ecal\+Energy\+Type, m\+\_\+hcal\+Energy\+Type, m\+\_\+muon\+Energy\+Type, and m\+\_\+other\+Energy\+Type.
+
+
+\begin{DoxyCode}
+90   \{
+91     m_ecalEnergyType = 0;
+92     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+93         \textcolor{stringliteral}{"EcalEnergyType"}, m_ecalEnergyType));
+94 
+95     m_hcalEnergyType = 0;
+96     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+97         \textcolor{stringliteral}{"HcalEnergyType"}, m_hcalEnergyType));
+98 
+99     m_muonEnergyType = 0;
+100     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+101         \textcolor{stringliteral}{"MuonEnergyType"}, m_muonEnergyType));
+102 
+103     m_otherEnergyType = 0;
+104     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+105         \textcolor{stringliteral}{"OtherEnergyType"}, m_otherEnergyType));
+106 
+107     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+108   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}!m\+\_\+ecal\+Energy\+Type@{m\+\_\+ecal\+Energy\+Type}}
+\index{m\+\_\+ecal\+Energy\+Type@{m\+\_\+ecal\+Energy\+Type}!arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}}
+\subsubsection[{m\+\_\+ecal\+Energy\+Type}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Analogic\+Energy\+Function\+::m\+\_\+ecal\+Energy\+Type\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1AnalogicEnergyFunction_a467b3054a4ef29a394a12e5c0ebd970a}
+
+
+Definition at line 64 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Make\+Energy\+Corrections(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}!m\+\_\+hcal\+Energy\+Type@{m\+\_\+hcal\+Energy\+Type}}
+\index{m\+\_\+hcal\+Energy\+Type@{m\+\_\+hcal\+Energy\+Type}!arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}}
+\subsubsection[{m\+\_\+hcal\+Energy\+Type}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Analogic\+Energy\+Function\+::m\+\_\+hcal\+Energy\+Type\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1AnalogicEnergyFunction_a0f9e4b0b8ddcf8a9a8e4a43abdf6aca0}
+
+
+Definition at line 65 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Make\+Energy\+Corrections(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}!m\+\_\+muon\+Energy\+Type@{m\+\_\+muon\+Energy\+Type}}
+\index{m\+\_\+muon\+Energy\+Type@{m\+\_\+muon\+Energy\+Type}!arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}}
+\subsubsection[{m\+\_\+muon\+Energy\+Type}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Analogic\+Energy\+Function\+::m\+\_\+muon\+Energy\+Type\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1AnalogicEnergyFunction_af960104ebfe0759a205ae3526b5e1d1b}
+
+
+Definition at line 66 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Make\+Energy\+Corrections(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}!m\+\_\+other\+Energy\+Type@{m\+\_\+other\+Energy\+Type}}
+\index{m\+\_\+other\+Energy\+Type@{m\+\_\+other\+Energy\+Type}!arbor\+\_\+content\+::\+Analogic\+Energy\+Function@{arbor\+\_\+content\+::\+Analogic\+Energy\+Function}}
+\subsubsection[{m\+\_\+other\+Energy\+Type}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Analogic\+Energy\+Function\+::m\+\_\+other\+Energy\+Type\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1AnalogicEnergyFunction_a03543389de30d73de0f8dd71b220bcd3}
+
+
+Definition at line 67 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Make\+Energy\+Corrections(), and Read\+Settings().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Energy\+Correction\+Plugins.\+h}\item 
+{\bf Energy\+Correction\+Plugins.\+cc}\end{DoxyCompactItemize}

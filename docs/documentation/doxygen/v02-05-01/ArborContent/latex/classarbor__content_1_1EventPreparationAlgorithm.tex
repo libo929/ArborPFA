@@ -1,0 +1,331 @@
+\section{arbor\+\_\+content\+:\+:Event\+Preparation\+Algorithm Class Reference}
+\label{classarbor__content_1_1EventPreparationAlgorithm}\index{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}}
+
+
+\doxyref{Event\+Preparation\+Algorithm}{p.}{classarbor__content_1_1EventPreparationAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Preparation\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Event\+Preparation\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1EventPreparationAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1EventPreparationAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+output\+Track\+List\+Name}
+\begin{DoxyCompactList}\small\item\em The output track list name. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+output\+Calo\+Hit\+List\+Name}
+\begin{DoxyCompactList}\small\item\em The output calo hit list name. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+output\+E\+Cal\+Calo\+Hit\+List\+Name}
+\begin{DoxyCompactList}\small\item\em The output ecal calo hit list name. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+output\+H\+Cal\+Calo\+Hit\+List\+Name}
+\begin{DoxyCompactList}\small\item\em The output hcal calo hit list name. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+output\+Muon\+Calo\+Hit\+List\+Name}
+\begin{DoxyCompactList}\small\item\em The output muon calo hit list name. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+replacement\+Track\+List\+Name}
+\begin{DoxyCompactList}\small\item\em The replacement track list name. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+replacement\+Calo\+Hit\+List\+Name}
+\begin{DoxyCompactList}\small\item\em The replacement calo hit list name. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+merge\+E\+Cal\+H\+Cal\+Calo\+Hit\+Lists}
+\begin{DoxyCompactList}\small\item\em Whether the ecal and hcal calo hit list have to merged. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Event\+Preparation\+Algorithm}{p.}{classarbor__content_1_1EventPreparationAlgorithm} class. 
+
+Definition at line 39 of file Event\+Preparation\+Algorithm.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1EventPreparationAlgorithm_ac75eb10d97bc7f45797590c27c2a4160}
+
+
+Definition at line 103 of file Event\+Preparation\+Algorithm.\+cc.
+
+
+
+References m\+\_\+merge\+E\+Cal\+H\+Cal\+Calo\+Hit\+Lists, m\+\_\+output\+Calo\+Hit\+List\+Name, m\+\_\+output\+E\+Cal\+Calo\+Hit\+List\+Name, m\+\_\+output\+H\+Cal\+Calo\+Hit\+List\+Name, m\+\_\+output\+Muon\+Calo\+Hit\+List\+Name, m\+\_\+output\+Track\+List\+Name, m\+\_\+replacement\+Calo\+Hit\+List\+Name, and m\+\_\+replacement\+Track\+List\+Name.
+
+
+\begin{DoxyCode}
+104 \{
+105     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadValue(xmlHandle,
+106         \textcolor{stringliteral}{"OutputTrackListName"}, m_outputTrackListName));
+107 
+108     m_mergeECalHCalCaloHitLists = \textcolor{keyword}{false};
+109     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+110         \textcolor{stringliteral}{"MergeECalHCalCaloHitLists"}, m_mergeECalHCalCaloHitLists));
+111 
+112     \textcolor{keywordflow}{if}(m_mergeECalHCalCaloHitLists)
+113     \{
+114         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadValue(xmlHandle,
+115             \textcolor{stringliteral}{"OutputCaloHitListName"}, m_outputCaloHitListName));
+116     \}
+117     \textcolor{keywordflow}{else}
+118     \{
+119         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadValue(xmlHandle,
+120             \textcolor{stringliteral}{"OutputECalCaloHitListName"}, m_outputECalCaloHitListName));
+121 
+122         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadValue(xmlHandle,
+123             \textcolor{stringliteral}{"OutputHCalCaloHitListName"}, m_outputHCalCaloHitListName));
+124     \}
+125 
+126     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadValue(xmlHandle,
+127         \textcolor{stringliteral}{"OutputMuonCaloHitListName"}, m_outputMuonCaloHitListName));
+128 
+129     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadValue(xmlHandle,
+130         \textcolor{stringliteral}{"ReplacementTrackListName"}, m_replacementTrackListName));
+131 
+132     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadValue(xmlHandle,
+133         \textcolor{stringliteral}{"ReplacementCaloHitListName"}, m_replacementCaloHitListName));
+134 
+135     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+136 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1EventPreparationAlgorithm_ad8e30e4970f42de3e487fb065c813068}
+
+
+Definition at line 36 of file Event\+Preparation\+Algorithm.\+cc.
+
+
+
+References m\+\_\+merge\+E\+Cal\+H\+Cal\+Calo\+Hit\+Lists, m\+\_\+output\+Calo\+Hit\+List\+Name, m\+\_\+output\+E\+Cal\+Calo\+Hit\+List\+Name, m\+\_\+output\+H\+Cal\+Calo\+Hit\+List\+Name, m\+\_\+output\+Muon\+Calo\+Hit\+List\+Name, m\+\_\+output\+Track\+List\+Name, m\+\_\+replacement\+Calo\+Hit\+List\+Name, and m\+\_\+replacement\+Track\+List\+Name.
+
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{comment}{// Filter current track list to select tracks to be used during clustering}
+39     \textcolor{keyword}{const} pandora::TrackList *pCurrentTrackList = NULL;
+40     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, 
+      pCurrentTrackList));
+41 
+42     pandora::TrackList clusteringTrackList;
+43 
+44     \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator iter = pCurrentTrackList->begin(), iterEnd = pCurrentTrackList
+      ->end(); iter != iterEnd; ++iter)
+45     \{
+46         \textcolor{keywordflow}{if} ((*iter)->GetDaughterTrackList().empty())
+47             clusteringTrackList.insert(*iter);
+48     \}
+49 
+50     \textcolor{comment}{// Save the filtered list and set it to be the current list for subsequent algorithms}
+51     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::SaveList(*\textcolor{keyword}{this}, 
+      clusteringTrackList, m_outputTrackListName));
+52     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::ReplaceCurrentList<pandora::Track>(*\textcolor{keyword}{this}, m_replacementTrackListName));
+53 
+54     \textcolor{comment}{// Split input calo hit list into ecal/hcal and muon calo hits}
+55     \textcolor{keyword}{const} pandora::CaloHitList *pCaloHitList = NULL;
+56     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, 
+      pCaloHitList));
+57 
+58     pandora::CaloHitList ecalCaloHitList, hcalCaloHitList, muonCaloHitList;
+59 
+60     \textcolor{keywordflow}{for} (pandora::CaloHitList::const\_iterator hitIter = pCaloHitList->begin(), hitIterEnd = pCaloHitList->
+      end(); hitIter != hitIterEnd; ++hitIter)
+61     \{
+62         \textcolor{keywordflow}{if} (pandora::MUON == (*hitIter)->GetHitType())
+63         \{
+64             \textcolor{keywordflow}{if} (!muonCaloHitList.insert(*hitIter).second)
+65                 \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_ALREADY\_PRESENT;
+66         \}
+67         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pandora::ECAL == (*hitIter)->GetHitType())
+68         \{
+69             \textcolor{keywordflow}{if} (!ecalCaloHitList.insert(*hitIter).second)
+70                 \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_ALREADY\_PRESENT;
+71         \}
+72         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pandora::HCAL == (*hitIter)->GetHitType())
+73         \{
+74             \textcolor{keywordflow}{if} (!hcalCaloHitList.insert(*hitIter).second)
+75                 \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_ALREADY\_PRESENT;
+76         \}
+77     \}
+78 
+79     \textcolor{comment}{// Save the lists, setting one of the list to be the current list for subsequent algorithms}
+80     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::SaveList(*\textcolor{keyword}{this}, 
+      muonCaloHitList, m_outputMuonCaloHitListName));
+81 
+82     \textcolor{keywordflow}{if}(m_mergeECalHCalCaloHitLists)
+83     \{
+84       pandora::CaloHitList caloHitList;
+85       caloHitList.insert(ecalCaloHitList.begin(), ecalCaloHitList.end());
+86       caloHitList.insert(hcalCaloHitList.begin(), hcalCaloHitList.end());
+87 
+88         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::SaveList(*\textcolor{keyword}{this}, 
+      caloHitList, m_outputCaloHitListName));
+89     \}
+90     \textcolor{keywordflow}{else}
+91     \{
+92         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::SaveList(*\textcolor{keyword}{this}, 
+      ecalCaloHitList, m_outputECalCaloHitListName));
+93         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::SaveList(*\textcolor{keyword}{this}, 
+      hcalCaloHitList, m_outputHCalCaloHitListName));
+94     \}
+95 
+96     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::ReplaceCurrentList<pandora::CaloHit>(*\textcolor{keyword}{this}, m_replacementCaloHitListName));
+97 
+98     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+99 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}!m\+\_\+merge\+E\+Cal\+H\+Cal\+Calo\+Hit\+Lists@{m\+\_\+merge\+E\+Cal\+H\+Cal\+Calo\+Hit\+Lists}}
+\index{m\+\_\+merge\+E\+Cal\+H\+Cal\+Calo\+Hit\+Lists@{m\+\_\+merge\+E\+Cal\+H\+Cal\+Calo\+Hit\+Lists}!arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+merge\+E\+Cal\+H\+Cal\+Calo\+Hit\+Lists}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm\+::m\+\_\+merge\+E\+Cal\+H\+Cal\+Calo\+Hit\+Lists\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1EventPreparationAlgorithm_a1d785a9c9fcf61fe456a3b3ab14ee290}
+
+
+Whether the ecal and hcal calo hit list have to merged. 
+
+
+
+Definition at line 64 of file Event\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}!m\+\_\+output\+Calo\+Hit\+List\+Name@{m\+\_\+output\+Calo\+Hit\+List\+Name}}
+\index{m\+\_\+output\+Calo\+Hit\+List\+Name@{m\+\_\+output\+Calo\+Hit\+List\+Name}!arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+output\+Calo\+Hit\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm\+::m\+\_\+output\+Calo\+Hit\+List\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1EventPreparationAlgorithm_a8fc666904c40817c10ec70ad295fa805}
+
+
+The output calo hit list name. 
+
+
+
+Definition at line 56 of file Event\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}!m\+\_\+output\+E\+Cal\+Calo\+Hit\+List\+Name@{m\+\_\+output\+E\+Cal\+Calo\+Hit\+List\+Name}}
+\index{m\+\_\+output\+E\+Cal\+Calo\+Hit\+List\+Name@{m\+\_\+output\+E\+Cal\+Calo\+Hit\+List\+Name}!arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+output\+E\+Cal\+Calo\+Hit\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm\+::m\+\_\+output\+E\+Cal\+Calo\+Hit\+List\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1EventPreparationAlgorithm_af088d57bc3287797c3953037bea6b22a}
+
+
+The output ecal calo hit list name. 
+
+
+
+Definition at line 57 of file Event\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}!m\+\_\+output\+H\+Cal\+Calo\+Hit\+List\+Name@{m\+\_\+output\+H\+Cal\+Calo\+Hit\+List\+Name}}
+\index{m\+\_\+output\+H\+Cal\+Calo\+Hit\+List\+Name@{m\+\_\+output\+H\+Cal\+Calo\+Hit\+List\+Name}!arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+output\+H\+Cal\+Calo\+Hit\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm\+::m\+\_\+output\+H\+Cal\+Calo\+Hit\+List\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1EventPreparationAlgorithm_affc2ee567cdbdb9492e5ad8b725d5840}
+
+
+The output hcal calo hit list name. 
+
+
+
+Definition at line 58 of file Event\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}!m\+\_\+output\+Muon\+Calo\+Hit\+List\+Name@{m\+\_\+output\+Muon\+Calo\+Hit\+List\+Name}}
+\index{m\+\_\+output\+Muon\+Calo\+Hit\+List\+Name@{m\+\_\+output\+Muon\+Calo\+Hit\+List\+Name}!arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+output\+Muon\+Calo\+Hit\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm\+::m\+\_\+output\+Muon\+Calo\+Hit\+List\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1EventPreparationAlgorithm_a1edb05a47a6e1593c70095a52e2935ce}
+
+
+The output muon calo hit list name. 
+
+
+
+Definition at line 59 of file Event\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}!m\+\_\+output\+Track\+List\+Name@{m\+\_\+output\+Track\+List\+Name}}
+\index{m\+\_\+output\+Track\+List\+Name@{m\+\_\+output\+Track\+List\+Name}!arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+output\+Track\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm\+::m\+\_\+output\+Track\+List\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1EventPreparationAlgorithm_ab90396ad0716f584e9c4da13688562ab}
+
+
+The output track list name. 
+
+
+
+Definition at line 55 of file Event\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}!m\+\_\+replacement\+Calo\+Hit\+List\+Name@{m\+\_\+replacement\+Calo\+Hit\+List\+Name}}
+\index{m\+\_\+replacement\+Calo\+Hit\+List\+Name@{m\+\_\+replacement\+Calo\+Hit\+List\+Name}!arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+replacement\+Calo\+Hit\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm\+::m\+\_\+replacement\+Calo\+Hit\+List\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1EventPreparationAlgorithm_aa3148199c377e1036a2cfba2370e183d}
+
+
+The replacement calo hit list name. 
+
+
+
+Definition at line 62 of file Event\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}!m\+\_\+replacement\+Track\+List\+Name@{m\+\_\+replacement\+Track\+List\+Name}}
+\index{m\+\_\+replacement\+Track\+List\+Name@{m\+\_\+replacement\+Track\+List\+Name}!arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+replacement\+Track\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Event\+Preparation\+Algorithm\+::m\+\_\+replacement\+Track\+List\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1EventPreparationAlgorithm_adda4797fe78c5f3c3980874b94a8f4f7}
+
+
+The replacement track list name. 
+
+
+
+Definition at line 61 of file Event\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Event\+Preparation\+Algorithm.\+h}\item 
+{\bf Event\+Preparation\+Algorithm.\+cc}\end{DoxyCompactItemize}

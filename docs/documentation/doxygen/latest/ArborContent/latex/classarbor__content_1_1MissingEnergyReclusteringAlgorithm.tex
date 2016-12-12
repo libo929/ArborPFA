@@ -1,0 +1,519 @@
+\section{arbor\+\_\+content\+:\+:Missing\+Energy\+Reclustering\+Algorithm Class Reference}
+\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm}\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+
+
+\doxyref{Missing\+Energy\+Reclustering\+Algorithm}{p.}{classarbor__content_1_1MissingEnergyReclusteringAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$Missing\+Energy\+Reclustering\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Missing\+Energy\+Reclustering\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1MissingEnergyReclusteringAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ unsigned int $>$ {\bf U\+Int\+Vector}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf m\+\_\+min\+Track\+Associations}
+\item 
+unsigned int {\bf m\+\_\+max\+Track\+Associations}
+\item 
+float {\bf m\+\_\+min\+Chi2\+To\+Run\+Reclustering}
+\item 
+float {\bf m\+\_\+max\+Chi2\+To\+Stop\+Reclustering}
+\item 
+float {\bf m\+\_\+max\+Cluster\+Hits\+Distance}
+\item 
+float {\bf m\+\_\+max\+Neighbor\+Cluster\+Angle}
+\item 
+float {\bf m\+\_\+min\+Track\+Momentum}
+\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+clustering\+Algorithm\+List}
+\item 
+std\+::string {\bf m\+\_\+association\+Algorithm\+Name}
+\item 
+std\+::string {\bf m\+\_\+track\+Cluster\+Association\+Alg\+Name}
+\item 
+std\+::string {\bf m\+\_\+monitoring\+Algorithm\+Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Missing\+Energy\+Reclustering\+Algorithm}{p.}{classarbor__content_1_1MissingEnergyReclusteringAlgorithm} class. 
+
+Definition at line 41 of file Missing\+Energy\+Reclustering\+Algorithm.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!U\+Int\+Vector@{U\+Int\+Vector}}
+\index{U\+Int\+Vector@{U\+Int\+Vector}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{U\+Int\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<$unsigned int$>$ {\bf arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+U\+Int\+Vector}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_af0f57654c86e9eb2b4605afed02afa7b}
+
+
+Definition at line 53 of file Missing\+Energy\+Reclustering\+Algorithm.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_ab5f8093d852320422183f9a5f6b429ed}
+
+
+Definition at line 242 of file Missing\+Energy\+Reclustering\+Algorithm.\+cc.
+
+
+
+References m\+\_\+association\+Algorithm\+Name, m\+\_\+clustering\+Algorithm\+List, m\+\_\+max\+Chi2\+To\+Stop\+Reclustering, m\+\_\+max\+Cluster\+Hits\+Distance, m\+\_\+max\+Neighbor\+Cluster\+Angle, m\+\_\+max\+Track\+Associations, m\+\_\+min\+Chi2\+To\+Run\+Reclustering, m\+\_\+min\+Track\+Associations, m\+\_\+min\+Track\+Momentum, m\+\_\+monitoring\+Algorithm\+Name, and m\+\_\+track\+Cluster\+Association\+Alg\+Name.
+
+
+\begin{DoxyCode}
+243   \{
+244     m_minTrackAssociations = 1;
+245     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+246         \textcolor{stringliteral}{"MinTrackAssociations"}, m_minTrackAssociations));
+247 
+248     m_maxTrackAssociations = 1;
+249     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+250         \textcolor{stringliteral}{"MaxTrackAssociations"}, m_maxTrackAssociations));
+251 
+252     m_minChi2ToRunReclustering = 1.8f;
+253     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+254         \textcolor{stringliteral}{"MinChi2ToRunReclustering"}, m_minChi2ToRunReclustering));
+255 
+256     m_maxChi2ToStopReclustering = 0.5f;
+257     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+258         \textcolor{stringliteral}{"MaxChi2ToStopReclustering"}, m_maxChi2ToStopReclustering));
+259 
+260     m_maxClusterHitsDistance = 70.f;
+261     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+262         \textcolor{stringliteral}{"MaxClusterHitsDistance"}, m_maxClusterHitsDistance));
+263 
+264     m_maxNeighborClusterAngle = 0.5f;
+265     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+266         \textcolor{stringliteral}{"MaxNeighborClusterAngle"}, m_maxNeighborClusterAngle));
+267 
+268     m_minTrackMomentum = 0.8f;
+269     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+270         \textcolor{stringliteral}{"MinTrackMomentum"}, m_minTrackMomentum));
+271 
+272     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ProcessAlgorithmList(*\textcolor{keyword}{
+      this}, xmlHandle,
+273         \textcolor{stringliteral}{"clusteringAlgorithms"}, m_clusteringAlgorithmList));
+274 
+275     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ProcessAlgorithm(*\textcolor{keyword}{this}, 
+      xmlHandle,
+276         \textcolor{stringliteral}{"ClusterAssociation"}, m_associationAlgorithmName));
+277 
+278     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ProcessAlgorithm(*\textcolor{keyword}{this}, 
+      xmlHandle,
+279         \textcolor{stringliteral}{"TrackClusterAssociation"}, m_trackClusterAssociationAlgName));
+280 
+281     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ProcessAlgorithm(*\textcolor{keyword}{this}, xmlHandle,
+282         \textcolor{stringliteral}{"Monitoring"}, m_monitoringAlgorithmName));
+283 
+284     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+285   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_ab2b2463163cae9ff8d7736ab82feffa2}
+
+
+Definition at line 41 of file Missing\+Energy\+Reclustering\+Algorithm.\+cc.
+
+
+
+References Arbor\+Content\+Api\+::\+End\+Reclustering(), arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Extract\+Recluster\+Results(), arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Centroid(), arbor\+\_\+content\+::\+Recluster\+Result\+::\+Get\+Chi(), arbor\+\_\+content\+::\+Recluster\+Result\+::\+Get\+Chi2(), arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Closest\+Distance\+Approach(), arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Get\+Track\+Cluster\+Compatibility(), Arbor\+Content\+Api\+::\+Initialize\+Reclustering(), arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Is\+Cluster\+Leaving\+Detector(), m\+\_\+association\+Algorithm\+Name, m\+\_\+clustering\+Algorithm\+List, m\+\_\+max\+Chi2\+To\+Stop\+Reclustering, m\+\_\+max\+Cluster\+Hits\+Distance, m\+\_\+max\+Neighbor\+Cluster\+Angle, m\+\_\+max\+Track\+Associations, m\+\_\+min\+Track\+Associations, m\+\_\+min\+Track\+Momentum, m\+\_\+monitoring\+Algorithm\+Name, m\+\_\+track\+Cluster\+Association\+Alg\+Name, Arbor\+Content\+Api\+::\+Post\+Run\+Reclustering\+Algorithm(), and Arbor\+Content\+Api\+::\+Run\+Reclustering\+Algorithm().
+
+
+\begin{DoxyCode}
+42   \{
+43     \textcolor{comment}{// start by recalculating track-cluster association}
+44     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::RunDaughterAlgorithm(*\textcolor{keyword}{
+      this}, m_trackClusterAssociationAlgName));
+45 
+46     \textcolor{comment}{// get current cluster list}
+47     \textcolor{keyword}{const} pandora::ClusterList *pClusterList = NULL;
+48     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, 
+      pClusterList));
+49 
+50     \textcolor{keywordflow}{if}(pClusterList->empty())
+51       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+52 
+53     pandora::ClusterVector clusterVector(pClusterList->begin(), pClusterList->end());
+54     std::sort(clusterVector.begin(), clusterVector.end(), SortingHelper::SortByTrackClusterCompatibility(&
+      this->GetPandora()));
+55 
+56     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<clusterVector.size() ; ++i)
+57     \{
+58       \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pCluster = clusterVector[i];
+59 
+60       \textcolor{keywordflow}{if}( NULL == pCluster )
+61         \textcolor{keywordflow}{continue};
+62 
+63       \textcolor{keyword}{const} pandora::TrackList trackList(pCluster->GetAssociatedTrackList());
+64       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nTrackAssociations(trackList.size());
+65 
+66       \textcolor{keywordflow}{if}((nTrackAssociations < m_minTrackAssociations) || (nTrackAssociations > 
+      m_maxTrackAssociations))
+67         \textcolor{keywordflow}{continue};
+68 
+69       \textcolor{keywordtype}{float} trackEnergySum(0.);
+70 
+71       \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator trackIter = trackList.begin(), trackIterEnd = trackList.end()
+      ; trackIter != trackIterEnd; ++trackIter)
+72         trackEnergySum += (*trackIter)->GetEnergyAtDca();
+73 
+74       \textcolor{keywordflow}{if}(trackEnergySum < m_minTrackMomentum)
+75         \textcolor{keywordflow}{continue};
+76 
+77       \textcolor{keyword}{const} \textcolor{keywordtype}{float} chi(ReclusterHelper::GetTrackClusterCompatibility(this->GetPandora(), pCluster, trackList
+      ));
+78 
+79       \textcolor{comment}{// check for chi2 and missing energy in charged cluster}
+80       \textcolor{keywordflow}{if}(chi*chi < m\_minChi2ToRunReclustering || chi > 0.f)
+81         \textcolor{keywordflow}{continue};
+82 
+83       \textcolor{comment}{// check for clusters that leave the detector}
+84       \textcolor{keywordflow}{if}(ClusterHelper::IsClusterLeavingDetector(this->GetPandora(), pCluster))
+85         \textcolor{keywordflow}{continue};
+86 
+87       \textcolor{comment}{// prepare clusters and tracks for reclustering}
+88       pandora::ClusterList reclusterClusterList;
+89       reclusterClusterList.insert(pCluster);
+90       pandora::TrackList reclusterTrackList(trackList);
+91 
+92       UIntVector originalClusterIndices(1, i);
+93 
+94       pandora::ClusterFitResult parentFitResult;
+95       pandora::CartesianVector parentCentroid(0.f, 0.f, 0.f);
+96       pandora::ClusterFitHelper::FitFullCluster(pCluster, parentFitResult);
+97 
+98       \textcolor{keyword}{const} pandora::StatusCode centroidStatusCode(ClusterHelper::GetCentroid(pCluster, parentCentroid));
+99 
+100       \textcolor{comment}{// find nearby clusters to potentially merge-in}
+101       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j=0 ; j<clusterVector.size() ; ++j)
+102       \{
+103         \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pOtherCluster = clusterVector[j];
+104 
+105         \textcolor{keywordflow}{if}((NULL == pOtherCluster) || (pCluster == pOtherCluster))
+106           \textcolor{keywordflow}{continue};
+107 
+108         \textcolor{keywordflow}{if}( ! pOtherCluster->GetAssociatedTrackList().empty() )
+109           \textcolor{keywordflow}{continue};
+110 
+111         \textcolor{keywordtype}{float} clusterHitsDistance = std::numeric\_limits<float>::max();
+112         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ClusterHelper::GetClosestDistanceApproach(pOtherCluster, pCluster, clusterHitsDistance));
+113 
+114         \textcolor{keywordflow}{if}(clusterHitsDistance < m_maxClusterHitsDistance)
+115         \{
+116           reclusterClusterList.insert(pOtherCluster);
+117           originalClusterIndices.push\_back(j);
+118         \}
+119         \textcolor{keywordflow}{else}
+120         \{
+121           \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != centroidStatusCode || !parentFitResult.IsFitSuccessful())
+122             \textcolor{keywordflow}{continue};
+123 
+124           pandora::CartesianVector daughterCentroid(0.f, 0.f, 0.f);
+125 
+126           \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != ClusterHelper::GetCentroid(pOtherCluster, daughterCentroid))
+127             \textcolor{keywordflow}{continue};
+128 
+129           \textcolor{keyword}{const} \textcolor{keywordtype}{float} angle( parentFitResult.GetDirection().GetOpeningAngle( daughterCentroid - 
+      parentCentroid ) );
+130 
+131           \textcolor{keywordflow}{if}( angle > m_maxNeighborClusterAngle )
+132             \textcolor{keywordflow}{continue};
+133 
+134           reclusterClusterList.insert(pOtherCluster);
+135           originalClusterIndices.push\_back(j);
+136         \}
+137       \}
+138 
+139       \textcolor{keywordflow}{if}(1 == reclusterClusterList.size())
+140         \textcolor{keywordflow}{continue};
+141 
+142       \textcolor{comment}{// initialize reclustering}
+143       std::string originalClusterListName;
+144       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::InitializeReclustering(*\textcolor{keyword}{this},
+145           reclusterTrackList, reclusterClusterList, originalClusterListName));
+146 
+147       \textcolor{keywordtype}{float} bestChi(chi);
+148       std::string bestReclusterClusterListName(originalClusterListName);
+149 
+150       \textcolor{keywordflow}{for}(pandora::StringVector::const\_iterator clusteringAlgIter = 
+      m_clusteringAlgorithmList.begin(), endClusteringAlgIter = 
+      m_clusteringAlgorithmList.end() ;
+151           endClusteringAlgIter != clusteringAlgIter ; ++clusteringAlgIter)
+152       \{
+153         \textcolor{keyword}{const} pandora::ClusterList *pReclusterClusterList = NULL;
+154         std::string reclusterClusterListName;
+155         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::RunReclusteringAlgorithm(*\textcolor{keyword}{this},
+156             *clusteringAlgIter, pReclusterClusterList, reclusterClusterListName));
+157 
+158         \textcolor{keywordflow}{if}(pReclusterClusterList->empty())
+159           \textcolor{keywordflow}{continue};
+160 
+161         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::RunDaughterAlgorithm(
+      *\textcolor{keyword}{this}, m_associationAlgorithmName));
+162         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::PostRunReclusteringAlgorithm(*\textcolor{keyword}{this}, reclusterClusterListName));
+163 
+164         \textcolor{comment}{// run monitoring algorithm if provided}
+165         \textcolor{keywordflow}{if}(!m_monitoringAlgorithmName.empty())
+166         \{
+167           PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::RunDaughterAlgorithm(*\textcolor{keyword}{this},
+168               m_monitoringAlgorithmName));
+169         \}
+170 
+171         \textcolor{comment}{// find the original tracks that triggered the reclustering}
+172         \textcolor{keywordflow}{for}(pandora::ClusterList::const\_iterator clusterIter = pReclusterClusterList->begin(), 
+      clusterEndIter = pReclusterClusterList->end() ;
+173             clusterEndIter != clusterIter ; ++ clusterIter)
+174         \{
+175           \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pReclusterCluster = *clusterIter;
+176 
+177           \textcolor{keywordflow}{if}( pReclusterCluster->GetAssociatedTrackList().empty() )
+178             \textcolor{keywordflow}{continue};
+179 
+180           \textcolor{keywordflow}{if}( pReclusterCluster->GetAssociatedTrackList().size() != trackList.size() )
+181             \textcolor{keywordflow}{continue};
+182 
+183           pandora::ClusterList reclusterList;
+184           reclusterList.insert(pReclusterCluster);
+185 
+186           ReclusterResult reclusterResult;
+187           \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != 
+      ReclusterHelper::ExtractReclusterResults(this->GetPandora(), *pReclusterClusterList, reclusterResult))
+188             \textcolor{keywordflow}{continue};
+189 
+190           \textcolor{keyword}{const} \textcolor{keywordtype}{float} newChi(reclusterResult.GetChi());
+191           \textcolor{keyword}{const} \textcolor{keywordtype}{float} newChi2(reclusterResult.GetChi2());
+192 
+193           \textcolor{keywordflow}{if}(newChi2 < bestChi*bestChi)
+194           \{
+195             bestChi = newChi;
+196             bestReclusterClusterListName = reclusterClusterListName;
+197 
+198             \textcolor{keywordflow}{if}(newChi2 < m_maxChi2ToStopReclustering)
+199               \textcolor{keywordflow}{break};
+200           \}
+201 
+202           \textcolor{keywordflow}{break};
+203         \}
+204       \}
+205 
+206       \textcolor{comment}{// Recreate track-cluster associations for chosen recluster candidates}
+207       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::TemporarilyReplaceCurrentList<pandora::Cluster>(*\textcolor{keyword}{this}, bestReclusterClusterListName));
+208       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::RunDaughterAlgorithm(*\textcolor{keyword}{
+      this}, m_trackClusterAssociationAlgName));
+209 
+210       \textcolor{comment}{// tidy the cluster vector used for reclustering}
+211       \textcolor{keywordflow}{if}( originalClusterListName != bestReclusterClusterListName )
+212       \{
+213         \textcolor{comment}{// remove clusters used in reclustering from the list}
+214         \textcolor{keywordflow}{for}(UIntVector::const\_iterator iter = originalClusterIndices.begin(), endIter = 
+      originalClusterIndices.end() ;
+215             endIter != iter ; ++iter)
+216           clusterVector[*iter] = NULL;
+217 
+218         \textcolor{comment}{// add the newly created neutral clusters to the list}
+219         \textcolor{keyword}{const} pandora::ClusterList *pReclusterClusterList = NULL;
+220         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetList(*\textcolor{keyword}{this}, 
+      bestReclusterClusterListName, pReclusterClusterList));
+221 
+222         \textcolor{keywordflow}{for}(pandora::ClusterList::const\_iterator clusterIter = pReclusterClusterList->begin(), 
+      clusterEndIter = pReclusterClusterList->end() ;
+223             clusterEndIter != clusterIter ; ++ clusterIter)
+224         \{
+225           \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pReclusterCluster = *clusterIter;
+226 
+227           \textcolor{keywordflow}{if}(!pReclusterCluster->GetAssociatedTrackList().empty())
+228             \textcolor{keywordflow}{continue};
+229 
+230           clusterVector.push\_back(pReclusterCluster);
+231         \}
+232       \}
+233 
+234       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::EndReclustering(*\textcolor{keyword}{this}, bestReclusterClusterListName));
+235     \}
+236 
+237     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+238   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!m\+\_\+association\+Algorithm\+Name@{m\+\_\+association\+Algorithm\+Name}}
+\index{m\+\_\+association\+Algorithm\+Name@{m\+\_\+association\+Algorithm\+Name}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{m\+\_\+association\+Algorithm\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::m\+\_\+association\+Algorithm\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_afc708731e2ca80a0303d126a09154403}
+
+
+Definition at line 71 of file Missing\+Energy\+Reclustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!m\+\_\+clustering\+Algorithm\+List@{m\+\_\+clustering\+Algorithm\+List}}
+\index{m\+\_\+clustering\+Algorithm\+List@{m\+\_\+clustering\+Algorithm\+List}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{m\+\_\+clustering\+Algorithm\+List}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+String\+Vector arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::m\+\_\+clustering\+Algorithm\+List\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_a4ccb1209bca2017e5f868ada0e904a1f}
+
+
+Definition at line 69 of file Missing\+Energy\+Reclustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!m\+\_\+max\+Chi2\+To\+Stop\+Reclustering@{m\+\_\+max\+Chi2\+To\+Stop\+Reclustering}}
+\index{m\+\_\+max\+Chi2\+To\+Stop\+Reclustering@{m\+\_\+max\+Chi2\+To\+Stop\+Reclustering}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{m\+\_\+max\+Chi2\+To\+Stop\+Reclustering}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::m\+\_\+max\+Chi2\+To\+Stop\+Reclustering\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_a36108258fbd66f0088dd571ee943be32}
+
+
+Definition at line 64 of file Missing\+Energy\+Reclustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!m\+\_\+max\+Cluster\+Hits\+Distance@{m\+\_\+max\+Cluster\+Hits\+Distance}}
+\index{m\+\_\+max\+Cluster\+Hits\+Distance@{m\+\_\+max\+Cluster\+Hits\+Distance}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{m\+\_\+max\+Cluster\+Hits\+Distance}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::m\+\_\+max\+Cluster\+Hits\+Distance\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_a3e830211a6c8e9455fd71ba3b4d936d1}
+
+
+Definition at line 65 of file Missing\+Energy\+Reclustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!m\+\_\+max\+Neighbor\+Cluster\+Angle@{m\+\_\+max\+Neighbor\+Cluster\+Angle}}
+\index{m\+\_\+max\+Neighbor\+Cluster\+Angle@{m\+\_\+max\+Neighbor\+Cluster\+Angle}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{m\+\_\+max\+Neighbor\+Cluster\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::m\+\_\+max\+Neighbor\+Cluster\+Angle\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_aacc99f50ef3b1bf7b59325e6f5037783}
+
+
+Definition at line 66 of file Missing\+Energy\+Reclustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!m\+\_\+max\+Track\+Associations@{m\+\_\+max\+Track\+Associations}}
+\index{m\+\_\+max\+Track\+Associations@{m\+\_\+max\+Track\+Associations}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{m\+\_\+max\+Track\+Associations}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::m\+\_\+max\+Track\+Associations\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_ac97484e5bf26a3dfbd887a7ba5d2d031}
+
+
+Definition at line 61 of file Missing\+Energy\+Reclustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!m\+\_\+min\+Chi2\+To\+Run\+Reclustering@{m\+\_\+min\+Chi2\+To\+Run\+Reclustering}}
+\index{m\+\_\+min\+Chi2\+To\+Run\+Reclustering@{m\+\_\+min\+Chi2\+To\+Run\+Reclustering}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{m\+\_\+min\+Chi2\+To\+Run\+Reclustering}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::m\+\_\+min\+Chi2\+To\+Run\+Reclustering\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_a0f3d1874d245d30d66390f6c88bb6d2a}
+
+
+Definition at line 63 of file Missing\+Energy\+Reclustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!m\+\_\+min\+Track\+Associations@{m\+\_\+min\+Track\+Associations}}
+\index{m\+\_\+min\+Track\+Associations@{m\+\_\+min\+Track\+Associations}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{m\+\_\+min\+Track\+Associations}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::m\+\_\+min\+Track\+Associations\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_a9063b8e9afac56cdfec624bd074442e3}
+
+
+Definition at line 60 of file Missing\+Energy\+Reclustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!m\+\_\+min\+Track\+Momentum@{m\+\_\+min\+Track\+Momentum}}
+\index{m\+\_\+min\+Track\+Momentum@{m\+\_\+min\+Track\+Momentum}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{m\+\_\+min\+Track\+Momentum}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::m\+\_\+min\+Track\+Momentum\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_ae7b4bbe0bdc035c6ac5739f0ba30050e}
+
+
+Definition at line 67 of file Missing\+Energy\+Reclustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!m\+\_\+monitoring\+Algorithm\+Name@{m\+\_\+monitoring\+Algorithm\+Name}}
+\index{m\+\_\+monitoring\+Algorithm\+Name@{m\+\_\+monitoring\+Algorithm\+Name}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{m\+\_\+monitoring\+Algorithm\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::m\+\_\+monitoring\+Algorithm\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_a24a40b229dc66d196d3942dbe2303707}
+
+
+Definition at line 73 of file Missing\+Energy\+Reclustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}!m\+\_\+track\+Cluster\+Association\+Alg\+Name@{m\+\_\+track\+Cluster\+Association\+Alg\+Name}}
+\index{m\+\_\+track\+Cluster\+Association\+Alg\+Name@{m\+\_\+track\+Cluster\+Association\+Alg\+Name}!arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm}}
+\subsubsection[{m\+\_\+track\+Cluster\+Association\+Alg\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::m\+\_\+track\+Cluster\+Association\+Alg\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MissingEnergyReclusteringAlgorithm_a753159507924d646af6d31827e9598ee}
+
+
+Definition at line 72 of file Missing\+Energy\+Reclustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Missing\+Energy\+Reclustering\+Algorithm.\+h}\item 
+{\bf Missing\+Energy\+Reclustering\+Algorithm.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,532 @@
+\section{arbor\+\_\+content\+:\+:Calo\+Hit\+Preparation\+Algorithm Class Reference}
+\label{classarbor__content_1_1CaloHitPreparationAlgorithm}\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+
+
+\doxyref{Calo\+Hit\+Preparation\+Algorithm}{p.}{classarbor__content_1_1CaloHitPreparationAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$Calo\+Hit\+Preparation\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Calo\+Hit\+Preparation\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1CaloHitPreparationAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1CaloHitPreparationAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\item 
+pandora\+::\+Status\+Code {\bf Flag\+Isolated\+Hits\+With\+Tracks} (const pandora\+::\+Ordered\+Calo\+Hit\+List \&ordered\+Calo\+Hit\+List)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf m\+\_\+isolation\+Max\+N\+Neighbors}
+\item 
+unsigned int {\bf m\+\_\+isolation\+Pseudo\+Layer\+Difference}
+\item 
+float {\bf m\+\_\+isolation\+Max\+Separation\+Distance\+Fine}
+\item 
+float {\bf m\+\_\+isolation\+Max\+Separation\+Distance\+Coarse}
+\item 
+float {\bf m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Fine}
+\item 
+float {\bf m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Coarse}
+\item 
+float {\bf m\+\_\+density\+Max\+Separation\+Distance\+Fine}
+\item 
+float {\bf m\+\_\+density\+Max\+Separation\+Distance\+Coarse}
+\item 
+float {\bf m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Fine}
+\item 
+float {\bf m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Coarse}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Calo\+Hit\+Preparation\+Algorithm}{p.}{classarbor__content_1_1CaloHitPreparationAlgorithm} class. 
+
+Definition at line 41 of file Calo\+Hit\+Preparation\+Algorithm.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}!Flag\+Isolated\+Hits\+With\+Tracks@{Flag\+Isolated\+Hits\+With\+Tracks}}
+\index{Flag\+Isolated\+Hits\+With\+Tracks@{Flag\+Isolated\+Hits\+With\+Tracks}!arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+\subsubsection[{Flag\+Isolated\+Hits\+With\+Tracks}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::\+Flag\+Isolated\+Hits\+With\+Tracks (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ordered\+Calo\+Hit\+List \&}]{ordered\+Calo\+Hit\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitPreparationAlgorithm_a5b2520bcba436b373f98958a10bf80b1}
+
+
+Definition at line 183 of file Calo\+Hit\+Preparation\+Algorithm.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Projection\+On\+Helix(), m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Coarse, and m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Fine.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+184   \{
+185     \textcolor{keyword}{const} pandora::TrackList *pTrackList = NULL;
+186     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, 
+      pTrackList));
+187 
+188     \textcolor{keywordflow}{if}(pTrackList->empty())
+189       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+190 
+191     \textcolor{keyword}{const} pandora::GeometryManager *\textcolor{keyword}{const} pGeometryManager(PandoraContentApi::GetGeometry(*\textcolor{keyword}{this}));
+192     \textcolor{keyword}{const} pandora::BFieldPlugin *\textcolor{keyword}{const} pBFieldPlugin(PandoraContentApi::GetPlugins(*this)->GetBFieldPlugin(
+      ));
+193 
+194     \textcolor{keyword}{const} \textcolor{keywordtype}{float} innerBField(pBFieldPlugin->GetBField(pandora::CartesianVector(0.f, 0.f, 0.f)));
+195 
+196     \textcolor{keywordflow}{for}(pandora::TrackList::const\_iterator trackIter = pTrackList->begin(), trackEndIter = pTrackList->end(
+      ) ;
+197         trackEndIter != trackIter ; ++trackIter)
+198     \{
+199       \textcolor{keyword}{const} pandora::Track *\textcolor{keyword}{const} pTrack(*trackIter);
+200 
+201       \textcolor{keywordflow}{if}(!pTrack->ReachesCalorimeter())
+202         \textcolor{keywordflow}{continue};
+203 
+204       \textcolor{keywordflow}{if} (!pTrack->GetDaughterTrackList().empty())
+205         \textcolor{keywordflow}{continue};
+206 
+207       \textcolor{keyword}{const} pandora::CartesianVector enteringPoint(pTrack->GetTrackStateAtCalorimeter().GetPosition());
+208       \textcolor{keyword}{const} pandora::CartesianVector direction(pTrack->GetTrackStateAtCalorimeter().GetMomentum());
+209 
+210       \textcolor{keyword}{const} pandora::Helix helix(enteringPoint, direction, pTrack->GetCharge(), innerBField);
+211 
+212       \textcolor{keywordflow}{for}(pandora::OrderedCaloHitList::const\_iterator iter = orderedCaloHitList.begin(), endIter = 
+      orderedCaloHitList.end() ;
+213           endIter != iter ; ++iter)
+214       \{
+215         \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator hitIter = iter->second->begin(), hitEndIter = iter->second
+      ->end() ;
+216             hitEndIter != hitIter ; ++hitIter)
+217         \{
+218           \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*hitIter);
+219 
+220           \textcolor{keywordflow}{if}(pCaloHit->GetHitType() == pandora::MUON)
+221             \textcolor{keywordflow}{continue};
+222 
+223           \textcolor{keywordflow}{if}(!pCaloHit->IsIsolated())
+224             \textcolor{keywordflow}{continue};
+225 
+226           \textcolor{keyword}{const} pandora::Granularity granularity(pGeometryManager->GetHitTypeGranularity(pCaloHit->
+      GetHitType()));
+227           \textcolor{keyword}{const} \textcolor{keywordtype}{float} maxDistanceToHelix(granularity <= pandora::FINE ? 
+      m_isolationMaxDistanceToHelixFine : m_isolationMaxDistanceToHelixCoarse);
+228 
+229           pandora::CartesianVector projectionOnHelix(0.f, 0.f, 0.f);
+230 
+231           \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != 
+      GeometryHelper::GetProjectionOnHelix(helix, pCaloHit->GetPositionVector(), projectionOnHelix))
+232             \textcolor{keywordflow}{continue};
+233 
+234           \textcolor{keyword}{const} \textcolor{keywordtype}{float} distanceToHelix((pCaloHit->GetPositionVector()-projectionOnHelix).GetMagnitude());
+235 
+236           \textcolor{comment}{// un-flag isolated hit if near helix}
+237           \textcolor{keywordflow}{if}(distanceToHelix < maxDistanceToHelix)
+238           \{
+239             PandoraContentApi::CaloHitMetadata caloHitMetadata;
+240             caloHitMetadata.m\_isIsolated = \textcolor{keyword}{false};
+241 
+242             PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::AlterMetadata(*\textcolor{keyword}{
+      this}, pCaloHit, caloHitMetadata));
+243           \}
+244         \}
+245       \}
+246     \}
+247 
+248     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+249   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitPreparationAlgorithm_a5a0c681f4d301d7596e2a7a794e69dd4}
+
+
+Definition at line 253 of file Calo\+Hit\+Preparation\+Algorithm.\+cc.
+
+
+
+References m\+\_\+density\+Max\+Separation\+Distance\+Coarse, m\+\_\+density\+Max\+Separation\+Distance\+Fine, m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Coarse, m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Fine, m\+\_\+isolation\+Max\+N\+Neighbors, m\+\_\+isolation\+Max\+Separation\+Distance\+Coarse, m\+\_\+isolation\+Max\+Separation\+Distance\+Fine, m\+\_\+isolation\+Pseudo\+Layer\+Difference, m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Coarse, and m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Fine.
+
+
+\begin{DoxyCode}
+254   \{
+255     m_isolationMaxNNeighbors = 1;
+256     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+257         \textcolor{stringliteral}{"IsolationMaxNNeighbors"}, m_isolationMaxNNeighbors));
+258 
+259     m_isolationPseudoLayerDifference = 2;
+260     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+261         \textcolor{stringliteral}{"IsolationPseudoLayerDifference"}, m_isolationPseudoLayerDifference));
+262 
+263     m_isolationMaxSeparationDistanceFine = 25.f;
+264     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+265         \textcolor{stringliteral}{"IsolationMaxSeparationDistanceFine"}, 
+      m_isolationMaxSeparationDistanceFine));
+266 
+267     m_isolationMaxSeparationDistanceCoarse = 40.f;
+268     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+269         \textcolor{stringliteral}{"IsolationMaxSeparationDistanceCoarse"}, 
+      m_isolationMaxSeparationDistanceCoarse));
+270 
+271     m_isolationMaxDistanceToHelixFine = 10.f;
+272     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+273         \textcolor{stringliteral}{"IsolationMaxDistanceToHelixFine"}, m_isolationMaxDistanceToHelixFine));
+274 
+275     m_isolationMaxDistanceToHelixCoarse = 20.f;
+276     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+277         \textcolor{stringliteral}{"IsolationMaxDistanceToHelixCoarse"}, m_isolationMaxDistanceToHelixCoarse));
+278 
+279     m_densityMaxSeparationDistanceFine = 10.f;
+280     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+281         \textcolor{stringliteral}{"DensityMaxSeparationDistanceFine"}, m_densityMaxSeparationDistanceFine));
+282 
+283     m_densityMaxSeparationDistanceCoarse = 20.f;
+284     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+285         \textcolor{stringliteral}{"DensityMaxSeparationDistanceCoarse"}, 
+      m_densityMaxSeparationDistanceCoarse));
+286 
+287     m_surroundingEnergyMaxSeparationDistanceFine = 10.f;
+288     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+289         \textcolor{stringliteral}{"SurroundingEnergyMaxSeparationDistanceFine"}, 
+      m_surroundingEnergyMaxSeparationDistanceFine));
+290 
+291     m_surroundingEnergyMaxSeparationDistanceCoarse = 20.f;
+292     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+293         \textcolor{stringliteral}{"SurroundingEnergyMaxSeparationDistanceCoarse"}, 
+      m_surroundingEnergyMaxSeparationDistanceCoarse));
+294 
+295     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+296   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitPreparationAlgorithm_ab9a3ea0c32a9aee86d102910957c89ef}
+
+
+Definition at line 39 of file Calo\+Hit\+Preparation\+Algorithm.\+cc.
+
+
+
+References Arbor\+Content\+Api\+::\+Alter\+Metadata(), Flag\+Isolated\+Hits\+With\+Tracks(), Arbor\+Content\+Api\+::\+Calo\+Hit\+Metadata\+::m\+\_\+density, m\+\_\+density\+Max\+Separation\+Distance\+Coarse, m\+\_\+density\+Max\+Separation\+Distance\+Fine, m\+\_\+isolation\+Max\+N\+Neighbors, m\+\_\+isolation\+Max\+Separation\+Distance\+Coarse, m\+\_\+isolation\+Max\+Separation\+Distance\+Fine, m\+\_\+isolation\+Pseudo\+Layer\+Difference, Arbor\+Content\+Api\+::\+Calo\+Hit\+Metadata\+::m\+\_\+surrounding\+Energy, m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Coarse, and m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Fine.
+
+
+\begin{DoxyCode}
+40   \{
+41     \textcolor{keyword}{const} pandora::CaloHitList *pCaloHitList = NULL;
+42     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, 
+      pCaloHitList));
+43 
+44     \textcolor{keywordflow}{if}(pCaloHitList->empty())
+45       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+46 
+47     \textcolor{keyword}{const} pandora::GeometryManager *\textcolor{keyword}{const} pGeometryManager(PandoraContentApi::GetGeometry(*\textcolor{keyword}{this}));
+48 
+49     pandora::OrderedCaloHitList orderedCaloHitList;
+50     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, orderedCaloHitList.Add(*pCaloHitList));
+51 
+52     \textcolor{keywordflow}{for}(pandora::OrderedCaloHitList::const\_iterator iter = orderedCaloHitList.begin(), endIter = 
+      orderedCaloHitList.end() ;
+53         endIter != iter ; ++iter)
+54     \{
+55       \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pseudoLayer(iter->first);
+56 
+57       \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator hitIter = iter->second->begin(), hitEndIter = iter->second->
+      end() ;
+58           hitEndIter != hitIter ; ++hitIter)
+59       \{
+60         \textcolor{keyword}{const} arbor_content::CaloHit *\textcolor{keyword}{const} pCaloHit(dynamic\_cast<const arbor\_content::CaloHit *>(*hitIter)
+      );
+61 
+62         \textcolor{keywordflow}{if}(NULL == pCaloHit)
+63           \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+64 
+65         \textcolor{keyword}{const} \textcolor{keywordtype}{float} energy(pCaloHit->GetHitType() == pandora::ECAL ? pCaloHit->GetElectromagneticEnergy() :
+       pCaloHit->GetHadronicEnergy());
+66 
+67         \textcolor{keyword}{const} pandora::CartesianVector position(pCaloHit->GetPositionVector());
+68         \textcolor{keyword}{const} pandora::Granularity granularity(pGeometryManager->GetHitTypeGranularity(pCaloHit->GetHitType
+      ()));
+69         \textcolor{keyword}{const} \textcolor{keywordtype}{float} densityMaxPositionDifference(granularity <= pandora::FINE ? 
+      m_densityMaxSeparationDistanceFine : m_densityMaxSeparationDistanceCoarse);
+70         \textcolor{keyword}{const} \textcolor{keywordtype}{float} surroundingEnergyMaxPositionDifference(granularity <= pandora::FINE ? 
+      m_surroundingEnergyMaxSeparationDistanceFine : 
+      m_surroundingEnergyMaxSeparationDistanceCoarse);
+71 
+72         ArborContentApi::CaloHitMetadata caloHitMetadata;
+73 
+74         \textcolor{keywordtype}{float} density(0.f), surroundingEnergy(energy);
+75         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} densityNeighbors(0);
+76 
+77         \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator hitIter2 = iter->second->begin(), hitEndIter2 = iter->
+      second->end() ;
+78             hitEndIter2 != hitIter2 ; ++hitIter2)
+79         \{
+80           \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit2(*hitIter2);
+81 
+82           \textcolor{keywordflow}{if}(pCaloHit == pCaloHit2)
+83             \textcolor{keywordflow}{continue};
+84 
+85           \textcolor{keyword}{const} pandora::CartesianVector position2(pCaloHit2->GetPositionVector());
+86 
+87           \textcolor{comment}{// WTF ??}
+88           \textcolor{keywordflow}{if}(position == position2)
+89             \textcolor{keywordflow}{continue};
+90 
+91           \textcolor{keyword}{const} \textcolor{keywordtype}{float} energy2(pCaloHit2->GetHitType() == pandora::ECAL ? pCaloHit2->
+      GetElectromagneticEnergy() : pCaloHit2->GetHadronicEnergy());
+92           \textcolor{keyword}{const} \textcolor{keywordtype}{float} positionDifference((position2-position).GetMagnitude());
+93 
+94           \textcolor{keywordflow}{if}(positionDifference < densityMaxPositionDifference)
+95           \{
+96             density += positionDifference/densityMaxPositionDifference;
+97             densityNeighbors++;
+98           \}
+99 
+100           \textcolor{keywordflow}{if}(positionDifference < surroundingEnergyMaxPositionDifference)
+101             surroundingEnergy += energy2;
+102         \}
+103 
+104         density /= (densityNeighbors + 1);
+105 
+106         caloHitMetadata.m_density = density;
+107         caloHitMetadata.m_surroundingEnergy= surroundingEnergy;
+108 
+109         \textcolor{keywordflow}{if}(pCaloHit->GetHitType() == pandora::MUON)
+110         \{
+111           caloHitMetadata.m\_isPossibleMip = \textcolor{keyword}{true};
+112           PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::AlterMetadata(*\textcolor{keyword}{this}, pCaloHit, caloHitMetadata));
+113 
+114           \textcolor{comment}{// continue -> never flag muon hits as isolated}
+115           \textcolor{keywordflow}{continue};
+116         \}
+117 
+118         \textcolor{keyword}{const} \textcolor{keywordtype}{float} maxSeparationDistance(granularity <= pandora::FINE ? 
+      m_isolationMaxSeparationDistanceFine : m_isolationMaxSeparationDistanceCoarse);
+119 
+120         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} startLayer(pseudoLayer < 
+      m_isolationPseudoLayerDifference ? 0 : pseudoLayer-
+      m_isolationPseudoLayerDifference);
+121         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} endLayer(pseudoLayer+m_isolationPseudoLayerDifference);
+122 
+123         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nNearbyHits(0);
+124         \textcolor{keywordtype}{bool} isIsolated = \textcolor{keyword}{true};
+125 
+126         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} iLayer = startLayer ; iLayer <= endLayer ; ++iLayer)
+127         \{
+128           pandora::OrderedCaloHitList::const\_iterator iIter = orderedCaloHitList.find(iLayer);
+129 
+130           \textcolor{keywordflow}{if}(orderedCaloHitList.end() == iIter)
+131             \textcolor{keywordflow}{continue};
+132 
+133           \textcolor{keywordflow}{if}(!isIsolated)
+134             \textcolor{keywordflow}{break};
+135 
+136           \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator hitIter2 = iIter->second->begin(), hitEndIter2 = iIter->
+      second->end() ;
+137               hitEndIter2 != hitIter2 ; ++hitIter2)
+138           \{
+139             \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit2(*hitIter2);
+140 
+141             \textcolor{keywordflow}{if}(pCaloHit == pCaloHit2)
+142               \textcolor{keywordflow}{continue};
+143 
+144             \textcolor{keywordflow}{if}(pCaloHit2->GetHitType() == pandora::MUON)
+145               \textcolor{keywordflow}{continue};
+146 
+147             \textcolor{keyword}{const} pandora::CartesianVector position2(pCaloHit2->GetPositionVector());
+148 
+149             \textcolor{comment}{// WTF ??}
+150             \textcolor{keywordflow}{if}(position == position2)
+151               \textcolor{keywordflow}{continue};
+152 
+153             \textcolor{keyword}{const} pandora::CartesianVector positionDifference(position2-position);
+154             \textcolor{keyword}{const} \textcolor{keywordtype}{float} openingAngle(position.GetOpeningAngle(positionDifference));
+155             \textcolor{keyword}{const} \textcolor{keywordtype}{float} sinOpeningAngle(std::sin(openingAngle));
+156             \textcolor{keyword}{const} \textcolor{keywordtype}{float} transverseDistance(positionDifference.GetMagnitude()*sinOpeningAngle);
+157 
+158             \textcolor{keywordflow}{if}(transverseDistance > maxSeparationDistance)
+159               \textcolor{keywordflow}{continue};
+160 
+161             ++nNearbyHits;
+162 
+163             \textcolor{keywordflow}{if}(nNearbyHits > m_isolationMaxNNeighbors)
+164             \{
+165               isIsolated = \textcolor{keyword}{false};
+166               \textcolor{keywordflow}{break};
+167             \}
+168           \}
+169         \}
+170 
+171         caloHitMetadata.m\_isIsolated = isIsolated;
+172         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::AlterMetadata(*\textcolor{keyword}{this}, pCaloHit, caloHitMetadata));
+173       \}
+174     \}
+175 
+176     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      FlagIsolatedHitsWithTracks(orderedCaloHitList));
+177 
+178     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+179   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}!m\+\_\+density\+Max\+Separation\+Distance\+Coarse@{m\+\_\+density\+Max\+Separation\+Distance\+Coarse}}
+\index{m\+\_\+density\+Max\+Separation\+Distance\+Coarse@{m\+\_\+density\+Max\+Separation\+Distance\+Coarse}!arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+density\+Max\+Separation\+Distance\+Coarse}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::m\+\_\+density\+Max\+Separation\+Distance\+Coarse\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitPreparationAlgorithm_aa1e5b50f4f6a58c53ff94d1529b2fe76}
+
+
+Definition at line 71 of file Calo\+Hit\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}!m\+\_\+density\+Max\+Separation\+Distance\+Fine@{m\+\_\+density\+Max\+Separation\+Distance\+Fine}}
+\index{m\+\_\+density\+Max\+Separation\+Distance\+Fine@{m\+\_\+density\+Max\+Separation\+Distance\+Fine}!arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+density\+Max\+Separation\+Distance\+Fine}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::m\+\_\+density\+Max\+Separation\+Distance\+Fine\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitPreparationAlgorithm_a41c4f72c5f6abeeb97ad4c97e1ac6028}
+
+
+Definition at line 70 of file Calo\+Hit\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}!m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Coarse@{m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Coarse}}
+\index{m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Coarse@{m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Coarse}!arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Coarse}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Coarse\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitPreparationAlgorithm_a8c9499b6dc98904ec12477ea28388c77}
+
+
+Definition at line 68 of file Calo\+Hit\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Flag\+Isolated\+Hits\+With\+Tracks(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}!m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Fine@{m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Fine}}
+\index{m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Fine@{m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Fine}!arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Fine}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::m\+\_\+isolation\+Max\+Distance\+To\+Helix\+Fine\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitPreparationAlgorithm_a3b565fff42aab55d21279425b730eced}
+
+
+Definition at line 67 of file Calo\+Hit\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Flag\+Isolated\+Hits\+With\+Tracks(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}!m\+\_\+isolation\+Max\+N\+Neighbors@{m\+\_\+isolation\+Max\+N\+Neighbors}}
+\index{m\+\_\+isolation\+Max\+N\+Neighbors@{m\+\_\+isolation\+Max\+N\+Neighbors}!arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+isolation\+Max\+N\+Neighbors}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::m\+\_\+isolation\+Max\+N\+Neighbors\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitPreparationAlgorithm_aad734c34962ca2d011d9a64dde222c1b}
+
+
+Definition at line 63 of file Calo\+Hit\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}!m\+\_\+isolation\+Max\+Separation\+Distance\+Coarse@{m\+\_\+isolation\+Max\+Separation\+Distance\+Coarse}}
+\index{m\+\_\+isolation\+Max\+Separation\+Distance\+Coarse@{m\+\_\+isolation\+Max\+Separation\+Distance\+Coarse}!arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+isolation\+Max\+Separation\+Distance\+Coarse}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::m\+\_\+isolation\+Max\+Separation\+Distance\+Coarse\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitPreparationAlgorithm_ac8d916f86d68b147e9d41de1042ca295}
+
+
+Definition at line 66 of file Calo\+Hit\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}!m\+\_\+isolation\+Max\+Separation\+Distance\+Fine@{m\+\_\+isolation\+Max\+Separation\+Distance\+Fine}}
+\index{m\+\_\+isolation\+Max\+Separation\+Distance\+Fine@{m\+\_\+isolation\+Max\+Separation\+Distance\+Fine}!arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+isolation\+Max\+Separation\+Distance\+Fine}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::m\+\_\+isolation\+Max\+Separation\+Distance\+Fine\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitPreparationAlgorithm_a8a798199244f013bdc7cc8eb5ac96094}
+
+
+Definition at line 65 of file Calo\+Hit\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}!m\+\_\+isolation\+Pseudo\+Layer\+Difference@{m\+\_\+isolation\+Pseudo\+Layer\+Difference}}
+\index{m\+\_\+isolation\+Pseudo\+Layer\+Difference@{m\+\_\+isolation\+Pseudo\+Layer\+Difference}!arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+isolation\+Pseudo\+Layer\+Difference}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::m\+\_\+isolation\+Pseudo\+Layer\+Difference\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitPreparationAlgorithm_adcb2e06b83108581b347a9cb0cc43739}
+
+
+Definition at line 64 of file Calo\+Hit\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}!m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Coarse@{m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Coarse}}
+\index{m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Coarse@{m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Coarse}!arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Coarse}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Coarse\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitPreparationAlgorithm_a20dcc1e2ba72f40171e0efbf9d5e3ab8}
+
+
+Definition at line 74 of file Calo\+Hit\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}!m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Fine@{m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Fine}}
+\index{m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Fine@{m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Fine}!arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Fine}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::m\+\_\+surrounding\+Energy\+Max\+Separation\+Distance\+Fine\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitPreparationAlgorithm_a29c2142e5613dd8e86d2fc6e3574b31b}
+
+
+Definition at line 73 of file Calo\+Hit\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Calo\+Hit\+Preparation\+Algorithm.\+h}\item 
+{\bf Calo\+Hit\+Preparation\+Algorithm.\+cc}\end{DoxyCompactItemize}

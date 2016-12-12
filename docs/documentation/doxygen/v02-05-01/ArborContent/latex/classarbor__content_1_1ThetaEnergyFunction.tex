@@ -1,0 +1,566 @@
+\section{arbor\+\_\+content\+:\+:Theta\+Energy\+Function Class Reference}
+\label{classarbor__content_1_1ThetaEnergyFunction}\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+
+
+\doxyref{Theta\+Energy\+Function}{p.}{classarbor__content_1_1ThetaEnergyFunction} class.  
+
+
+
+
+{\ttfamily \#include $<$Energy\+Correction\+Plugins.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Theta\+Energy\+Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1ThetaEnergyFunction}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Theta\+Energy\+Function} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Make\+Energy\+Corrections} (const pandora\+::\+Cluster $\ast$const p\+Cluster, float \&corrected\+Energy) const 
+\begin{DoxyCompactList}\small\item\em Make energy correction on this given cluster. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Read settings from the xml handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf Get\+Cos\+Theta} (const pandora\+::\+Cluster $\ast$const p\+Cluster) const 
+\begin{DoxyCompactList}\small\item\em Get the calo hit approach to barrel module gap. \end{DoxyCompactList}\item 
+float {\bf Get\+Barrel\+Corrected\+Energy} (float input\+Energy, float cos\+Theta) const 
+\begin{DoxyCompactList}\small\item\em Get the corrected energy in the barrel region. \end{DoxyCompactList}\item 
+float {\bf Get\+Endcap\+Corrected\+Energy} (float input\+Energy, float cos\+Theta) const 
+\begin{DoxyCompactList}\small\item\em Get the corrected energy in the endcap region. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf m\+\_\+low\+Energy\+Cut}
+\item 
+float {\bf m\+\_\+barrel\+P00}
+\item 
+float {\bf m\+\_\+barrel\+P01}
+\item 
+float {\bf m\+\_\+barrel\+P02}
+\item 
+float {\bf m\+\_\+barrel\+P10}
+\item 
+float {\bf m\+\_\+barrel\+P11}
+\item 
+float {\bf m\+\_\+barrel\+P12}
+\item 
+float {\bf m\+\_\+endcap\+P00}
+\item 
+float {\bf m\+\_\+endcap\+P01}
+\item 
+float {\bf m\+\_\+endcap\+P02}
+\item 
+float {\bf m\+\_\+endcap\+P10}
+\item 
+float {\bf m\+\_\+endcap\+P11}
+\item 
+float {\bf m\+\_\+endcap\+P12}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Theta\+Energy\+Function}{p.}{classarbor__content_1_1ThetaEnergyFunction} class. 
+
+Definition at line 174 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!Theta\+Energy\+Function@{Theta\+Energy\+Function}}
+\index{Theta\+Energy\+Function@{Theta\+Energy\+Function}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{Theta\+Energy\+Function}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::\+Theta\+Energy\+Function (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1ThetaEnergyFunction_a8c4b3825d8712619a1b5ae70dad5176f}
+
+
+Default constructor. 
+
+
+
+Definition at line 343 of file Energy\+Correction\+Plugins.\+cc.
+
+
+\begin{DoxyCode}
+343                                            :
+344         m_lowEnergyCut(3.f),
+345         m_barrelP00(-2.36284),
+346         m_barrelP01(1.14627),
+347         m_barrelP02(-0.00152029),
+348         m_barrelP10(0.325533),
+349         m_barrelP11(-0.126941),
+350         m_barrelP12(0.000462463),
+351         m_endcapP00(-2.16956),
+352         m_endcapP01(0.801878),
+353         m_endcapP02(1.27263e-05),
+354         m_endcapP10(0.157559),
+355         m_endcapP11(0.34754),
+356         m_endcapP12(-0.00122559)
+357   \{
+358   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!Get\+Barrel\+Corrected\+Energy@{Get\+Barrel\+Corrected\+Energy}}
+\index{Get\+Barrel\+Corrected\+Energy@{Get\+Barrel\+Corrected\+Energy}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{Get\+Barrel\+Corrected\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::\+Get\+Barrel\+Corrected\+Energy (
+\begin{DoxyParamCaption}
+\item[{float}]{input\+Energy, }
+\item[{float}]{cos\+Theta}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_a5e140fd38a11ca9f2850887b3d559b3a}
+
+
+Get the corrected energy in the barrel region. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & input cluster energy \\
+\hline
+{\em The} & cluster cos theta \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 448 of file Energy\+Correction\+Plugins.\+cc.
+
+
+
+References m\+\_\+barrel\+P00, m\+\_\+barrel\+P01, m\+\_\+barrel\+P02, m\+\_\+barrel\+P10, m\+\_\+barrel\+P11, and m\+\_\+barrel\+P12.
+
+
+
+Referenced by Make\+Energy\+Corrections().
+
+
+\begin{DoxyCode}
+449   \{
+450     \textcolor{keywordflow}{return} (-1*(m_barrelP01+m_barrelP11*cosTheta) + std::sqrt((m_barrelP01+
+      m_barrelP11*cosTheta)*(m_barrelP01+m_barrelP11*cosTheta)
+451         - 4*(m_barrelP02+m_barrelP12*cosTheta)*(m_barrelP00+m_barrelP10*cosTheta - inputEnergy)))/(2*(
+      m_barrelP02+m_barrelP12*cosTheta));
+452   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!Get\+Cos\+Theta@{Get\+Cos\+Theta}}
+\index{Get\+Cos\+Theta@{Get\+Cos\+Theta}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{Get\+Cos\+Theta}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::\+Get\+Cos\+Theta (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_a10ad1b55abd637ad8b7462926b57e684}
+
+
+Get the calo hit approach to barrel module gap. 
+
+
+
+Definition at line 438 of file Energy\+Correction\+Plugins.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Centroid().
+
+
+
+Referenced by Make\+Energy\+Corrections().
+
+
+\begin{DoxyCode}
+439   \{
+440     pandora::CartesianVector centroid(0.f, 0.f, 0.f);
+441     PANDORA\_THROW\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ClusterHelper::GetCentroid(pCluster, centroid));
+442 
+443     \textcolor{keywordflow}{return} fabs(centroid.GetCosOpeningAngle(pandora::CartesianVector(0.f, 0.f, 1.f)));
+444   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!Get\+Endcap\+Corrected\+Energy@{Get\+Endcap\+Corrected\+Energy}}
+\index{Get\+Endcap\+Corrected\+Energy@{Get\+Endcap\+Corrected\+Energy}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{Get\+Endcap\+Corrected\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::\+Get\+Endcap\+Corrected\+Energy (
+\begin{DoxyParamCaption}
+\item[{float}]{input\+Energy, }
+\item[{float}]{cos\+Theta}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_a7d33f0ae9a3c2b60e3e2f17aeca960c0}
+
+
+Get the corrected energy in the endcap region. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & input cluster energy \\
+\hline
+{\em The} & cluster cos theta \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 456 of file Energy\+Correction\+Plugins.\+cc.
+
+
+
+References m\+\_\+endcap\+P00, m\+\_\+endcap\+P01, m\+\_\+endcap\+P02, m\+\_\+endcap\+P10, m\+\_\+endcap\+P11, and m\+\_\+endcap\+P12.
+
+
+
+Referenced by Make\+Energy\+Corrections().
+
+
+\begin{DoxyCode}
+457   \{
+458     \textcolor{keywordflow}{return} (-1*(m_endcapP01+m_endcapP11*cosTheta) + std::sqrt((m_endcapP01+
+      m_endcapP11*cosTheta)*(m_endcapP01+m_endcapP11*cosTheta)
+459         - 4*(m_endcapP02+m_endcapP12*cosTheta)*(m_endcapP00+m_endcapP10*cosTheta - inputEnergy)))/(2*(
+      m_endcapP02+m_endcapP12*cosTheta));
+460   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!Make\+Energy\+Corrections@{Make\+Energy\+Corrections}}
+\index{Make\+Energy\+Corrections@{Make\+Energy\+Corrections}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{Make\+Energy\+Corrections}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::\+Make\+Energy\+Corrections (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{float \&}]{corrected\+Energy}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1ThetaEnergyFunction_a176853c707a23acda0b7af19b62afc9f}
+
+
+Make energy correction on this given cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the cluster address to correct the energy \\
+\hline
+{\em corrected\+Energy} & the energy to correct \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 362 of file Energy\+Correction\+Plugins.\+cc.
+
+
+
+References Get\+Barrel\+Corrected\+Energy(), Get\+Cos\+Theta(), Get\+Endcap\+Corrected\+Energy(), arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Get\+Starting\+Pseudo\+Layer(), and m\+\_\+low\+Energy\+Cut.
+
+
+\begin{DoxyCode}
+363   \{
+364     \textcolor{keywordflow}{if}(pCluster->GetNCaloHits() == 0)
+365       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+366 
+367     \textcolor{keywordflow}{if}(correctedEnergy < m_lowEnergyCut)
+368       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+369 
+370     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} startingPseudoLayer(std::numeric\_limits<unsigned int>::max());
+371     \textcolor{keyword}{const} pandora::StatusCode statusCode(
+      ParticleIdHelper::GetStartingPseudoLayer(this->GetPandora(), pCluster, 
+      ParticleIdHelper::StartingLayerSettings(), startingPseudoLayer));
+372 
+373     \textcolor{comment}{// do not apply energy corrections if starting layer not found}
+374     \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != statusCode)
+375       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+376 
+377     pandora::CaloHitList clusterCaloHitList;
+378     pCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+379 
+380     \textcolor{keyword}{const} \textcolor{keywordtype}{float} clusterEnergy(pCluster->GetHadronicEnergy());
+381     \textcolor{keywordtype}{float} startingHadronicEnergySum(0.f);
+382     \textcolor{keywordtype}{float} barrelEnergyFraction(0.f);
+383     \textcolor{keywordtype}{float} endcapEnergyFraction(0.f);
+384     \textcolor{keywordtype}{bool} noShowerHit(\textcolor{keyword}{true});
+385 
+386     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList.begin(), endIter = 
+      clusterCaloHitList.end() ;
+387         endIter != iter ; ++iter)
+388     \{
+389       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*iter);
+390 
+391       \textcolor{keywordflow}{if}(pCaloHit->GetHitRegion() == pandora::BARREL)
+392       \{
+393         barrelEnergyFraction += pCaloHit->GetHadronicEnergy();
+394       \}
+395       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pCaloHit->GetHitRegion() == pandora::ENDCAP)
+396       \{
+397         endcapEnergyFraction += pCaloHit->GetHadronicEnergy();
+398       \}
+399 
+400       \textcolor{keywordflow}{if}(pCaloHit->GetPseudoLayer() >= startingPseudoLayer)
+401         \textcolor{keywordflow}{continue};
+402 
+403       startingHadronicEnergySum += pCaloHit->GetHadronicEnergy();
+404       noShowerHit = \textcolor{keyword}{false};
+405     \}
+406 
+407     \textcolor{keywordflow}{if}(noShowerHit)
+408       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+409 
+410     \textcolor{comment}{// evaluate corrected energy fraction of the main shower part}
+411     \textcolor{comment}{// used in following computation since calibration of this correction is done}
+412     \textcolor{comment}{// with kaon0L particles. This avoid to correct energy of mip like hadrons}
+413     \textcolor{keyword}{const} \textcolor{keywordtype}{float} startingHadronicEnergyFraction(startingHadronicEnergySum/pCluster->GetHadronicEnergy());
+414     \textcolor{keyword}{const} \textcolor{keywordtype}{float} correctedStartingHadronicEnergy(startingHadronicEnergyFraction*correctedEnergy);
+415     \textcolor{keyword}{const} \textcolor{keywordtype}{float} mainCorrectedShowerEnergy(correctedEnergy - correctedStartingHadronicEnergy);
+416 
+417     barrelEnergyFraction /= clusterEnergy;
+418     endcapEnergyFraction /= clusterEnergy;
+419 
+420     \textcolor{keywordflow}{try}
+421     \{
+422       \textcolor{keyword}{const} \textcolor{keywordtype}{float} clusterCosTheta(this->GetCosTheta(pCluster));
+423 
+424       correctedEnergy = barrelEnergyFraction*this->GetBarrelCorrectedEnergy(mainCorrectedShowerEnergy, 
+      clusterCosTheta)
+425           + endcapEnergyFraction*this->GetEndcapCorrectedEnergy(mainCorrectedShowerEnergy, clusterCosTheta)
+      ;
+426     \}
+427     \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} pandora::StatusCodeException &exception)
+428     \{
+429       std::cerr << \textcolor{stringliteral}{"ThetaEnergyFunction::MakeEnergyCorrections: Couldn't evaluate cluster cos theta : "} << 
+      exception.ToString() << std::endl;
+430       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+431     \}
+432 
+433     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+434   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1ThetaEnergyFunction_a945f41f2fb3fe01da1e55fdb77e0afaa}
+
+
+Read settings from the xml handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xml\+Handle} & the xml handle to read settings from \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 464 of file Energy\+Correction\+Plugins.\+cc.
+
+
+
+References m\+\_\+barrel\+P00, m\+\_\+barrel\+P01, m\+\_\+barrel\+P02, m\+\_\+barrel\+P10, m\+\_\+barrel\+P11, m\+\_\+barrel\+P12, m\+\_\+endcap\+P00, m\+\_\+endcap\+P01, m\+\_\+endcap\+P02, m\+\_\+endcap\+P10, m\+\_\+endcap\+P11, m\+\_\+endcap\+P12, and m\+\_\+low\+Energy\+Cut.
+
+
+\begin{DoxyCode}
+465   \{
+466     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+467         \textcolor{stringliteral}{"LowEnergyCut"}, m_lowEnergyCut));
+468 
+469     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+470         \textcolor{stringliteral}{"BarrelP00"}, m_barrelP00));
+471 
+472     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+473         \textcolor{stringliteral}{"BarrelP01"}, m_barrelP01));
+474 
+475     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+476         \textcolor{stringliteral}{"BarrelP02"}, m_barrelP02));
+477 
+478     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+479         \textcolor{stringliteral}{"BarrelP10"}, m_barrelP10));
+480 
+481     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+482         \textcolor{stringliteral}{"BarrelP11"}, m_barrelP11));
+483 
+484     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+485         \textcolor{stringliteral}{"BarrelP12"}, m_barrelP12));
+486 
+487     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+488         \textcolor{stringliteral}{"EndcapP00"}, m_endcapP00));
+489 
+490     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+491         \textcolor{stringliteral}{"EndcapP01"}, m_endcapP01));
+492 
+493     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+494         \textcolor{stringliteral}{"EndcapP02"}, m_endcapP02));
+495 
+496     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+497         \textcolor{stringliteral}{"EndcapP10"}, m_endcapP10));
+498 
+499     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+500         \textcolor{stringliteral}{"EndcapP11"}, m_endcapP11));
+501 
+502     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+503         \textcolor{stringliteral}{"EndcapP12"}, m_endcapP12));
+504 
+505     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+506   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!m\+\_\+barrel\+P00@{m\+\_\+barrel\+P00}}
+\index{m\+\_\+barrel\+P00@{m\+\_\+barrel\+P00}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{m\+\_\+barrel\+P00}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::m\+\_\+barrel\+P00\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_ab40f7e8a3a8fb64d5d935b3da0b1162b}
+
+
+Definition at line 222 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Get\+Barrel\+Corrected\+Energy(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!m\+\_\+barrel\+P01@{m\+\_\+barrel\+P01}}
+\index{m\+\_\+barrel\+P01@{m\+\_\+barrel\+P01}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{m\+\_\+barrel\+P01}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::m\+\_\+barrel\+P01\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_ac60c0cd9eb8550d8ba481f2fb9f43095}
+
+
+Definition at line 223 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Get\+Barrel\+Corrected\+Energy(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!m\+\_\+barrel\+P02@{m\+\_\+barrel\+P02}}
+\index{m\+\_\+barrel\+P02@{m\+\_\+barrel\+P02}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{m\+\_\+barrel\+P02}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::m\+\_\+barrel\+P02\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_afb236b015678b49c3e55c2314f068b59}
+
+
+Definition at line 224 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Get\+Barrel\+Corrected\+Energy(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!m\+\_\+barrel\+P10@{m\+\_\+barrel\+P10}}
+\index{m\+\_\+barrel\+P10@{m\+\_\+barrel\+P10}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{m\+\_\+barrel\+P10}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::m\+\_\+barrel\+P10\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_a053e37965259a95d78abd0b7787e6efc}
+
+
+Definition at line 225 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Get\+Barrel\+Corrected\+Energy(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!m\+\_\+barrel\+P11@{m\+\_\+barrel\+P11}}
+\index{m\+\_\+barrel\+P11@{m\+\_\+barrel\+P11}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{m\+\_\+barrel\+P11}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::m\+\_\+barrel\+P11\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_a4def16f4bb2ef5b1df6cf8e5a426ca46}
+
+
+Definition at line 226 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Get\+Barrel\+Corrected\+Energy(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!m\+\_\+barrel\+P12@{m\+\_\+barrel\+P12}}
+\index{m\+\_\+barrel\+P12@{m\+\_\+barrel\+P12}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{m\+\_\+barrel\+P12}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::m\+\_\+barrel\+P12\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_a67b67c5345c7398b47b4be36f28bc64b}
+
+
+Definition at line 227 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Get\+Barrel\+Corrected\+Energy(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!m\+\_\+endcap\+P00@{m\+\_\+endcap\+P00}}
+\index{m\+\_\+endcap\+P00@{m\+\_\+endcap\+P00}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{m\+\_\+endcap\+P00}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::m\+\_\+endcap\+P00\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_ad8c79f3104e8caa39b34a0de699e301b}
+
+
+Definition at line 229 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Get\+Endcap\+Corrected\+Energy(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!m\+\_\+endcap\+P01@{m\+\_\+endcap\+P01}}
+\index{m\+\_\+endcap\+P01@{m\+\_\+endcap\+P01}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{m\+\_\+endcap\+P01}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::m\+\_\+endcap\+P01\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_a15c7763bbb37a66411cc72b3ee1431bd}
+
+
+Definition at line 230 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Get\+Endcap\+Corrected\+Energy(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!m\+\_\+endcap\+P02@{m\+\_\+endcap\+P02}}
+\index{m\+\_\+endcap\+P02@{m\+\_\+endcap\+P02}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{m\+\_\+endcap\+P02}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::m\+\_\+endcap\+P02\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_a386404931712a669b3437baf87e46970}
+
+
+Definition at line 231 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Get\+Endcap\+Corrected\+Energy(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!m\+\_\+endcap\+P10@{m\+\_\+endcap\+P10}}
+\index{m\+\_\+endcap\+P10@{m\+\_\+endcap\+P10}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{m\+\_\+endcap\+P10}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::m\+\_\+endcap\+P10\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_a2b8c0e5c9c99136d0b78ad7241b65e2c}
+
+
+Definition at line 232 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Get\+Endcap\+Corrected\+Energy(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!m\+\_\+endcap\+P11@{m\+\_\+endcap\+P11}}
+\index{m\+\_\+endcap\+P11@{m\+\_\+endcap\+P11}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{m\+\_\+endcap\+P11}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::m\+\_\+endcap\+P11\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_aafaf53fe703e4e95de7ae9e37b28e5f3}
+
+
+Definition at line 233 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Get\+Endcap\+Corrected\+Energy(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!m\+\_\+endcap\+P12@{m\+\_\+endcap\+P12}}
+\index{m\+\_\+endcap\+P12@{m\+\_\+endcap\+P12}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{m\+\_\+endcap\+P12}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::m\+\_\+endcap\+P12\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_a0317a56457f428f49de2aab38f4682c3}
+
+
+Definition at line 234 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Get\+Endcap\+Corrected\+Energy(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}!m\+\_\+low\+Energy\+Cut@{m\+\_\+low\+Energy\+Cut}}
+\index{m\+\_\+low\+Energy\+Cut@{m\+\_\+low\+Energy\+Cut}!arbor\+\_\+content\+::\+Theta\+Energy\+Function@{arbor\+\_\+content\+::\+Theta\+Energy\+Function}}
+\subsubsection[{m\+\_\+low\+Energy\+Cut}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::m\+\_\+low\+Energy\+Cut\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ThetaEnergyFunction_a828a6e80fdb7d2c56067cb8773ffb82f}
+
+
+Definition at line 220 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Make\+Energy\+Corrections(), and Read\+Settings().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Energy\+Correction\+Plugins.\+h}\item 
+{\bf Energy\+Correction\+Plugins.\+cc}\end{DoxyCompactItemize}

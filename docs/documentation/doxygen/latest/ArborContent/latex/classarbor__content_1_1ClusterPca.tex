@@ -1,0 +1,335 @@
+\section{arbor\+\_\+content\+:\+:Cluster\+Pca Class Reference}
+\label{classarbor__content_1_1ClusterPca}\index{arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}}
+
+
+\doxyref{Cluster\+Pca}{p.}{classarbor__content_1_1ClusterPca} class.  
+
+
+
+
+{\ttfamily \#include $<$Cluster\+Helper.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf Component}
+\begin{DoxyCompactList}\small\item\em \doxyref{Component}{p.}{structarbor__content_1_1ClusterPca_1_1Component} struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Cluster\+Pca} (const pandora\+::\+Cluster $\ast$const p\+Cluster)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+float {\bf Get\+Eigen\+Value} (int component) const 
+\begin{DoxyCompactList}\small\item\em Get the eigen value for a given component. \end{DoxyCompactList}\item 
+const pandora\+::\+Cartesian\+Vector \& {\bf Get\+Eigen\+Vector} (int component) const 
+\begin{DoxyCompactList}\small\item\em Get the eigen vector for a given component. \end{DoxyCompactList}\item 
+float {\bf Get\+Transverse\+Ratio} () const 
+\begin{DoxyCompactList}\small\item\em Get the transverse ratio of the cluster. \end{DoxyCompactList}\item 
+const pandora\+::\+Cluster $\ast$ {\bf Get\+Cluster} () const 
+\begin{DoxyCompactList}\small\item\em Get the input cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Component} {\bf m\+\_\+components} [3]
+\begin{DoxyCompactList}\small\item\em The eigen values and vectors for each component. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+transverse\+Ratio}
+\begin{DoxyCompactList}\small\item\em The cluster transverse ratio. \end{DoxyCompactList}\item 
+const pandora\+::\+Cluster $\ast$ {\bf m\+\_\+p\+Cluster}
+\begin{DoxyCompactList}\small\item\em The inout cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Cluster\+Pca}{p.}{classarbor__content_1_1ClusterPca} class. 
+
+Definition at line 43 of file Cluster\+Helper.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}!Cluster\+Pca@{Cluster\+Pca}}
+\index{Cluster\+Pca@{Cluster\+Pca}!arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}}
+\subsubsection[{Cluster\+Pca}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Cluster\+Pca\+::\+Cluster\+Pca (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1ClusterPca_aef7c2109045b0f425292af4c74389ac4}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the input cluster address to perform pca on \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file Cluster\+Helper.\+cc.
+
+
+
+References m\+\_\+components, arbor\+\_\+content\+::\+Cluster\+Pca\+::\+Component\+::m\+\_\+eigen\+Value, arbor\+\_\+content\+::\+Cluster\+Pca\+::\+Component\+::m\+\_\+eigen\+Vector, and m\+\_\+transverse\+Ratio.
+
+
+\begin{DoxyCode}
+52                                                              :
+53         m_pCluster(pCluster)
+54   \{
+55     \textcolor{keywordflow}{if}(NULL == pCluster || 2 > pCluster->GetNCaloHits())
+56       \textcolor{keywordflow}{throw} pandora::StatusCodeException(pandora::STATUS\_CODE\_INVALID\_PARAMETER);
+57 
+58     \textcolor{keywordtype}{float} mean[3] = \{0.f\};
+59 
+60     pandora::CaloHitList clusterCaloHitList;
+61     pCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+62 
+63     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} nDofs(clusterCaloHitList.size());
+64 
+65     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList.begin() , endIter = 
+      clusterCaloHitList.end() ;
+66         endIter != iter ; ++iter)
+67     \{
+68       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*iter);
+69 
+70       mean[0] += pCaloHit->GetPositionVector().GetX();
+71       mean[1] += pCaloHit->GetPositionVector().GetY();
+72       mean[2] += pCaloHit->GetPositionVector().GetZ();
+73     \}
+74 
+75     mean[0] /= nDofs;
+76     mean[1] /= nDofs;
+77     mean[2] /= nDofs;
+78 
+79     TMatrixD covarianceMatrix(3, 3);
+80 
+81     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList.begin() , endIter = 
+      clusterCaloHitList.end() ;
+82         endIter != iter ; ++iter)
+83     \{
+84       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*iter);
+85 
+86       \textcolor{keywordtype}{float} x(pCaloHit->GetPositionVector().GetX() - mean[0]);
+87       \textcolor{keywordtype}{float} y(pCaloHit->GetPositionVector().GetY() - mean[1]);
+88       \textcolor{keywordtype}{float} z(pCaloHit->GetPositionVector().GetZ() - mean[2]);
+89 
+90       covarianceMatrix(0, 0) += ((x*x) / nDofs);
+91       covarianceMatrix(1, 1) += ((y*y) / nDofs);
+92       covarianceMatrix(2, 2) += ((z*z) / nDofs);
+93 
+94       covarianceMatrix(0, 1) += ((x*y) / nDofs);
+95       covarianceMatrix(0, 2) += ((x*z) / nDofs);
+96       covarianceMatrix(1, 2) += ((y*z) / nDofs);
+97     \}
+98 
+99     covarianceMatrix(1, 0) = covarianceMatrix(0, 1);
+100     covarianceMatrix(2, 0) = covarianceMatrix(0, 2);
+101     covarianceMatrix(2, 1) = covarianceMatrix(1, 2);
+102 
+103     TMatrixDEigen eigenMatrix(covarianceMatrix);
+104 
+105     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<3 ; i++)
+106     \{
+107       m_components[i].m_eigenValue = eigenMatrix.GetEigenValuesRe()[i];
+108 
+109       \textcolor{keyword}{const} \textcolor{keywordtype}{float} x(eigenMatrix.GetEigenVectors()[i][0]);
+110       \textcolor{keyword}{const} \textcolor{keywordtype}{float} y(eigenMatrix.GetEigenVectors()[i][1]);
+111       \textcolor{keyword}{const} \textcolor{keywordtype}{float} z(eigenMatrix.GetEigenVectors()[i][2]);
+112 
+113       m_components[i].m_eigenVector.SetValues(x, y, z);
+114 
+115       \textcolor{comment}{//    std::cout << "Eigen val [" << i << "] : val = " << m\_components[i].m\_eigenValue << " , vec = "
+       << m\_components[i].m\_eigenVector << std::endl;}
+116     \}
+117 
+118     m_transverseRatio = std::sqrt(m_components[2].m\_eigenValue*m_components[2].m\_eigenValue + 
+      m_components[1].m\_eigenValue*m_components[1].m\_eigenValue) / m_components[0].
+      m_eigenValue;
+119   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}!Get\+Cluster@{Get\+Cluster}}
+\index{Get\+Cluster@{Get\+Cluster}!arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}}
+\subsubsection[{Get\+Cluster}]{\setlength{\rightskip}{0pt plus 5cm}const pandora\+::\+Cluster $\ast$ arbor\+\_\+content\+::\+Cluster\+Pca\+::\+Get\+Cluster (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ClusterPca_abb73051bd6061e6631b8df493bbf766f}
+
+
+Get the input cluster. 
+
+
+
+Definition at line 330 of file Cluster\+Helper.\+h.
+
+
+
+References m\+\_\+p\+Cluster.
+
+
+\begin{DoxyCode}
+331 \{
+332   \textcolor{keywordflow}{return} m_pCluster;
+333 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}!Get\+Eigen\+Value@{Get\+Eigen\+Value}}
+\index{Get\+Eigen\+Value@{Get\+Eigen\+Value}!arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}}
+\subsubsection[{Get\+Eigen\+Value}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Cluster\+Pca\+::\+Get\+Eigen\+Value (
+\begin{DoxyParamCaption}
+\item[{int}]{component}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ClusterPca_a533745ec6818f930fe4978b3e1c30377}
+
+
+Get the eigen value for a given component. 
+
+Components are sorted by descending order
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & the pca component\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the eigen value for the given component 
+\end{DoxyReturn}
+
+
+Definition at line 303 of file Cluster\+Helper.\+h.
+
+
+
+References m\+\_\+components, and arbor\+\_\+content\+::\+Cluster\+Pca\+::\+Component\+::m\+\_\+eigen\+Value.
+
+
+\begin{DoxyCode}
+304 \{
+305   \textcolor{keywordflow}{if}(component < 0 || component > 2)
+306     \textcolor{keywordflow}{throw} pandora::StatusCodeException(pandora::STATUS\_CODE\_INVALID\_PARAMETER);
+307 
+308   \textcolor{keywordflow}{return} m_components[component].m_eigenValue;
+309 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}!Get\+Eigen\+Vector@{Get\+Eigen\+Vector}}
+\index{Get\+Eigen\+Vector@{Get\+Eigen\+Vector}!arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}}
+\subsubsection[{Get\+Eigen\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}const pandora\+::\+Cartesian\+Vector \& arbor\+\_\+content\+::\+Cluster\+Pca\+::\+Get\+Eigen\+Vector (
+\begin{DoxyParamCaption}
+\item[{int}]{component}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ClusterPca_a7be4389217ed562d0cd9e018cfa9c498}
+
+
+Get the eigen vector for a given component. 
+
+Components are sorted by descending order
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & the pca component\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the eigen vector for the given component 
+\end{DoxyReturn}
+
+
+Definition at line 313 of file Cluster\+Helper.\+h.
+
+
+
+References m\+\_\+components, and arbor\+\_\+content\+::\+Cluster\+Pca\+::\+Component\+::m\+\_\+eigen\+Vector.
+
+
+\begin{DoxyCode}
+314 \{
+315   \textcolor{keywordflow}{if}(component < 0 || component > 2)
+316     \textcolor{keywordflow}{throw} pandora::StatusCodeException(pandora::STATUS\_CODE\_INVALID\_PARAMETER);
+317 
+318   \textcolor{keywordflow}{return} m_components[component].m_eigenVector;
+319 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}!Get\+Transverse\+Ratio@{Get\+Transverse\+Ratio}}
+\index{Get\+Transverse\+Ratio@{Get\+Transverse\+Ratio}!arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}}
+\subsubsection[{Get\+Transverse\+Ratio}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Cluster\+Pca\+::\+Get\+Transverse\+Ratio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ClusterPca_a5c4350dded02bc182998ceb539270f09}
+
+
+Get the transverse ratio of the cluster. 
+
+
+
+Definition at line 323 of file Cluster\+Helper.\+h.
+
+
+
+References m\+\_\+transverse\+Ratio.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::\+Is\+Mip\+Fragment().
+
+
+\begin{DoxyCode}
+324 \{
+325   \textcolor{keywordflow}{return} m_transverseRatio;
+326 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}!m\+\_\+components@{m\+\_\+components}}
+\index{m\+\_\+components@{m\+\_\+components}!arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}}
+\subsubsection[{m\+\_\+components}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Component} arbor\+\_\+content\+::\+Cluster\+Pca\+::m\+\_\+components[3]\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ClusterPca_a9e8da5916342c38177693951e39af864}
+
+
+The eigen values and vectors for each component. 
+
+
+
+Definition at line 96 of file Cluster\+Helper.\+h.
+
+
+
+Referenced by Cluster\+Pca(), Get\+Eigen\+Value(), and Get\+Eigen\+Vector().
+
+\index{arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}!m\+\_\+p\+Cluster@{m\+\_\+p\+Cluster}}
+\index{m\+\_\+p\+Cluster@{m\+\_\+p\+Cluster}!arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}}
+\subsubsection[{m\+\_\+p\+Cluster}]{\setlength{\rightskip}{0pt plus 5cm}const pandora\+::\+Cluster$\ast$ arbor\+\_\+content\+::\+Cluster\+Pca\+::m\+\_\+p\+Cluster\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ClusterPca_a27964b65a555141cea62bf3d255c6d18}
+
+
+The inout cluster. 
+
+
+
+Definition at line 98 of file Cluster\+Helper.\+h.
+
+
+
+Referenced by Get\+Cluster().
+
+\index{arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}!m\+\_\+transverse\+Ratio@{m\+\_\+transverse\+Ratio}}
+\index{m\+\_\+transverse\+Ratio@{m\+\_\+transverse\+Ratio}!arbor\+\_\+content\+::\+Cluster\+Pca@{arbor\+\_\+content\+::\+Cluster\+Pca}}
+\subsubsection[{m\+\_\+transverse\+Ratio}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Cluster\+Pca\+::m\+\_\+transverse\+Ratio\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ClusterPca_a1b9e3277423116cc07014e4f2ce804f5}
+
+
+The cluster transverse ratio. 
+
+
+
+Definition at line 97 of file Cluster\+Helper.\+h.
+
+
+
+Referenced by Cluster\+Pca(), and Get\+Transverse\+Ratio().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Cluster\+Helper.\+h}\item 
+{\bf Cluster\+Helper.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,118 @@
+\section{arbor\+\_\+content\+:\+:Composite\+Algorithm Class Reference}
+\label{classarbor__content_1_1CompositeAlgorithm}\index{arbor\+\_\+content\+::\+Composite\+Algorithm@{arbor\+\_\+content\+::\+Composite\+Algorithm}}
+
+
+\doxyref{Composite\+Algorithm}{p.}{classarbor__content_1_1CompositeAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$Composite\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Composite\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1CompositeAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1CompositeAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+algorithm\+List}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Composite\+Algorithm}{p.}{classarbor__content_1_1CompositeAlgorithm} class. 
+
+Definition at line 41 of file Composite\+Algorithm.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Composite\+Algorithm@{arbor\+\_\+content\+::\+Composite\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Composite\+Algorithm@{arbor\+\_\+content\+::\+Composite\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Composite\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CompositeAlgorithm_a5797a3b6b9d293e206772b6cf288013f}
+
+
+Definition at line 49 of file Composite\+Algorithm.\+cc.
+
+
+
+References m\+\_\+algorithm\+List.
+
+
+\begin{DoxyCode}
+50 \{
+51     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ProcessAlgorithmList(*\textcolor{keyword}{
+      this}, xmlHandle, \textcolor{stringliteral}{"algorithms"},
+52         m_algorithmList));
+53 
+54   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+55 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Composite\+Algorithm@{arbor\+\_\+content\+::\+Composite\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Composite\+Algorithm@{arbor\+\_\+content\+::\+Composite\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Composite\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CompositeAlgorithm_a4d31776f22109751f40267ae8246469c}
+
+
+Definition at line 36 of file Composite\+Algorithm.\+cc.
+
+
+
+References m\+\_\+algorithm\+List.
+
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{comment}{// Run daughter algorithms}
+39     \textcolor{keywordflow}{for} (pandora::StringVector::const\_iterator iter = m_algorithmList.begin(), iterEnd = 
+      m_algorithmList.end(); iter != iterEnd; ++iter)
+40     \{
+41         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::RunDaughterAlgorithm(
+      *\textcolor{keyword}{this}, *iter));
+42     \}
+43 
+44   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+45 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Composite\+Algorithm@{arbor\+\_\+content\+::\+Composite\+Algorithm}!m\+\_\+algorithm\+List@{m\+\_\+algorithm\+List}}
+\index{m\+\_\+algorithm\+List@{m\+\_\+algorithm\+List}!arbor\+\_\+content\+::\+Composite\+Algorithm@{arbor\+\_\+content\+::\+Composite\+Algorithm}}
+\subsubsection[{m\+\_\+algorithm\+List}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+String\+Vector arbor\+\_\+content\+::\+Composite\+Algorithm\+::m\+\_\+algorithm\+List\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CompositeAlgorithm_aa41a6d395774679d623856f9c428b0bf}
+
+
+Definition at line 57 of file Composite\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Composite\+Algorithm.\+h}\item 
+{\bf Composite\+Algorithm.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,170 @@
+\section{arbor\+\_\+content\+:\+:Cluster\+Preparation\+Algorithm Class Reference}
+\label{classarbor__content_1_1ClusterPreparationAlgorithm}\index{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm}}
+
+
+\doxyref{Cluster\+Preparation\+Algorithm}{p.}{classarbor__content_1_1ClusterPreparationAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$Cluster\+Preparation\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Cluster\+Preparation\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1ClusterPreparationAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1ClusterPreparationAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+candidate\+List\+Names}
+\begin{DoxyCompactList}\small\item\em The list of cluster list names to use. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+merged\+Candidate\+List\+Name}
+\begin{DoxyCompactList}\small\item\em The name of the merged candidate list name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Cluster\+Preparation\+Algorithm}{p.}{classarbor__content_1_1ClusterPreparationAlgorithm} class. 
+
+Definition at line 39 of file Cluster\+Preparation\+Algorithm.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ClusterPreparationAlgorithm_a7ce1fa78293d0c621caf92997bf319af}
+
+
+Definition at line 68 of file Cluster\+Preparation\+Algorithm.\+cc.
+
+
+
+References m\+\_\+candidate\+List\+Names, and m\+\_\+merged\+Candidate\+List\+Name.
+
+
+\begin{DoxyCode}
+69 \{
+70     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadVectorOfValues(
+      xmlHandle,
+71         \textcolor{stringliteral}{"CandidateListNames"}, m_candidateListNames));
+72 
+73     \textcolor{keywordflow}{if} (m_candidateListNames.empty())
+74         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+75 
+76     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadValue(xmlHandle,
+77         \textcolor{stringliteral}{"MergedCandidateListName"}, m_mergedCandidateListName));
+78 
+79     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+80 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ClusterPreparationAlgorithm_a720cf53adf89ff57ca6a8678fef4e591}
+
+
+Definition at line 34 of file Cluster\+Preparation\+Algorithm.\+cc.
+
+
+
+References m\+\_\+candidate\+List\+Names, and m\+\_\+merged\+Candidate\+List\+Name.
+
+
+\begin{DoxyCode}
+35 \{
+36     \textcolor{comment}{// Merge all candidate clusters in specified input lists, to create e.g. final pfo cluster list}
+37     \textcolor{keywordflow}{for} (pandora::StringVector::const\_iterator iter = m_candidateListNames.begin(), iterEnd = 
+      m_candidateListNames.end(); iter != iterEnd; ++iter)
+38     \{
+39         \textcolor{keyword}{const} pandora::ClusterList *pClusterList = NULL;
+40 
+41         \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetList(*\textcolor{keyword}{this}, *iter, pClusterList))
+42             \textcolor{keywordflow}{continue};
+43 
+44         pandora::ClusterList clustersToSave;
+45 
+46         \textcolor{keywordflow}{for} (pandora::ClusterList::const\_iterator clusterIter = pClusterList->begin(), clusterIterEnd = 
+      pClusterList->end(); clusterIter != clusterIterEnd; ++clusterIter)
+47         \{
+48             \textcolor{keywordflow}{if} ((*clusterIter)->IsAvailable())
+49                 clustersToSave.insert(*clusterIter);
+50         \}
+51 
+52         PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_INITIALIZED,
+       !=, PandoraContentApi::SaveList(*\textcolor{keyword}{this},
+53             *iter, m_mergedCandidateListName, clustersToSave));
+54     \}
+55 
+56     \textcolor{comment}{// Save the merged list and set it to be the current list for future algorithms}
+57     \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::ReplaceCurrentList<pandora::Cluster>(*\textcolor{keyword}{this}, 
+      m_mergedCandidateListName))
+58     \{
+59         std::cout << \textcolor{stringliteral}{"ClusterPreparationAlgorithm: empty cluster list for subsequent pfo construction."} << 
+      std::endl;
+60         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::DropCurrentList<pandora::Cluster>(*\textcolor{keyword}{this}));
+61     \}
+62 
+63     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+64 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm}!m\+\_\+candidate\+List\+Names@{m\+\_\+candidate\+List\+Names}}
+\index{m\+\_\+candidate\+List\+Names@{m\+\_\+candidate\+List\+Names}!arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+candidate\+List\+Names}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+String\+Vector arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm\+::m\+\_\+candidate\+List\+Names\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ClusterPreparationAlgorithm_a4ba86e63af319a2fcc670261f026cf8a}
+
+
+The list of cluster list names to use. 
+
+
+
+Definition at line 55 of file Cluster\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm}!m\+\_\+merged\+Candidate\+List\+Name@{m\+\_\+merged\+Candidate\+List\+Name}}
+\index{m\+\_\+merged\+Candidate\+List\+Name@{m\+\_\+merged\+Candidate\+List\+Name}!arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+merged\+Candidate\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Cluster\+Preparation\+Algorithm\+::m\+\_\+merged\+Candidate\+List\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ClusterPreparationAlgorithm_a866c161756961dd952adea616332c172}
+
+
+The name of the merged candidate list name. 
+
+
+
+Definition at line 56 of file Cluster\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Cluster\+Preparation\+Algorithm.\+h}\item 
+{\bf Cluster\+Preparation\+Algorithm.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+\section{arbor\+\_\+content\+:\+:Arbor\+Photon\+Id Class Reference}
+\label{classarbor__content_1_1ArborPhotonId}\index{arbor\+\_\+content\+::\+Arbor\+Photon\+Id@{arbor\+\_\+content\+::\+Arbor\+Photon\+Id}}
+
+
+\doxyref{Arbor\+Photon\+Id}{p.}{classarbor__content_1_1ArborPhotonId} class.  
+
+
+
+
+{\ttfamily \#include $<$Particle\+Id\+Plugins.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Arbor\+Photon\+Id\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1ArborPhotonId}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf Is\+Match} (const pandora\+::\+Cluster $\ast$const p\+Cluster) const 
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Arbor\+Photon\+Id}{p.}{classarbor__content_1_1ArborPhotonId} class. 
+
+Definition at line 112 of file Particle\+Id\+Plugins.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Arbor\+Photon\+Id@{arbor\+\_\+content\+::\+Arbor\+Photon\+Id}!Is\+Match@{Is\+Match}}
+\index{Is\+Match@{Is\+Match}!arbor\+\_\+content\+::\+Arbor\+Photon\+Id@{arbor\+\_\+content\+::\+Arbor\+Photon\+Id}}
+\subsubsection[{Is\+Match}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Arbor\+Photon\+Id\+::\+Is\+Match (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1ArborPhotonId_aecef6a19a156d266ce8e2b8dd98ab827}
+
+
+Definition at line 452 of file Particle\+Id\+Plugins.\+cc.
+
+
+\begin{DoxyCode}
+453   \{
+454     \textcolor{keywordflow}{if} (pandora::PHOTON == pCluster->GetParticleIdFlag())
+455     \{
+456       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+457     \}
+458 
+459     \textcolor{keywordflow}{if}(this->GetPandora().GetPlugins()->GetParticleId()->IsEmShower(pCluster))
+460     \{
+461       \textcolor{keywordtype}{bool} isPhoton(pCluster->GetAssociatedTrackList().empty());
+462 
+463       \textcolor{keywordflow}{if}(isPhoton)
+464       \{
+465         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+466       \}
+467     \}
+468 
+469     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+470   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Arbor\+Photon\+Id@{arbor\+\_\+content\+::\+Arbor\+Photon\+Id}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Arbor\+Photon\+Id@{arbor\+\_\+content\+::\+Arbor\+Photon\+Id}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Arbor\+Photon\+Id\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1ArborPhotonId_a6077fe823fc945876690057661124226}
+
+
+Definition at line 474 of file Particle\+Id\+Plugins.\+cc.
+
+
+\begin{DoxyCode}
+475   \{
+476     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+477   \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Particle\+Id\+Plugins.\+h}\item 
+{\bf Particle\+Id\+Plugins.\+cc}\end{DoxyCompactItemize}

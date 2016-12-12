@@ -1,0 +1,597 @@
+\section{arbor\+\_\+content\+:\+:Connector\+Cleaning\+Tool Class Reference}
+\label{classarbor__content_1_1ConnectorCleaningTool}\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+
+
+\doxyref{Connector\+Cleaning\+Tool}{p.}{classarbor__content_1_1ConnectorCleaningTool} class.  
+
+
+
+
+{\ttfamily \#include $<$Connector\+Cleaning\+Tool.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Connector\+Cleaning\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classarbor__content_1_1ConnectorCleaningTool}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1ConnectorCleaningTool_1_1Factory} class for instantiating algorithm tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf $\sim$\+Connector\+Cleaning\+Tool} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Process} (const pandora\+::\+Algorithm \&algorithm, const pandora\+::\+Calo\+Hit\+List $\ast$const p\+Calo\+Hit\+List)
+\begin{DoxyCompactList}\small\item\em Clean the connectors of the calo hit list. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Read settings from the xml handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ const \\*
+{\bf arbor\+\_\+content\+::\+Calo\+Hit} \\*
+$\ast$, pandora\+::\+Calo\+Hit\+List $>$ {\bf Calo\+Hit\+Cleaning\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf Get\+Order\+Parameter} (const {\bf arbor\+\_\+content\+::\+Connector} $\ast$const p\+Connector, const pandora\+::\+Cartesian\+Vector \&reference\+Direction) const 
+\begin{DoxyCompactList}\small\item\em Get the order parameter of the connector in the backward direction. \end{DoxyCompactList}\item 
+pandora\+::\+Cartesian\+Vector {\bf Get\+Reference\+Vector} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit) const 
+\begin{DoxyCompactList}\small\item\em Get the reference vector of the calo hit. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Clean\+Calo\+Hits} (const pandora\+::\+Calo\+Hit\+List $\ast$const p\+Calo\+Hit\+List) const 
+\begin{DoxyCompactList}\small\item\em Clean the connectors of the calo hits, ending with a tree structure. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Clean\+Calo\+Hits} (const pandora\+::\+Ordered\+Calo\+Hit\+List \&ordered\+Calo\+Hit\+List) const 
+\begin{DoxyCompactList}\small\item\em Clean the connectors of the ordered calo hit list, ending with a tree structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf m\+\_\+strategy}
+\item 
+float {\bf m\+\_\+backward\+Connector\+Weight}
+\item 
+float {\bf m\+\_\+forward\+Connector\+Weight}
+\item 
+unsigned int {\bf m\+\_\+backward\+Reference\+Direction\+Depth}
+\item 
+unsigned int {\bf m\+\_\+forward\+Reference\+Direction\+Depth}
+\item 
+float {\bf m\+\_\+order\+Parameter\+Angle\+Power}
+\item 
+float {\bf m\+\_\+order\+Parameter\+Distance\+Power}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Connector\+Cleaning\+Tool}{p.}{classarbor__content_1_1ConnectorCleaningTool} class. 
+
+Definition at line 43 of file Connector\+Cleaning\+Tool.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!Calo\+Hit\+Cleaning\+Map@{Calo\+Hit\+Cleaning\+Map}}
+\index{Calo\+Hit\+Cleaning\+Map@{Calo\+Hit\+Cleaning\+Map}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{Calo\+Hit\+Cleaning\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<$const {\bf arbor\+\_\+content\+::\+Calo\+Hit}$\ast$, pandora\+::\+Calo\+Hit\+List$>$ {\bf arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::\+Calo\+Hit\+Cleaning\+Map}\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorCleaningTool_a86673312f2668bd4ae72b1d782816d57}
+
+
+Definition at line 45 of file Connector\+Cleaning\+Tool.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!````~Connector\+Cleaning\+Tool@{$\sim$\+Connector\+Cleaning\+Tool}}
+\index{````~Connector\+Cleaning\+Tool@{$\sim$\+Connector\+Cleaning\+Tool}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{$\sim$\+Connector\+Cleaning\+Tool}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::$\sim$\+Connector\+Cleaning\+Tool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ConnectorCleaningTool_a7bca4ab3b1c6ab65eb22587941a74171}
+
+
+Destructor. 
+
+
+
+Definition at line 130 of file Connector\+Cleaning\+Tool.\+h.
+
+
+\begin{DoxyCode}
+131 \{
+132 
+133 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!Clean\+Calo\+Hits@{Clean\+Calo\+Hits}}
+\index{Clean\+Calo\+Hits@{Clean\+Calo\+Hits}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{Clean\+Calo\+Hits}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::\+Clean\+Calo\+Hits (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Calo\+Hit\+List $\ast$const}]{p\+Calo\+Hit\+List}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorCleaningTool_aaf1a5fcd5bf613b9b6b3a9470ce781ed}
+
+
+Clean the connectors of the calo hits, ending with a tree structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit\+List} & the calo hit list to clean \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file Connector\+Cleaning\+Tool.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+B\+A\+C\+K\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, Arbor\+Content\+Api\+::\+Get\+Connector\+List(), arbor\+\_\+content\+::\+Connector\+::\+Get\+From(), Get\+Order\+Parameter(), Get\+Reference\+Vector(), and Arbor\+Content\+Api\+::\+Remove\+Connection\+Between().
+
+
+
+Referenced by Clean\+Calo\+Hits(), and Process().
+
+
+\begin{DoxyCode}
+106   \{
+107     CaloHitCleaningMap caloHitCleaningMap;
+108 
+109     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = pCaloHitList->begin(), endIter = pCaloHitList->end() ;
+110         endIter != iter ; ++iter)
+111     \{
+112       \textcolor{keyword}{const} arbor_content::CaloHit *pCaloHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }
+      arbor_content::CaloHit *\textcolor{keyword}{>}(*iter);
+113 
+114       \textcolor{keywordflow}{if}(NULL == pCaloHit)
+115         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+116 
+117       \textcolor{keyword}{const} ConnectorList &backwardConnectorList(
+      ArborContentApi::GetConnectorList(pCaloHit, BACKWARD_DIRECTION));
+118 
+119       \textcolor{keywordflow}{if}(backwardConnectorList.size() < 2)
+120         \textcolor{keywordflow}{continue};
+121 
+122       pandora::CartesianVector referenceVector(this->GetReferenceVector(pCaloHit));
+123 
+124       \textcolor{comment}{// undefined reference vector ?}
+125       \textcolor{keywordflow}{if}(referenceVector == pandora::CartesianVector(0.f, 0.f, 0.f))
+126         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+127 
+128       \textcolor{keyword}{const} CaloHit *pBestCaloHit = NULL;
+129       \textcolor{keywordtype}{float} bestOrderParameter = std::numeric\_limits<float>::max();
+130       pandora::CaloHitList deleteConnectionCaloHitList;
+131 
+132       \textcolor{comment}{// find the best connector with the smallest order parameter}
+133       \textcolor{keywordflow}{for}(ConnectorList::const\_iterator connectorIter = backwardConnectorList.begin(), connectorEndIter = 
+      backwardConnectorList.end() ;
+134           connectorEndIter != connectorIter ; ++connectorIter)
+135       \{
+136         \textcolor{keyword}{const} Connector *pConnector = *connectorIter;
+137         \textcolor{keyword}{const} CaloHit *pFromCaloHit = pConnector->GetFrom();
+138         \textcolor{keyword}{const} \textcolor{keywordtype}{float} orderParameter(this->GetOrderParameter(pConnector, referenceVector));
+139 
+140         \textcolor{keywordflow}{if}(orderParameter< bestOrderParameter)
+141         \{
+142           \textcolor{keywordflow}{if}(NULL != pBestCaloHit)
+143             deleteConnectionCaloHitList.insert(pBestCaloHit);
+144 
+145           bestOrderParameter = orderParameter;
+146           pBestCaloHit = pFromCaloHit;
+147         \}
+148         \textcolor{keywordflow}{else}
+149         \{
+150           deleteConnectionCaloHitList.insert(pFromCaloHit);
+151         \}
+152       \}
+153 
+154       \textcolor{keywordflow}{if}(NULL != pBestCaloHit)
+155         caloHitCleaningMap[pCaloHit] = deleteConnectionCaloHitList;
+156     \}
+157 
+158     \textcolor{comment}{// remove all un-needed connections}
+159     \textcolor{keywordflow}{for}(CaloHitCleaningMap::const\_iterator iter = caloHitCleaningMap.begin(), endIter = caloHitCleaningMap.
+      end() ;
+160         endIter != iter ; ++iter)
+161     \{
+162       \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator hitIter = iter->second.begin(), hitEndIter = iter->second.
+      end() ;
+163           hitEndIter != hitIter ; ++hitIter)
+164       \{
+165         \textcolor{keyword}{const} arbor_content::CaloHit *\textcolor{keyword}{const} pCaloHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }
+      arbor_content::CaloHit *const\textcolor{keyword}{>}(*hitIter);
+166         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::RemoveConnectionBetween(iter->first, pCaloHit));
+167       \}
+168     \}
+169 
+170     caloHitCleaningMap.clear();
+171 
+172     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+173   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!Clean\+Calo\+Hits@{Clean\+Calo\+Hits}}
+\index{Clean\+Calo\+Hits@{Clean\+Calo\+Hits}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{Clean\+Calo\+Hits}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::\+Clean\+Calo\+Hits (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ordered\+Calo\+Hit\+List \&}]{ordered\+Calo\+Hit\+List}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorCleaningTool_a6acf636c2eb30b3f34a5a505229cdc04}
+
+
+Clean the connectors of the ordered calo hit list, ending with a tree structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ordered\+Calo\+Hit\+List} & the ordered calo hit list to clean \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 177 of file Connector\+Cleaning\+Tool.\+cc.
+
+
+
+References Clean\+Calo\+Hits(), and m\+\_\+strategy.
+
+
+\begin{DoxyCode}
+178   \{
+179     \textcolor{keywordflow}{if}(1 == m_strategy)
+180     \{
+181       \textcolor{keywordflow}{for}(pandora::OrderedCaloHitList::const\_iterator iter = orderedCaloHitList.begin(), endIter = 
+      orderedCaloHitList.end() ;
+182           endIter != iter ; ++iter)
+183       \{
+184         \textcolor{keywordflow}{if}(iter->second->empty())
+185           \textcolor{keywordflow}{continue};
+186 
+187         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      CleanCaloHits(iter->second));
+188       \}
+189     \}
+190     \textcolor{keywordflow}{else}
+191     \{
+192       \textcolor{keywordflow}{for}(pandora::OrderedCaloHitList::const\_reverse\_iterator iter = orderedCaloHitList.rbegin(), endIter =
+       orderedCaloHitList.rend() ;
+193           endIter != iter ; ++iter)
+194       \{
+195         \textcolor{keywordflow}{if}(iter->second->empty())
+196           \textcolor{keywordflow}{continue};
+197 
+198         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      CleanCaloHits(iter->second));
+199       \}
+200     \}
+201 
+202     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+203   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!Get\+Order\+Parameter@{Get\+Order\+Parameter}}
+\index{Get\+Order\+Parameter@{Get\+Order\+Parameter}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{Get\+Order\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::\+Get\+Order\+Parameter (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Connector} $\ast$const}]{p\+Connector, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{reference\+Direction}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorCleaningTool_ab3ca1321b1e84e338b9cd04953f3b7d7}
+
+
+Get the order parameter of the connector in the backward direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Connector} & the connector to compute the order parameter \\
+\hline
+{\em reference\+Direction} & the reference direction to compare with the connector\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the order parameter 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file Connector\+Cleaning\+Tool.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+B\+A\+C\+K\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, arbor\+\_\+content\+::\+Connector\+::\+Get\+Normalized\+Length(), arbor\+\_\+content\+::\+Connector\+::\+Get\+Vector(), m\+\_\+order\+Parameter\+Angle\+Power, and m\+\_\+order\+Parameter\+Distance\+Power.
+
+
+
+Referenced by Clean\+Calo\+Hits().
+
+
+\begin{DoxyCode}
+63   \{
+64     \textcolor{keyword}{const} pandora::CartesianVector connectorVector = pConnector->GetVector(
+      BACKWARD_DIRECTION);
+65     \textcolor{keyword}{const} \textcolor{keywordtype}{float} angle = referenceDirection.GetOpeningAngle(connectorVector)/M\_PI;
+66     \textcolor{keyword}{const} \textcolor{keywordtype}{float} distance = pConnector->GetNormalizedLength();
+67 
+68     \textcolor{keywordflow}{return} (std::pow(angle, m_orderParameterAnglePower) * std::pow(distance, 
+      m_orderParameterDistancePower));
+69   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!Get\+Reference\+Vector@{Get\+Reference\+Vector}}
+\index{Get\+Reference\+Vector@{Get\+Reference\+Vector}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{Get\+Reference\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Cartesian\+Vector arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::\+Get\+Reference\+Vector (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorCleaningTool_aef73b1a51a5a677c61e3caa276e8fe39}
+
+
+Get the reference vector of the calo hit. 
+
+The vector is oriented backwardly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the calo hit to evaluate the reference vector\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the reference vector 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file Connector\+Cleaning\+Tool.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+B\+A\+C\+K\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, arbor\+\_\+content\+::\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Get\+Mean\+Direction(), m\+\_\+backward\+Connector\+Weight, m\+\_\+backward\+Reference\+Direction\+Depth, m\+\_\+forward\+Connector\+Weight, and m\+\_\+forward\+Reference\+Direction\+Depth.
+
+
+
+Referenced by Clean\+Calo\+Hits().
+
+
+\begin{DoxyCode}
+74   \{
+75     pandora::CartesianVector referenceVector = pandora::CartesianVector(0, 0, 0);
+76 
+77     \textcolor{keywordflow}{try}
+78     \{
+79       pandora::CartesianVector meanForwardDirection(0, 0, 0);
+80       pandora::CartesianVector meanBackwardDirection(0, 0, 0);
+81 
+82       PANDORA\_THROW\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      CaloHitHelper::GetMeanDirection(pCaloHit, FORWARD_DIRECTION,
+83           meanForwardDirection, m_forwardReferenceDirectionDepth));
+84       meanForwardDirection *= m_forwardConnectorWeight;
+85 
+86       PANDORA\_THROW\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      CaloHitHelper::GetMeanDirection(pCaloHit, BACKWARD_DIRECTION,
+87           meanBackwardDirection, m_backwardReferenceDirectionDepth));
+88 
+89       meanBackwardDirection *= m_backwardConnectorWeight;
+90 
+91       \textcolor{keywordflow}{if}(meanForwardDirection == meanBackwardDirection)
+92         \textcolor{keywordflow}{throw} pandora::StatusCodeException(pandora::STATUS\_CODE\_FAILURE);
+93 
+94       referenceVector = meanBackwardDirection - meanForwardDirection;
+95     \}
+96     \textcolor{keywordflow}{catch}(pandora::StatusCodeException &exception)
+97     \{
+98     \}
+99 
+100     \textcolor{keywordflow}{return} referenceVector;
+101   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!Process@{Process}}
+\index{Process@{Process}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{Process}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::\+Process (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const pandora\+::\+Calo\+Hit\+List $\ast$const}]{p\+Calo\+Hit\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classarbor__content_1_1ConnectorCleaningTool_a007ef5a19b911465cc1a2bf5505a63ef}
+
+
+Clean the connectors of the calo hit list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the parent algorithm to access pandora content\\
+\hline
+{\em p\+Calo\+Hit\+List} & the calo hit list to process \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf arbor\+\_\+content\+::\+Connector\+Algorithm\+Tool} \doxyref{}{p.}{classarbor__content_1_1ConnectorAlgorithmTool_a38a9c564567e360c783928ed88117aac}.
+
+
+
+Definition at line 40 of file Connector\+Cleaning\+Tool.\+cc.
+
+
+
+References Clean\+Calo\+Hits(), and m\+\_\+strategy.
+
+
+\begin{DoxyCode}
+41   \{
+42     \textcolor{keywordflow}{if}(pCaloHitList->empty())
+43       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+44 
+45     \textcolor{keywordflow}{if}(0 == m_strategy)
+46     \{
+47       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      CleanCaloHits(pCaloHitList));
+48     \}
+49     \textcolor{keywordflow}{else}
+50     \{
+51       pandora::OrderedCaloHitList orderedCaloHitList;
+52       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, orderedCaloHitList.Add(*pCaloHitList));
+53 
+54       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      CleanCaloHits(orderedCaloHitList));
+55     \}
+56 
+57     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+58   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1ConnectorCleaningTool_ad26c6114ab11183db706aad89ac44561}
+
+
+Read settings from the xml handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xml\+Handle} & the xml handle to settings \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 207 of file Connector\+Cleaning\+Tool.\+cc.
+
+
+
+References m\+\_\+backward\+Connector\+Weight, m\+\_\+backward\+Reference\+Direction\+Depth, m\+\_\+forward\+Connector\+Weight, m\+\_\+forward\+Reference\+Direction\+Depth, m\+\_\+order\+Parameter\+Angle\+Power, m\+\_\+order\+Parameter\+Distance\+Power, and m\+\_\+strategy.
+
+
+\begin{DoxyCode}
+208   \{
+209     m_backwardConnectorWeight = 1.f;
+210     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+211         \textcolor{stringliteral}{"BackwardConnectorWeight"}, m_backwardConnectorWeight));
+212 
+213     m_forwardConnectorWeight = 3.f;
+214     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+215         \textcolor{stringliteral}{"ForwardConnectorWeight"}, m_forwardConnectorWeight));
+216 
+217     m_backwardReferenceDirectionDepth = 1;
+218     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+219         \textcolor{stringliteral}{"BackwardReferenceDirectionDepth"}, m_backwardReferenceDirectionDepth));
+220 
+221     m_forwardReferenceDirectionDepth = 2;
+222     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+223         \textcolor{stringliteral}{"ForwardReferenceDirectionDepth"}, m_forwardReferenceDirectionDepth));
+224 
+225     \textcolor{keywordflow}{if}(m_backwardReferenceDirectionDepth == 0 || 
+      m_forwardReferenceDirectionDepth == 0)
+226       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+227 
+228     m_orderParameterAnglePower = 1.f;
+229     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+230         \textcolor{stringliteral}{"OrderParameterAnglePower"}, m_orderParameterAnglePower));
+231 
+232     m_orderParameterDistancePower = 5.f;
+233     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+234         \textcolor{stringliteral}{"OrderParameterDistancePower"}, m_orderParameterDistancePower));
+235 
+236     m_strategy = 2;
+237     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+238         \textcolor{stringliteral}{"Strategy"}, m_strategy));
+239 
+240     \textcolor{keywordflow}{if}(2 < m_strategy)
+241       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+242 
+243     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+244   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!m\+\_\+backward\+Connector\+Weight@{m\+\_\+backward\+Connector\+Weight}}
+\index{m\+\_\+backward\+Connector\+Weight@{m\+\_\+backward\+Connector\+Weight}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{m\+\_\+backward\+Connector\+Weight}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::m\+\_\+backward\+Connector\+Weight\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorCleaningTool_ae31be0e1f78d1bbe0602501bb63a7290}
+
+
+Definition at line 113 of file Connector\+Cleaning\+Tool.\+h.
+
+
+
+Referenced by Get\+Reference\+Vector(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!m\+\_\+backward\+Reference\+Direction\+Depth@{m\+\_\+backward\+Reference\+Direction\+Depth}}
+\index{m\+\_\+backward\+Reference\+Direction\+Depth@{m\+\_\+backward\+Reference\+Direction\+Depth}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{m\+\_\+backward\+Reference\+Direction\+Depth}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::m\+\_\+backward\+Reference\+Direction\+Depth\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorCleaningTool_af70215c4f8c1ceaa1c1ef74a07d2343f}
+
+
+Definition at line 115 of file Connector\+Cleaning\+Tool.\+h.
+
+
+
+Referenced by Get\+Reference\+Vector(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!m\+\_\+forward\+Connector\+Weight@{m\+\_\+forward\+Connector\+Weight}}
+\index{m\+\_\+forward\+Connector\+Weight@{m\+\_\+forward\+Connector\+Weight}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{m\+\_\+forward\+Connector\+Weight}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::m\+\_\+forward\+Connector\+Weight\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorCleaningTool_a8fe6c80eaa8854e4446fc731d797d7fe}
+
+
+Definition at line 114 of file Connector\+Cleaning\+Tool.\+h.
+
+
+
+Referenced by Get\+Reference\+Vector(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!m\+\_\+forward\+Reference\+Direction\+Depth@{m\+\_\+forward\+Reference\+Direction\+Depth}}
+\index{m\+\_\+forward\+Reference\+Direction\+Depth@{m\+\_\+forward\+Reference\+Direction\+Depth}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{m\+\_\+forward\+Reference\+Direction\+Depth}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::m\+\_\+forward\+Reference\+Direction\+Depth\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorCleaningTool_a6894e4ee9b66ddfcb4fc8898e9e7042e}
+
+
+Definition at line 116 of file Connector\+Cleaning\+Tool.\+h.
+
+
+
+Referenced by Get\+Reference\+Vector(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!m\+\_\+order\+Parameter\+Angle\+Power@{m\+\_\+order\+Parameter\+Angle\+Power}}
+\index{m\+\_\+order\+Parameter\+Angle\+Power@{m\+\_\+order\+Parameter\+Angle\+Power}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{m\+\_\+order\+Parameter\+Angle\+Power}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::m\+\_\+order\+Parameter\+Angle\+Power\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorCleaningTool_a2c95cd1ed5faa2fc993085fe40f8dd8d}
+
+
+Definition at line 117 of file Connector\+Cleaning\+Tool.\+h.
+
+
+
+Referenced by Get\+Order\+Parameter(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!m\+\_\+order\+Parameter\+Distance\+Power@{m\+\_\+order\+Parameter\+Distance\+Power}}
+\index{m\+\_\+order\+Parameter\+Distance\+Power@{m\+\_\+order\+Parameter\+Distance\+Power}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{m\+\_\+order\+Parameter\+Distance\+Power}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::m\+\_\+order\+Parameter\+Distance\+Power\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorCleaningTool_ab2cfaa49b2d565cdb49caf3231d4b4d6}
+
+
+Definition at line 118 of file Connector\+Cleaning\+Tool.\+h.
+
+
+
+Referenced by Get\+Order\+Parameter(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}!m\+\_\+strategy@{m\+\_\+strategy}}
+\index{m\+\_\+strategy@{m\+\_\+strategy}!arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool@{arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool}}
+\subsubsection[{m\+\_\+strategy}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::m\+\_\+strategy\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ConnectorCleaningTool_a43b23fbc2ae37c86a2cec11b64f32e65}
+
+
+Definition at line 112 of file Connector\+Cleaning\+Tool.\+h.
+
+
+
+Referenced by Clean\+Calo\+Hits(), Process(), and Read\+Settings().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Connector\+Cleaning\+Tool.\+h}\item 
+{\bf Connector\+Cleaning\+Tool.\+cc}\end{DoxyCompactItemize}

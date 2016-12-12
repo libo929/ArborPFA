@@ -1,0 +1,149 @@
+\section{arbor\+\_\+content\+:\+:Sorting\+Helper Class Reference}
+\label{classarbor__content_1_1SortingHelper}\index{arbor\+\_\+content\+::\+Sorting\+Helper@{arbor\+\_\+content\+::\+Sorting\+Helper}}
+
+
+\doxyref{Sorting\+Helper}{p.}{classarbor__content_1_1SortingHelper} class.  
+
+
+
+
+{\ttfamily \#include $<$Sorting\+Helper.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Sort\+By\+Track\+Cluster\+Compatibility}
+\begin{DoxyCompactList}\small\item\em \doxyref{Sort\+By\+Track\+Cluster\+Compatibility}{p.}{classarbor__content_1_1SortingHelper_1_1SortByTrackClusterCompatibility} class. \end{DoxyCompactList}\item 
+class {\bf Sort\+Cluster\+By\+Omega\+Tracks}
+\begin{DoxyCompactList}\small\item\em \doxyref{Sort\+Cluster\+By\+Omega\+Tracks}{p.}{classarbor__content_1_1SortingHelper_1_1SortClusterByOmegaTracks} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bf Sort\+Clusters\+By\+Inner\+Layer} (const pandora\+::\+Cluster $\ast$const p\+Lhs, const pandora\+::\+Cluster $\ast$const p\+Rhs)
+\begin{DoxyCompactList}\small\item\em Sort clusters by inner layer, and hadronic energy for same layer. \end{DoxyCompactList}\item 
+static bool {\bf Sort\+Branches\+By\+Size} (const {\bf Branch} \&lhs, const {\bf Branch} \&rhs)
+\begin{DoxyCompactList}\small\item\em Sort branches by size. \end{DoxyCompactList}\item 
+static bool {\bf Sort\+Tracks\+By\+Energy} (const pandora\+::\+Track $\ast$const p\+Lhs, const pandora\+::\+Track $\ast$const p\+Rhs)
+\begin{DoxyCompactList}\small\item\em Sort tracks by energy at dca. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Sorting\+Helper}{p.}{classarbor__content_1_1SortingHelper} class. 
+
+Definition at line 45 of file Sorting\+Helper.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Sorting\+Helper@{arbor\+\_\+content\+::\+Sorting\+Helper}!Sort\+Branches\+By\+Size@{Sort\+Branches\+By\+Size}}
+\index{Sort\+Branches\+By\+Size@{Sort\+Branches\+By\+Size}!arbor\+\_\+content\+::\+Sorting\+Helper@{arbor\+\_\+content\+::\+Sorting\+Helper}}
+\subsubsection[{Sort\+Branches\+By\+Size}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Branches\+By\+Size (
+\begin{DoxyParamCaption}
+\item[{const {\bf Branch} \&}]{lhs, }
+\item[{const {\bf Branch} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1SortingHelper_aadd71b83b46df8586ccc55c4cbfe3239}
+
+
+Sort branches by size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & the left handed branch to compare \\
+\hline
+{\em rhs} & the right handed branch to compare \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Sorting\+Helper.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Branch\+::size().
+
+
+\begin{DoxyCode}
+58   \{
+59     \textcolor{keywordflow}{return} lhs.size() < rhs.size();
+60   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Sorting\+Helper@{arbor\+\_\+content\+::\+Sorting\+Helper}!Sort\+Clusters\+By\+Inner\+Layer@{Sort\+Clusters\+By\+Inner\+Layer}}
+\index{Sort\+Clusters\+By\+Inner\+Layer@{Sort\+Clusters\+By\+Inner\+Layer}!arbor\+\_\+content\+::\+Sorting\+Helper@{arbor\+\_\+content\+::\+Sorting\+Helper}}
+\subsubsection[{Sort\+Clusters\+By\+Inner\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Clusters\+By\+Inner\+Layer (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Lhs, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1SortingHelper_a3417f817e719b42d064013da5a328d58}
+
+
+Sort clusters by inner layer, and hadronic energy for same layer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Lhs} & the left handed cluster to compare \\
+\hline
+{\em p\+Rhs} & the right handed cluster to compare \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file Sorting\+Helper.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Cluster\+Fragment\+Merging\+Algorithm\+::\+Run(), arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::\+Run(), and arbor\+\_\+content\+::\+Pointing\+Cluster\+Association\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+41   \{
+42     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} innerLayerLhs(pLhs->GetInnerPseudoLayer()), innerLayerRhs(pRhs->GetInnerPseudoLayer(
+      ));
+43 
+44     \textcolor{keywordflow}{if} (innerLayerLhs != innerLayerRhs)
+45       \textcolor{keywordflow}{return} (innerLayerLhs < innerLayerRhs);
+46 
+47     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nCaloHitsLhs(pLhs->GetNCaloHits()), nCaloHitsRhs(pRhs->GetNCaloHits());
+48 
+49     \textcolor{keywordflow}{if} (nCaloHitsLhs != nCaloHitsRhs)
+50       \textcolor{keywordflow}{return} (nCaloHitsLhs > nCaloHitsRhs);
+51 
+52     \textcolor{keywordflow}{return} (pLhs->GetHadronicEnergy() > pRhs->GetHadronicEnergy());
+53   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Sorting\+Helper@{arbor\+\_\+content\+::\+Sorting\+Helper}!Sort\+Tracks\+By\+Energy@{Sort\+Tracks\+By\+Energy}}
+\index{Sort\+Tracks\+By\+Energy@{Sort\+Tracks\+By\+Energy}!arbor\+\_\+content\+::\+Sorting\+Helper@{arbor\+\_\+content\+::\+Sorting\+Helper}}
+\subsubsection[{Sort\+Tracks\+By\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Tracks\+By\+Energy (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Track $\ast$const}]{p\+Lhs, }
+\item[{const pandora\+::\+Track $\ast$const}]{p\+Rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1SortingHelper_a16e7c784daf7d36b1eb1109f51391b7a}
+
+
+Sort tracks by energy at dca. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Lhs} & the left handed track to compare \\
+\hline
+{\em p\+Rhs} & the right handed track to compare \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file Sorting\+Helper.\+cc.
+
+
+\begin{DoxyCode}
+65   \{
+66     \textcolor{keywordflow}{return} pLhs->GetEnergyAtDca() < pRhs->GetEnergyAtDca();
+67   \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Sorting\+Helper.\+h}\item 
+{\bf Sorting\+Helper.\+cc}\end{DoxyCompactItemize}

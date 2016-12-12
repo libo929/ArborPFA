@@ -1,0 +1,223 @@
+\section{Arbor\+Content Class Reference}
+\label{classArborContent}\index{Arbor\+Content@{Arbor\+Content}}
+
+
+\doxyref{Arbor\+Content}{p.}{classArborContent} class used to register arbor algorithms and plugins.  
+
+
+
+
+{\ttfamily \#include $<$Arbor\+Content.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static pandora\+::\+Status\+Code {\bf Register\+Algorithms} (const pandora\+::\+Pandora \&pandora)
+\begin{DoxyCompactList}\small\item\em Register all the arbor algorithms with pandora. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Register\+Arbor\+Pseudo\+Layer\+Plugin} (const pandora\+::\+Pandora \&pandora)
+\begin{DoxyCompactList}\small\item\em Register pseudo layer plugin with pandora. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Register\+B\+Field\+Plugin} (const pandora\+::\+Pandora \&pandora, const float inner\+B\+Field, const float muon\+Barrel\+B\+Field, const float muon\+End\+Cap\+B\+Field)
+\begin{DoxyCompactList}\small\item\em Register the b field plugin (note user side configuration) with pandora. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Register\+Energy\+Corrections} (const pandora\+::\+Pandora \&pandora)
+\begin{DoxyCompactList}\small\item\em Register the energy corrections with pandora. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Register\+Particle\+Ids} (const pandora\+::\+Pandora \&pandora)
+\begin{DoxyCompactList}\small\item\em Register arbor particle id functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Arbor\+Content}{p.}{classArborContent} class used to register arbor algorithms and plugins. 
+
+Definition at line 104 of file Arbor\+Content.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Arbor\+Content@{Arbor\+Content}!Register\+Algorithms@{Register\+Algorithms}}
+\index{Register\+Algorithms@{Register\+Algorithms}!Arbor\+Content@{Arbor\+Content}}
+\subsubsection[{Register\+Algorithms}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+::\+Register\+Algorithms (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classArborContent_a78bfbda7aeff41589e9afd387d624857}
+
+
+Register all the arbor algorithms with pandora. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance with which to register content \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 207 of file Arbor\+Content.\+h.
+
+
+
+References A\+R\+B\+O\+R\+\_\+\+A\+L\+G\+O\+R\+I\+T\+H\+M\+\_\+\+L\+I\+S\+T, and A\+R\+B\+O\+R\+\_\+\+A\+L\+G\+O\+R\+I\+T\+H\+M\+\_\+\+T\+O\+O\+L\+\_\+\+L\+I\+S\+T.
+
+
+\begin{DoxyCode}
+208 \{
+209   ARBOR_ALGORITHM_LIST(PANDORA\_REGISTER\_ALGORITHM);
+210   ARBOR_ALGORITHM_TOOL_LIST(PANDORA\_REGISTER\_ALGORITHM\_TOOL);
+211 
+212   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+213 \}
+\end{DoxyCode}
+\index{Arbor\+Content@{Arbor\+Content}!Register\+Arbor\+Pseudo\+Layer\+Plugin@{Register\+Arbor\+Pseudo\+Layer\+Plugin}}
+\index{Register\+Arbor\+Pseudo\+Layer\+Plugin@{Register\+Arbor\+Pseudo\+Layer\+Plugin}!Arbor\+Content@{Arbor\+Content}}
+\subsubsection[{Register\+Arbor\+Pseudo\+Layer\+Plugin}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+::\+Register\+Arbor\+Pseudo\+Layer\+Plugin (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classArborContent_a9e7fde15a06c5cad9532cebcf1ae2eea}
+
+
+Register pseudo layer plugin with pandora. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance with which to register content \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 217 of file Arbor\+Content.\+h.
+
+
+\begin{DoxyCode}
+218 \{
+219   \textcolor{keywordflow}{return} PandoraApi::SetPseudoLayerPlugin(pandora, \textcolor{keyword}{new} 
+      arbor_content::ArborPseudoLayerPlugin());
+220 \}
+\end{DoxyCode}
+\index{Arbor\+Content@{Arbor\+Content}!Register\+B\+Field\+Plugin@{Register\+B\+Field\+Plugin}}
+\index{Register\+B\+Field\+Plugin@{Register\+B\+Field\+Plugin}!Arbor\+Content@{Arbor\+Content}}
+\subsubsection[{Register\+B\+Field\+Plugin}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+::\+Register\+B\+Field\+Plugin (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const float}]{inner\+B\+Field, }
+\item[{const float}]{muon\+Barrel\+B\+Field, }
+\item[{const float}]{muon\+End\+Cap\+B\+Field}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classArborContent_afd4606458458c5d4c2250c5d9fc185bd}
+
+
+Register the b field plugin (note user side configuration) with pandora. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance with which to register content \\
+\hline
+{\em inner\+B\+Field} & the bfield in the main tracker, ecal and hcal, units Tesla \\
+\hline
+{\em muon\+Barrel\+B\+Field} & the bfield in the muon barrel, units Tesla \\
+\hline
+{\em muon\+End\+Cap\+B\+Field} & the bfield in the muon endcap, units Tesla \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 224 of file Arbor\+Content.\+h.
+
+
+\begin{DoxyCode}
+226 \{
+227   \textcolor{keywordflow}{return} PandoraApi::SetBFieldPlugin(pandora, \textcolor{keyword}{new} 
+      arbor_content::ArborBFieldPlugin(innerBField, muonBarrelBField, muonEndCapBField));
+228 \}
+\end{DoxyCode}
+\index{Arbor\+Content@{Arbor\+Content}!Register\+Energy\+Corrections@{Register\+Energy\+Corrections}}
+\index{Register\+Energy\+Corrections@{Register\+Energy\+Corrections}!Arbor\+Content@{Arbor\+Content}}
+\subsubsection[{Register\+Energy\+Corrections}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+::\+Register\+Energy\+Corrections (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classArborContent_a9a30e61883858a523e4c93d42c80abb1}
+
+
+Register the energy corrections with pandora. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance with which to register content \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 232 of file Arbor\+Content.\+h.
+
+
+\begin{DoxyCode}
+233 \{
+234   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraApi::RegisterEnergyCorrectionPlugin(
+      pandora,
+235       \textcolor{stringliteral}{"SdhcalQuadraticEnergyFunction"}, pandora::HADRONIC, \textcolor{keyword}{new} 
+      arbor_content::SdhcalQuadraticEnergyFunction()));
+236 
+237   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraApi::RegisterEnergyCorrectionPlugin(
+      pandora,
+238       \textcolor{stringliteral}{"SdhcalQuadraticEnergyFunction"}, pandora::ELECTROMAGNETIC, \textcolor{keyword}{new} 
+      arbor_content::SdhcalQuadraticEnergyFunction()));
+239 
+240   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraApi::RegisterEnergyCorrectionPlugin(
+      pandora,
+241       \textcolor{stringliteral}{"AnalogicEnergyFunction"}, pandora::HADRONIC, \textcolor{keyword}{new} 
+      arbor_content::AnalogicEnergyFunction()));
+242 
+243   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraApi::RegisterEnergyCorrectionPlugin(
+      pandora,
+244       \textcolor{stringliteral}{"AnalogicEnergyFunction"}, pandora::ELECTROMAGNETIC, \textcolor{keyword}{new} 
+      arbor_content::AnalogicEnergyFunction()));
+245 
+246   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraApi::RegisterEnergyCorrectionPlugin(
+      pandora,
+247       \textcolor{stringliteral}{"BarrelGapEnergyFunction"}, pandora::HADRONIC, \textcolor{keyword}{new} 
+      arbor_content::BarrelGapEnergyFunction()));
+248 
+249   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraApi::RegisterEnergyCorrectionPlugin(
+      pandora,
+250       \textcolor{stringliteral}{"ThetaEnergyFunction"}, pandora::HADRONIC, \textcolor{keyword}{new} 
+      arbor_content::ThetaEnergyFunction()));
+251 
+252   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+253 \}
+\end{DoxyCode}
+\index{Arbor\+Content@{Arbor\+Content}!Register\+Particle\+Ids@{Register\+Particle\+Ids}}
+\index{Register\+Particle\+Ids@{Register\+Particle\+Ids}!Arbor\+Content@{Arbor\+Content}}
+\subsubsection[{Register\+Particle\+Ids}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+::\+Register\+Particle\+Ids (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContent_ac9beafa0c4d14d5488da399d714d534b}
+
+
+Register arbor particle id functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance with which to register content \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 257 of file Arbor\+Content.\+h.
+
+
+
+References A\+R\+B\+O\+R\+\_\+\+P\+A\+R\+T\+I\+C\+L\+E\+\_\+\+I\+D\+\_\+\+L\+I\+S\+T.
+
+
+\begin{DoxyCode}
+258 \{
+259   ARBOR_PARTICLE_ID_LIST(PANDORA\_REGISTER\_PARTICLE\_ID);
+260 
+261   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+262 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Arbor\+Content.\+h}\end{DoxyCompactItemize}

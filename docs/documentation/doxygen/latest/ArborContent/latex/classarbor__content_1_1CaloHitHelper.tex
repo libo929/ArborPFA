@@ -1,0 +1,710 @@
+\section{arbor\+\_\+content\+:\+:Calo\+Hit\+Helper Class Reference}
+\label{classarbor__content_1_1CaloHitHelper}\index{arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}}
+
+
+\doxyref{Calo\+Hit\+Helper}{p.}{classarbor__content_1_1CaloHitHelper} class.  
+
+
+
+
+{\ttfamily \#include $<$Calo\+Hit\+Helper.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static pandora\+::\+Status\+Code {\bf Remove\+Current\+Connections} (const pandora\+::\+Algorithm \&algorithm)
+\begin{DoxyCompactList}\small\item\em Remove the connections of the current calo hit list. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Remove\+Connections} (const pandora\+::\+Calo\+Hit\+List $\ast$const p\+Calo\+Hit\+List)
+\begin{DoxyCompactList}\small\item\em Remove the connections of the calo hit list. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Extract\+Current\+Seed\+Calo\+Hit\+List} (const pandora\+::\+Algorithm \&algorithm, pandora\+::\+Calo\+Hit\+List \&seed\+Calo\+Hit\+List, bool discriminate\+Leaf\+Hits=false)
+\begin{DoxyCompactList}\small\item\em Extract the calo hit seed list from the current calo hit list. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Extract\+Seed\+Calo\+Hit\+List} (const pandora\+::\+Calo\+Hit\+List $\ast$const p\+Calo\+Hit\+List, pandora\+::\+Calo\+Hit\+List \&seed\+Calo\+Hit\+List, bool discriminate\+Leaf\+Hits=false)
+\begin{DoxyCompactList}\small\item\em Extract the calo hit seed list from the calo hit list. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Extract\+Current\+Leaf\+Calo\+Hit\+List} (const pandora\+::\+Algorithm \&algorithm, pandora\+::\+Calo\+Hit\+List \&leaf\+Calo\+Hit\+List, bool discriminate\+Seed\+Hits=false)
+\begin{DoxyCompactList}\small\item\em Extract the calo hit leaf list from the current calo hit list. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Extract\+Leaf\+Calo\+Hit\+List} (const pandora\+::\+Calo\+Hit\+List $\ast$const p\+Calo\+Hit\+List, pandora\+::\+Calo\+Hit\+List \&leaf\+Calo\+Hit\+List, bool discriminate\+Seed\+Hits=false)
+\begin{DoxyCompactList}\small\item\em Extract the calo hit leaf list from the calo hit list. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Build\+Calo\+Hit\+List} (const {\bf Calo\+Hit} $\ast$const p\+Calo\+Hit, {\bf Connector\+Direction} direction, pandora\+::\+Calo\+Hit\+List \&calohit\+List)
+\begin{DoxyCompactList}\small\item\em Build the calo hit list starting from a calo hit by looking recursively in the connector list (forward or backward) \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Build\+Calo\+Hit\+List} (const {\bf Calo\+Hit} $\ast$const p\+Calo\+Hit, {\bf Connector\+Direction} direction, pandora\+::\+Calo\+Hit\+List \&calohit\+List, unsigned int connection\+Limit, unsigned int pseudo\+Layer\+Limit)
+\begin{DoxyCompactList}\small\item\em Build the calo hit list starting from a calo hit by looking recursively in the connector list (forward or backward). \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Mean\+Direction} (const {\bf Calo\+Hit} $\ast$const p\+Calo\+Hit, {\bf Connector\+Direction} connector\+Direction, pandora\+::\+Cartesian\+Vector \&direction, unsigned int depth)
+\begin{DoxyCompactList}\small\item\em Get the mean direction of the calo hit in a given direction. \end{DoxyCompactList}\item 
+static bool {\bf Can\+Connect} (const {\bf Calo\+Hit} $\ast$const p\+Calo\+Hit1, const {\bf Calo\+Hit} $\ast$const p\+Calo\+Hit2, const pandora\+::\+Cartesian\+Vector \&expected\+Direction, const float normale\+Max\+Angle, const float normale\+Max\+Distance, const float transverse\+Max\+Angle, const float transverse\+Max\+Distance)
+\begin{DoxyCompactList}\small\item\em Whether the two calo hits can be connected. \end{DoxyCompactList}\item 
+static bool {\bf Can\+Connect} (const pandora\+::\+Track $\ast$const p\+Track, const {\bf Calo\+Hit} $\ast$const p\+Calo\+Hit, const float normale\+Max\+Angle, const float normale\+Max\+Distance, const float transverse\+Max\+Angle, const float transverse\+Max\+Distance)
+\begin{DoxyCompactList}\small\item\em Whether the track and the calo hit can be connected. \end{DoxyCompactList}\item 
+static bool {\bf Is\+In\+Region\+Of\+Interest} (const pandora\+::\+Cartesian\+Vector \&start\+Region\+Position, const pandora\+::\+Cartesian\+Vector \&test\+Position, const pandora\+::\+Cartesian\+Vector \&expected\+Direction, const pandora\+::\+Cartesian\+Vector \&normale\+Vector, const float normale\+Max\+Angle, const float normale\+Max\+Distance, const float transverse\+Max\+Angle, const float transverse\+Max\+Distance)
+\begin{DoxyCompactList}\small\item\em Whether the tested position is in the region of interest. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Calo\+Hit\+Helper}{p.}{classarbor__content_1_1CaloHitHelper} class. 
+
+Definition at line 46 of file Calo\+Hit\+Helper.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}!Build\+Calo\+Hit\+List@{Build\+Calo\+Hit\+List}}
+\index{Build\+Calo\+Hit\+List@{Build\+Calo\+Hit\+List}!arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}}
+\subsubsection[{Build\+Calo\+Hit\+List}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Build\+Calo\+Hit\+List (
+\begin{DoxyParamCaption}
+\item[{const {\bf Calo\+Hit} $\ast$const}]{p\+Calo\+Hit, }
+\item[{{\bf Connector\+Direction}}]{direction, }
+\item[{pandora\+::\+Calo\+Hit\+List \&}]{calohit\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1CaloHitHelper_a5cba7945199b23c6760e08eb4f6aceeb}
+
+
+Build the calo hit list starting from a calo hit by looking recursively in the connector list (forward or backward) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the calo hit to start from \\
+\hline
+{\em direction} & the direction to look recursively for \\
+\hline
+{\em calo\+Hit\+List} & the calo hit list recursively built to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file Calo\+Hit\+Helper.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Connector\+::\+Get(), and Arbor\+Content\+Api\+::\+Get\+Connector\+List().
+
+
+
+Referenced by Build\+Calo\+Hit\+List(), arbor\+\_\+content\+::\+Arbor\+Clustering\+Algorithm\+::\+Create\+Clusters(), arbor\+\_\+content\+::\+Cluster\+Fragment\+Merging\+Algorithm\+::\+Run(), arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Split\+Cluster\+Into\+Tree\+Clusters(), and arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Split\+Tree\+From\+Cluster().
+
+
+\begin{DoxyCode}
+135   \{
+136     \textcolor{keyword}{const} ConnectorList &connectorList(ArborContentApi::GetConnectorList(pCaloHit, direction));
+137 
+138     \textcolor{keywordflow}{for}(ConnectorList::const\_iterator iter = connectorList.begin(), endIter = connectorList.end() ;
+139         endIter != iter ; ++iter)
+140     \{
+141       \textcolor{keyword}{const} Connector *\textcolor{keyword}{const} pConnector = *iter;
+142 
+143       \textcolor{keyword}{const} CaloHit *\textcolor{keyword}{const} pConnectedCaloHit = pConnector->Get(direction);
+144 
+145       \textcolor{keywordflow}{if}(!calohitList.insert(pConnectedCaloHit).second)
+146         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+147 
+148       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      CaloHitHelper::BuildCaloHitList(pConnectedCaloHit, direction, calohitList));
+149     \}
+150 
+151 
+152     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+153   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}!Build\+Calo\+Hit\+List@{Build\+Calo\+Hit\+List}}
+\index{Build\+Calo\+Hit\+List@{Build\+Calo\+Hit\+List}!arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}}
+\subsubsection[{Build\+Calo\+Hit\+List}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Build\+Calo\+Hit\+List (
+\begin{DoxyParamCaption}
+\item[{const {\bf Calo\+Hit} $\ast$const}]{p\+Calo\+Hit, }
+\item[{{\bf Connector\+Direction}}]{direction, }
+\item[{pandora\+::\+Calo\+Hit\+List \&}]{calohit\+List, }
+\item[{unsigned int}]{connection\+Limit, }
+\item[{unsigned int}]{pseudo\+Layer\+Limit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1CaloHitHelper_a1fd8da07ba8539353377a0849c5897e6}
+
+
+Build the calo hit list starting from a calo hit by looking recursively in the connector list (forward or backward). 
+
+Stops after n recursive steps from the initial calo hit or after reaching a pseudo layer limit
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the calo hit to start from \\
+\hline
+{\em direction} & the direction to look recursively for \\
+\hline
+{\em calo\+Hit\+List} & the calo hit list recursively built to receive \\
+\hline
+{\em connection\+Limit} & the maximum number of recursive steps from the initial calo hit \\
+\hline
+{\em pseudo\+Layer\+Limit} & the pseudo layer limit to reach for stopping the recursive list building \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 157 of file Calo\+Hit\+Helper.\+cc.
+
+
+
+References Build\+Calo\+Hit\+List(), arbor\+\_\+content\+::\+Connector\+::\+Get(), and Arbor\+Content\+Api\+::\+Get\+Connector\+List().
+
+
+\begin{DoxyCode}
+159   \{
+160     \textcolor{keyword}{const} ConnectorList &connectorList(ArborContentApi::GetConnectorList(pCaloHit, direction));
+161 
+162     \textcolor{keywordflow}{if}(0 == connectionDepthLimit)
+163       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+164 
+165     \textcolor{keywordflow}{for}(ConnectorList::const\_iterator iter = connectorList.begin(), endIter = connectorList.end() ;
+166         endIter != iter ; ++iter)
+167     \{
+168       \textcolor{keyword}{const} Connector *\textcolor{keyword}{const} pConnector = *iter;
+169       \textcolor{keyword}{const} CaloHit *\textcolor{keyword}{const} pConnectedCaloHit = pConnector->Get(direction);
+170 
+171       \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pseudoLayerDifference =
+172           std::max(pConnectedCaloHit->GetPseudoLayer(), pCaloHit->GetPseudoLayer()) - std::min(
+      pConnectedCaloHit->GetPseudoLayer(), pCaloHit->GetPseudoLayer());
+173 
+174       \textcolor{keywordflow}{if}(pseudoLayerDifference > pseudoLayerLimit)
+175         \textcolor{keywordflow}{continue};
+176 
+177       \textcolor{keywordflow}{if}(!calohitList.insert(pConnectedCaloHit).second)
+178         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+179 
+180       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      CaloHitHelper::BuildCaloHitList(pConnectedCaloHit, direction, calohitList, connectionDepthLimit-1, 
+      pseudoLayerLimit-pseudoLayerDifference));
+181     \}
+182 
+183 
+184     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+185   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}!Can\+Connect@{Can\+Connect}}
+\index{Can\+Connect@{Can\+Connect}!arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}}
+\subsubsection[{Can\+Connect}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Can\+Connect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Calo\+Hit} $\ast$const}]{p\+Calo\+Hit1, }
+\item[{const {\bf Calo\+Hit} $\ast$const}]{p\+Calo\+Hit2, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{expected\+Direction, }
+\item[{const float}]{normale\+Max\+Angle, }
+\item[{const float}]{normale\+Max\+Distance, }
+\item[{const float}]{transverse\+Max\+Angle, }
+\item[{const float}]{transverse\+Max\+Distance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1CaloHitHelper_a9395f5fee90a2eb5cccd43de95762d5d}
+
+
+Whether the two calo hits can be connected. 
+
+The valid region to connect two hits is contained within a cone
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit1} & a backward calo hit to connect \\
+\hline
+{\em p\+Calo\+Hit2} & a forward calo hit to connect \\
+\hline
+{\em excepted\+Direction} & the expected of the shower development from p\+Calo\+Hit1 \\
+\hline
+{\em normale\+Max\+Angle} & the maximum angle between the two hits when the expected direction is colinear to the cell direction of p\+Calo\+Hit1 \\
+\hline
+{\em normale\+Max\+Distance} & the maximum distance between the two hits when the expected direction is colinear to the cell direction of p\+Calo\+Hit1 \\
+\hline
+{\em transverse\+Max\+Angle} & the maximum angle between the two hits when the expected direction is perpendicular to the cell direction of p\+Calo\+Hit1 \\
+\hline
+{\em transverse\+Max\+Distance} & the maximum distance between the two hits when the expected direction is perpendicular to the cell direction of p\+Calo\+Hit1 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 224 of file Calo\+Hit\+Helper.\+cc.
+
+
+
+References Is\+In\+Region\+Of\+Interest().
+
+
+\begin{DoxyCode}
+227   \{
+228     \textcolor{keywordflow}{if}(NULL == pCaloHit1 || NULL == pCaloHit2)
+229       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+230 
+231     \textcolor{keywordflow}{if}(pCaloHit1 == pCaloHit2)
+232       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+233 
+234     \textcolor{keywordflow}{if}(pCaloHit2->GetPseudoLayer() < pCaloHit1->GetPseudoLayer())
+235       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+236 
+237     \textcolor{keyword}{const} pandora::CartesianVector &cellNormaleVector(pCaloHit1->GetCellNormalVector());
+238 
+239     \textcolor{keywordflow}{return} CaloHitHelper::IsInRegionOfInterest(pCaloHit1->GetPositionVector(), pCaloHit2->GetPositionVector
+      (),
+240         expectedDirection, cellNormaleVector, normaleMaxAngle, normaleMaxDistance, transverseMaxAngle, 
+      transverseMaxDistance);
+241   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}!Can\+Connect@{Can\+Connect}}
+\index{Can\+Connect@{Can\+Connect}!arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}}
+\subsubsection[{Can\+Connect}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Can\+Connect (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Track $\ast$const}]{p\+Track, }
+\item[{const {\bf Calo\+Hit} $\ast$const}]{p\+Calo\+Hit, }
+\item[{const float}]{normale\+Max\+Angle, }
+\item[{const float}]{normale\+Max\+Distance, }
+\item[{const float}]{transverse\+Max\+Angle, }
+\item[{const float}]{transverse\+Max\+Distance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1CaloHitHelper_a3177322ef6cfa1f5b3fa55132c5b9f9f}
+
+
+Whether the track and the calo hit can be connected. 
+
+The valid region is contained within a cone
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Track} & a track with a valid calorimeter projection \\
+\hline
+{\em p\+Calo\+Hit} & a forward calo hit to connect \\
+\hline
+{\em normale\+Max\+Angle} & the maximum angle between the two hits when the expected direction is colinear to the cell direction of p\+Calo\+Hit1 \\
+\hline
+{\em normale\+Max\+Distance} & the maximum distance between the two hits when the expected direction is colinear to the cell direction of p\+Calo\+Hit1 \\
+\hline
+{\em transverse\+Max\+Angle} & the maximum angle between the two hits when the expected direction is perpendicular to the cell direction of p\+Calo\+Hit1 \\
+\hline
+{\em transverse\+Max\+Distance} & the maximum distance between the two hits when the expected direction is perpendicular to the cell direction of p\+Calo\+Hit1 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 245 of file Calo\+Hit\+Helper.\+cc.
+
+
+
+References Is\+In\+Region\+Of\+Interest().
+
+
+\begin{DoxyCode}
+248   \{
+249     \textcolor{keywordflow}{if}(NULL == pTrack || NULL == pCaloHit)
+250       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+251 
+252     \textcolor{keyword}{const} pandora::CartesianVector &cellNormaleVector(pCaloHit->GetCellNormalVector());
+253 
+254     \textcolor{keywordflow}{return} CaloHitHelper::IsInRegionOfInterest(pTrack->GetTrackStateAtCalorimeter().GetPosition(), pCaloHit
+      ->GetPositionVector(),
+255         pTrack->GetTrackStateAtCalorimeter().GetMomentum(), cellNormaleVector, normaleMaxAngle, 
+      normaleMaxDistance, transverseMaxAngle, transverseMaxDistance);
+256   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}!Extract\+Current\+Leaf\+Calo\+Hit\+List@{Extract\+Current\+Leaf\+Calo\+Hit\+List}}
+\index{Extract\+Current\+Leaf\+Calo\+Hit\+List@{Extract\+Current\+Leaf\+Calo\+Hit\+List}!arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}}
+\subsubsection[{Extract\+Current\+Leaf\+Calo\+Hit\+List}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Extract\+Current\+Leaf\+Calo\+Hit\+List (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{pandora\+::\+Calo\+Hit\+List \&}]{leaf\+Calo\+Hit\+List, }
+\item[{bool}]{discriminate\+Seed\+Hits = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1CaloHitHelper_af18ea4e667334712525dabc285c60ba1}
+
+
+Extract the calo hit leaf list from the current calo hit list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the algorithm to access the content \\
+\hline
+{\em leaf\+Calo\+Hit\+List} & the calo hit leaf list to receive \\
+\hline
+{\em discriminate\+Leaf\+Hits} & whether the leaf/seed hits have to be put in the extracted list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file Calo\+Hit\+Helper.\+cc.
+
+
+
+References Extract\+Leaf\+Calo\+Hit\+List().
+
+
+\begin{DoxyCode}
+104   \{
+105     \textcolor{keyword}{const} pandora::CaloHitList *pCaloHitList = NULL;
+106     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(algorithm,
+       pCaloHitList));
+107 
+108     \textcolor{keywordflow}{return} CaloHitHelper::ExtractLeafCaloHitList(pCaloHitList, leafCaloHitList, discriminateSeedHits);
+109   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}!Extract\+Current\+Seed\+Calo\+Hit\+List@{Extract\+Current\+Seed\+Calo\+Hit\+List}}
+\index{Extract\+Current\+Seed\+Calo\+Hit\+List@{Extract\+Current\+Seed\+Calo\+Hit\+List}!arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}}
+\subsubsection[{Extract\+Current\+Seed\+Calo\+Hit\+List}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Extract\+Current\+Seed\+Calo\+Hit\+List (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{pandora\+::\+Calo\+Hit\+List \&}]{seed\+Calo\+Hit\+List, }
+\item[{bool}]{discriminate\+Leaf\+Hits = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1CaloHitHelper_a3f5677e62ecc5688caf310c774e54ddf}
+
+
+Extract the calo hit seed list from the current calo hit list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the algorithm to access the content \\
+\hline
+{\em seed\+Calo\+Hit\+List} & the calo hit seed list to receive \\
+\hline
+{\em discriminate\+Leaf\+Hits} & whether the leaf/seed hits have to be put in the extracted list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file Calo\+Hit\+Helper.\+cc.
+
+
+
+References Extract\+Seed\+Calo\+Hit\+List().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Arbor\+Clustering\+Algorithm\+::\+Create\+Clusters().
+
+
+\begin{DoxyCode}
+73   \{
+74     \textcolor{keyword}{const} pandora::CaloHitList *pCaloHitList = NULL;
+75     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(algorithm,
+       pCaloHitList));
+76 
+77     \textcolor{keywordflow}{return} CaloHitHelper::ExtractSeedCaloHitList(pCaloHitList, seedCaloHitList, discriminateLeafHits);
+78   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}!Extract\+Leaf\+Calo\+Hit\+List@{Extract\+Leaf\+Calo\+Hit\+List}}
+\index{Extract\+Leaf\+Calo\+Hit\+List@{Extract\+Leaf\+Calo\+Hit\+List}!arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}}
+\subsubsection[{Extract\+Leaf\+Calo\+Hit\+List}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Extract\+Leaf\+Calo\+Hit\+List (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Calo\+Hit\+List $\ast$const}]{p\+Calo\+Hit\+List, }
+\item[{pandora\+::\+Calo\+Hit\+List \&}]{leaf\+Calo\+Hit\+List, }
+\item[{bool}]{discriminate\+Seed\+Hits = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1CaloHitHelper_acc494d65b15146e5171fb013cce4b9ac}
+
+
+Extract the calo hit leaf list from the calo hit list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit\+List} & the list to extract the sub calo hit leaf list \\
+\hline
+{\em leaf\+Calo\+Hit\+List} & the calo hit leaf list to receive \\
+\hline
+{\em discriminate\+Leaf\+Hits} & whether the leaf/seed hits have to be put in the extracted list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 113 of file Calo\+Hit\+Helper.\+cc.
+
+
+
+References Arbor\+Content\+Api\+::\+Is\+Leaf(), and Arbor\+Content\+Api\+::\+Is\+Seed().
+
+
+
+Referenced by Extract\+Current\+Leaf\+Calo\+Hit\+List(), and arbor\+\_\+content\+::\+Cluster\+Fragment\+Merging\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+115   \{
+116     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = pCaloHitList->begin(), endIter = pCaloHitList->end() ;
+117         endIter != iter ; ++iter)
+118     \{
+119       \textcolor{keyword}{const} CaloHit *\textcolor{keyword}{const} pCaloHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }CaloHit *const\textcolor{keyword}{>}(*iter);
+120 
+121       \textcolor{keywordflow}{if}(NULL == pCaloHit)
+122         \textcolor{keywordflow}{continue};
+123 
+124       \textcolor{keywordflow}{if}(ArborContentApi::IsLeaf(pCaloHit) && !(discriminateSeedHits && !
+      ArborContentApi::IsSeed(pCaloHit)))
+125         leafCaloHitList.insert(pCaloHit);
+126     \}
+127 
+128     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+129   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}!Extract\+Seed\+Calo\+Hit\+List@{Extract\+Seed\+Calo\+Hit\+List}}
+\index{Extract\+Seed\+Calo\+Hit\+List@{Extract\+Seed\+Calo\+Hit\+List}!arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}}
+\subsubsection[{Extract\+Seed\+Calo\+Hit\+List}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Extract\+Seed\+Calo\+Hit\+List (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Calo\+Hit\+List $\ast$const}]{p\+Calo\+Hit\+List, }
+\item[{pandora\+::\+Calo\+Hit\+List \&}]{seed\+Calo\+Hit\+List, }
+\item[{bool}]{discriminate\+Leaf\+Hits = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1CaloHitHelper_a89ea31f657c7a3ad0e2b3d4efde798d3}
+
+
+Extract the calo hit seed list from the calo hit list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit\+List} & the list to extract the sub calo hit seed list \\
+\hline
+{\em seed\+Calo\+Hit\+List} & the calo hit seed list to receive \\
+\hline
+{\em discriminate\+Leaf\+Hits} & whether the leaf/seed hits have to be put in the extracted list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file Calo\+Hit\+Helper.\+cc.
+
+
+
+References Arbor\+Content\+Api\+::\+Is\+Leaf(), and Arbor\+Content\+Api\+::\+Is\+Seed().
+
+
+
+Referenced by Extract\+Current\+Seed\+Calo\+Hit\+List(), arbor\+\_\+content\+::\+Closeby\+Seed\+Merging\+Algorithm\+::\+Find\+Merge\+Candidate\+Clusters(), arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+N\+Calo\+Hit\+Seeds(), arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Split\+Cluster\+Into\+Tree\+Clusters(), and arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Split\+Tree\+From\+Cluster().
+
+
+\begin{DoxyCode}
+84   \{
+85     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = pCaloHitList->begin(), endIter = pCaloHitList->end() ;
+86         endIter != iter ; ++iter)
+87     \{
+88       \textcolor{keyword}{const} CaloHit *\textcolor{keyword}{const} pCaloHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }CaloHit *const\textcolor{keyword}{>}(*iter);
+89 
+90       \textcolor{keywordflow}{if}(NULL == pCaloHit)
+91         \textcolor{keywordflow}{continue};
+92 
+93       \textcolor{keywordflow}{if}(ArborContentApi::IsSeed(pCaloHit) && !(ArborContentApi::IsLeaf(pCaloHit) && discriminateLeafHits))
+94         seedCaloHitList.insert(pCaloHit);
+95     \}
+96 
+97     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+98   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}!Get\+Mean\+Direction@{Get\+Mean\+Direction}}
+\index{Get\+Mean\+Direction@{Get\+Mean\+Direction}!arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}}
+\subsubsection[{Get\+Mean\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Get\+Mean\+Direction (
+\begin{DoxyParamCaption}
+\item[{const {\bf Calo\+Hit} $\ast$const}]{p\+Calo\+Hit, }
+\item[{{\bf Connector\+Direction}}]{connector\+Direction, }
+\item[{pandora\+::\+Cartesian\+Vector \&}]{direction, }
+\item[{unsigned int}]{depth}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1CaloHitHelper_a86f521ab2a3f2ff79534918ca3affc4e}
+
+
+Get the mean direction of the calo hit in a given direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the calo hit to evaluate the mean direction \\
+\hline
+{\em connector\+Direction} & the connector direction to evaluate the mean direction \\
+\hline
+{\em direction} & the mean direction to receive \\
+\hline
+{\em depth} & the maximum connector depth to reach for the direction evaluation \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 189 of file Calo\+Hit\+Helper.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Connector\+::\+Get(), and Arbor\+Content\+Api\+::\+Get\+Connector\+List().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::\+Get\+Reference\+Vector().
+
+
+\begin{DoxyCode}
+191   \{
+192     \textcolor{keywordflow}{if}(NULL == pCaloHit)
+193       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+194 
+195     \textcolor{keywordflow}{if}(0 == depth)
+196       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+197 
+198     \textcolor{keyword}{const} ConnectorList &connectorList(ArborContentApi::GetConnectorList(pCaloHit, connectorDirection));
+199 
+200     \textcolor{keywordflow}{if}(connectorList.empty())
+201       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+202 
+203     \textcolor{keyword}{const} pandora::CartesianVector &positionVector(pCaloHit->GetPositionVector());
+204 
+205     \textcolor{keywordflow}{for}(ConnectorList::const\_iterator iter = connectorList.begin() , endIter = connectorList.end() ;
+206         endIter != iter ; ++iter)
+207     \{
+208       \textcolor{keyword}{const} Connector *\textcolor{keyword}{const} pConnector = *iter;
+209       \textcolor{keyword}{const} CaloHit *\textcolor{keyword}{const} pConnectedCaloHit = pConnector->Get(connectorDirection);
+210 
+211       pandora::CartesianVector differencePosition(pConnectedCaloHit->GetPositionVector() - positionVector);
+212       \textcolor{keyword}{const} \textcolor{keywordtype}{float} normalizationWeight = 1.f / (differencePosition.GetMagnitudeSquared());
+213       direction += (differencePosition * normalizationWeight);
+214 
+215       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      CaloHitHelper::GetMeanDirection(pConnectedCaloHit, connectorDirection,
+216           direction, depth-1));
+217     \}
+218 
+219     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+220   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}!Is\+In\+Region\+Of\+Interest@{Is\+In\+Region\+Of\+Interest}}
+\index{Is\+In\+Region\+Of\+Interest@{Is\+In\+Region\+Of\+Interest}!arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}}
+\subsubsection[{Is\+In\+Region\+Of\+Interest}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Is\+In\+Region\+Of\+Interest (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{start\+Region\+Position, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{test\+Position, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{expected\+Direction, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{normale\+Vector, }
+\item[{const float}]{normale\+Max\+Angle, }
+\item[{const float}]{normale\+Max\+Distance, }
+\item[{const float}]{transverse\+Max\+Angle, }
+\item[{const float}]{transverse\+Max\+Distance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1CaloHitHelper_a8c1009876aa9bc6392484e8b20e0c9b0}
+
+
+Whether the tested position is in the region of interest. 
+
+The valid region is contained within a cone
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Region\+Position} & the position where the region of interest starts \\
+\hline
+{\em test\+Position} & the position to test inside the region of interest \\
+\hline
+{\em excepted\+Direction} & the expected of the shower development from start\+Region\+Position \\
+\hline
+{\em normale\+Max\+Angle} & the maximum angle between the two hits when the expected direction is colinear to the cell direction of start\+Region\+Position \\
+\hline
+{\em normale\+Max\+Distance} & the maximum distance between the two hits when the expected direction is colinear to the cell direction of start\+Region\+Position \\
+\hline
+{\em transverse\+Max\+Angle} & the maximum angle between the two hits when the expected direction is perpendicular to the cell direction of start\+Region\+Position \\
+\hline
+{\em transverse\+Max\+Distance} & the maximum distance between the two hits when the expected direction is perpendicular to the cell direction of start\+Region\+Position \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 260 of file Calo\+Hit\+Helper.\+cc.
+
+
+
+Referenced by Can\+Connect().
+
+
+\begin{DoxyCode}
+262   \{
+263     \textcolor{keyword}{const} \textcolor{keywordtype}{float} expectedAngle = normaleVector.GetOpeningAngle(expectedDirection);
+264 
+265     \textcolor{keywordflow}{if}(normaleMaxAngle <= transverseMaxAngle || normaleMaxDistance >= transverseMaxDistance)
+266       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+267 
+268     \textcolor{keyword}{const} \textcolor{keywordtype}{float} maxDistance = (normaleMaxDistance - transverseMaxDistance)*std::cos(expectedAngle) + 
+      transverseMaxDistance;
+269     \textcolor{keyword}{const} \textcolor{keywordtype}{float} maxAngle = (normaleMaxAngle - transverseMaxAngle)*std::cos(expectedAngle) + 
+      transverseMaxAngle;
+270 
+271     \textcolor{keyword}{const} pandora::CartesianVector differenceVector = testPosition - startRegionPosition;
+272 
+273     \textcolor{keyword}{const} \textcolor{keywordtype}{float} angle = differenceVector.GetOpeningAngle(expectedDirection);
+274     \textcolor{keyword}{const} \textcolor{keywordtype}{float} distance = differenceVector.GetMagnitude();
+275 
+276     \textcolor{keywordflow}{if}(angle > maxAngle || distance > maxDistance)
+277       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+278 
+279     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+280   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}!Remove\+Connections@{Remove\+Connections}}
+\index{Remove\+Connections@{Remove\+Connections}!arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}}
+\subsubsection[{Remove\+Connections}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Remove\+Connections (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Calo\+Hit\+List $\ast$const}]{p\+Calo\+Hit\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1CaloHitHelper_a7cb816b6fe0de4cf0ba1b829e931707f}
+
+
+Remove the connections of the calo hit list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit\+List} & the calo hit list to remove the connections \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 53 of file Calo\+Hit\+Helper.\+cc.
+
+
+
+References Arbor\+Content\+Api\+::\+Remove\+And\+Delete\+All\+Connections().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Fragment\+Removal\+Algorithm\+::\+Remove\+Cluster\+Fragments(), Remove\+Current\+Connections(), and arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+54   \{
+55     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = pCaloHitList->begin(), endIter = pCaloHitList->end() ;
+56         endIter != iter ; ++iter)
+57     \{
+58       \textcolor{keyword}{const} CaloHit *\textcolor{keyword}{const} pCaloHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }CaloHit *const\textcolor{keyword}{>}(*iter);
+59 
+60       \textcolor{keywordflow}{if}(NULL == pCaloHit)
+61         \textcolor{keywordflow}{continue};
+62 
+63       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::RemoveAndDeleteAllConnections(pCaloHit));
+64     \}
+65 
+66     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+67   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}!Remove\+Current\+Connections@{Remove\+Current\+Connections}}
+\index{Remove\+Current\+Connections@{Remove\+Current\+Connections}!arbor\+\_\+content\+::\+Calo\+Hit\+Helper@{arbor\+\_\+content\+::\+Calo\+Hit\+Helper}}
+\subsubsection[{Remove\+Current\+Connections}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Remove\+Current\+Connections (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1CaloHitHelper_a517d7d6221b233398630cec6086fcbfc}
+
+
+Remove the connections of the current calo hit list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the algorithm to access the content \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 43 of file Calo\+Hit\+Helper.\+cc.
+
+
+
+References Remove\+Connections().
+
+
+\begin{DoxyCode}
+44   \{
+45     \textcolor{keyword}{const} pandora::CaloHitList *pCaloHitList = NULL;
+46     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(algorithm,
+       pCaloHitList));
+47 
+48     \textcolor{keywordflow}{return} CaloHitHelper::RemoveConnections(pCaloHitList);
+49   \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Calo\+Hit\+Helper.\+h}\item 
+{\bf Calo\+Hit\+Helper.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,143 @@
+\section{arbor\+\_\+content\+:\+:Particle\+Id\+Helper\+:\+:Starting\+Layer\+Settings Class Reference}
+\label{classarbor__content_1_1ParticleIdHelper_1_1StartingLayerSettings}\index{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}}
+
+
+\doxyref{Starting\+Layer\+Settings}{p.}{classarbor__content_1_1ParticleIdHelper_1_1StartingLayerSettings} class.  
+
+
+
+
+{\ttfamily \#include $<$Particle\+Id\+Plugins.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Starting\+Layer\+Settings} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Input\+U\+Int {\bf m\+\_\+max\+Forward\+Pseudo\+Layer}
+\item 
+pandora\+::\+Input\+U\+Int {\bf m\+\_\+min\+Pseudo\+Layer\+N\+Hits}
+\item 
+pandora\+::\+Input\+Float {\bf m\+\_\+min\+Fit\+Hit\+Distance\+Fine}
+\item 
+pandora\+::\+Input\+Float {\bf m\+\_\+min\+Fit\+Hit\+Distance\+Coarse}
+\item 
+pandora\+::\+Input\+U\+Int {\bf m\+\_\+min\+N\+Interacting\+Layers}
+\item 
+pandora\+::\+Input\+Float {\bf m\+\_\+low\+Energy\+Cluster\+Cut}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Starting\+Layer\+Settings}{p.}{classarbor__content_1_1ParticleIdHelper_1_1StartingLayerSettings} class. 
+
+Definition at line 46 of file Particle\+Id\+Plugins.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}!Starting\+Layer\+Settings@{Starting\+Layer\+Settings}}
+\index{Starting\+Layer\+Settings@{Starting\+Layer\+Settings}!arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}}
+\subsubsection[{Starting\+Layer\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::\+Starting\+Layer\+Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1ParticleIdHelper_1_1StartingLayerSettings_abc519e1ac84b3b3f8e031d13730f3a81}
+
+
+Default constructor. 
+
+
+
+Definition at line 38 of file Particle\+Id\+Plugins.\+cc.
+
+
+\begin{DoxyCode}
+38                                                                :
+39         m_maxForwardPseudoLayer(3),
+40         m_minPseudoLayerNHits(4),
+41         m_minFitHitDistanceFine(50.f),
+42         m_minFitHitDistanceCoarse(100.f),
+43         m_minNInteractingLayers(2),
+44         m_lowEnergyClusterCut(4.f)
+45   \{
+46   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}!m\+\_\+low\+Energy\+Cluster\+Cut@{m\+\_\+low\+Energy\+Cluster\+Cut}}
+\index{m\+\_\+low\+Energy\+Cluster\+Cut@{m\+\_\+low\+Energy\+Cluster\+Cut}!arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}}
+\subsubsection[{m\+\_\+low\+Energy\+Cluster\+Cut}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Input\+Float arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+low\+Energy\+Cluster\+Cut}\label{classarbor__content_1_1ParticleIdHelper_1_1StartingLayerSettings_a4ea4c92342655402191c7b569828062b}
+
+
+Definition at line 59 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Get\+Starting\+Pseudo\+Layer(), and arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::\+Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}!m\+\_\+max\+Forward\+Pseudo\+Layer@{m\+\_\+max\+Forward\+Pseudo\+Layer}}
+\index{m\+\_\+max\+Forward\+Pseudo\+Layer@{m\+\_\+max\+Forward\+Pseudo\+Layer}!arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}}
+\subsubsection[{m\+\_\+max\+Forward\+Pseudo\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Input\+U\+Int arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+max\+Forward\+Pseudo\+Layer}\label{classarbor__content_1_1ParticleIdHelper_1_1StartingLayerSettings_ac53c3428005f2f5eb203c58c71f9f112}
+
+
+Definition at line 54 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Get\+Starting\+Pseudo\+Layer(), and arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::\+Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}!m\+\_\+min\+Fit\+Hit\+Distance\+Coarse@{m\+\_\+min\+Fit\+Hit\+Distance\+Coarse}}
+\index{m\+\_\+min\+Fit\+Hit\+Distance\+Coarse@{m\+\_\+min\+Fit\+Hit\+Distance\+Coarse}!arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}}
+\subsubsection[{m\+\_\+min\+Fit\+Hit\+Distance\+Coarse}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Input\+Float arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+min\+Fit\+Hit\+Distance\+Coarse}\label{classarbor__content_1_1ParticleIdHelper_1_1StartingLayerSettings_a4feaa383104b4c1b75902fabad0a5c40}
+
+
+Definition at line 57 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Get\+Starting\+Pseudo\+Layer(), and arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::\+Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}!m\+\_\+min\+Fit\+Hit\+Distance\+Fine@{m\+\_\+min\+Fit\+Hit\+Distance\+Fine}}
+\index{m\+\_\+min\+Fit\+Hit\+Distance\+Fine@{m\+\_\+min\+Fit\+Hit\+Distance\+Fine}!arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}}
+\subsubsection[{m\+\_\+min\+Fit\+Hit\+Distance\+Fine}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Input\+Float arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+min\+Fit\+Hit\+Distance\+Fine}\label{classarbor__content_1_1ParticleIdHelper_1_1StartingLayerSettings_ad7ae3777955f94a7bfa383fbce1a5974}
+
+
+Definition at line 56 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Get\+Starting\+Pseudo\+Layer(), and arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::\+Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}!m\+\_\+min\+N\+Interacting\+Layers@{m\+\_\+min\+N\+Interacting\+Layers}}
+\index{m\+\_\+min\+N\+Interacting\+Layers@{m\+\_\+min\+N\+Interacting\+Layers}!arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}}
+\subsubsection[{m\+\_\+min\+N\+Interacting\+Layers}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Input\+U\+Int arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+min\+N\+Interacting\+Layers}\label{classarbor__content_1_1ParticleIdHelper_1_1StartingLayerSettings_ab04ea799fbd1ce8ec35a451827538d3f}
+
+
+Definition at line 58 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Get\+Starting\+Pseudo\+Layer(), and arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::\+Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}!m\+\_\+min\+Pseudo\+Layer\+N\+Hits@{m\+\_\+min\+Pseudo\+Layer\+N\+Hits}}
+\index{m\+\_\+min\+Pseudo\+Layer\+N\+Hits@{m\+\_\+min\+Pseudo\+Layer\+N\+Hits}!arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings@{arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings}}
+\subsubsection[{m\+\_\+min\+Pseudo\+Layer\+N\+Hits}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Input\+U\+Int arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+min\+Pseudo\+Layer\+N\+Hits}\label{classarbor__content_1_1ParticleIdHelper_1_1StartingLayerSettings_acc21194e8531a3db16dd725a2c07f98a}
+
+
+Definition at line 55 of file Particle\+Id\+Plugins.\+h.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Get\+Starting\+Pseudo\+Layer(), and arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::\+Read\+Settings().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Particle\+Id\+Plugins.\+h}\item 
+{\bf Particle\+Id\+Plugins.\+cc}\end{DoxyCompactItemize}

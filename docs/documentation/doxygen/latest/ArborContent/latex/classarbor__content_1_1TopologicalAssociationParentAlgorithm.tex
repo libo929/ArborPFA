@@ -1,0 +1,122 @@
+\section{arbor\+\_\+content\+:\+:Topological\+Association\+Parent\+Algorithm Class Reference}
+\label{classarbor__content_1_1TopologicalAssociationParentAlgorithm}\index{arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm@{arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm}}
+
+
+Template\+Algorithm class.  
+
+
+
+
+{\ttfamily \#include $<$Topological\+Association\+Parent\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Topological\+Association\+Parent\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1TopologicalAssociationParentAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1TopologicalAssociationParentAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+association\+Algorithms}
+\begin{DoxyCompactList}\small\item\em The ordered list of topological association algorithms to be used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Template\+Algorithm class. 
+
+Definition at line 39 of file Topological\+Association\+Parent\+Algorithm.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm@{arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm@{arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TopologicalAssociationParentAlgorithm_a6d292bdf6f014715d192a89e85dc7819}
+
+
+Definition at line 47 of file Topological\+Association\+Parent\+Algorithm.\+cc.
+
+
+
+References m\+\_\+association\+Algorithms.
+
+
+\begin{DoxyCode}
+48   \{
+49     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ProcessAlgorithmList(*\textcolor{keyword}{
+      this}, xmlHandle, \textcolor{stringliteral}{"associationAlgorithms"},
+50         m_associationAlgorithms));
+51 
+52     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+53   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm@{arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm@{arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TopologicalAssociationParentAlgorithm_aec8d3f774a1ad3714380e4217ded0de1}
+
+
+Definition at line 34 of file Topological\+Association\+Parent\+Algorithm.\+cc.
+
+
+
+References m\+\_\+association\+Algorithms.
+
+
+\begin{DoxyCode}
+35   \{
+36     \textcolor{comment}{// Run topological daughter association algorithms}
+37     \textcolor{keywordflow}{for} (pandora::StringVector::const\_iterator iter = m_associationAlgorithms.begin(), iterEnd = 
+      m_associationAlgorithms.end(); iter != iterEnd; ++iter)
+38     \{
+39       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::RunDaughterAlgorithm(*\textcolor{keyword}{
+      this}, *iter));
+40     \}
+41 
+42     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+43   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm@{arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm}!m\+\_\+association\+Algorithms@{m\+\_\+association\+Algorithms}}
+\index{m\+\_\+association\+Algorithms@{m\+\_\+association\+Algorithms}!arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm@{arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm}}
+\subsubsection[{m\+\_\+association\+Algorithms}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+String\+Vector arbor\+\_\+content\+::\+Topological\+Association\+Parent\+Algorithm\+::m\+\_\+association\+Algorithms\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TopologicalAssociationParentAlgorithm_a3e00860b8d1a8d42d359469ed837c52e}
+
+
+The ordered list of topological association algorithms to be used. 
+
+
+
+Definition at line 55 of file Topological\+Association\+Parent\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Topological\+Association\+Parent\+Algorithm.\+h}\item 
+{\bf Topological\+Association\+Parent\+Algorithm.\+cc}\end{DoxyCompactItemize}

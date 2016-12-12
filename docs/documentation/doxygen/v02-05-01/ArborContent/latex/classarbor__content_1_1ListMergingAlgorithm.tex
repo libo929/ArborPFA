@@ -1,0 +1,113 @@
+\section{arbor\+\_\+content\+:\+:List\+Merging\+Algorithm$<$ T $>$ Class Template Reference}
+\label{classarbor__content_1_1ListMergingAlgorithm}\index{arbor\+\_\+content\+::\+List\+Merging\+Algorithm$<$ T $>$@{arbor\+\_\+content\+::\+List\+Merging\+Algorithm$<$ T $>$}}
+
+
+\doxyref{List\+Merging\+Algorithm}{p.}{classarbor__content_1_1ListMergingAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$List\+Merging\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:List\+Merging\+Algorithm$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.434783cm]{classarbor__content_1_1ListMergingAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual pandora\+::\+Status\+Code {\bf Run} ()=0
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+input\+List\+Names}
+\item 
+std\+::string {\bf m\+\_\+output\+List\+Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class arbor\+\_\+content\+::\+List\+Merging\+Algorithm$<$ T $>$}
+
+\doxyref{List\+Merging\+Algorithm}{p.}{classarbor__content_1_1ListMergingAlgorithm} class. 
+
+Definition at line 43 of file List\+Merging\+Algorithm.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+List\+Merging\+Algorithm@{arbor\+\_\+content\+::\+List\+Merging\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+List\+Merging\+Algorithm@{arbor\+\_\+content\+::\+List\+Merging\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template pandora\+::\+Status\+Code {\bf arbor\+\_\+content\+::\+List\+Merging\+Algorithm}$<$ T $>$\+::Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classarbor__content_1_1ListMergingAlgorithm_a18215706064bef560d8ef986d31f404e}
+
+
+Definition at line 108 of file List\+Merging\+Algorithm.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+List\+Merging\+Algorithm$<$ T $>$\+::m\+\_\+input\+List\+Names, and arbor\+\_\+content\+::\+List\+Merging\+Algorithm$<$ T $>$\+::m\+\_\+output\+List\+Name.
+
+
+\begin{DoxyCode}
+109 \{
+110   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadVectorOfValues(
+      xmlHandle,
+111       \textcolor{stringliteral}{"InputListNames"}, m_inputListNames));
+112 
+113   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadValue(xmlHandle,
+114       \textcolor{stringliteral}{"OutputListName"}, m_outputListName));
+115 
+116   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+117 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+List\+Merging\+Algorithm@{arbor\+\_\+content\+::\+List\+Merging\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+List\+Merging\+Algorithm@{arbor\+\_\+content\+::\+List\+Merging\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual pandora\+::\+Status\+Code {\bf arbor\+\_\+content\+::\+List\+Merging\+Algorithm}$<$ T $>$\+::Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{classarbor__content_1_1ListMergingAlgorithm_a110c7fb750c502a0c5ede077e16b27be}
+
+
+Implemented in {\bf arbor\+\_\+content\+::\+Algorithm\+Object\+List\+Merging\+Algorithm$<$ T $>$} \doxyref{}{p.}{classarbor__content_1_1AlgorithmObjectListMergingAlgorithm_a19852863298557f06822a38708535b94}, and {\bf arbor\+\_\+content\+::\+Input\+Object\+List\+Merging\+Algorithm$<$ T $>$} \doxyref{}{p.}{classarbor__content_1_1InputObjectListMergingAlgorithm_a26d80e036e050111e449a14420f9d373}.
+
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+List\+Merging\+Algorithm@{arbor\+\_\+content\+::\+List\+Merging\+Algorithm}!m\+\_\+input\+List\+Names@{m\+\_\+input\+List\+Names}}
+\index{m\+\_\+input\+List\+Names@{m\+\_\+input\+List\+Names}!arbor\+\_\+content\+::\+List\+Merging\+Algorithm@{arbor\+\_\+content\+::\+List\+Merging\+Algorithm}}
+\subsubsection[{m\+\_\+input\+List\+Names}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ pandora\+::\+String\+Vector {\bf arbor\+\_\+content\+::\+List\+Merging\+Algorithm}$<$ T $>$\+::m\+\_\+input\+List\+Names\hspace{0.3cm}{\ttfamily [protected]}}\label{classarbor__content_1_1ListMergingAlgorithm_a520dde41eb08ed10d3cba090b990b743}
+
+
+Definition at line 49 of file List\+Merging\+Algorithm.\+h.
+
+
+
+Referenced by arbor\+\_\+content\+::\+List\+Merging\+Algorithm$<$ T $>$\+::\+Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+List\+Merging\+Algorithm@{arbor\+\_\+content\+::\+List\+Merging\+Algorithm}!m\+\_\+output\+List\+Name@{m\+\_\+output\+List\+Name}}
+\index{m\+\_\+output\+List\+Name@{m\+\_\+output\+List\+Name}!arbor\+\_\+content\+::\+List\+Merging\+Algorithm@{arbor\+\_\+content\+::\+List\+Merging\+Algorithm}}
+\subsubsection[{m\+\_\+output\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::string {\bf arbor\+\_\+content\+::\+List\+Merging\+Algorithm}$<$ T $>$\+::m\+\_\+output\+List\+Name\hspace{0.3cm}{\ttfamily [protected]}}\label{classarbor__content_1_1ListMergingAlgorithm_a8849a62565417a2fac2d57375947e320}
+
+
+Definition at line 50 of file List\+Merging\+Algorithm.\+h.
+
+
+
+Referenced by arbor\+\_\+content\+::\+List\+Merging\+Algorithm$<$ T $>$\+::\+Read\+Settings().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf List\+Merging\+Algorithm.\+h}\item 
+{\bf List\+Merging\+Algorithm.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,180 @@
+\section{arbor\+\_\+content\+:\+:Calo\+Hit\+Factory Class Reference}
+\label{classarbor__content_1_1CaloHitFactory}\index{arbor\+\_\+content\+::\+Calo\+Hit\+Factory@{arbor\+\_\+content\+::\+Calo\+Hit\+Factory}}
+
+
+\doxyref{Calo\+Hit\+Factory}{p.}{classarbor__content_1_1CaloHitFactory} class.  
+
+
+
+
+{\ttfamily \#include $<$Object\+Factories.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Calo\+Hit\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1CaloHitFactory}
+\end{center}
+\end{figure}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Pandora\+Api\+::\+Calo\+Hit\+::\+Parameters $\ast$ {\bf New\+Parameters} () const 
+\begin{DoxyCompactList}\small\item\em Create new parameters instance on the heap (memory-\/management to be controlled by user) \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Read} (Pandora\+Api\+::\+Calo\+Hit\+::\+Parameters \&parameters, pandora\+::\+File\+Reader \&file\+Reader) const 
+\begin{DoxyCompactList}\small\item\em Read any additional (derived class only) object parameters from file using the specified file reader. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Write} (const pandora\+::\+Calo\+Hit $\ast$const p\+Calo\+Hit, pandora\+::\+File\+Writer \&file\+Writer) const 
+\begin{DoxyCompactList}\small\item\em Persist any additional (derived class only) object parameters using the specified file writer. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Create} (const Pandora\+Api\+::\+Calo\+Hit\+::\+Parameters \&parameters, const pandora\+::\+Calo\+Hit $\ast$\&p\+Calo\+Hit) const 
+\begin{DoxyCompactList}\small\item\em Create an object with the given parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Calo\+Hit\+Factory}{p.}{classarbor__content_1_1CaloHitFactory} class. 
+
+Definition at line 45 of file Object\+Factories.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Factory@{arbor\+\_\+content\+::\+Calo\+Hit\+Factory}!Create@{Create}}
+\index{Create@{Create}!arbor\+\_\+content\+::\+Calo\+Hit\+Factory@{arbor\+\_\+content\+::\+Calo\+Hit\+Factory}}
+\subsubsection[{Create}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Factory\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{const Pandora\+Api\+::\+Calo\+Hit\+::\+Parameters \&}]{parameters, }
+\item[{const pandora\+::\+Calo\+Hit $\ast$\&}]{p\+Calo\+Hit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitFactory_ad370b65b81bcb92b10bc8a3cb9631dc2}
+
+
+Create an object with the given parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & the parameters to pass in constructor \\
+\hline
+{\em p\+Object} & to receive the address of the object created \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file Object\+Factories.\+cc.
+
+
+\begin{DoxyCode}
+59   \{
+60     pCaloHit = NULL;
+61     \textcolor{keyword}{const} arbor_content::CaloHit *pArborCaloHit = NULL;
+62 
+63     \textcolor{keywordflow}{try}
+64     \{
+65       pArborCaloHit = \textcolor{keyword}{new} arbor_content::CaloHit(parameters);
+66 
+67       \textcolor{keywordflow}{if}(NULL == pArborCaloHit)
+68         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+69     \}
+70     \textcolor{keywordflow}{catch}(pandora::StatusCodeException &statusCodeException)
+71     \{
+72       std::cout << \textcolor{stringliteral}{"CaloHitFactory: failed to create a arbor\_content::CaloHit object : "} << 
+      statusCodeException.ToString() << std::endl;
+73 
+74       \textcolor{keywordflow}{if}(NULL != pArborCaloHit)
+75         \textcolor{keyword}{delete} pArborCaloHit;
+76 
+77       \textcolor{keywordflow}{return} statusCodeException.GetStatusCode();
+78     \}
+79 
+80     pCaloHit = pArborCaloHit;
+81 
+82     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+83   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Factory@{arbor\+\_\+content\+::\+Calo\+Hit\+Factory}!New\+Parameters@{New\+Parameters}}
+\index{New\+Parameters@{New\+Parameters}!arbor\+\_\+content\+::\+Calo\+Hit\+Factory@{arbor\+\_\+content\+::\+Calo\+Hit\+Factory}}
+\subsubsection[{New\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}Pandora\+Api\+::\+Calo\+Hit\+::\+Parameters $\ast$ arbor\+\_\+content\+::\+Calo\+Hit\+Factory\+::\+New\+Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitFactory_a07f6d03ddd7a581b2e31c73fc19d18a9}
+
+
+Create new parameters instance on the heap (memory-\/management to be controlled by user) 
+
+\begin{DoxyReturn}{Returns}
+the address of the new parameters instance 
+\end{DoxyReturn}
+
+
+Definition at line 35 of file Object\+Factories.\+cc.
+
+
+\begin{DoxyCode}
+36   \{
+37     \textcolor{keywordflow}{return} \textcolor{keyword}{new} PandoraApi::CaloHit::Parameters();
+38   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Factory@{arbor\+\_\+content\+::\+Calo\+Hit\+Factory}!Read@{Read}}
+\index{Read@{Read}!arbor\+\_\+content\+::\+Calo\+Hit\+Factory@{arbor\+\_\+content\+::\+Calo\+Hit\+Factory}}
+\subsubsection[{Read}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Factory\+::\+Read (
+\begin{DoxyParamCaption}
+\item[{Pandora\+Api\+::\+Calo\+Hit\+::\+Parameters \&}]{parameters, }
+\item[{pandora\+::\+File\+Reader \&}]{file\+Reader}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitFactory_a86c58854ebda7ceb930b758d7cb19077}
+
+
+Read any additional (derived class only) object parameters from file using the specified file reader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & the parameters to pass in constructor \\
+\hline
+{\em file\+Reader} & the file reader, used to extract any additional parameters from file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 42 of file Object\+Factories.\+cc.
+
+
+\begin{DoxyCode}
+43   \{
+44     \textcolor{comment}{/* nop */}
+45     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+46   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Factory@{arbor\+\_\+content\+::\+Calo\+Hit\+Factory}!Write@{Write}}
+\index{Write@{Write}!arbor\+\_\+content\+::\+Calo\+Hit\+Factory@{arbor\+\_\+content\+::\+Calo\+Hit\+Factory}}
+\subsubsection[{Write}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Factory\+::\+Write (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Calo\+Hit $\ast$const}]{p\+Calo\+Hit, }
+\item[{pandora\+::\+File\+Writer \&}]{file\+Writer}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitFactory_a5f0a26903f8ecb64c7a59a16ba2c2e06}
+
+
+Persist any additional (derived class only) object parameters using the specified file writer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the address of the object to persist \\
+\hline
+{\em file\+Writer} & the file writer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file Object\+Factories.\+cc.
+
+
+\begin{DoxyCode}
+51   \{
+52     \textcolor{comment}{/* nop */}
+53     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+54   \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Object\+Factories.\+h}\item 
+{\bf Object\+Factories.\+cc}\end{DoxyCompactItemize}

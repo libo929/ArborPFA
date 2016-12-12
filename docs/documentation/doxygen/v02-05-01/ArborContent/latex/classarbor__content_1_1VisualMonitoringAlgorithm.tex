@@ -1,0 +1,1348 @@
+\section{arbor\+\_\+content\+:\+:Visual\+Monitoring\+Algorithm Class Reference}
+\label{classarbor__content_1_1VisualMonitoringAlgorithm}\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+
+
+\doxyref{Visual\+Monitoring\+Algorithm}{p.}{classarbor__content_1_1VisualMonitoringAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$Visual\+Monitoring\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Visual\+Monitoring\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1VisualMonitoringAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1VisualMonitoringAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Visual\+Monitoring\+Algorithm} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ int, float $>$ {\bf Pdg\+Code\+To\+Energy\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\item 
+void {\bf Visualize\+M\+C\+Particle\+List} (const std\+::string \&list\+Name) const 
+\begin{DoxyCompactList}\small\item\em Visualize mc particle list. \end{DoxyCompactList}\item 
+void {\bf Visualize\+Calo\+Hit\+List} (const std\+::string \&list\+Name) const 
+\begin{DoxyCompactList}\small\item\em Visualize a specified calo hit list. \end{DoxyCompactList}\item 
+void {\bf Visualize\+Track\+List} (const std\+::string \&list\+Name) const 
+\begin{DoxyCompactList}\small\item\em Visualize a specified track list. \end{DoxyCompactList}\item 
+void {\bf Visualize\+Cluster\+List} (const std\+::string \&list\+Name) const 
+\begin{DoxyCompactList}\small\item\em Visualize a specified calo hit list. \end{DoxyCompactList}\item 
+void {\bf Visualize\+Particle\+Flow\+List} (const std\+::string \&list\+Name) const 
+\begin{DoxyCompactList}\small\item\em Visualize a specified pfo list. \end{DoxyCompactList}\item 
+void {\bf Visualize\+Vertex\+List} (const std\+::string \&list\+Name) const 
+\begin{DoxyCompactList}\small\item\em Visualize a specified vertex list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\+\_\+show\+Current\+Connectors}
+\begin{DoxyCompactList}\small\item\em Whether to show connectors of the current list. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+connector\+Level}
+\begin{DoxyCompactList}\small\item\em \doxyref{Connector}{p.}{classarbor__content_1_1Connector} level at which they are drawn (calo hit, clusters, pfos) \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+show\+Current\+M\+C\+Particles}
+\begin{DoxyCompactList}\small\item\em Whether to show current mc particles. \end{DoxyCompactList}\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+mc\+Particle\+List\+Names}
+\begin{DoxyCompactList}\small\item\em Names of mc particles lists to show. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+show\+Current\+Calo\+Hits}
+\begin{DoxyCompactList}\small\item\em Whether to show current calohitlist. \end{DoxyCompactList}\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+calo\+Hit\+List\+Names}
+\begin{DoxyCompactList}\small\item\em Names of calo hit lists to show. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+show\+Current\+Tracks}
+\begin{DoxyCompactList}\small\item\em Whether to show current tracks. \end{DoxyCompactList}\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+track\+List\+Names}
+\begin{DoxyCompactList}\small\item\em Names of track lists to show. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+show\+Current\+Clusters}
+\begin{DoxyCompactList}\small\item\em Whether to show current clusters. \end{DoxyCompactList}\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+cluster\+List\+Names}
+\begin{DoxyCompactList}\small\item\em Names of cluster lists to show. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+show\+Current\+Pfos}
+\begin{DoxyCompactList}\small\item\em Whether to show current particle flow object list. \end{DoxyCompactList}\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+pfo\+List\+Names}
+\begin{DoxyCompactList}\small\item\em Names of pfo lists to show. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+show\+Current\+Vertices}
+\begin{DoxyCompactList}\small\item\em Whether to show current vertex list. \end{DoxyCompactList}\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+vertex\+List\+Names}
+\begin{DoxyCompactList}\small\item\em Names of vertex lists to show. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+display\+Event}
+\begin{DoxyCompactList}\small\item\em Whether to display the event. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+show\+Detector}
+\begin{DoxyCompactList}\small\item\em Whether to display the detector geometry. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+detector\+View}
+\begin{DoxyCompactList}\small\item\em The detector view, default, xy or xz. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+show\+Only\+Available}
+\begin{DoxyCompactList}\small\item\em Whether to show only available (i.\+e. non-\/clustered) calohits and tracks. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+show\+Associated\+Tracks}
+\begin{DoxyCompactList}\small\item\em Whether to display tracks associated to clusters when viewing cluster lists. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+hit\+Colors}
+\begin{DoxyCompactList}\small\item\em Define the hit coloring scheme (default\+: pfo, choices\+: pfo, particleid) \end{DoxyCompactList}\item 
+float {\bf m\+\_\+threshold\+Energy}
+\begin{DoxyCompactList}\small\item\em Cell energy threshold for display (em scale) \end{DoxyCompactList}\item 
+float {\bf m\+\_\+transparency\+Threshold\+E}
+\begin{DoxyCompactList}\small\item\em Cell energy for which transparency is saturated (0\%, fully opaque) \end{DoxyCompactList}\item 
+float {\bf m\+\_\+energy\+Scale\+Threshold\+E}
+\begin{DoxyCompactList}\small\item\em Cell energy for which color is at top end of continous color palette. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+show\+Pfo\+Vertices}
+\begin{DoxyCompactList}\small\item\em Whether to display pfo vertices. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+show\+Pfo\+Hierarchy}
+\begin{DoxyCompactList}\small\item\em Whether to display daughter pfos only under parent pfo elements. \end{DoxyCompactList}\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+suppress\+M\+C\+Particles}
+\begin{DoxyCompactList}\small\item\em List of P\+D\+G numbers and energies for M\+C particles to be suppressed (e.\+g. \char`\"{} 22\+:0.\+1 2112\+:1.\+0 \char`\"{}) \end{DoxyCompactList}\item 
+{\bf Pdg\+Code\+To\+Energy\+Map} {\bf m\+\_\+particle\+Suppression\+Map}
+\begin{DoxyCompactList}\small\item\em Map from pdg-\/codes to energy for suppression of particles types below specific energies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Visual\+Monitoring\+Algorithm}{p.}{classarbor__content_1_1VisualMonitoringAlgorithm} class. 
+
+Definition at line 45 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!Pdg\+Code\+To\+Energy\+Map@{Pdg\+Code\+To\+Energy\+Map}}
+\index{Pdg\+Code\+To\+Energy\+Map@{Pdg\+Code\+To\+Energy\+Map}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{Pdg\+Code\+To\+Energy\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<$int, float$>$ {\bf arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::\+Pdg\+Code\+To\+Energy\+Map}\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a0b6e2d0eb37316cc17079aa12403e278}
+
+
+Definition at line 120 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!Visual\+Monitoring\+Algorithm@{Visual\+Monitoring\+Algorithm}}
+\index{Visual\+Monitoring\+Algorithm@{Visual\+Monitoring\+Algorithm}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{Visual\+Monitoring\+Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::\+Visual\+Monitoring\+Algorithm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1VisualMonitoringAlgorithm_aa95781ba1d9693cad6c915bbdabc48b1}
+
+
+Default constructor. 
+
+
+
+Definition at line 43 of file Visual\+Monitoring\+Algorithm.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::\+Factory\+::\+Create\+Algorithm().
+
+
+\begin{DoxyCode}
+43                                                        :
+44       m_showCurrentConnectors(\textcolor{keyword}{true}),
+45       m_connectorLevel(\textcolor{stringliteral}{"pfos"}),
+46       m_showCurrentMCParticles(\textcolor{keyword}{false}),
+47       m_showCurrentCaloHits(\textcolor{keyword}{false}),
+48       m_showCurrentTracks(\textcolor{keyword}{false}),
+49       m_showCurrentClusters(\textcolor{keyword}{true}),
+50       m_showCurrentPfos(\textcolor{keyword}{true}),
+51       m_showCurrentVertices(\textcolor{keyword}{false}),
+52       m_displayEvent(\textcolor{keyword}{true}),
+53       m_showDetector(\textcolor{keyword}{true}),
+54       m_detectorView(\textcolor{stringliteral}{"xz"}),
+55       m_showOnlyAvailable(\textcolor{keyword}{false}),
+56       m_showAssociatedTracks(\textcolor{keyword}{false}),
+57       m_hitColors(\textcolor{stringliteral}{"pfo"}),
+58       m_thresholdEnergy(-1.f),
+59       m_transparencyThresholdE(-1.f),
+60       m_energyScaleThresholdE(1.f),
+61       m_showPfoVertices(\textcolor{keyword}{true}),
+62       m_showPfoHierarchy(\textcolor{keyword}{true})
+63   \{
+64   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a36b467d1e3207a91652381b897e4313c}
+
+
+Definition at line 556 of file Visual\+Monitoring\+Algorithm.\+cc.
+
+
+
+References m\+\_\+calo\+Hit\+List\+Names, m\+\_\+cluster\+List\+Names, m\+\_\+connector\+Level, m\+\_\+detector\+View, m\+\_\+display\+Event, m\+\_\+energy\+Scale\+Threshold\+E, m\+\_\+hit\+Colors, m\+\_\+mc\+Particle\+List\+Names, m\+\_\+particle\+Suppression\+Map, m\+\_\+pfo\+List\+Names, m\+\_\+show\+Associated\+Tracks, m\+\_\+show\+Current\+Calo\+Hits, m\+\_\+show\+Current\+Clusters, m\+\_\+show\+Current\+Connectors, m\+\_\+show\+Current\+M\+C\+Particles, m\+\_\+show\+Current\+Pfos, m\+\_\+show\+Current\+Tracks, m\+\_\+show\+Current\+Vertices, m\+\_\+show\+Detector, m\+\_\+show\+Only\+Available, m\+\_\+show\+Pfo\+Hierarchy, m\+\_\+show\+Pfo\+Vertices, m\+\_\+suppress\+M\+C\+Particles, m\+\_\+threshold\+Energy, m\+\_\+track\+List\+Names, m\+\_\+transparency\+Threshold\+E, and m\+\_\+vertex\+List\+Names.
+
+
+\begin{DoxyCode}
+557   \{
+558     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+559         \textcolor{stringliteral}{"ShowCurrentConnectors"}, m_showCurrentConnectors));
+560 
+561     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+562         \textcolor{stringliteral}{"ConnectorLevel"}, m_connectorLevel));
+563     std::transform(m_connectorLevel.begin(), m_connectorLevel.end(), 
+      m_connectorLevel.begin(), ::tolower);
+564 
+565     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+566         \textcolor{stringliteral}{"ShowCurrentMCParticles"}, m_showCurrentMCParticles));
+567 
+568     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadVectorOfValues(xmlHandle,
+569         \textcolor{stringliteral}{"MCParticleListNames"}, m_mcParticleListNames));
+570 
+571     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+572         \textcolor{stringliteral}{"ShowCurrentCaloHits"}, m_showCurrentCaloHits));
+573 
+574     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadVectorOfValues(xmlHandle,
+575         \textcolor{stringliteral}{"CaloHitListNames"}, m_caloHitListNames));
+576 
+577     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+578         \textcolor{stringliteral}{"ShowCurrentTracks"}, m_showCurrentTracks));
+579 
+580     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadVectorOfValues(xmlHandle,
+581         \textcolor{stringliteral}{"TrackListNames"}, m_trackListNames));
+582 
+583     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+584         \textcolor{stringliteral}{"ShowCurrentClusters"}, m_showCurrentClusters));
+585 
+586     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadVectorOfValues(xmlHandle,
+587         \textcolor{stringliteral}{"ClusterListNames"}, m_clusterListNames));
+588 
+589     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+590         \textcolor{stringliteral}{"ShowCurrentPfos"}, m_showCurrentPfos));
+591 
+592     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadVectorOfValues(xmlHandle,
+593         \textcolor{stringliteral}{"PfoListNames"}, m_pfoListNames));
+594 
+595     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+596         \textcolor{stringliteral}{"ShowCurrentVertices"}, m_showCurrentVertices));
+597 
+598     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadVectorOfValues(xmlHandle,
+599         \textcolor{stringliteral}{"VertexListNames"}, m_vertexListNames));
+600 
+601     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+602         \textcolor{stringliteral}{"DisplayEvent"}, m_displayEvent));
+603 
+604     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+605         \textcolor{stringliteral}{"ShowDetector"}, m_showDetector));
+606 
+607     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+608         \textcolor{stringliteral}{"DetectorView"}, m_detectorView));
+609     std::transform(m_detectorView.begin(), m_detectorView.end(), m_detectorView.begin(), ::tolower);
+610 
+611     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+612         \textcolor{stringliteral}{"ShowOnlyAvailable"}, m_showOnlyAvailable));
+613 
+614     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+615         \textcolor{stringliteral}{"ShowAssociatedTracks"}, m_showAssociatedTracks));
+616 
+617     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+618         \textcolor{stringliteral}{"HitColors"}, m_hitColors));
+619     std::transform(m_hitColors.begin(), m_hitColors.end(), m_hitColors.begin(), ::tolower);
+620 
+621     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+622         \textcolor{stringliteral}{"ThresholdEnergy"}, m_thresholdEnergy));
+623 
+624     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+625         \textcolor{stringliteral}{"TransparencyThresholdE"}, m_transparencyThresholdE));
+626 
+627     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+628         \textcolor{stringliteral}{"EnergyScaleThresholdE"}, m_energyScaleThresholdE));
+629 
+630     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+631         \textcolor{stringliteral}{"ShowPfoVertices"}, m_showPfoVertices));
+632 
+633     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+634         \textcolor{stringliteral}{"ShowPfoHierarchy"}, m_showPfoHierarchy));
+635 
+636     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadVectorOfValues(xmlHandle,
+637         \textcolor{stringliteral}{"SuppressMCParticles"}, m_suppressMCParticles));
+638 
+639     \textcolor{keywordflow}{for} (pandora::StringVector::iterator iter = m_suppressMCParticles.begin(), iterEnd = 
+      m_suppressMCParticles.end(); iter != iterEnd; ++iter)
+640     \{
+641       \textcolor{keyword}{const} std::string pdgEnergy(*iter);
+642       pandora::StringVector pdgEnergySeparated;
+643       \textcolor{keyword}{const} std::string delimiter = \textcolor{stringliteral}{":"};
+644       pandora::XmlHelper::TokenizeString(pdgEnergy, pdgEnergySeparated, delimiter);
+645 
+646       \textcolor{keywordflow}{if} (pdgEnergySeparated.size() != 2)
+647         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+648 
+649       \textcolor{keywordtype}{int} pdgCode(0);
+650       \textcolor{keywordtype}{float} energy(0.f);
+651 
+652       \textcolor{keywordflow}{if} (!pandora::StringToType(pdgEnergySeparated.at(0), pdgCode) || !pandora::StringToType(
+      pdgEnergySeparated.at(1), energy))
+653         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+654 
+655       m_particleSuppressionMap.insert(PdgCodeToEnergyMap::value\_type(pdgCode, energy));
+656     \}
+657 
+658     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+659   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a1c6141995c2caabb4dde00fbf1cd96bc}
+
+
+Definition at line 68 of file Visual\+Monitoring\+Algorithm.\+cc.
+
+
+
+References m\+\_\+calo\+Hit\+List\+Names, m\+\_\+cluster\+List\+Names, m\+\_\+detector\+View, m\+\_\+display\+Event, m\+\_\+energy\+Scale\+Threshold\+E, m\+\_\+mc\+Particle\+List\+Names, m\+\_\+pfo\+List\+Names, m\+\_\+show\+Current\+Calo\+Hits, m\+\_\+show\+Current\+Clusters, m\+\_\+show\+Current\+M\+C\+Particles, m\+\_\+show\+Current\+Pfos, m\+\_\+show\+Current\+Tracks, m\+\_\+show\+Current\+Vertices, m\+\_\+show\+Detector, m\+\_\+track\+List\+Names, m\+\_\+transparency\+Threshold\+E, m\+\_\+vertex\+List\+Names, Visualize\+Calo\+Hit\+List(), Visualize\+Cluster\+List(), Visualize\+M\+C\+Particle\+List(), Visualize\+Particle\+Flow\+List(), Visualize\+Track\+List(), and Visualize\+Vertex\+List().
+
+
+\begin{DoxyCode}
+69   \{
+70     PANDORA\_MONITORING\_API(SetEveDisplayParameters(this->GetPandora(), 
+      m_showDetector, (m_detectorView.find(\textcolor{stringliteral}{"xz"}) != std::string::npos) ? ::DETECTOR\_VIEW\_XZ :
+71         (m_detectorView.find(\textcolor{stringliteral}{"xy"}) != std::string::npos) ? ::DETECTOR\_VIEW\_XY : ::DETECTOR\_VIEW\_DEFAULT, 
+      m_transparencyThresholdE, m_energyScaleThresholdE));
+72 
+73     \textcolor{comment}{// Show current mc particles}
+74     \textcolor{keywordflow}{if} (m_showCurrentMCParticles)
+75     \{
+76       this->VisualizeMCParticleList(std::string());
+77     \}
+78 
+79     \textcolor{comment}{// Show specified lists of mc particles}
+80     \textcolor{keywordflow}{for} (pandora::StringVector::const\_iterator iter = m_mcParticleListNames.begin(), iterEnd = 
+      m_mcParticleListNames.end(); iter != iterEnd; ++iter)
+81     \{
+82       this->VisualizeMCParticleList(*iter);
+83     \}
+84 
+85     \textcolor{comment}{// Show current calo hit list}
+86     \textcolor{keywordflow}{if} (m_showCurrentCaloHits)
+87     \{
+88       this->VisualizeCaloHitList(std::string());
+89     \}
+90 
+91     \textcolor{comment}{// Show specified lists of calo hits}
+92     \textcolor{keywordflow}{for} (pandora::StringVector::const\_iterator iter = m_caloHitListNames.begin(), iterEnd = 
+      m_caloHitListNames.end(); iter != iterEnd; ++iter)
+93     \{
+94       this->VisualizeCaloHitList(*iter);
+95     \}
+96 
+97     \textcolor{comment}{// Show current cluster list}
+98     \textcolor{keywordflow}{if} (m_showCurrentClusters)
+99     \{
+100       this->VisualizeClusterList(std::string());
+101     \}
+102 
+103     \textcolor{comment}{// Show specified lists of clusters}
+104     \textcolor{keywordflow}{for} (pandora::StringVector::const\_iterator iter = m_clusterListNames.begin(), iterEnd = 
+      m_clusterListNames.end(); iter != iterEnd; ++iter)
+105     \{
+106       this->VisualizeClusterList(*iter);
+107     \}
+108 
+109     \textcolor{comment}{// Show current track list}
+110     \textcolor{keywordflow}{if} (m_showCurrentTracks)
+111     \{
+112       this->VisualizeTrackList(std::string());
+113     \}
+114 
+115     \textcolor{comment}{// Show specified lists of tracks}
+116     \textcolor{keywordflow}{for} (pandora::StringVector::const\_iterator iter = m_trackListNames.begin(), iterEnd = 
+      m_trackListNames.end(); iter != iterEnd; ++iter)
+117     \{
+118       this->VisualizeTrackList(*iter);
+119     \}
+120 
+121     \textcolor{comment}{// Show current particle flow objects}
+122     \textcolor{keywordflow}{if} (m_showCurrentPfos)
+123     \{
+124       this->VisualizeParticleFlowList(std::string());
+125     \}
+126 
+127     \textcolor{comment}{// Show specified lists of pfo}
+128     \textcolor{keywordflow}{for} (pandora::StringVector::const\_iterator iter = m_pfoListNames.begin(), iterEnd = 
+      m_pfoListNames.end(); iter != iterEnd; ++iter)
+129     \{
+130       this->VisualizeParticleFlowList(*iter);
+131     \}
+132 
+133     \textcolor{comment}{// Show current vertex objects}
+134     \textcolor{keywordflow}{if} (m_showCurrentVertices)
+135     \{
+136       this->VisualizeVertexList(std::string());
+137     \}
+138 
+139     \textcolor{comment}{// Show specified lists of vertices}
+140     \textcolor{keywordflow}{for} (pandora::StringVector::const\_iterator iter = m_vertexListNames.begin(), iterEnd = 
+      m_vertexListNames.end(); iter != iterEnd; ++iter)
+141     \{
+142       this->VisualizeVertexList(*iter);
+143     \}
+144 
+145     \textcolor{comment}{// Finally, display the event and pause application}
+146     \textcolor{keywordflow}{if} (m_displayEvent)
+147     \{
+148       PANDORA\_MONITORING\_API(ViewEvent(this->GetPandora()));
+149     \}
+150 
+151     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+152   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!Visualize\+Calo\+Hit\+List@{Visualize\+Calo\+Hit\+List}}
+\index{Visualize\+Calo\+Hit\+List@{Visualize\+Calo\+Hit\+List}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{Visualize\+Calo\+Hit\+List}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::\+Visualize\+Calo\+Hit\+List (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{list\+Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_ada6e09a97cec97ff815cb25edc1a4c32}
+
+
+Visualize a specified calo hit list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Name} & the list name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 185 of file Visual\+Monitoring\+Algorithm.\+cc.
+
+
+
+References m\+\_\+connector\+Level, m\+\_\+hit\+Colors, m\+\_\+show\+Current\+Connectors, m\+\_\+show\+Only\+Available, and m\+\_\+threshold\+Energy.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+186   \{
+187     \textcolor{keyword}{const} pandora::CaloHitList *pCaloHitList = NULL;
+188 
+189     \textcolor{keywordflow}{if} (listName.empty())
+190     \{
+191       \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, pCaloHitList))
+192       \{
+193         \textcolor{keywordflow}{if} (PandoraContentApi::GetSettings(*this)->ShouldDisplayAlgorithmInfo())
+194           std::cout << \textcolor{stringliteral}{"VisualMonitoringAlgorithm: current calo hit list unavailable."} << std::endl;
+195         \textcolor{keywordflow}{return};
+196       \}
+197     \}
+198     \textcolor{keywordflow}{else}
+199     \{
+200       \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetList(*\textcolor{keyword}{this}, listName, pCaloHitList))
+201       \{
+202         \textcolor{keywordflow}{if} (PandoraContentApi::GetSettings(*this)->ShouldDisplayAlgorithmInfo())
+203           std::cout << \textcolor{stringliteral}{"VisualMonitoringAlgorithm: calo hit list "} << listName << \textcolor{stringliteral}{" unavailable."} << 
+      std::endl;
+204         \textcolor{keywordflow}{return};
+205       \}
+206     \}
+207 
+208     \textcolor{comment}{// Filter calo hit list}
+209     pandora::CaloHitList caloHitList;
+210 
+211     \textcolor{keywordflow}{for} (pandora::CaloHitList::const\_iterator iter = pCaloHitList->begin(), iterEnd = pCaloHitList->end(); 
+      iter != iterEnd; ++iter)
+212     \{
+213       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit = *iter;
+214 
+215       \textcolor{keywordflow}{if} ((pCaloHit->GetElectromagneticEnergy() > m_thresholdEnergy) &&
+216           (!m_showOnlyAvailable || PandoraContentApi::IsAvailable(*\textcolor{keyword}{this}, pCaloHit)))
+217       \{
+218         caloHitList.insert(pCaloHit);
+219       \}
+220     \}
+221 
+222 \textcolor{preprocessor}{#ifdef MONITORING}
+223     \textcolor{keywordflow}{if}(this->GetPandora().GetSettings()->IsMonitoringEnabled())
+224     \{
+225       \textcolor{keywordflow}{if}(m_showCurrentConnectors && m_connectorLevel == \textcolor{stringliteral}{"calohits"})
+226       \{
+227         TEveElement *pParentElement = pandora\_monitoring::PandoraMonitoring::GetInstance(this->GetPandora()
+      )->VisualizeCaloHits(&caloHitList, listName.empty() ? \textcolor{stringliteral}{"CurrentCaloHits"} : listName.c\_str(),
+228             0, (m_hitColors.find(\textcolor{stringliteral}{"energy"}) != std::string::npos ? ::AUTOENERGY : ::GRAY));
+229 
+230         this->VisualizeConnectors(&caloHitList, listName.empty() ? \textcolor{stringliteral}{"CurrentCaloHitsConnectors"} : (listName+\textcolor{stringliteral}{
+      "Connectors"}).c\_str(), pParentElement,
+231             (m_hitColors.find(\textcolor{stringliteral}{"energy"}) != std::string::npos ? ::AUTOENERGY : ::GRAY));
+232       \}
+233       \textcolor{keywordflow}{else}
+234       \{
+235         PANDORA\_MONITORING\_API(VisualizeCaloHits(this->GetPandora(), &caloHitList, listName.empty() ? \textcolor{stringliteral}{"
+      CurrentCaloHits"} : listName.c\_str(),
+236             (m_hitColors.find(\textcolor{stringliteral}{"energy"}) != std::string::npos ? ::AUTOENERGY : ::GRAY)));
+237       \}
+238     \}
+239 \textcolor{preprocessor}{#endif}
+240 
+241   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!Visualize\+Cluster\+List@{Visualize\+Cluster\+List}}
+\index{Visualize\+Cluster\+List@{Visualize\+Cluster\+List}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{Visualize\+Cluster\+List}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::\+Visualize\+Cluster\+List (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{list\+Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a7fe334b0f09e6cf32afe2398da79f615}
+
+
+Visualize a specified calo hit list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Name} & the list name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 284 of file Visual\+Monitoring\+Algorithm.\+cc.
+
+
+
+References m\+\_\+connector\+Level, m\+\_\+hit\+Colors, m\+\_\+show\+Associated\+Tracks, m\+\_\+show\+Current\+Connectors, and m\+\_\+show\+Only\+Available.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+285   \{
+286     \textcolor{keyword}{const} pandora::ClusterList *pClusterList = NULL;
+287 
+288     \textcolor{keywordflow}{if} (listName.empty())
+289     \{
+290       \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, pClusterList))
+291       \{
+292         \textcolor{keywordflow}{if} (PandoraContentApi::GetSettings(*this)->ShouldDisplayAlgorithmInfo())
+293           std::cout << \textcolor{stringliteral}{"VisualMonitoringAlgorithm: current cluster list unavailable."} << std::endl;
+294         \textcolor{keywordflow}{return};
+295       \}
+296     \}
+297     \textcolor{keywordflow}{else}
+298     \{
+299       \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetList(*\textcolor{keyword}{this}, listName, pClusterList))
+300       \{
+301         \textcolor{keywordflow}{if} (PandoraContentApi::GetSettings(*this)->ShouldDisplayAlgorithmInfo())
+302           std::cout << \textcolor{stringliteral}{"VisualMonitoringAlgorithm: cluster list "} << listName << \textcolor{stringliteral}{" unavailable."} << 
+      std::endl;
+303         \textcolor{keywordflow}{return};
+304       \}
+305     \}
+306 
+307     \textcolor{comment}{// Filter cluster list}
+308     pandora::ClusterList clusterList;
+309 
+310     \textcolor{keywordflow}{for} (pandora::ClusterList::const\_iterator iter = pClusterList->begin(), iterEnd = pClusterList->end(); 
+      iter != iterEnd; ++iter)
+311     \{
+312       \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pCluster = *iter;
+313 
+314       \textcolor{keywordflow}{if} (!m_showOnlyAvailable || PandoraContentApi::IsAvailable(*\textcolor{keyword}{this}, pCluster))
+315       \{
+316         clusterList.insert(pCluster);
+317       \}
+318     \}
+319 
+320 \textcolor{preprocessor}{#ifdef MONITORING}
+321     \textcolor{keywordflow}{if}(this->GetPandora().GetSettings()->IsMonitoringEnabled())
+322     \{
+323       \textcolor{keywordflow}{if}(m_showCurrentConnectors && m_connectorLevel == \textcolor{stringliteral}{"clusters"})
+324       \{
+325         TEveElement *pParentElement = pandora\_monitoring::PandoraMonitoring::GetInstance(this->GetPandora()
+      )->VisualizeClusters(&clusterList, listName.empty() ? \textcolor{stringliteral}{"CurrentClusters"} : listName.c\_str(), 0,
+326             (m_hitColors.find(\textcolor{stringliteral}{"particleid"}) != std::string::npos) ? ::AUTOID :
+327                 (m_hitColors.find(\textcolor{stringliteral}{"iterate"}) != std::string::npos) ? ::AUTOITER :
+328                     (m_hitColors.find(\textcolor{stringliteral}{"energy"}) != std::string::npos) ? ::AUTOENERGY : ::AUTO,
+329                         m_showAssociatedTracks);
+330 
+331         TEveElement *pConnectorDirectory = \textcolor{keyword}{new} TEveElementList();
+332         pConnectorDirectory->SetElementNameTitle(\textcolor{stringliteral}{"ClusterConnectors"}, \textcolor{stringliteral}{"ClusterConnectors"});
+333         pParentElement->AddElement(pConnectorDirectory);
+334 
+335         \textcolor{keywordflow}{for}(pandora::ClusterList::const\_iterator iter = clusterList.begin(), endIter = clusterList.end() ;
+336             endIter != iter ; ++iter)
+337         \{
+338           pandora::CaloHitList clusterHits;
+339           (*iter)->GetOrderedCaloHitList().GetCaloHitList(clusterHits);
+340 
+341           this->VisualizeConnectors(&clusterHits, listName.empty() ? \textcolor{stringliteral}{"CurrentClustersConnectors"} : (
+      listName+\textcolor{stringliteral}{"Connectors"}).c\_str(), pConnectorDirectory,
+342               (m_hitColors.find(\textcolor{stringliteral}{"particleid"}) != std::string::npos) ? ::AUTOID :
+343                   (m_hitColors.find(\textcolor{stringliteral}{"iterate"}) != std::string::npos) ? ::AUTOITER :
+344                       (m_hitColors.find(\textcolor{stringliteral}{"energy"}) != std::string::npos) ? ::AUTOENERGY : ::AUTO);
+345         \}
+346       \}
+347       \textcolor{keywordflow}{else}
+348       \{
+349         PANDORA\_MONITORING\_API(VisualizeClusters(this->GetPandora(), &clusterList, listName.empty() ? \textcolor{stringliteral}{"
+      CurrentClusters"} : listName.c\_str(),
+350             (m_hitColors.find(\textcolor{stringliteral}{"particleid"}) != std::string::npos) ? ::AUTOID :
+351                 (m_hitColors.find(\textcolor{stringliteral}{"iterate"}) != std::string::npos) ? ::AUTOITER :
+352                     (m_hitColors.find(\textcolor{stringliteral}{"energy"}) != std::string::npos) ? ::AUTOENERGY : ::AUTO,
+353                         m_showAssociatedTracks));
+354       \}
+355     \}
+356 \textcolor{preprocessor}{#endif}
+357   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!Visualize\+M\+C\+Particle\+List@{Visualize\+M\+C\+Particle\+List}}
+\index{Visualize\+M\+C\+Particle\+List@{Visualize\+M\+C\+Particle\+List}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{Visualize\+M\+C\+Particle\+List}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::\+Visualize\+M\+C\+Particle\+List (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{list\+Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_acf570cbccfd8702ab56465c1913f6b9a}
+
+
+Visualize mc particle list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Name} & the list name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 156 of file Visual\+Monitoring\+Algorithm.\+cc.
+
+
+
+References m\+\_\+particle\+Suppression\+Map.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+157   \{
+158     \textcolor{keyword}{const} pandora::MCParticleList *pMCParticleList = NULL;
+159 
+160     \textcolor{keywordflow}{if} (listName.empty())
+161     \{
+162       \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, pMCParticleList))
+163       \{
+164         \textcolor{keywordflow}{if} (PandoraContentApi::GetSettings(*this)->ShouldDisplayAlgorithmInfo())
+165           std::cout << \textcolor{stringliteral}{"VisualMonitoringAlgorithm: mc particle list unavailable."} << std::endl;
+166         \textcolor{keywordflow}{return};
+167       \}
+168     \}
+169     \textcolor{keywordflow}{else}
+170     \{
+171       \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetList(*\textcolor{keyword}{this}, listName, pMCParticleList))
+172       \{
+173         \textcolor{keywordflow}{if} (PandoraContentApi::GetSettings(*this)->ShouldDisplayAlgorithmInfo())
+174           std::cout << \textcolor{stringliteral}{"VisualMonitoringAlgorithm: mc particle list unavailable."} << std::endl;
+175         \textcolor{keywordflow}{return};
+176       \}
+177     \}
+178 
+179     PANDORA\_MONITORING\_API(VisualizeMCParticles(this->GetPandora(), pMCParticleList, listName.empty() ? \textcolor{stringliteral}{"
+      CurrentMCParticles"} : listName.c\_str(),
+180         ::AUTO, &m_particleSuppressionMap));
+181   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!Visualize\+Particle\+Flow\+List@{Visualize\+Particle\+Flow\+List}}
+\index{Visualize\+Particle\+Flow\+List@{Visualize\+Particle\+Flow\+List}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{Visualize\+Particle\+Flow\+List}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::\+Visualize\+Particle\+Flow\+List (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{list\+Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a76910356d0130fd00ec62d01788f10ce}
+
+
+Visualize a specified pfo list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Name} & the list name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 361 of file Visual\+Monitoring\+Algorithm.\+cc.
+
+
+
+References m\+\_\+connector\+Level, m\+\_\+hit\+Colors, m\+\_\+show\+Current\+Connectors, m\+\_\+show\+Pfo\+Hierarchy, and m\+\_\+show\+Pfo\+Vertices.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+362   \{
+363     \textcolor{keyword}{const} pandora::PfoList *pPfoList = NULL;
+364 
+365     \textcolor{keywordflow}{if} (listName.empty())
+366     \{
+367       \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, pPfoList))
+368       \{
+369         \textcolor{keywordflow}{if} (PandoraContentApi::GetSettings(*this)->ShouldDisplayAlgorithmInfo())
+370           std::cout << \textcolor{stringliteral}{"VisualMonitoringAlgorithm: current pfo list unavailable."} << std::endl;
+371         \textcolor{keywordflow}{return};
+372       \}
+373     \}
+374     \textcolor{keywordflow}{else}
+375     \{
+376       \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetList(*\textcolor{keyword}{this}, listName, pPfoList))
+377       \{
+378         \textcolor{keywordflow}{if} (PandoraContentApi::GetSettings(*this)->ShouldDisplayAlgorithmInfo())
+379           std::cout << \textcolor{stringliteral}{"VisualMonitoringAlgorithm: pfo list "} << listName << \textcolor{stringliteral}{" unavailable."} << std::endl;
+380         \textcolor{keywordflow}{return};
+381       \}
+382     \}
+383 
+384 \textcolor{preprocessor}{#ifdef MONITORING}
+385     \textcolor{keywordflow}{if}(this->GetPandora().GetSettings()->IsMonitoringEnabled())
+386     \{
+387       \textcolor{keywordflow}{if}(m_showCurrentConnectors && m_connectorLevel == \textcolor{stringliteral}{"pfos"})
+388       \{
+389         TEveElement *pParentElement = pandora\_monitoring::PandoraMonitoring::GetInstance(this->GetPandora()
+      )->VisualizeParticleFlowObjects(pPfoList, listName.empty() ? \textcolor{stringliteral}{"CurrentPfos"} : listName.c\_str(), 0,
+390             (m_hitColors.find(\textcolor{stringliteral}{"particleid"}) != std::string::npos) ? ::AUTOID :
+391                 (m_hitColors.find(\textcolor{stringliteral}{"iterate"}) != std::string::npos ? ::AUTOITER :
+392                     (m_hitColors.find(\textcolor{stringliteral}{"energy"}) != std::string::npos ? ::AUTOENERGY :
+393                         AUTO)), m_showPfoVertices, m_showPfoHierarchy);
+394 
+395         TEveElement *pConnectorDirectory = \textcolor{keyword}{new} TEveElementList();
+396         pConnectorDirectory->SetElementNameTitle(\textcolor{stringliteral}{"PfoConnectors"}, \textcolor{stringliteral}{"PfoConnectors"});
+397         pParentElement->AddElement(pConnectorDirectory);
+398 
+399         \textcolor{keywordflow}{for}(pandora::PfoList::const\_iterator pfoIter = pPfoList->begin(), pfoEndIter = pPfoList->end() ;
+400             pfoEndIter != pfoIter ; ++pfoIter)
+401         \{
+402           \textcolor{keyword}{const} pandora::Pfo *\textcolor{keyword}{const} pPfo = *pfoIter;
+403 
+404           \textcolor{keyword}{const} pandora::ClusterList &pfoClusterList(pPfo->GetClusterList());
+405 
+406           \textcolor{keywordflow}{for}(pandora::ClusterList::const\_iterator iter = pfoClusterList.begin(), endIter = pfoClusterList.
+      end() ;
+407               endIter != iter ; ++iter)
+408           \{
+409             pandora::CaloHitList clusterHits;
+410             (*iter)->GetOrderedCaloHitList().GetCaloHitList(clusterHits);
+411 
+412             this->VisualizeConnectors(&clusterHits, listName.empty() ? \textcolor{stringliteral}{"CurrentPfoConnectors"} : (listName+\textcolor{stringliteral}{"
+      Connectors"}).c\_str(), pConnectorDirectory,
+413                 (m_hitColors.find(\textcolor{stringliteral}{"particleid"}) != std::string::npos) ? ::AUTOID :
+414                     (m_hitColors.find(\textcolor{stringliteral}{"iterate"}) != std::string::npos) ? ::AUTOITER :
+415                         (m_hitColors.find(\textcolor{stringliteral}{"energy"}) != std::string::npos) ? ::AUTOENERGY : ::AUTO);
+416           \}
+417         \}
+418       \}
+419       \textcolor{keywordflow}{else}
+420       \{
+421         PANDORA\_MONITORING\_API(VisualizeParticleFlowObjects(this->GetPandora(), pPfoList, listName.empty() 
+      ? \textcolor{stringliteral}{"CurrentPfos"} : listName.c\_str(),
+422             (m_hitColors.find(\textcolor{stringliteral}{"particleid"}) != std::string::npos) ? ::AUTOID :
+423                 (m_hitColors.find(\textcolor{stringliteral}{"iterate"}) != std::string::npos ? ::AUTOITER :
+424                     (m_hitColors.find(\textcolor{stringliteral}{"energy"}) != std::string::npos ? ::AUTOENERGY :
+425                         AUTO)), m_showPfoVertices, m_showPfoHierarchy));
+426       \}
+427     \}
+428 \textcolor{preprocessor}{#endif}
+429   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!Visualize\+Track\+List@{Visualize\+Track\+List}}
+\index{Visualize\+Track\+List@{Visualize\+Track\+List}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{Visualize\+Track\+List}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::\+Visualize\+Track\+List (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{list\+Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a144ae94d62b93663cce685cf08883628}
+
+
+Visualize a specified track list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Name} & the list name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 245 of file Visual\+Monitoring\+Algorithm.\+cc.
+
+
+
+References m\+\_\+show\+Only\+Available.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+246   \{
+247     \textcolor{keyword}{const} pandora::TrackList *pTrackList = NULL;
+248 
+249     \textcolor{keywordflow}{if} (listName.empty())
+250     \{
+251       \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, pTrackList))
+252       \{
+253         \textcolor{keywordflow}{if} (PandoraContentApi::GetSettings(*this)->ShouldDisplayAlgorithmInfo())
+254           std::cout << \textcolor{stringliteral}{"VisualMonitoringAlgorithm: current track list unavailable."} << std::endl;
+255         \textcolor{keywordflow}{return};
+256       \}
+257     \}
+258     \textcolor{keywordflow}{else}
+259     \{
+260       \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetList(*\textcolor{keyword}{this}, listName, pTrackList))
+261       \{
+262         \textcolor{keywordflow}{if} (PandoraContentApi::GetSettings(*this)->ShouldDisplayAlgorithmInfo())
+263           std::cout << \textcolor{stringliteral}{"VisualMonitoringAlgorithm: track list "} << listName << \textcolor{stringliteral}{" unavailable."} << std::endl
+      ;
+264         \textcolor{keywordflow}{return};
+265       \}
+266     \}
+267 
+268     \textcolor{comment}{// Filter track list}
+269     pandora::TrackList trackList;
+270 
+271     \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator iter = pTrackList->begin(), iterEnd = pTrackList->end(); iter !
+      = iterEnd; ++iter)
+272     \{
+273       \textcolor{keyword}{const} pandora::Track *\textcolor{keyword}{const} pTrack = *iter;
+274 
+275       \textcolor{keywordflow}{if} (!m_showOnlyAvailable || pTrack->IsAvailable())
+276         trackList.insert(pTrack);
+277     \}
+278 
+279     PANDORA\_MONITORING\_API(VisualizeTracks(this->GetPandora(), &trackList, listName.empty() ? \textcolor{stringliteral}{"
+      CurrentTracks"} : listName.c\_str(), ::GRAY));
+280   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!Visualize\+Vertex\+List@{Visualize\+Vertex\+List}}
+\index{Visualize\+Vertex\+List@{Visualize\+Vertex\+List}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{Visualize\+Vertex\+List}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::\+Visualize\+Vertex\+List (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{list\+Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a7aa1e94f9bb8e7126305afdd3ce64d18}
+
+
+Visualize a specified vertex list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\+Name} & the list name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 433 of file Visual\+Monitoring\+Algorithm.\+cc.
+
+
+
+References m\+\_\+show\+Only\+Available.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+434   \{
+435     \textcolor{keyword}{const} pandora::VertexList *pVertexList = NULL;
+436 
+437     \textcolor{keywordflow}{if} (listName.empty())
+438     \{
+439       \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, pVertexList))
+440       \{
+441         \textcolor{keywordflow}{if} (PandoraContentApi::GetSettings(*this)->ShouldDisplayAlgorithmInfo())
+442           std::cout << \textcolor{stringliteral}{"VisualMonitoringAlgorithm: current vertex list unavailable."} << std::endl;
+443         \textcolor{keywordflow}{return};
+444       \}
+445     \}
+446     \textcolor{keywordflow}{else}
+447     \{
+448       \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetList(*\textcolor{keyword}{this}, listName, pVertexList))
+449       \{
+450         \textcolor{keywordflow}{if} (PandoraContentApi::GetSettings(*this)->ShouldDisplayAlgorithmInfo())
+451           std::cout << \textcolor{stringliteral}{"VisualMonitoringAlgorithm: vertex list "} << listName << \textcolor{stringliteral}{" unavailable."} << 
+      std::endl;
+452         \textcolor{keywordflow}{return};
+453       \}
+454     \}
+455 
+456     \textcolor{comment}{// Filter vertex list}
+457     pandora::VertexList vertexList;
+458 
+459     \textcolor{keywordflow}{for} (pandora::VertexList::const\_iterator iter = pVertexList->begin(), iterEnd = pVertexList->end(); 
+      iter != iterEnd; ++iter)
+460     \{
+461       \textcolor{keyword}{const} pandora::Vertex *\textcolor{keyword}{const} pVertex = *iter;
+462 
+463       \textcolor{keywordflow}{if} (!m_showOnlyAvailable || pVertex->IsAvailable())
+464         vertexList.insert(pVertex);
+465     \}
+466 
+467     PANDORA\_MONITORING\_API(VisualizeVertices(this->GetPandora(), &vertexList, listName.empty() ? \textcolor{stringliteral}{"
+      CurrentVertices"} : listName.c\_str(), ::AUTO));
+468   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+calo\+Hit\+List\+Names@{m\+\_\+calo\+Hit\+List\+Names}}
+\index{m\+\_\+calo\+Hit\+List\+Names@{m\+\_\+calo\+Hit\+List\+Names}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+calo\+Hit\+List\+Names}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+String\+Vector arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+calo\+Hit\+List\+Names\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_ad05ea94ba1c49da77d8a14f736c88e7c}
+
+
+Names of calo hit lists to show. 
+
+
+
+Definition at line 129 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+cluster\+List\+Names@{m\+\_\+cluster\+List\+Names}}
+\index{m\+\_\+cluster\+List\+Names@{m\+\_\+cluster\+List\+Names}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+cluster\+List\+Names}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+String\+Vector arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+cluster\+List\+Names\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_ab82fbd53a8aec4371109a6ab0b02b32c}
+
+
+Names of cluster lists to show. 
+
+
+
+Definition at line 135 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+connector\+Level@{m\+\_\+connector\+Level}}
+\index{m\+\_\+connector\+Level@{m\+\_\+connector\+Level}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+connector\+Level}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+connector\+Level\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_af70a37ece03d1fc98f0c9c170ca903eb}
+
+
+\doxyref{Connector}{p.}{classarbor__content_1_1Connector} level at which they are drawn (calo hit, clusters, pfos) 
+
+
+
+Definition at line 123 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), Visualize\+Calo\+Hit\+List(), Visualize\+Cluster\+List(), and Visualize\+Particle\+Flow\+List().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+detector\+View@{m\+\_\+detector\+View}}
+\index{m\+\_\+detector\+View@{m\+\_\+detector\+View}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+detector\+View}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+detector\+View\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_af986dfd1f0f63e6544b6249b6050724b}
+
+
+The detector view, default, xy or xz. 
+
+
+
+Definition at line 145 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+display\+Event@{m\+\_\+display\+Event}}
+\index{m\+\_\+display\+Event@{m\+\_\+display\+Event}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+display\+Event}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+display\+Event\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_ad04c341df03bbcb557c9115fac65c6be}
+
+
+Whether to display the event. 
+
+
+
+Definition at line 143 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+energy\+Scale\+Threshold\+E@{m\+\_\+energy\+Scale\+Threshold\+E}}
+\index{m\+\_\+energy\+Scale\+Threshold\+E@{m\+\_\+energy\+Scale\+Threshold\+E}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+energy\+Scale\+Threshold\+E}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+energy\+Scale\+Threshold\+E\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_af48300fc75ef76be622ec5e3b2e3d12e}
+
+
+Cell energy for which color is at top end of continous color palette. 
+
+
+
+Definition at line 152 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+hit\+Colors@{m\+\_\+hit\+Colors}}
+\index{m\+\_\+hit\+Colors@{m\+\_\+hit\+Colors}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+hit\+Colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+hit\+Colors\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a42cc037393c5916581bfc40e0caa7e17}
+
+
+Define the hit coloring scheme (default\+: pfo, choices\+: pfo, particleid) 
+
+
+
+Definition at line 149 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), Visualize\+Calo\+Hit\+List(), Visualize\+Cluster\+List(), and Visualize\+Particle\+Flow\+List().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+mc\+Particle\+List\+Names@{m\+\_\+mc\+Particle\+List\+Names}}
+\index{m\+\_\+mc\+Particle\+List\+Names@{m\+\_\+mc\+Particle\+List\+Names}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+mc\+Particle\+List\+Names}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+String\+Vector arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+mc\+Particle\+List\+Names\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_afd30dfab51a27d89a459db4cf191d0b1}
+
+
+Names of mc particles lists to show. 
+
+
+
+Definition at line 126 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+particle\+Suppression\+Map@{m\+\_\+particle\+Suppression\+Map}}
+\index{m\+\_\+particle\+Suppression\+Map@{m\+\_\+particle\+Suppression\+Map}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+particle\+Suppression\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pdg\+Code\+To\+Energy\+Map} arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+particle\+Suppression\+Map\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_af76c0dea440043040ceb1bfd643e108d}
+
+
+Map from pdg-\/codes to energy for suppression of particles types below specific energies. 
+
+
+
+Definition at line 158 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Visualize\+M\+C\+Particle\+List().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+pfo\+List\+Names@{m\+\_\+pfo\+List\+Names}}
+\index{m\+\_\+pfo\+List\+Names@{m\+\_\+pfo\+List\+Names}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+pfo\+List\+Names}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+String\+Vector arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+pfo\+List\+Names\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_aaff579b162ca6d896bd7d8b450f3f350}
+
+
+Names of pfo lists to show. 
+
+
+
+Definition at line 138 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+show\+Associated\+Tracks@{m\+\_\+show\+Associated\+Tracks}}
+\index{m\+\_\+show\+Associated\+Tracks@{m\+\_\+show\+Associated\+Tracks}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+show\+Associated\+Tracks}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+show\+Associated\+Tracks\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a33dfa7df4bcb97dddbd26af46fe7d8e8}
+
+
+Whether to display tracks associated to clusters when viewing cluster lists. 
+
+
+
+Definition at line 148 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Visualize\+Cluster\+List().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+show\+Current\+Calo\+Hits@{m\+\_\+show\+Current\+Calo\+Hits}}
+\index{m\+\_\+show\+Current\+Calo\+Hits@{m\+\_\+show\+Current\+Calo\+Hits}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+show\+Current\+Calo\+Hits}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+show\+Current\+Calo\+Hits\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_aa7fff5de356e81fdec814d20b20b3844}
+
+
+Whether to show current calohitlist. 
+
+
+
+Definition at line 128 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+show\+Current\+Clusters@{m\+\_\+show\+Current\+Clusters}}
+\index{m\+\_\+show\+Current\+Clusters@{m\+\_\+show\+Current\+Clusters}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+show\+Current\+Clusters}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+show\+Current\+Clusters\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a81becd8fb5b2b1088c34068086cd032e}
+
+
+Whether to show current clusters. 
+
+
+
+Definition at line 134 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+show\+Current\+Connectors@{m\+\_\+show\+Current\+Connectors}}
+\index{m\+\_\+show\+Current\+Connectors@{m\+\_\+show\+Current\+Connectors}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+show\+Current\+Connectors}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+show\+Current\+Connectors\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a0dac44010422e5fd22a61c9c6f8e4c89}
+
+
+Whether to show connectors of the current list. 
+
+
+
+Definition at line 122 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), Visualize\+Calo\+Hit\+List(), Visualize\+Cluster\+List(), and Visualize\+Particle\+Flow\+List().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+show\+Current\+M\+C\+Particles@{m\+\_\+show\+Current\+M\+C\+Particles}}
+\index{m\+\_\+show\+Current\+M\+C\+Particles@{m\+\_\+show\+Current\+M\+C\+Particles}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+show\+Current\+M\+C\+Particles}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+show\+Current\+M\+C\+Particles\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a102aab233b9e6ff66bb65516d5a816f7}
+
+
+Whether to show current mc particles. 
+
+
+
+Definition at line 125 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+show\+Current\+Pfos@{m\+\_\+show\+Current\+Pfos}}
+\index{m\+\_\+show\+Current\+Pfos@{m\+\_\+show\+Current\+Pfos}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+show\+Current\+Pfos}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+show\+Current\+Pfos\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a85befe9fae43bca209d947d2cd30240c}
+
+
+Whether to show current particle flow object list. 
+
+
+
+Definition at line 137 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+show\+Current\+Tracks@{m\+\_\+show\+Current\+Tracks}}
+\index{m\+\_\+show\+Current\+Tracks@{m\+\_\+show\+Current\+Tracks}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+show\+Current\+Tracks}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+show\+Current\+Tracks\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a7d56c8b9ca700f87b7c2aed2db4641a3}
+
+
+Whether to show current tracks. 
+
+
+
+Definition at line 131 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+show\+Current\+Vertices@{m\+\_\+show\+Current\+Vertices}}
+\index{m\+\_\+show\+Current\+Vertices@{m\+\_\+show\+Current\+Vertices}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+show\+Current\+Vertices}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+show\+Current\+Vertices\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a33ea13c15de5c82d3c1e165d0d8d0ac5}
+
+
+Whether to show current vertex list. 
+
+
+
+Definition at line 140 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+show\+Detector@{m\+\_\+show\+Detector}}
+\index{m\+\_\+show\+Detector@{m\+\_\+show\+Detector}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+show\+Detector}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+show\+Detector\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a7861ed9374da8f0bef5bdf84109ba9f8}
+
+
+Whether to display the detector geometry. 
+
+
+
+Definition at line 144 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+show\+Only\+Available@{m\+\_\+show\+Only\+Available}}
+\index{m\+\_\+show\+Only\+Available@{m\+\_\+show\+Only\+Available}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+show\+Only\+Available}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+show\+Only\+Available\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_ad1001d99a9ca1c99192a66434d4f2972}
+
+
+Whether to show only available (i.\+e. non-\/clustered) calohits and tracks. 
+
+
+
+Definition at line 147 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), Visualize\+Calo\+Hit\+List(), Visualize\+Cluster\+List(), Visualize\+Track\+List(), and Visualize\+Vertex\+List().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+show\+Pfo\+Hierarchy@{m\+\_\+show\+Pfo\+Hierarchy}}
+\index{m\+\_\+show\+Pfo\+Hierarchy@{m\+\_\+show\+Pfo\+Hierarchy}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+show\+Pfo\+Hierarchy}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+show\+Pfo\+Hierarchy\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_acd046c4d7a7bdd43c5b8dce46eee21d8}
+
+
+Whether to display daughter pfos only under parent pfo elements. 
+
+
+
+Definition at line 155 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Visualize\+Particle\+Flow\+List().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+show\+Pfo\+Vertices@{m\+\_\+show\+Pfo\+Vertices}}
+\index{m\+\_\+show\+Pfo\+Vertices@{m\+\_\+show\+Pfo\+Vertices}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+show\+Pfo\+Vertices}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+show\+Pfo\+Vertices\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a465d0b0ecaa53e064eaa02681d6ff864}
+
+
+Whether to display pfo vertices. 
+
+
+
+Definition at line 154 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Visualize\+Particle\+Flow\+List().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+suppress\+M\+C\+Particles@{m\+\_\+suppress\+M\+C\+Particles}}
+\index{m\+\_\+suppress\+M\+C\+Particles@{m\+\_\+suppress\+M\+C\+Particles}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+suppress\+M\+C\+Particles}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+String\+Vector arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+suppress\+M\+C\+Particles\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_ade42b2048f7cb11848742709d4edb0f7}
+
+
+List of P\+D\+G numbers and energies for M\+C particles to be suppressed (e.\+g. \char`\"{} 22\+:0.\+1 2112\+:1.\+0 \char`\"{}) 
+
+
+
+Definition at line 157 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+threshold\+Energy@{m\+\_\+threshold\+Energy}}
+\index{m\+\_\+threshold\+Energy@{m\+\_\+threshold\+Energy}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+threshold\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+threshold\+Energy\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_afc29b975ba04d6ebbb079d83507d3fd7}
+
+
+Cell energy threshold for display (em scale) 
+
+
+
+Definition at line 150 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Visualize\+Calo\+Hit\+List().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+track\+List\+Names@{m\+\_\+track\+List\+Names}}
+\index{m\+\_\+track\+List\+Names@{m\+\_\+track\+List\+Names}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+track\+List\+Names}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+String\+Vector arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+track\+List\+Names\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a9a775feb009cabab527e1be98e52cd9d}
+
+
+Names of track lists to show. 
+
+
+
+Definition at line 132 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+transparency\+Threshold\+E@{m\+\_\+transparency\+Threshold\+E}}
+\index{m\+\_\+transparency\+Threshold\+E@{m\+\_\+transparency\+Threshold\+E}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+transparency\+Threshold\+E}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+transparency\+Threshold\+E\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a8834cb3c4f1739e63c153ee4495da258}
+
+
+Cell energy for which transparency is saturated (0\%, fully opaque) 
+
+
+
+Definition at line 151 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}!m\+\_\+vertex\+List\+Names@{m\+\_\+vertex\+List\+Names}}
+\index{m\+\_\+vertex\+List\+Names@{m\+\_\+vertex\+List\+Names}!arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm@{arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm}}
+\subsubsection[{m\+\_\+vertex\+List\+Names}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+String\+Vector arbor\+\_\+content\+::\+Visual\+Monitoring\+Algorithm\+::m\+\_\+vertex\+List\+Names\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1VisualMonitoringAlgorithm_a061284765364ce63e4a11bdb06e1058d}
+
+
+Names of vertex lists to show. 
+
+
+
+Definition at line 141 of file Visual\+Monitoring\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Visual\+Monitoring\+Algorithm.\+h}\item 
+{\bf Visual\+Monitoring\+Algorithm.\+cc}\end{DoxyCompactItemize}

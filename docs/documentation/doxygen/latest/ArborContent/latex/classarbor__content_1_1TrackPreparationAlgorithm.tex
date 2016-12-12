@@ -1,0 +1,454 @@
+\section{arbor\+\_\+content\+:\+:Track\+Preparation\+Algorithm Class Reference}
+\label{classarbor__content_1_1TrackPreparationAlgorithm}\index{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}}
+
+
+\doxyref{Track\+Preparation\+Algorithm}{p.}{classarbor__content_1_1TrackPreparationAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$Track\+Preparation\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Track\+Preparation\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1TrackPreparationAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1TrackPreparationAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Track\+Preparation\+Algorithm} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\item 
+pandora\+::\+Status\+Code {\bf Create\+Pfo\+Track\+List} (const pandora\+::\+Track\+List \&input\+Track\+List, pandora\+::\+Track\+List \&pfo\+Track\+List) const 
+\begin{DoxyCompactList}\small\item\em Create list of parent tracks to be used in construction of charged pfos. \end{DoxyCompactList}\item 
+bool {\bf Has\+Associated\+Clusters} (const pandora\+::\+Track $\ast$const p\+Track, const bool read\+Sibling\+Info=true) const 
+\begin{DoxyCompactList}\small\item\em Whether a track, or any of its daughters or siblings has an associated cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+candidate\+List\+Names}
+\begin{DoxyCompactList}\small\item\em The list of track list names to use. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+merged\+Candidate\+List\+Name}
+\begin{DoxyCompactList}\small\item\em The name under which to save the full, merged, list of candidate tracks. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+should\+Make\+Associations}
+\begin{DoxyCompactList}\small\item\em Whether to re-\/make track-\/cluster associations for candidate tracks. \end{DoxyCompactList}\item 
+pandora\+::\+String\+Vector {\bf m\+\_\+association\+Algorithms}
+\begin{DoxyCompactList}\small\item\em The ordered list of track-\/cluster associations algorithm to run. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+should\+Make\+Pfo\+Track\+List}
+\begin{DoxyCompactList}\small\item\em Whether to make pfo track list, containing parent tracks of charged pfos. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+pfo\+Track\+List\+Name}
+\begin{DoxyCompactList}\small\item\em The name of the pfo track list, containing parent tracks of charged pfos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Track\+Preparation\+Algorithm}{p.}{classarbor__content_1_1TrackPreparationAlgorithm} class. 
+
+Definition at line 39 of file Track\+Preparation\+Algorithm.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}!Track\+Preparation\+Algorithm@{Track\+Preparation\+Algorithm}}
+\index{Track\+Preparation\+Algorithm@{Track\+Preparation\+Algorithm}!arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}}
+\subsubsection[{Track\+Preparation\+Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm\+::\+Track\+Preparation\+Algorithm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1TrackPreparationAlgorithm_a701506674936125c3fd8e73a773c5f3b}
+
+
+Default constructor. 
+
+
+
+Definition at line 34 of file Track\+Preparation\+Algorithm.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm\+::\+Factory\+::\+Create\+Algorithm().
+
+
+\begin{DoxyCode}
+34                                                      :
+35     m_shouldMakeAssociations(\textcolor{keyword}{true}),
+36     m_shouldMakePfoTrackList(\textcolor{keyword}{true})
+37 \{
+38 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}!Create\+Pfo\+Track\+List@{Create\+Pfo\+Track\+List}}
+\index{Create\+Pfo\+Track\+List@{Create\+Pfo\+Track\+List}!arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}}
+\subsubsection[{Create\+Pfo\+Track\+List}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm\+::\+Create\+Pfo\+Track\+List (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Track\+List \&}]{input\+Track\+List, }
+\item[{pandora\+::\+Track\+List \&}]{pfo\+Track\+List}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackPreparationAlgorithm_a6d0b37636989001d61ced0d76b96b384}
+
+
+Create list of parent tracks to be used in construction of charged pfos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Track\+List} & the input track list \\
+\hline
+{\em pfo\+Track\+List} & to receive the list of parent tracks to be used in construction of charged pfos \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 93 of file Track\+Preparation\+Algorithm.\+cc.
+
+
+
+References Has\+Associated\+Clusters().
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+94 \{
+95   pandora::TrackList siblingTracks;
+96 
+97     \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator iter = inputTrackList.begin(), iterEnd = inputTrackList.end(); 
+      iter != iterEnd; ++iter)
+98     \{
+99         \textcolor{keyword}{const} pandora::Track *\textcolor{keyword}{const} pTrack = *iter;
+100 
+101         \textcolor{keywordflow}{if} (!pTrack->GetParentTrackList().empty())
+102             \textcolor{keywordflow}{continue};
+103 
+104         \textcolor{comment}{// Sibling tracks as first evidence of pfo target}
+105         \textcolor{keyword}{const} pandora::TrackList &siblingTrackList(pTrack->GetSiblingTrackList());
+106 
+107         \textcolor{keywordflow}{if} (!siblingTrackList.empty())
+108         \{
+109             \textcolor{keywordflow}{if} (siblingTracks.end() != siblingTracks.find(pTrack))
+110                 \textcolor{keywordflow}{continue};
+111 
+112             \textcolor{keywordflow}{if} (this->HasAssociatedClusters(pTrack))
+113             \{
+114                 pfoTrackList.insert(pTrack);
+115                 siblingTracks.insert(siblingTrackList.begin(), siblingTrackList.end());
+116             \}
+117         \}
+118         \textcolor{comment}{// Single parent track as pfo target}
+119         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (this->HasAssociatedClusters(pTrack))
+120         \{
+121             pfoTrackList.insert(pTrack);
+122         \}
+123     \}
+124 
+125     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+126 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}!Has\+Associated\+Clusters@{Has\+Associated\+Clusters}}
+\index{Has\+Associated\+Clusters@{Has\+Associated\+Clusters}!arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}}
+\subsubsection[{Has\+Associated\+Clusters}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm\+::\+Has\+Associated\+Clusters (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Track $\ast$const}]{p\+Track, }
+\item[{const bool}]{read\+Sibling\+Info = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackPreparationAlgorithm_ad931067e727650b624842c2890f5a76c}
+
+
+Whether a track, or any of its daughters or siblings has an associated cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Track} & address of the track \\
+\hline
+{\em read\+Sibling\+Info} & whether to read sibling track information (set to false to avoid multiple counting)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 130 of file Track\+Preparation\+Algorithm.\+cc.
+
+
+
+Referenced by Create\+Pfo\+Track\+List().
+
+
+\begin{DoxyCode}
+131 \{
+132     \textcolor{keywordflow}{if} ((pTrack->CanFormPfo() && pTrack->HasAssociatedCluster()) || (pTrack->CanFormClusterlessPfo()))
+133         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+134 
+135     \textcolor{keywordflow}{if} (!pTrack->IsAvailable())
+136         \textcolor{keywordflow}{throw} pandora::StatusCodeException(pandora::STATUS\_CODE\_FAILURE);
+137 
+138     \textcolor{comment}{// Consider any sibling tracks}
+139     \textcolor{keywordflow}{if} (readSiblingInfo)
+140     \{
+141         \textcolor{keyword}{const} pandora::TrackList &siblingTrackList(pTrack->GetSiblingTrackList());
+142 
+143         \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator iter = siblingTrackList.begin(), iterEnd = siblingTrackList
+      .end(); iter != iterEnd; ++iter)
+144         \{
+145             \textcolor{keywordflow}{if} (this->HasAssociatedClusters(*iter, \textcolor{keyword}{false}))
+146                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+147         \}
+148     \}
+149 
+150     \textcolor{comment}{// Consider any daughter tracks}
+151     \textcolor{keyword}{const} pandora::TrackList &daughterTrackList(pTrack->GetDaughterTrackList());
+152 
+153     \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator iter = daughterTrackList.begin(), iterEnd = daughterTrackList.
+      end(); iter != iterEnd; ++iter)
+154     \{
+155         \textcolor{keywordflow}{if} (this->HasAssociatedClusters(*iter))
+156             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+157     \}
+158 
+159     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+160 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackPreparationAlgorithm_a5a6d8c1c63cfa035492a7a1251d0bca8}
+
+
+Definition at line 164 of file Track\+Preparation\+Algorithm.\+cc.
+
+
+
+References m\+\_\+association\+Algorithms, m\+\_\+candidate\+List\+Names, m\+\_\+merged\+Candidate\+List\+Name, m\+\_\+pfo\+Track\+List\+Name, m\+\_\+should\+Make\+Associations, and m\+\_\+should\+Make\+Pfo\+Track\+List.
+
+
+\begin{DoxyCode}
+165 \{
+166     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadVectorOfValues(
+      xmlHandle,
+167         \textcolor{stringliteral}{"CandidateListNames"}, m_candidateListNames));
+168 
+169     \textcolor{keywordflow}{if} (m_candidateListNames.empty())
+170         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+171 
+172     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadValue(xmlHandle,
+173         \textcolor{stringliteral}{"MergedCandidateListName"}, m_mergedCandidateListName));
+174 
+175     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+176         \textcolor{stringliteral}{"ShouldMakeAssociations"}, m_shouldMakeAssociations));
+177 
+178     \textcolor{keywordflow}{if} (m_shouldMakeAssociations)
+179     \{
+180         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ProcessAlgorithmList
+      (*\textcolor{keyword}{this}, xmlHandle,
+181             \textcolor{stringliteral}{"trackClusterAssociationAlgorithms"}, m_associationAlgorithms));
+182     \}
+183 
+184     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+185         \textcolor{stringliteral}{"ShouldMakePfoTrackList"}, m_shouldMakePfoTrackList));
+186 
+187     \textcolor{keywordflow}{if} (m_shouldMakePfoTrackList)
+188     \{
+189         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::XmlHelper::ReadValue(xmlHandle,
+190             \textcolor{stringliteral}{"PfoTrackListName"}, m_pfoTrackListName));
+191     \}
+192 
+193     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+194 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackPreparationAlgorithm_a818008cfc1dc13f7dc14c6953c9f8687}
+
+
+Definition at line 42 of file Track\+Preparation\+Algorithm.\+cc.
+
+
+
+References Create\+Pfo\+Track\+List(), m\+\_\+association\+Algorithms, m\+\_\+candidate\+List\+Names, m\+\_\+merged\+Candidate\+List\+Name, m\+\_\+pfo\+Track\+List\+Name, m\+\_\+should\+Make\+Associations, and m\+\_\+should\+Make\+Pfo\+Track\+List.
+
+
+\begin{DoxyCode}
+43 \{
+44     \textcolor{comment}{// Create candidate track list, containing all tracks that could be associated to clusters and so used
+       in final pfo creation}
+45   pandora::TrackList candidateTrackList;
+46 
+47     \textcolor{keywordflow}{for} (pandora::StringVector::const\_iterator iter = m_candidateListNames.begin(), iterEnd = 
+      m_candidateListNames.end(); iter != iterEnd; ++iter)
+48     \{
+49         \textcolor{keyword}{const} pandora::TrackList *pTrackList = NULL;
+50 
+51         \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != PandoraContentApi::GetList<pandora::TrackList>(*\textcolor{keyword}{this}, *iter, 
+      pTrackList))
+52             \textcolor{keywordflow}{continue};
+53 
+54         \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator trackIter = pTrackList->begin(), trackIterEnd = pTrackList
+      ->end(); trackIter != trackIterEnd; ++trackIter)
+55         \{
+56             \textcolor{keywordflow}{if} ((*trackIter)->IsAvailable())
+57                 candidateTrackList.insert(*trackIter);
+58         \}
+59     \}
+60 
+61     \textcolor{comment}{// Set this list of candidate pfo tracks to be the current track list}
+62     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::SaveList(*\textcolor{keyword}{this}, 
+      candidateTrackList, m_mergedCandidateListName));
+63     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::ReplaceCurrentList<pandora::Track>(*\textcolor{keyword}{this}, m_mergedCandidateListName));
+64 
+65     \textcolor{keywordflow}{if} (m_shouldMakeAssociations)
+66     \{
+67         \textcolor{comment}{// Remove existing and calculate new track-cluster associations}
+68         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::RemoveCurrentTrackClusterAssociations(*\textcolor{keyword}{this}));
+69 
+70         \textcolor{keywordflow}{for} (pandora::StringVector::const\_iterator iter = 
+      m_associationAlgorithms.begin(), iterEnd = m_associationAlgorithms.end();
+71             iter != iterEnd; ++iter)
+72         \{
+73             PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::RunDaughterAlgorithm(*\textcolor{keyword}{this}, *iter));
+74         \}
+75     \}
+76 
+77     \textcolor{keywordflow}{if} (m_shouldMakePfoTrackList)
+78     \{
+79         \textcolor{comment}{// Filter the candidate track list to identify the parent tracks of charged pfos}
+80       pandora::TrackList pfoTrackList;
+81         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      CreatePfoTrackList(candidateTrackList, pfoTrackList));
+82 
+83         \textcolor{comment}{// Save the filtered list and set it to be the current list for future algorithms}
+84         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::SaveList(*\textcolor{keyword}{this}, 
+      pfoTrackList, m_pfoTrackListName));
+85         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::ReplaceCurrentList<pandora::Track>(*\textcolor{keyword}{this}, m_pfoTrackListName));
+86     \}
+87 
+88     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+89 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}!m\+\_\+association\+Algorithms@{m\+\_\+association\+Algorithms}}
+\index{m\+\_\+association\+Algorithms@{m\+\_\+association\+Algorithms}!arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+association\+Algorithms}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+String\+Vector arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm\+::m\+\_\+association\+Algorithms\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackPreparationAlgorithm_af2a2833d0fa5d8f15e782eedb68e4894}
+
+
+The ordered list of track-\/cluster associations algorithm to run. 
+
+
+
+Definition at line 82 of file Track\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}!m\+\_\+candidate\+List\+Names@{m\+\_\+candidate\+List\+Names}}
+\index{m\+\_\+candidate\+List\+Names@{m\+\_\+candidate\+List\+Names}!arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+candidate\+List\+Names}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+String\+Vector arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm\+::m\+\_\+candidate\+List\+Names\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackPreparationAlgorithm_aabd1b401a9f936d8b6ffbfe1a81d6f69}
+
+
+The list of track list names to use. 
+
+
+
+Definition at line 78 of file Track\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}!m\+\_\+merged\+Candidate\+List\+Name@{m\+\_\+merged\+Candidate\+List\+Name}}
+\index{m\+\_\+merged\+Candidate\+List\+Name@{m\+\_\+merged\+Candidate\+List\+Name}!arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+merged\+Candidate\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm\+::m\+\_\+merged\+Candidate\+List\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackPreparationAlgorithm_ad1b8757b0938dd50c28c9cdc971685b2}
+
+
+The name under which to save the full, merged, list of candidate tracks. 
+
+
+
+Definition at line 79 of file Track\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}!m\+\_\+pfo\+Track\+List\+Name@{m\+\_\+pfo\+Track\+List\+Name}}
+\index{m\+\_\+pfo\+Track\+List\+Name@{m\+\_\+pfo\+Track\+List\+Name}!arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+pfo\+Track\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm\+::m\+\_\+pfo\+Track\+List\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackPreparationAlgorithm_a5676b854915f7b31b6a988568bddccb6}
+
+
+The name of the pfo track list, containing parent tracks of charged pfos. 
+
+
+
+Definition at line 85 of file Track\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}!m\+\_\+should\+Make\+Associations@{m\+\_\+should\+Make\+Associations}}
+\index{m\+\_\+should\+Make\+Associations@{m\+\_\+should\+Make\+Associations}!arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+should\+Make\+Associations}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm\+::m\+\_\+should\+Make\+Associations\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackPreparationAlgorithm_aca0f93936c61d5e9a416d9c25931c835}
+
+
+Whether to re-\/make track-\/cluster associations for candidate tracks. 
+
+
+
+Definition at line 81 of file Track\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}!m\+\_\+should\+Make\+Pfo\+Track\+List@{m\+\_\+should\+Make\+Pfo\+Track\+List}}
+\index{m\+\_\+should\+Make\+Pfo\+Track\+List@{m\+\_\+should\+Make\+Pfo\+Track\+List}!arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm@{arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm}}
+\subsubsection[{m\+\_\+should\+Make\+Pfo\+Track\+List}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Track\+Preparation\+Algorithm\+::m\+\_\+should\+Make\+Pfo\+Track\+List\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackPreparationAlgorithm_ae76cd7bf545a9c2330e8f001c4f6bce4}
+
+
+Whether to make pfo track list, containing parent tracks of charged pfos. 
+
+
+
+Definition at line 84 of file Track\+Preparation\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Track\+Preparation\+Algorithm.\+h}\item 
+{\bf Track\+Preparation\+Algorithm.\+cc}\end{DoxyCompactItemize}

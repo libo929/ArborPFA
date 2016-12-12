@@ -1,0 +1,1368 @@
+\section{arbor\+\_\+content\+:\+:Cluster\+Helper Class Reference}
+\label{classarbor__content_1_1ClusterHelper}\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+
+
+\doxyref{Cluster\+Helper}{p.}{classarbor__content_1_1ClusterHelper} class.  
+
+
+
+
+{\ttfamily \#include $<$Cluster\+Helper.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static pandora\+::\+Status\+Code {\bf Get\+Centroid} (const pandora\+::\+Cluster $\ast$const p\+Cluster, pandora\+::\+Cartesian\+Vector \&centroid)
+\begin{DoxyCompactList}\small\item\em Get the cluster centroid. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Closest\+Distance\+Approach} (const pandora\+::\+Cluster $\ast$const p\+Cluster, const pandora\+::\+Cartesian\+Vector \&point, float \&closest\+Distance)
+\begin{DoxyCompactList}\small\item\em Get the closest distance approach between all the hits of the cluster and the given position vector. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Centroid\+Distance} (const pandora\+::\+Cluster $\ast$const p\+Cluster, const pandora\+::\+Cartesian\+Vector \&point, float \&centroid\+Distance)
+\begin{DoxyCompactList}\small\item\em Get the distance between the cluster centroid and the given position vector. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Closest\+Distance\+Approach} (const pandora\+::\+Cluster $\ast$const p\+Cluster1, const pandora\+::\+Cluster $\ast$const p\+Cluster2, float \&closest\+Distance)
+\begin{DoxyCompactList}\small\item\em Get the closest distance approach between all the hits of the clusters. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+N\+Calo\+Hit\+Seeds} (const pandora\+::\+Cluster $\ast$const p\+Cluster, unsigned int \&n\+Seeds)
+\begin{DoxyCompactList}\small\item\em Get the number of calo hit seeds in the cluster. \end{DoxyCompactList}\item 
+static bool {\bf Is\+Cluster\+Leaving\+Detector} (const pandora\+::\+Pandora \&pandora, const pandora\+::\+Cluster $\ast$const p\+Cluster, unsigned int n\+Outer\+Layers\+To\+Examine=3, float max\+Distance\+To\+Detector\+Edge=50.f, unsigned int min\+N\+Hits\+Near\+Edges=3)
+\begin{DoxyCompactList}\small\item\em Whether the cluster is leaving the detector. \end{DoxyCompactList}\item 
+static bool {\bf Contains\+Hit\+Type} (const pandora\+::\+Cluster $\ast$const p\+Cluster, const pandora\+::\+Hit\+Type hit\+Type)
+\begin{DoxyCompactList}\small\item\em Whether the cluster contains at least one hit of target type. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Mean\+Surrounding\+Energy} (const pandora\+::\+Cluster $\ast$const p\+Cluster, float \&mean\+Surrounding\+Energy)
+\begin{DoxyCompactList}\small\item\em Get the mean surrounding energy of the cluster. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Mean\+Density} (const pandora\+::\+Cluster $\ast$const p\+Cluster, float \&mean\+Density)
+\begin{DoxyCompactList}\small\item\em Get the mean density of the cluster. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Chi\+Cluster\+Merging} (const pandora\+::\+Pandora \&pandora, const pandora\+::\+Cluster $\ast$const p\+Cluster\+To\+Enlarge, const pandora\+::\+Cluster $\ast$const p\+Cluster\+To\+Merge, float \&old\+Chi, float \&new\+Chi)
+\begin{DoxyCompactList}\small\item\em Evaluate the chi before and after to merge the two clusters. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Merge\+Clusters} (const pandora\+::\+Algorithm \&algorithm, {\bf Cluster\+To\+Cluster\+Map} \&cluster\+To\+Cluster\+Map)
+\begin{DoxyCompactList}\small\item\em Perform intelligent merging of clusters (daughter $<$-\/$>$ parent relationship management) \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Track\+Cluster\+Distance} (const pandora\+::\+Pandora \&pandora, const pandora\+::\+Cluster $\ast$const p\+Cluster, const pandora\+::\+Track $\ast$const p\+Track, const float max\+Transverse\+Distance, float \&track\+Cluster\+Distance)
+\begin{DoxyCompactList}\small\item\em Get the track cluster distance. \end{DoxyCompactList}\item 
+static bool {\bf Does\+Cluster\+Cross\+Gap\+Region} (const pandora\+::\+Pandora \&pandora, const pandora\+::\+Cluster $\ast$const p\+Cluster, const unsigned int start\+Layer, const unsigned int end\+Layer, const pandora\+::\+Detector\+Gap $\ast$\&p\+Detector\+Gap, const unsigned int n\+Sampling\+Points=50)
+\begin{DoxyCompactList}\small\item\em Whether a linear fit to a cluster crosses a registered gap region. \end{DoxyCompactList}\item 
+static bool {\bf Does\+Fit\+Cross\+Gap\+Region} (const pandora\+::\+Pandora \&pandora, const pandora\+::\+Cluster\+Fit\+Result \&cluster\+Fit\+Result, const pandora\+::\+Cartesian\+Vector \&start\+Position, const float propagation\+Distance, const pandora\+::\+Detector\+Gap $\ast$\&p\+Detector\+Gap, const unsigned int n\+Sampling\+Points=50)
+\begin{DoxyCompactList}\small\item\em Whether a linear fit crosses a registered gap region. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Distance\+To\+Detector\+Gap} (const pandora\+::\+Cartesian\+Vector \&position\+Vector, const pandora\+::\+Detector\+Gap $\ast$const p\+Detector\+Gap, float \&distance\+To\+Gap)
+\begin{DoxyCompactList}\small\item\em Get the distance to detector gap. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Calo\+Hits\+Near\+Detector\+Gaps} (const pandora\+::\+Pandora \&pandora, const pandora\+::\+Cluster $\ast$const p\+Cluster, const float max\+Distance\+Fine, const float max\+Distance\+Coarse, pandora\+::\+Calo\+Hit\+List \&calo\+Hit\+List, bool should\+Use\+Isolated\+Hits)
+\begin{DoxyCompactList}\small\item\em Get the calo hit list belonging to the cluster, close to all registered detector gaps. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Get\+Calo\+Hits\+Near\+Detector\+Gap} (const pandora\+::\+Pandora \&pandora, const pandora\+::\+Cluster $\ast$const p\+Cluster, const pandora\+::\+Detector\+Gap $\ast$const p\+Detector\+Gap, const float max\+Distance\+Fine, const float max\+Distance\+Coarse, pandora\+::\+Calo\+Hit\+List \&calo\+Hit\+List, bool should\+Use\+Isolated\+Hits)
+\begin{DoxyCompactList}\small\item\em Get the calo hit list belonging to the cluster, close to all registered detector gaps. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Clean\+And\+Delete\+Cluster} (const pandora\+::\+Algorithm \&algorithm, const pandora\+::\+Cluster $\ast$const p\+Cluster)
+\item 
+static pandora\+::\+Status\+Code {\bf Clean\+And\+Delete\+Clusters} (const pandora\+::\+Algorithm \&algorithm, const pandora\+::\+Cluster\+List \&cluster\+List)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Cluster\+Helper}{p.}{classarbor__content_1_1ClusterHelper} class. 
+
+Definition at line 107 of file Cluster\+Helper.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Clean\+And\+Delete\+Cluster@{Clean\+And\+Delete\+Cluster}}
+\index{Clean\+And\+Delete\+Cluster@{Clean\+And\+Delete\+Cluster}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Clean\+And\+Delete\+Cluster}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Clean\+And\+Delete\+Cluster (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_abf3010dd0fd4a6961f1aeaada0cacf6a}
+
+
+Definition at line 731 of file Cluster\+Helper.\+cc.
+
+
+
+References Arbor\+Content\+Api\+::\+Remove\+And\+Delete\+All\+Connections().
+
+
+
+Referenced by Clean\+And\+Delete\+Clusters().
+
+
+\begin{DoxyCode}
+732   \{
+733     pandora::CaloHitList clusterCaloHitList;
+734     pCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+735 
+736     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList.begin() , endIter = 
+      clusterCaloHitList.end() ;
+737         endIter != iter ; ++iter)
+738     \{
+739       \textcolor{keyword}{const} arbor_content::CaloHit *\textcolor{keyword}{const} pCaloHit(dynamic\_cast<const arbor\_content::CaloHit *const>(*iter)
+      );
+740 
+741       \textcolor{keywordflow}{if}(NULL == pCaloHit)
+742         \textcolor{keywordflow}{continue};
+743 
+744       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::RemoveAndDeleteAllConnections(pCaloHit));
+745     \}
+746 
+747     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::Delete(algorithm, 
+      pCluster));
+748 
+749     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+750   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Clean\+And\+Delete\+Clusters@{Clean\+And\+Delete\+Clusters}}
+\index{Clean\+And\+Delete\+Clusters@{Clean\+And\+Delete\+Clusters}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Clean\+And\+Delete\+Clusters}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Clean\+And\+Delete\+Clusters (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const pandora\+::\+Cluster\+List \&}]{cluster\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_ab72a64f6474de392a91a4161014ed2f2}
+
+
+Definition at line 754 of file Cluster\+Helper.\+cc.
+
+
+
+References Clean\+And\+Delete\+Cluster().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Photon\+Reconstruction\+Algorithm\+::\+Select\+Photons\+And\+Remove\+Others().
+
+
+\begin{DoxyCode}
+755   \{
+756     \textcolor{keywordflow}{for}(pandora::ClusterList::const\_iterator iter = clusterList.begin(), endIter = clusterList.end() ;
+757         endIter != iter ; ++iter)
+758     \{
+759       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ClusterHelper::CleanAndDeleteCluster(algorithm, *iter));
+760     \}
+761 
+762     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+763   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Contains\+Hit\+Type@{Contains\+Hit\+Type}}
+\index{Contains\+Hit\+Type@{Contains\+Hit\+Type}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Contains\+Hit\+Type}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Contains\+Hit\+Type (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{const pandora\+::\+Hit\+Type}]{hit\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_aa0633d25cfc8e59c52f460be45e62b78}
+
+
+Whether the cluster contains at least one hit of target type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & to check \\
+\hline
+{\em hit\+Type} & the hit type to look for \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 329 of file Cluster\+Helper.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Fragment\+Removal\+Algorithm\+::\+Find\+Cluster\+Fragments(), arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Get\+Starting\+Pseudo\+Layer(), Is\+Cluster\+Leaving\+Detector(), and arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::\+Is\+Match().
+
+
+\begin{DoxyCode}
+330   \{
+331     \textcolor{keyword}{const} pandora::OrderedCaloHitList &orderedCaloHitList(pCluster->GetOrderedCaloHitList());
+332 
+333     \textcolor{keywordflow}{for} (pandora::OrderedCaloHitList::const\_reverse\_iterator iter = orderedCaloHitList.rbegin(), iterEnd = 
+      orderedCaloHitList.rend(); iter != iterEnd; ++iter)
+334     \{
+335       \textcolor{keywordflow}{for} (pandora::CaloHitList::const\_iterator hIter = iter->second->begin(), hIterEnd = iter->second->end
+      (); hIter != hIterEnd; ++hIter)
+336       \{
+337         \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*hIter);
+338 
+339         \textcolor{keywordflow}{if} (hitType == pCaloHit->GetHitType())
+340           \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+341       \}
+342     \}
+343 
+344     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+345   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Does\+Cluster\+Cross\+Gap\+Region@{Does\+Cluster\+Cross\+Gap\+Region}}
+\index{Does\+Cluster\+Cross\+Gap\+Region@{Does\+Cluster\+Cross\+Gap\+Region}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Does\+Cluster\+Cross\+Gap\+Region}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Does\+Cluster\+Cross\+Gap\+Region (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{const unsigned int}]{start\+Layer, }
+\item[{const unsigned int}]{end\+Layer, }
+\item[{const pandora\+::\+Detector\+Gap $\ast$\&}]{p\+Detector\+Gap, }
+\item[{const unsigned int}]{n\+Sampling\+Points = {\ttfamily 50}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_ad0155c74b79fed5761e9dbb461d1a1db}
+
+
+Whether a linear fit to a cluster crosses a registered gap region. 
+
+Only the region between the startlayer and endlayer is considered in the fit and in the comparison with registered gap regions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the associated pandora instance \\
+\hline
+{\em p\+Cluster} & address of the cluster \\
+\hline
+{\em start\+Layer} & the start layer (adjusted to maximum of specified layer and cluster inner layer) \\
+\hline
+{\em end\+Layer} & the end layer (adjusted to minimum of specified layer and cluster outer layer) \\
+\hline
+{\em p\+Detector\+Gap} & the crossing gap to receive, if any \\
+\hline
+{\em n\+Sampling\+Points} & number of points at which to sample the fit within the specified layer region\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 514 of file Cluster\+Helper.\+cc.
+
+
+
+References Does\+Fit\+Cross\+Gap\+Region().
+
+
+\begin{DoxyCode}
+516   \{
+517     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} fitStartLayer(std::max(startLayer, pCluster->GetInnerPseudoLayer()));
+518     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} fitEndLayer(std::min(endLayer, pCluster->GetOuterPseudoLayer()));
+519 
+520     \textcolor{keywordflow}{if} (fitStartLayer > fitEndLayer)
+521       \textcolor{keywordflow}{throw} pandora::StatusCodeException(pandora::STATUS\_CODE\_INVALID\_PARAMETER);
+522 
+523     pandora::ClusterFitResult fitResult;
+524     \textcolor{keywordflow}{if} (pandora::STATUS\_CODE\_SUCCESS != pandora::ClusterFitHelper::FitLayers(pCluster, fitStartLayer, 
+      fitEndLayer, fitResult))
+525       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+526 
+527     \textcolor{keyword}{const} pandora::CartesianVector startLayerCentroid(pCluster->GetCentroid(fitStartLayer));
+528     \textcolor{keyword}{const} \textcolor{keywordtype}{float} propagationDistance((pCluster->GetCentroid(fitEndLayer) - startLayerCentroid).GetDotProduct
+      (fitResult.GetDirection()));
+529 
+530     \textcolor{keywordflow}{return} ClusterHelper::DoesFitCrossGapRegion(pandora, fitResult, startLayerCentroid, propagationDistance
+      , pDetectorGap, nSamplingPoints);
+531   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Does\+Fit\+Cross\+Gap\+Region@{Does\+Fit\+Cross\+Gap\+Region}}
+\index{Does\+Fit\+Cross\+Gap\+Region@{Does\+Fit\+Cross\+Gap\+Region}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Does\+Fit\+Cross\+Gap\+Region}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Does\+Fit\+Cross\+Gap\+Region (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const pandora\+::\+Cluster\+Fit\+Result \&}]{cluster\+Fit\+Result, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{start\+Position, }
+\item[{const float}]{propagation\+Distance, }
+\item[{const pandora\+::\+Detector\+Gap $\ast$\&}]{p\+Detector\+Gap, }
+\item[{const unsigned int}]{n\+Sampling\+Points = {\ttfamily 50}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_a395edfa1553f53c89e79bb47c6e79698}
+
+
+Whether a linear fit crosses a registered gap region. 
+
+The fit will be propagated through the specified distance from its closest approach to the start\+Position. Within this propagation, the fit will be sampled a specified number of times and the resulting position compared with registered gap regions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the associated pandora instance \\
+\hline
+{\em cluster\+Fit\+Result} & the cluster fit result \\
+\hline
+{\em start\+Position} & the propagation start position (adjusted to closest point on fit trajectory) \\
+\hline
+{\em propagation\+Distance} & the propagation distance, which can be negative for propagation towards the ip \\
+\hline
+{\em p\+Detector\+Gap} & the detector gap to receive, if any \\
+\hline
+{\em n\+Sampling\+Points} & number of points at which to sample the fit within its propagation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 535 of file Cluster\+Helper.\+cc.
+
+
+
+Referenced by Does\+Cluster\+Cross\+Gap\+Region().
+
+
+\begin{DoxyCode}
+537   \{
+538     \textcolor{keyword}{const} pandora::CartesianVector &fitDirection(clusterFitResult.GetDirection());
+539     \textcolor{keyword}{const} pandora::CartesianVector &fitIntercept(clusterFitResult.GetIntercept());
+540 
+541     \textcolor{keyword}{const} \textcolor{keywordtype}{float} fitStartDistance((startPosition - fitIntercept).GetDotProduct(fitDirection));
+542     \textcolor{keyword}{const} pandora::CartesianVector fitStartPosition(fitIntercept + (fitDirection * fitStartDistance));
+543     \textcolor{keyword}{const} pandora::CartesianVector fitPropagation(fitDirection * propagationDistance);
+544 
+545     \textcolor{keyword}{const} pandora::DetectorGapList &detectorGapList(pandora.GetGeometry()->GetDetectorGapList());
+546 
+547     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < nSamplingPoints; ++i)
+548     \{
+549       \textcolor{keyword}{const} pandora::CartesianVector fitPosition(fitStartPosition + (fitPropagation * (static\_cast<float>(i
+      ) / static\_cast<float>(nSamplingPoints))));
+550 
+551       \textcolor{keywordflow}{for} (pandora::DetectorGapList::const\_iterator iter = detectorGapList.begin(), iterEnd = 
+      detectorGapList.end(); iter != iterEnd; ++iter)
+552       \{
+553         \textcolor{comment}{// ATTN Could pass (e.g. inner layer) hit type for cluster, but know that actually need to pass
+       only any 3D hit type (hack)}
+554         \textcolor{keywordflow}{if} ((*iter)->IsInGap(fitPosition, pandora::ECAL))
+555         \{
+556           pDetectorGap = *iter;
+557           \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+558         \}
+559       \}
+560     \}
+561 
+562     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+563   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Get\+Calo\+Hits\+Near\+Detector\+Gap@{Get\+Calo\+Hits\+Near\+Detector\+Gap}}
+\index{Get\+Calo\+Hits\+Near\+Detector\+Gap@{Get\+Calo\+Hits\+Near\+Detector\+Gap}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Get\+Calo\+Hits\+Near\+Detector\+Gap}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Calo\+Hits\+Near\+Detector\+Gap (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{const pandora\+::\+Detector\+Gap $\ast$const}]{p\+Detector\+Gap, }
+\item[{const float}]{max\+Distance\+Fine, }
+\item[{const float}]{max\+Distance\+Coarse, }
+\item[{pandora\+::\+Calo\+Hit\+List \&}]{calo\+Hit\+List, }
+\item[{bool}]{should\+Use\+Isolated\+Hits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_a6fe6bc6998a9dc967280fe6a503335c1}
+
+
+Get the calo hit list belonging to the cluster, close to all registered detector gaps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access pandora content \\
+\hline
+{\em p\+Cluster} & the input cluster address \\
+\hline
+{\em p\+Detector\+Gap} & the detector gap to consider \\
+\hline
+{\em max\+Distance} & the maximum distance between the gap and a calo hit \\
+\hline
+{\em calo\+Hit\+List} & the list of calo hit near a detector gap \\
+\hline
+{\em should\+Use\+Isolated\+Hits} & whether to consider isolated calo hits from the input cluster \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 698 of file Cluster\+Helper.\+cc.
+
+
+
+References Get\+Distance\+To\+Detector\+Gap().
+
+
+
+Referenced by Get\+Calo\+Hits\+Near\+Detector\+Gaps().
+
+
+\begin{DoxyCode}
+700   \{
+701     \textcolor{keywordflow}{if}(0 == pCluster->GetNCaloHits())
+702       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+703 
+704     pandora::CaloHitList clusterCaloHitList;
+705     pCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+706 
+707     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList.begin() , endIter = 
+      clusterCaloHitList.end() ;
+708         endIter != iter ; ++iter)
+709     \{
+710       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*iter);
+711 
+712       \textcolor{keywordflow}{if}(!shouldUseIsolatedHits && pCaloHit->IsIsolated())
+713         \textcolor{keywordflow}{continue};
+714 
+715       \textcolor{keyword}{const} pandora::Granularity &granularity(pandora.GetGeometry()->GetHitTypeGranularity(pCaloHit->
+      GetHitType()));
+716       \textcolor{keyword}{const} \textcolor{keywordtype}{float} maxDistance(granularity <= pandora::FINE ? maxDistanceFine : maxDistanceCoarse);
+717       \textcolor{keywordtype}{float} distanceToGap(0.f);
+718 
+719       \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != ClusterHelper::GetDistanceToDetectorGap(pCaloHit->
+      GetPositionVector(), pDetectorGap, distanceToGap))
+720         \textcolor{keywordflow}{continue};
+721 
+722       \textcolor{keywordflow}{if}(distanceToGap < maxDistance)
+723         caloHitList.insert(pCaloHit);
+724     \}
+725 
+726     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+727   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Get\+Calo\+Hits\+Near\+Detector\+Gaps@{Get\+Calo\+Hits\+Near\+Detector\+Gaps}}
+\index{Get\+Calo\+Hits\+Near\+Detector\+Gaps@{Get\+Calo\+Hits\+Near\+Detector\+Gaps}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Get\+Calo\+Hits\+Near\+Detector\+Gaps}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Calo\+Hits\+Near\+Detector\+Gaps (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{const float}]{max\+Distance\+Fine, }
+\item[{const float}]{max\+Distance\+Coarse, }
+\item[{pandora\+::\+Calo\+Hit\+List \&}]{calo\+Hit\+List, }
+\item[{bool}]{should\+Use\+Isolated\+Hits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_a12d0e4178fa63865f661df7110069b6d}
+
+
+Get the calo hit list belonging to the cluster, close to all registered detector gaps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access pandora content \\
+\hline
+{\em p\+Cluster} & the input cluster address \\
+\hline
+{\em max\+Distance} & the maximum distance between the gap and a calo hit \\
+\hline
+{\em calo\+Hit\+List} & the list of calo hit near a detector gap \\
+\hline
+{\em should\+Use\+Isolated\+Hits} & whether to consider isolated calo hits from the input cluster \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 682 of file Cluster\+Helper.\+cc.
+
+
+
+References Get\+Calo\+Hits\+Near\+Detector\+Gap().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Single\+Particle\+Monitoring\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+684   \{
+685     \textcolor{keyword}{const} pandora::DetectorGapList &detectorGapList(pandora.GetGeometry()->GetDetectorGapList());
+686 
+687     \textcolor{keywordflow}{for} (pandora::DetectorGapList::const\_iterator iter = detectorGapList.begin(), iterEnd = detectorGapList
+      .end(); iter != iterEnd; ++iter)
+688     \{
+689       \textcolor{keyword}{const} pandora::DetectorGap *\textcolor{keyword}{const} pDetectorGap(*iter);
+690       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ClusterHelper::GetCaloHitsNearDetectorGap(pandora, pCluster, pDetectorGap, maxDistanceFine, 
+      maxDistanceCoarse, caloHitList, shouldUseIsolatedHits));
+691     \}
+692 
+693     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+694   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Get\+Centroid@{Get\+Centroid}}
+\index{Get\+Centroid@{Get\+Centroid}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Get\+Centroid}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Centroid (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{pandora\+::\+Cartesian\+Vector \&}]{centroid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_ac36b47c8b30bfed248172b0256435c7b}
+
+
+Get the cluster centroid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the cluster to evaluate the centroid \\
+\hline
+{\em centroid} & the centroid to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 124 of file Cluster\+Helper.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Pointing\+Cluster\+Association\+Algorithm\+::\+Find\+Best\+Parent\+Cluster(), Get\+Centroid\+Distance(), arbor\+\_\+content\+::\+Pointing\+Cluster\+Association\+Algorithm\+::\+Get\+Cluster\+Backward\+Direction(), arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::\+Get\+Cos\+Theta(), arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Get\+Starting\+Pseudo\+Layer(), and arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+125   \{
+126     \textcolor{keyword}{const} pandora::OrderedCaloHitList &orderedCaloHitList(pCluster->GetOrderedCaloHitList());
+127 
+128     \textcolor{keywordflow}{for}(pandora::OrderedCaloHitList::const\_iterator iter = orderedCaloHitList.begin(), endIter = 
+      orderedCaloHitList.end() ;
+129         endIter != iter ; ++iter)
+130     \{
+131       centroid += pCluster->GetCentroid(iter->first);
+132     \}
+133 
+134     centroid *= 1.f/(orderedCaloHitList.size());
+135 
+136     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+137   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Get\+Centroid\+Distance@{Get\+Centroid\+Distance}}
+\index{Get\+Centroid\+Distance@{Get\+Centroid\+Distance}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Get\+Centroid\+Distance}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Centroid\+Distance (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{point, }
+\item[{float \&}]{centroid\+Distance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_a08422537ccfb371211eb8b529f1ad620}
+
+
+Get the distance between the cluster centroid and the given position vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the cluster to evaluate the closest distance approach \\
+\hline
+{\em point} & the position vector \\
+\hline
+{\em centroid\+Distance} & the distance between the point and the cluster centroid, unit mm \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 170 of file Cluster\+Helper.\+cc.
+
+
+
+References Get\+Centroid().
+
+
+\begin{DoxyCode}
+172   \{
+173     centroidDistance = std::numeric\_limits<float>::max();
+174 
+175     \textcolor{keywordflow}{if}(NULL == pCluster)
+176       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+177 
+178     \textcolor{keywordflow}{if}(0 == pCluster->GetNCaloHits())
+179       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+180 
+181     pandora::CartesianVector clusterCentroid(0.f, 0.f, 0.f);
+182     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ClusterHelper::GetCentroid(pCluster, clusterCentroid));
+183 
+184     centroidDistance = (clusterCentroid - point).GetMagnitude();
+185 
+186     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+187   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Get\+Chi\+Cluster\+Merging@{Get\+Chi\+Cluster\+Merging}}
+\index{Get\+Chi\+Cluster\+Merging@{Get\+Chi\+Cluster\+Merging}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Get\+Chi\+Cluster\+Merging}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Chi\+Cluster\+Merging (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster\+To\+Enlarge, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster\+To\+Merge, }
+\item[{float \&}]{old\+Chi, }
+\item[{float \&}]{new\+Chi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_a93720d7c086eae13c083d42184f7d87a}
+
+
+Evaluate the chi before and after to merge the two clusters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access internal content \\
+\hline
+{\em p\+Cluster\+To\+Enlarge} & the cluster to enlarge \\
+\hline
+{\em p\+Cluster\+To\+Merge} & the cluster to merge \\
+\hline
+{\em old\+Chi} & the chi of the cluster to enlarge \\
+\hline
+{\em new\+Chi} & the chi of the clusters after a potential merging \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 407 of file Cluster\+Helper.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Get\+Track\+Cluster\+Compatibility().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Pointing\+Cluster\+Association\+Algorithm\+::\+Find\+Best\+Parent\+Cluster(), and arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::\+Find\+Charged\+Mip\+Fragments().
+
+
+\begin{DoxyCode}
+408   \{
+409     \textcolor{keyword}{const} pandora::TrackList trackList(pClusterToEnlarge->GetAssociatedTrackList());
+410 
+411     pandora::TrackList trackListCombined(pClusterToMerge->GetAssociatedTrackList());
+412     trackListCombined.insert(trackList.begin(), trackList.end());
+413 
+414     \textcolor{keywordflow}{if}(trackList.empty())
+415       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+416 
+417     \textcolor{keywordtype}{float} trackEnergySum(0.f);
+418     \textcolor{keywordtype}{float} trackEnergySumCombined(0.f);
+419 
+420     \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator trackIter = trackList.begin(), trackIterEnd = trackList.end(); 
+      trackIter != trackIterEnd; ++trackIter)
+421       trackEnergySum += (*trackIter)->GetEnergyAtDca();
+422 
+423     \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator trackIter = trackListCombined.begin(), trackIterEnd = 
+      trackListCombined.end(); trackIter != trackIterEnd; ++trackIter)
+424       trackEnergySumCombined += (*trackIter)->GetEnergyAtDca();
+425 
+426     \textcolor{keyword}{const} \textcolor{keywordtype}{float} clusterEnergy(pClusterToEnlarge->GetTrackComparisonEnergy(
+      pandora));
+427     \textcolor{keyword}{const} \textcolor{keywordtype}{float} clusterEnergyCombined(clusterEnergy + pClusterToMerge->GetTrackComparisonEnergy(
+      pandora));
+428 
+429     oldChi = ReclusterHelper::GetTrackClusterCompatibility(pandora, clusterEnergy, trackEnergySum);
+430     newChi = ReclusterHelper::GetTrackClusterCompatibility(pandora, clusterEnergyCombined, 
+      trackEnergySumCombined);
+431 
+432     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+433   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Get\+Closest\+Distance\+Approach@{Get\+Closest\+Distance\+Approach}}
+\index{Get\+Closest\+Distance\+Approach@{Get\+Closest\+Distance\+Approach}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Get\+Closest\+Distance\+Approach}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Closest\+Distance\+Approach (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{point, }
+\item[{float \&}]{closest\+Distance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_a91ee869aed16836eb87e4540e5213792}
+
+
+Get the closest distance approach between all the hits of the cluster and the given position vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the cluster to evaluate the closest distance approach \\
+\hline
+{\em point} & the position vector \\
+\hline
+{\em closest\+Distance} & the closest distance approach between the point and the cluster, unit mm \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file Cluster\+Helper.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool\+::\+Find\+Calo\+Hit\+Cluster\+Merging(), Get\+Closest\+Distance\+Approach(), and arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+143   \{
+144     closestDistance = std::numeric\_limits<float>::max();
+145 
+146     \textcolor{keywordflow}{if}(NULL == pCluster)
+147       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+148 
+149     \textcolor{keywordflow}{if}(0 == pCluster->GetNCaloHits())
+150       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+151 
+152     pandora::CaloHitList clusterCaloHitList;
+153     pCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+154 
+155     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList.begin() , endIter = 
+      clusterCaloHitList.end() ;
+156         endIter != iter ; ++iter)
+157     \{
+158       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit = *iter;
+159       \textcolor{keyword}{const} \textcolor{keywordtype}{float} distance = (pCaloHit->GetPositionVector() - point).GetMagnitude();
+160 
+161       \textcolor{keywordflow}{if}(closestDistance > distance)
+162         closestDistance = distance;
+163     \}
+164 
+165     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+166   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Get\+Closest\+Distance\+Approach@{Get\+Closest\+Distance\+Approach}}
+\index{Get\+Closest\+Distance\+Approach@{Get\+Closest\+Distance\+Approach}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Get\+Closest\+Distance\+Approach}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Closest\+Distance\+Approach (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster1, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster2, }
+\item[{float \&}]{closest\+Distance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_a354db9f315c759c8e2472e65c0331ec1}
+
+
+Get the closest distance approach between all the hits of the clusters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the first cluster \\
+\hline
+{\em p\+Cluster} & the second cluster \\
+\hline
+{\em closest\+Distance} & the closest distance approach between the two clusters, unit mm \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 191 of file Cluster\+Helper.\+cc.
+
+
+
+References Get\+Closest\+Distance\+Approach().
+
+
+\begin{DoxyCode}
+193   \{
+194     closestDistance = std::numeric\_limits<float>::max();
+195 
+196     \textcolor{keywordflow}{if}(NULL == pCluster1 || NULL == pCluster2)
+197       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+198 
+199     \textcolor{keywordflow}{if}(0 == pCluster1->GetNCaloHits() || 0 == pCluster2->GetNCaloHits())
+200       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+201 
+202     pandora::CaloHitList clusterCaloHitList1;
+203     pCluster1->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList1);
+204 
+205     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList1.begin() , endIter = 
+      clusterCaloHitList1.end() ;
+206         endIter != iter ; ++iter)
+207     \{
+208       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit = *iter;
+209       \textcolor{keywordtype}{float} closestHitDistanceApproach(std::numeric\_limits<float>::max());
+210 
+211       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ClusterHelper::GetClosestDistanceApproach(pCluster2,
+212           pCaloHit->GetPositionVector(), closestHitDistanceApproach));
+213 
+214       \textcolor{keywordflow}{if}(closestHitDistanceApproach < closestDistance)
+215         closestDistance = closestHitDistanceApproach;
+216     \}
+217 
+218     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+219   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Get\+Distance\+To\+Detector\+Gap@{Get\+Distance\+To\+Detector\+Gap}}
+\index{Get\+Distance\+To\+Detector\+Gap@{Get\+Distance\+To\+Detector\+Gap}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Get\+Distance\+To\+Detector\+Gap}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Distance\+To\+Detector\+Gap (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cartesian\+Vector \&}]{position\+Vector, }
+\item[{const pandora\+::\+Detector\+Gap $\ast$const}]{p\+Detector\+Gap, }
+\item[{float \&}]{distance\+To\+Gap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_a9db1861d0440b358343ddda5ba351797}
+
+
+Get the distance to detector gap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position\+Vector} & the position in space to test \\
+\hline
+{\em p\+Detector\+Gap} & the detector gap to consider \\
+\hline
+{\em distance\+To\+Gap} & the distance to detector gap to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 567 of file Cluster\+Helper.\+cc.
+
+
+
+Referenced by Get\+Calo\+Hits\+Near\+Detector\+Gap().
+
+
+\begin{DoxyCode}
+568   \{
+569     distanceToGap = 0.f;
+570 
+571     \textcolor{keywordflow}{if}(NULL == pDetectorGap)
+572       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+573 
+574     \textcolor{keywordflow}{if}(pDetectorGap->IsInGap(positionVector, pandora::ECAL))
+575       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+576 
+577     \textcolor{keyword}{const} pandora::BoxGap *\textcolor{keyword}{const} pBoxGap(dynamic\_cast<const pandora::BoxGap *const>(pDetectorGap));
+578 
+579     \textcolor{keywordflow}{if}(pBoxGap)
+580     \{
+581       \textcolor{keyword}{const} pandora::CartesianVector relativePosition(positionVector - pBoxGap->GetVertex());
+582 
+583       \textcolor{keyword}{const} \textcolor{keywordtype}{float} projection1(relativePosition.GetDotProduct(pBoxGap->GetSide1().GetUnitVector()));
+584       \textcolor{keyword}{const} \textcolor{keywordtype}{float} projection2(relativePosition.GetDotProduct(pBoxGap->GetSide2().GetUnitVector()));
+585       \textcolor{keyword}{const} \textcolor{keywordtype}{float} projection3(relativePosition.GetDotProduct(pBoxGap->GetSide3().GetUnitVector()));
+586 
+587       distanceToGap = std::min(fabs(projection1), std::min(fabs(projection2), fabs(projection3)));
+588 
+589       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+590     \}
+591 
+592     \textcolor{keyword}{const} pandora::ConcentricGap *\textcolor{keyword}{const} pConcentricGap(dynamic\_cast<const pandora::ConcentricGap *const>(
+      pDetectorGap));
+593 
+594     \textcolor{keywordflow}{if}(pConcentricGap)
+595     \{
+596       \textcolor{keyword}{const} \textcolor{keywordtype}{float} z(positionVector.GetZ());
+597       \textcolor{keyword}{const} \textcolor{keywordtype}{float} x(positionVector.GetX()), y(positionVector.GetY());
+598       \textcolor{keyword}{const} \textcolor{keywordtype}{float} r(std::sqrt(x * x + y * y));
+599       \textcolor{keywordtype}{bool} inner(\textcolor{keyword}{false}), outer(\textcolor{keyword}{false});
+600       \textcolor{keyword}{const} \textcolor{keywordtype}{bool} inZ(pConcentricGap->GetMaxZCoordinate() < z && pConcentricGap->GetMinZCoordinate() > z);
+601       \textcolor{keywordtype}{float} zDistance(0.f), rInnerDistance(0.f), rOuterDistance(0.f);
+602 
+603       \textcolor{keywordflow}{if}(pConcentricGap->GetMaxZCoordinate() < z)
+604       \{
+605         zDistance = fabs(z - pConcentricGap->GetMaxZCoordinate());
+606       \}
+607 
+608       \textcolor{keywordflow}{if}(pConcentricGap->GetMinZCoordinate() > z)
+609       \{
+610         zDistance = fabs(z - pConcentricGap->GetMinZCoordinate());
+611       \}
+612 
+613       \textcolor{comment}{// inner r case}
+614       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<pConcentricGap->GetInnerSymmetryOrder()+1 ; i++)
+615       \{
+616         \textcolor{keyword}{const} \textcolor{keywordtype}{float} phi = pConcentricGap->GetInnerPhiCoordinate() + 2 * M\_PI * (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i) / 
+      static\_cast<float>(pConcentricGap->GetInnerSymmetryOrder()));
+617         \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiMin = phi - (2 * M\_PI / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pConcentricGap->GetInnerSymmetryOrder()))
+       / 2.f;
+618         \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiMax = phi + (2 * M\_PI / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pConcentricGap->GetInnerSymmetryOrder()))
+       / 2.f;
+619         \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiPosition(std::atan2(y, x));
+620 
+621         \textcolor{keywordflow}{if}(phiPosition > phiMin && phiPosition < phiMax)
+622         \{
+623           \textcolor{keyword}{const} pandora::CartesianVector normaleVector(std::cos(phi), std::sin(phi), 0.f);
+624 
+625           \textcolor{keywordflow}{if}(r*std::cos(normaleVector.GetOpeningAngle(positionVector)) < pConcentricGap->
+      GetInnerRCoordinate())
+626           \{
+627             rInnerDistance = fabs(pConcentricGap->GetInnerRCoordinate() - r*std::cos(normaleVector.
+      GetOpeningAngle(positionVector)));
+628             inner = \textcolor{keyword}{true};
+629           \}
+630 
+631           \textcolor{keywordflow}{break};
+632         \}
+633       \}
+634 
+635       \textcolor{comment}{// outer r case}
+636       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<pConcentricGap->GetOuterSymmetryOrder()+1 ; i++)
+637       \{
+638         \textcolor{keyword}{const} \textcolor{keywordtype}{float} phi = pConcentricGap->GetOuterPhiCoordinate() + 2 * M\_PI * (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(i) / 
+      static\_cast<float>(pConcentricGap->GetOuterSymmetryOrder()));
+639         \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiMin = phi - (2 * M\_PI / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pConcentricGap->GetOuterSymmetryOrder()))
+       / 2.f;
+640         \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiMax = phi + (2 * M\_PI / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(pConcentricGap->GetOuterSymmetryOrder()))
+       / 2.f;
+641         \textcolor{keyword}{const} \textcolor{keywordtype}{float} phiPosition(std::atan2(y, x));
+642 
+643         \textcolor{keywordflow}{if}(phiPosition > phiMin && phiPosition < phiMax)
+644         \{
+645           \textcolor{keyword}{const} pandora::CartesianVector normaleVector(std::cos(phi), std::sin(phi), 0.f);
+646 
+647           \textcolor{keywordflow}{if}(r*std::cos(normaleVector.GetOpeningAngle(positionVector)) > pConcentricGap->
+      GetOuterRCoordinate())
+648           \{
+649             rOuterDistance = fabs(r*std::cos(normaleVector.GetOpeningAngle(positionVector)) - 
+      pConcentricGap->GetOuterRCoordinate());
+650             outer = \textcolor{keyword}{true};
+651           \}
+652 
+653           \textcolor{keywordflow}{break};
+654         \}
+655       \}
+656 
+657       \textcolor{keywordflow}{if}(!inner && !outer)
+658       \{
+659         distanceToGap = fabs(zDistance);
+660       \}
+661       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(inZ)
+662       \{
+663         \textcolor{keywordflow}{if}(inner)
+664           distanceToGap = fabs(rInnerDistance);
+665         \textcolor{keywordflow}{else}
+666           distanceToGap = fabs(rOuterDistance);
+667       \}
+668       \textcolor{keywordflow}{else}
+669       \{
+670         \textcolor{keywordtype}{float} rDistance(inner ? rInnerDistance : rOuterDistance);
+671         distanceToGap = std::sqrt(fabs(rDistance)*fabs(rDistance) + fabs(zDistance)*fabs(zDistance));
+672       \}
+673 
+674       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+675     \}
+676 
+677     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+678   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Get\+Mean\+Density@{Get\+Mean\+Density}}
+\index{Get\+Mean\+Density@{Get\+Mean\+Density}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Get\+Mean\+Density}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Mean\+Density (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{float \&}]{mean\+Density}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_abef6105c10061ba64bfc539db17ed77b}
+
+
+Get the mean density of the cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the input cluster \\
+\hline
+{\em mean\+Density} & the mean density to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 378 of file Cluster\+Helper.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+::\+Get\+Density().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Fragment\+Removal\+Algorithm\+::\+Find\+Cluster\+Fragments().
+
+
+\begin{DoxyCode}
+379   \{
+380     \textcolor{keywordflow}{if}(NULL == pCluster || 0 == pCluster->GetNCaloHits())
+381       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+382 
+383     meanDensity = 0.f;
+384 
+385     \textcolor{keyword}{const} pandora::OrderedCaloHitList &orderedCaloHitList(pCluster->GetOrderedCaloHitList());
+386 
+387     \textcolor{keywordflow}{for} (pandora::OrderedCaloHitList::const\_reverse\_iterator iter = orderedCaloHitList.rbegin(), iterEnd = 
+      orderedCaloHitList.rend(); iter != iterEnd; ++iter)
+388     \{
+389       \textcolor{keywordflow}{for} (pandora::CaloHitList::const\_iterator hIter = iter->second->begin(), hIterEnd = iter->second->end
+      (); hIter != hIterEnd; ++hIter)
+390       \{
+391         \textcolor{keyword}{const} arbor_content::CaloHit *\textcolor{keyword}{const} pCaloHit(dynamic\_cast<const arbor\_content::CaloHit *const>(*
+      hIter));
+392 
+393         \textcolor{keywordflow}{if}(NULL == pCaloHit)
+394           \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+395 
+396         meanDensity += pCaloHit->GetDensity();
+397       \}
+398     \}
+399 
+400     meanDensity /= pCluster->GetNCaloHits();
+401 
+402     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+403   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Get\+Mean\+Surrounding\+Energy@{Get\+Mean\+Surrounding\+Energy}}
+\index{Get\+Mean\+Surrounding\+Energy@{Get\+Mean\+Surrounding\+Energy}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Get\+Mean\+Surrounding\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Mean\+Surrounding\+Energy (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{float \&}]{mean\+Surrounding\+Energy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_a50c055218c6298973dec97f60025dd39}
+
+
+Get the mean surrounding energy of the cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the input cluster \\
+\hline
+{\em mean\+Surrounding\+Energy} & the mean surrounding energy to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 349 of file Cluster\+Helper.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+::\+Get\+Surrounding\+Energy().
+
+
+\begin{DoxyCode}
+350   \{
+351     \textcolor{keywordflow}{if}(NULL == pCluster || 0 == pCluster->GetNCaloHits())
+352       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+353 
+354     meanSurroundingEnergy = 0.f;
+355 
+356     \textcolor{keyword}{const} pandora::OrderedCaloHitList &orderedCaloHitList(pCluster->GetOrderedCaloHitList());
+357 
+358     \textcolor{keywordflow}{for} (pandora::OrderedCaloHitList::const\_reverse\_iterator iter = orderedCaloHitList.rbegin(), iterEnd = 
+      orderedCaloHitList.rend(); iter != iterEnd; ++iter)
+359     \{
+360       \textcolor{keywordflow}{for} (pandora::CaloHitList::const\_iterator hIter = iter->second->begin(), hIterEnd = iter->second->end
+      (); hIter != hIterEnd; ++hIter)
+361       \{
+362         \textcolor{keyword}{const} arbor_content::CaloHit *\textcolor{keyword}{const} pCaloHit(dynamic\_cast<const arbor\_content::CaloHit *const>(*
+      hIter));
+363 
+364         \textcolor{keywordflow}{if}(NULL == pCaloHit)
+365           \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+366 
+367         meanSurroundingEnergy += pCaloHit->GetSurroundingEnergy();
+368       \}
+369     \}
+370 
+371     meanSurroundingEnergy /= pCluster->GetNCaloHits();
+372 
+373     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+374   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Get\+N\+Calo\+Hit\+Seeds@{Get\+N\+Calo\+Hit\+Seeds}}
+\index{Get\+N\+Calo\+Hit\+Seeds@{Get\+N\+Calo\+Hit\+Seeds}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Get\+N\+Calo\+Hit\+Seeds}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+N\+Calo\+Hit\+Seeds (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{unsigned int \&}]{n\+Seeds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_ac12e7af5245bc5d6f47ea1d61963190d}
+
+
+Get the number of calo hit seeds in the cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the cluster to get the number of calo hit seeds \\
+\hline
+{\em n\+Seeds} & the number of seeds to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 223 of file Cluster\+Helper.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Extract\+Seed\+Calo\+Hit\+List().
+
+
+\begin{DoxyCode}
+224   \{
+225     \textcolor{keywordflow}{if}(NULL == pCluster)
+226       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+227 
+228     pandora::CaloHitList clusterCaloHitList;
+229     pandora::CaloHitList seedsCaloHitList;
+230 
+231     pCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+232 
+233     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      CaloHitHelper::ExtractSeedCaloHitList(&clusterCaloHitList, seedsCaloHitList));
+234 
+235     nSeeds = seedsCaloHitList.size();
+236 
+237     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+238   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Get\+Track\+Cluster\+Distance@{Get\+Track\+Cluster\+Distance}}
+\index{Get\+Track\+Cluster\+Distance@{Get\+Track\+Cluster\+Distance}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Get\+Track\+Cluster\+Distance}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Track\+Cluster\+Distance (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{const pandora\+::\+Track $\ast$const}]{p\+Track, }
+\item[{const float}]{max\+Transverse\+Distance, }
+\item[{float \&}]{track\+Cluster\+Distance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_a259b49cce36a00a4f5665f0d0943f533}
+
+
+Get the track cluster distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access internal content \\
+\hline
+{\em p\+Cluster} & the input cluster \\
+\hline
+{\em p\+Track} & the input track \\
+\hline
+{\em max\+Transverse\+Distance} & the maximum distance between cluster hits and the track helix \\
+\hline
+{\em track\+Cluster\+Distance} & the track cluster distance to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 468 of file Cluster\+Helper.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Projection\+On\+Helix().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Unassociated\+Track\+Recovery\+Alg\+::\+Perform\+Possible\+Track\+Cluster\+Associations().
+
+
+\begin{DoxyCode}
+469   \{
+470     pandora::CaloHitList clusterCaloHitList;
+471     pCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+472 
+473     \textcolor{keyword}{const} \textcolor{keywordtype}{float} bField(pandora.GetPlugins()->GetBFieldPlugin()->GetBField(pandora::CartesianVector(0.f, 0.f
+      , 0.f)));
+474     \textcolor{keyword}{const} pandora::Helix helix(pTrack->GetTrackStateAtCalorimeter().GetPosition(),
+475         pTrack->GetTrackStateAtCalorimeter().GetMomentum(), pTrack->GetCharge(), bField);
+476 
+477     \textcolor{keyword}{const} pandora::CartesianVector trackProjection(pTrack->GetTrackStateAtCalorimeter().GetPosition());
+478 
+479     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nNearbyCaloHits(0);
+480     \textcolor{keywordtype}{float} distanceToHelix(0.f);
+481 
+482     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList.begin() , endIter = 
+      clusterCaloHitList.end() ;
+483         endIter != iter ; ++iter)
+484     \{
+485       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*iter);
+486 
+487       \textcolor{keyword}{const} \textcolor{keywordtype}{float} trackHitAngle(pCaloHit->GetPositionVector().GetOpeningAngle(trackProjection));
+488 
+489       \textcolor{comment}{// cut needed for discriminate track opposite direction}
+490       \textcolor{keywordflow}{if}(trackHitAngle > (2*M\_PI)/3.f)
+491         \textcolor{keywordflow}{continue};
+492 
+493       pandora::CartesianVector projectionOnHelix(0.f, 0.f, 0.f);
+494       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      GeometryHelper::GetProjectionOnHelix(helix, pCaloHit->GetPositionVector(), projectionOnHelix));
+495       \textcolor{keyword}{const} \textcolor{keywordtype}{float} hitDistanceToHelix((pCaloHit->GetPositionVector()-projectionOnHelix).GetMagnitude());
+496 
+497       \textcolor{keywordflow}{if}(hitDistanceToHelix < maxTransverseDistance)
+498       \{
+499         ++nNearbyCaloHits;
+500         distanceToHelix += hitDistanceToHelix;
+501       \}
+502     \}
+503 
+504     \textcolor{keywordflow}{if}(0 == nNearbyCaloHits)
+505       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_NOT\_FOUND;
+506 
+507     trackClusterDistance = distanceToHelix / nNearbyCaloHits;
+508 
+509     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+510   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Is\+Cluster\+Leaving\+Detector@{Is\+Cluster\+Leaving\+Detector}}
+\index{Is\+Cluster\+Leaving\+Detector@{Is\+Cluster\+Leaving\+Detector}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Is\+Cluster\+Leaving\+Detector}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Is\+Cluster\+Leaving\+Detector (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{unsigned int}]{n\+Outer\+Layers\+To\+Examine = {\ttfamily 3}, }
+\item[{float}]{max\+Distance\+To\+Detector\+Edge = {\ttfamily 50.f}, }
+\item[{unsigned int}]{min\+N\+Hits\+Near\+Edges = {\ttfamily 3}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_a4fe4f64a3637b560b03da6fabf35ef50}
+
+
+Whether the cluster is leaving the detector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access internal content \\
+\hline
+{\em p\+Cluster} & the cluster address \\
+\hline
+{\em n\+Outer\+Layers\+To\+Examine} & the number of outer layers of the cluster to examine \\
+\hline
+{\em max\+Distance\+To\+Detector\+Edge} & the distance to the detector edge for a target calo hit \\
+\hline
+{\em min\+N\+Hits\+Near\+Edges} & the minimum number of calo hit near the detector edge to consider the cluster as leaving the detector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 242 of file Cluster\+Helper.\+cc.
+
+
+
+References Contains\+Hit\+Type(), and arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Outer\+Normale\+Vector().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Energy\+Excess\+Reclustering\+Algorithm\+::\+Run(), and arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+244   \{
+245     \textcolor{keywordflow}{if}(NULL == pCluster)
+246       \textcolor{keywordflow}{throw} pandora::StatusCodeException(pandora::STATUS\_CODE\_INVALID\_PARAMETER);
+247 
+248     \textcolor{comment}{// muons escape detector}
+249     \textcolor{keywordflow}{if}( abs(pCluster->GetParticleIdFlag()) == 13 || 
+      ClusterHelper::ContainsHitType(pCluster, pandora::MUON))
+250       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+251 
+252     \textcolor{keywordflow}{if}(pandora::HCAL != pCluster->GetOuterLayerHitType())
+253       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+254 
+255     \textcolor{keyword}{const} pandora::OrderedCaloHitList &orderedCaloHitList(pCluster->GetOrderedCaloHitList());
+256     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} outerPseudoLayer(pCluster->GetOuterPseudoLayer());
+257     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} innerPseudoLayer(pCluster->GetInnerPseudoLayer());
+258     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nPseudoLayers(outerPseudoLayer-innerPseudoLayer+1);
+259     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pseudoLayerStart(nPseudoLayers < nOuterLayersToExamine ? innerPseudoLayer : 
+      outerPseudoLayer-nOuterLayersToExamine);
+260 
+261     \textcolor{keyword}{const} pandora::GeometryManager *\textcolor{keyword}{const} pGeometry = pandora.GetGeometry();
+262 
+263     \textcolor{keyword}{const} pandora::SubDetector &hcalEndcap(pGeometry->GetSubDetector(pandora::HCAL\_ENDCAP));
+264     \textcolor{keyword}{const} pandora::SubDetector &hcalBarrel(pGeometry->GetSubDetector(pandora::HCAL\_BARREL));
+265 
+266     \textcolor{keyword}{const} \textcolor{keywordtype}{float} hcalEndcapOuterZCoordinate(hcalEndcap.GetOuterZCoordinate());
+267     \textcolor{keyword}{const} \textcolor{keywordtype}{float} hcalEndcapOuterRCoordinate(hcalEndcap.GetOuterRCoordinate());
+268     \textcolor{keyword}{const} \textcolor{keywordtype}{float} hcalBarrelOuterRCoordinate(hcalBarrel.GetOuterRCoordinate());
+269 
+270     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nHitsNearbyEdge(0);
+271 
+272     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pl=pseudoLayerStart ; pl<outerPseudoLayer ; ++pl)
+273     \{
+274       pandora::OrderedCaloHitList::const\_iterator iter = orderedCaloHitList.find(pl);
+275 
+276       \textcolor{keywordflow}{if}(orderedCaloHitList.end() == iter)
+277         \textcolor{keywordflow}{continue};
+278 
+279       \textcolor{keywordflow}{for} (pandora::CaloHitList::const\_iterator hitIter = iter->second->begin(), hitIterEnd = iter->second
+      ->end() ;
+280           hitIter != hitIterEnd; ++hitIter)
+281       \{
+282         \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*hitIter);
+283 
+284         \textcolor{keywordflow}{if}(pandora::HCAL != pCaloHit->GetHitType())
+285           \textcolor{keywordflow}{continue};
+286 
+287         \textcolor{keywordflow}{if}(pandora::ENDCAP == pCaloHit->GetHitRegion())
+288         \{
+289           pandora::CartesianVector outerNormaleVector(0.f, 0.f, 0.f);
+290 
+291           \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != 
+      GeometryHelper::GetOuterNormaleVector(pandora, pandora::HCAL\_ENDCAP, (*hitIter)->GetPositionVector(), 
+      outerNormaleVector))
+292             \textcolor{keywordflow}{continue};
+293 
+294           \textcolor{keyword}{const} \textcolor{keywordtype}{float} hitCosAngleNormale(outerNormaleVector.GetCosOpeningAngle(pCaloHit->GetPositionVector(
+      )));
+295           \textcolor{keyword}{const} \textcolor{keywordtype}{float} hitDistanceToOrigin(pCaloHit->GetPositionVector().GetMagnitude());
+296           \textcolor{keyword}{const} \textcolor{keywordtype}{float} hitDistanceToREdge(hcalEndcapOuterRCoordinate - hitDistanceToOrigin*
+      hitCosAngleNormale);
+297           \textcolor{keyword}{const} \textcolor{keywordtype}{float} hitDistanceToZEdge(hcalEndcapOuterZCoordinate-fabs(pCaloHit->GetPositionVector().GetZ
+      ()));
+298 
+299           \textcolor{keywordflow}{if}(hitDistanceToREdge < maxDistanceToDetectorEdge)
+300             ++nHitsNearbyEdge;
+301           \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(hitDistanceToZEdge < maxDistanceToDetectorEdge)
+302             ++nHitsNearbyEdge;
+303         \}
+304         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pandora::BARREL == pCaloHit->GetHitRegion())
+305         \{
+306           pandora::CartesianVector outerNormaleVector(0.f, 0.f, 0.f);
+307 
+308           \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != 
+      GeometryHelper::GetOuterNormaleVector(pandora, pandora::HCAL\_BARREL, (*hitIter)->GetPositionVector(), 
+      outerNormaleVector))
+309             \textcolor{keywordflow}{continue};
+310 
+311           \textcolor{keyword}{const} \textcolor{keywordtype}{float} hitCosAngleNormale(outerNormaleVector.GetCosOpeningAngle(pCaloHit->GetPositionVector(
+      )));
+312           \textcolor{keyword}{const} \textcolor{keywordtype}{float} hitDistanceToOrigin(pCaloHit->GetPositionVector().GetMagnitude());
+313           \textcolor{keyword}{const} \textcolor{keywordtype}{float} hitDistanceToEdge(hcalBarrelOuterRCoordinate - hitDistanceToOrigin*hitCosAngleNormale
+      );
+314 
+315           \textcolor{keywordflow}{if}(hitDistanceToEdge < maxDistanceToDetectorEdge)
+316             ++nHitsNearbyEdge;
+317         \}
+318       \}
+319     \}
+320 
+321     \textcolor{keywordflow}{if}(nHitsNearbyEdge >= minNHitsNearEdges)
+322       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+323 
+324     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+325   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}!Merge\+Clusters@{Merge\+Clusters}}
+\index{Merge\+Clusters@{Merge\+Clusters}!arbor\+\_\+content\+::\+Cluster\+Helper@{arbor\+\_\+content\+::\+Cluster\+Helper}}
+\subsubsection[{Merge\+Clusters}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Merge\+Clusters (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{{\bf Cluster\+To\+Cluster\+Map} \&}]{cluster\+To\+Cluster\+Map}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ClusterHelper_af6e1c1d372159980f89aeb888b3bc102}
+
+
+Perform intelligent merging of clusters (daughter $<$-\/$>$ parent relationship management) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the algorithm that requests the merging \\
+\hline
+{\em cluster\+To\+Cluster\+Map} & the mapping of clusters to merge (daughter -\/$>$ parent) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 437 of file Cluster\+Helper.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Pointing\+Cluster\+Association\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+438   \{
+439     \textcolor{keywordflow}{for}(ClusterToClusterMap::iterator iter = clusterToClusterMap.begin(), endIter = clusterToClusterMap.end
+      () ;
+440         endIter != iter ; ++iter)
+441     \{
+442       \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pDaughterCluster(iter->first);
+443       \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pParentCluster(iter->second);
+444 
+445       \textcolor{keywordflow}{if}((NULL == pDaughterCluster) || (NULL == pParentCluster))
+446         \textcolor{keywordflow}{continue};
+447 
+448       \textcolor{keywordflow}{for}(ClusterToClusterMap::iterator jter = clusterToClusterMap.begin(), endJter = clusterToClusterMap.
+      end() ;
+449           endJter != jter ; ++jter)
+450       \{
+451         \textcolor{keywordflow}{if}(jter->first == pDaughterCluster)
+452           \textcolor{keywordflow}{continue};
+453 
+454         \textcolor{keywordflow}{if}(jter->second == pDaughterCluster)
+455           jter->second = pParentCluster;
+456       \}
+457 
+458       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::MergeAndDeleteClusters(
+      algorithm, pParentCluster, pDaughterCluster));
+459 
+460       (iter->second) = NULL;
+461     \}
+462 
+463     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+464   \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Cluster\+Helper.\+h}\item 
+{\bf Cluster\+Helper.\+cc}\end{DoxyCompactItemize}
