@@ -12,7 +12,7 @@ PROJECT( ArborPFA )
 ### PACKAGE VERSIONS ########################################################
 SET( ${PROJECT_NAME}_VERSION_MAJOR 2 )
 SET( ${PROJECT_NAME}_VERSION_MINOR 5 )
-SET( ${PROJECT_NAME}_VERSION_PATCH 0 )
+SET( ${PROJECT_NAME}_VERSION_PATCH 1 )
 
 # versions of ArborPFA subpackages
 # don't forget to update when releasing ArborPFA
@@ -20,7 +20,7 @@ SET( ${PROJECT_NAME}_VERSION_PATCH 0 )
 SET( PandoraSDK_version           "v02-03-00" )
 SET( PandoraMonitoring_version    "v02-03-00" )
 SET( ArborContent_version         "v01-05-00" )
-SET( MarlinArbor_version          "v01-04-00" )
+SET( MarlinArbor_version          "v01-04-01" )
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmakemodules)
 
