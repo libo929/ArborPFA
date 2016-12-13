@@ -1,0 +1,297 @@
+\section{arbor\+\_\+content\+:\+:Split\+Track\+Reclustering\+Algorithm Class Reference}
+\label{classarbor__content_1_1SplitTrackReclusteringAlgorithm}\index{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm}}
+
+
+\doxyref{Split\+Track\+Reclustering\+Algorithm}{p.}{classarbor__content_1_1SplitTrackReclusteringAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$Split\+Track\+Reclustering\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Split\+Track\+Reclustering\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1SplitTrackReclusteringAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1SplitTrackReclusteringAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ const \\*
+pandora\+::\+Track $\ast$, const \\*
+pandora\+::\+Cluster $\ast$ $>$ {\bf Track\+To\+Cluster\+Map}
+\item 
+typedef std\+::map$<$ const \\*
+pandora\+::\+Track $\ast$, const \\*
+pandora\+::\+Helix $>$ {\bf Track\+To\+Helix\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf m\+\_\+min\+N\+Track\+Association}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Split\+Track\+Reclustering\+Algorithm}{p.}{classarbor__content_1_1SplitTrackReclusteringAlgorithm} class. 
+
+Definition at line 41 of file Split\+Track\+Reclustering\+Algorithm.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm}!Track\+To\+Cluster\+Map@{Track\+To\+Cluster\+Map}}
+\index{Track\+To\+Cluster\+Map@{Track\+To\+Cluster\+Map}!arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm}}
+\subsubsection[{Track\+To\+Cluster\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<$const pandora\+::\+Track $\ast$, const pandora\+::\+Cluster $\ast$$>$ {\bf arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm\+::\+Track\+To\+Cluster\+Map}}\label{classarbor__content_1_1SplitTrackReclusteringAlgorithm_a769803af28b3fb28862d5866b58d32da}
+
+
+Definition at line 44 of file Split\+Track\+Reclustering\+Algorithm.\+h.
+
+\index{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm}!Track\+To\+Helix\+Map@{Track\+To\+Helix\+Map}}
+\index{Track\+To\+Helix\+Map@{Track\+To\+Helix\+Map}!arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm}}
+\subsubsection[{Track\+To\+Helix\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<$const pandora\+::\+Track $\ast$, const pandora\+::\+Helix$>$ {\bf arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm\+::\+Track\+To\+Helix\+Map}}\label{classarbor__content_1_1SplitTrackReclusteringAlgorithm_ad7dd7238188142100e7f0d2a080ee0cc}
+
+
+Definition at line 45 of file Split\+Track\+Reclustering\+Algorithm.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1SplitTrackReclusteringAlgorithm_a4b2b5135abbf1460046324dacc644008}
+
+
+Definition at line 184 of file Split\+Track\+Reclustering\+Algorithm.\+cc.
+
+
+
+References m\+\_\+min\+N\+Track\+Association.
+
+
+\begin{DoxyCode}
+185   \{
+186     m_minNTrackAssociation = 2;
+187     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+188         \textcolor{stringliteral}{"MinNTrackAssociation"}, m_minNTrackAssociation));
+189 
+190     \textcolor{keywordflow}{if}(m_minNTrackAssociation < 2)
+191       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+192 
+193     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+194   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1SplitTrackReclusteringAlgorithm_a86d75863a6b23366e7d6bd9eca887fc4}
+
+
+Definition at line 40 of file Split\+Track\+Reclustering\+Algorithm.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Distance\+To\+Helix(), m\+\_\+min\+N\+Track\+Association, and arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Remove\+Connections().
+
+
+\begin{DoxyCode}
+41   \{
+42     \textcolor{comment}{// Get current cluster list}
+43     \textcolor{keyword}{const} pandora::ClusterList *pClusterList = NULL;
+44     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, 
+      pClusterList));
+45 
+46     \textcolor{keywordflow}{if}( pClusterList->empty() )
+47       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+48 
+49     \textcolor{keyword}{const} \textcolor{keywordtype}{float} bField(PandoraContentApi::GetPlugins(*this)->GetBFieldPlugin()->GetBField(
+      pandora::CartesianVector(0.f, 0.f, 0.f)));
+50 
+51     pandora::ClusterVector clusterVector(pClusterList->begin(), pClusterList->end());
+52 
+53     \textcolor{keywordflow}{for}(pandora::ClusterVector::iterator iter = clusterVector.begin(), endIter = clusterVector.end() ;
+54         endIter != iter ; ++iter)
+55     \{
+56       \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pOriginalCluster(*iter);
+57 
+58       \textcolor{keywordflow}{if}(NULL == pOriginalCluster)
+59         \textcolor{keywordflow}{continue};
+60 
+61       \textcolor{keyword}{const} pandora::TrackList trackList(pOriginalCluster->GetAssociatedTrackList());
+62       \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nTracks(trackList.size());
+63 
+64       \textcolor{keywordflow}{if}(nTracks < m_minNTrackAssociation)
+65         \textcolor{keywordflow}{continue};
+66 
+67       pandora::OrderedCaloHitList orderedCaloHitList(pOriginalCluster->GetOrderedCaloHitList());
+68       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, orderedCaloHitList.Add(pOriginalCluster->
+      GetIsolatedCaloHitList()));
+69 
+70       \textcolor{comment}{// Remove arbor connections}
+71       pandora::CaloHitList clusterCaloHitList;
+72       orderedCaloHitList.GetCaloHitList(clusterCaloHitList);
+73 
+74       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      CaloHitHelper::RemoveConnections(&clusterCaloHitList));
+75 
+76       \textcolor{comment}{// Initialize cluster fragmentation}
+77       pandora::ClusterList clusterList;
+78       clusterList.insert(pOriginalCluster);
+79       std::string originalClustersListName, fragmentClustersListName;
+80 
+81       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::InitializeFragmentation
+      (*\textcolor{keyword}{this}, clusterList,
+82           originalClustersListName, fragmentClustersListName));
+83 
+84       TrackToClusterMap trackToClusterMap;
+85       TrackToHelixMap trackToHelixMap;
+86 
+87       \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator trackIter = trackList.begin(), trackIterEnd = trackList.end()
+       ;
+88           trackIter != trackIterEnd; ++trackIter)
+89       \{
+90         \textcolor{keyword}{const} pandora::Track *\textcolor{keyword}{const} pTrack = *trackIter;
+91         \textcolor{keyword}{const} pandora::Helix helix(pTrack->GetTrackStateAtCalorimeter().GetPosition(), pTrack->
+      GetTrackStateAtCalorimeter().GetMomentum(), pTrack->GetCharge(), bField);
+92 
+93         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::RemoveTrackClusterAssociation(*\textcolor{keyword}{this}, pTrack, pOriginalCluster));
+94 
+95         \textcolor{keyword}{const} pandora::Cluster *pCluster = NULL;
+96         PandoraContentApi::Cluster::Parameters parameters;
+97         parameters.m\_pTrack = pTrack;
+98         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::Cluster::Create(*\textcolor{keyword}{this}
+      , parameters, pCluster));
+99 
+100         \textcolor{keywordflow}{if} (!trackToClusterMap.insert(TrackToClusterMap::value\_type(pTrack, pCluster)).second ||
+101             !trackToHelixMap.insert(TrackToHelixMap::value\_type(pTrack, helix)).second)
+102         \{
+103           \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+104         \}
+105       \}
+106 
+107       \textcolor{comment}{// Assign the calo hits in the original cluster to the most appropriate track}
+108       \textcolor{keywordflow}{for} (pandora::OrderedCaloHitList::const\_iterator listIter = orderedCaloHitList.begin(), listIterEnd =
+       orderedCaloHitList.end();
+109           listIter != listIterEnd; ++listIter)
+110       \{
+111         \textcolor{keywordflow}{for} (pandora::CaloHitList::const\_iterator hitIter = listIter->second->begin(), hitIterEnd = 
+      listIter->second->end();
+112             hitIter != hitIterEnd; ++hitIter)
+113         \{
+114           \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit = *hitIter;
+115           \textcolor{keyword}{const} pandora::CartesianVector &hitPosition(pCaloHit->GetPositionVector());
+116 
+117           \textcolor{comment}{// Identify most suitable cluster for calo hit, using distance to helix fit as figure of merit}
+118           \textcolor{keyword}{const} pandora::Cluster *pBestCluster = NULL;
+119           \textcolor{keywordtype}{float} minDistanceToTrack(std::numeric\_limits<float>::max());
+120 
+121           \textcolor{keywordflow}{for} (TrackToClusterMap::const\_iterator mapIter = trackToClusterMap.begin(), mapIterEnd = 
+      trackToClusterMap.end();
+122               mapIter != mapIterEnd; ++mapIter)
+123           \{
+124             \textcolor{keyword}{const} pandora::Track *\textcolor{keyword}{const} pTrack(mapIter->first);
+125             \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pCluster(mapIter->second);
+126 
+127             TrackToHelixMap::const\_iterator helixIter = trackToHelixMap.find(pTrack);
+128 
+129             \textcolor{keywordflow}{if} (trackToHelixMap.end() == helixIter)
+130               \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+131 
+132             \textcolor{keyword}{const} pandora::Helix &helix(helixIter->second);
+133 
+134             \textcolor{keywordtype}{float} distanceToTrack(std::numeric\_limits<float>::max());
+135             PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      GeometryHelper::GetDistanceToHelix(helix, hitPosition, distanceToTrack));
+136 
+137             \textcolor{keywordflow}{if} (distanceToTrack < minDistanceToTrack)
+138             \{
+139               minDistanceToTrack = distanceToTrack;
+140               pBestCluster = pCluster;
+141             \}
+142           \}
+143 
+144           \textcolor{comment}{// should never happen}
+145           \textcolor{keywordflow}{if} (NULL == pBestCluster)
+146             \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+147 
+148           PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::AddToCluster(*\textcolor{keyword}{this},
+       pBestCluster, pCaloHit));
+149         \}
+150       \}
+151 
+152       \textcolor{comment}{// Check for any "empty" clusters and create new track-cluster associations}
+153       \textcolor{keywordflow}{for} (TrackToClusterMap::iterator mapIter = trackToClusterMap.begin(); mapIter != trackToClusterMap.
+      end();)
+154       \{
+155         \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pCluster = mapIter->second;
+156 
+157         \textcolor{keywordflow}{if} (0 == pCluster->GetNCaloHits())
+158         \{
+159           PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::Delete(*\textcolor{keyword}{this}, 
+      pCluster));
+160           trackToClusterMap.erase(mapIter++);
+161         \}
+162         \textcolor{keywordflow}{else}
+163         \{
+164           PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::AddTrackClusterAssociation(*\textcolor{keyword}{this}, mapIter->first, pCluster));
+165           ++mapIter;
+166         \}
+167       \}
+168 
+169       \textcolor{keywordflow}{if} (trackToClusterMap.empty())
+170       \{
+171         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+172       \}
+173 
+174       \textcolor{comment}{// End cluster fragmentation operations, automatically choose the new cluster fragments}
+175       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::EndFragmentation(*\textcolor{keyword}{this},
+       fragmentClustersListName,
+176           originalClustersListName));
+177     \}
+178 
+179     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+180   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm}!m\+\_\+min\+N\+Track\+Association@{m\+\_\+min\+N\+Track\+Association}}
+\index{m\+\_\+min\+N\+Track\+Association@{m\+\_\+min\+N\+Track\+Association}!arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm@{arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm}}
+\subsubsection[{m\+\_\+min\+N\+Track\+Association}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Split\+Track\+Reclustering\+Algorithm\+::m\+\_\+min\+N\+Track\+Association\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1SplitTrackReclusteringAlgorithm_acd5370cf2e90666ea6eb20fd4232bebf}
+
+
+Definition at line 61 of file Split\+Track\+Reclustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Split\+Track\+Reclustering\+Algorithm.\+h}\item 
+{\bf Split\+Track\+Reclustering\+Algorithm.\+cc}\end{DoxyCompactItemize}

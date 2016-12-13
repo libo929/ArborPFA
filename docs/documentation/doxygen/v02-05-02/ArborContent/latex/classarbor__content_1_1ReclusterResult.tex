@@ -1,0 +1,484 @@
+\section{arbor\+\_\+content\+:\+:Recluster\+Result Class Reference}
+\label{classarbor__content_1_1ReclusterResult}\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+
+
+\doxyref{Recluster\+Result}{p.}{classarbor__content_1_1ReclusterResult} class.  
+
+
+
+
+{\ttfamily \#include $<$Recluster\+Helper.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf Get\+Chi} () const 
+\item 
+float {\bf Get\+Chi2} () const 
+\item 
+float {\bf Get\+Chi\+Per\+Dof} () const 
+\item 
+float {\bf Get\+Chi2\+Per\+Dof} () const 
+\item 
+float {\bf Get\+Neutral\+Energy} () const 
+\item 
+float {\bf Get\+Charged\+Energy} () const 
+\item 
+float {\bf Get\+Chi\+Worst\+Association} () const 
+\item 
+void {\bf Set\+Chi} (float chi)
+\item 
+void {\bf Set\+Chi2} (float chi2)
+\item 
+void {\bf Set\+Chi\+Per\+Dof} (float chi\+Per\+Dof)
+\item 
+void {\bf Set\+Chi2\+Per\+Dof} (float chi2\+Per\+Dof)
+\item 
+void {\bf Set\+Neutral\+Energy} (float neutral\+Energy)
+\item 
+void {\bf Set\+Charged\+Energy} (float charged\+Energy)
+\item 
+void {\bf Set\+Chi\+Worst\+Association} (float chi\+Worst\+Association)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf m\+\_\+chi}
+\item 
+float {\bf m\+\_\+chi2}
+\item 
+float {\bf m\+\_\+chi\+Per\+Dof}
+\item 
+float {\bf m\+\_\+chi2\+Per\+Dof}
+\item 
+float {\bf m\+\_\+neutral\+Energy}
+\item 
+float {\bf m\+\_\+charged\+Energy}
+\item 
+float {\bf m\+\_\+chi\+Worst\+Association}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Recluster\+Result}{p.}{classarbor__content_1_1ReclusterResult} class. 
+
+Definition at line 42 of file Recluster\+Helper.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Get\+Charged\+Energy@{Get\+Charged\+Energy}}
+\index{Get\+Charged\+Energy@{Get\+Charged\+Energy}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Get\+Charged\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::\+Get\+Charged\+Energy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_aaecb2a09ce5d3919919667d94b4274c6}
+
+
+Definition at line 230 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+charged\+Energy.
+
+
+\begin{DoxyCode}
+231 \{
+232   \textcolor{keywordflow}{return} m_chargedEnergy;
+233 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Get\+Chi@{Get\+Chi}}
+\index{Get\+Chi@{Get\+Chi}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Get\+Chi}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::\+Get\+Chi (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_af0f61124a1c1b77a29f79ce08357f2ac}
+
+
+Definition at line 195 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+chi.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+196 \{
+197   \textcolor{keywordflow}{return} m_chi;
+198 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Get\+Chi2@{Get\+Chi2}}
+\index{Get\+Chi2@{Get\+Chi2}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Get\+Chi2}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::\+Get\+Chi2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_a40b73b81208ab0c81ac8d2e894b97fac}
+
+
+Definition at line 202 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+chi2.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+203 \{
+204   \textcolor{keywordflow}{return} m_chi2;
+205 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Get\+Chi2\+Per\+Dof@{Get\+Chi2\+Per\+Dof}}
+\index{Get\+Chi2\+Per\+Dof@{Get\+Chi2\+Per\+Dof}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Get\+Chi2\+Per\+Dof}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::\+Get\+Chi2\+Per\+Dof (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_a66f3f662bb88d3b2177dc48f561d2c5e}
+
+
+Definition at line 216 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+chi2\+Per\+Dof.
+
+
+\begin{DoxyCode}
+217 \{
+218   \textcolor{keywordflow}{return} m_chi2PerDof;
+219 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Get\+Chi\+Per\+Dof@{Get\+Chi\+Per\+Dof}}
+\index{Get\+Chi\+Per\+Dof@{Get\+Chi\+Per\+Dof}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Get\+Chi\+Per\+Dof}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::\+Get\+Chi\+Per\+Dof (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_a0d42974511ccad05b89c0502909c159a}
+
+
+Definition at line 209 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+chi\+Per\+Dof.
+
+
+\begin{DoxyCode}
+210 \{
+211   \textcolor{keywordflow}{return} m_chiPerDof;
+212 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Get\+Chi\+Worst\+Association@{Get\+Chi\+Worst\+Association}}
+\index{Get\+Chi\+Worst\+Association@{Get\+Chi\+Worst\+Association}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Get\+Chi\+Worst\+Association}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::\+Get\+Chi\+Worst\+Association (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_a6f2ae8fea39819b56fb52f9d5f3e8494}
+
+
+Definition at line 237 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+chi\+Worst\+Association.
+
+
+\begin{DoxyCode}
+238 \{
+239   \textcolor{keywordflow}{return} m_chiWorstAssociation;
+240 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Get\+Neutral\+Energy@{Get\+Neutral\+Energy}}
+\index{Get\+Neutral\+Energy@{Get\+Neutral\+Energy}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Get\+Neutral\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::\+Get\+Neutral\+Energy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_a5b57276127f7c54f7e2e534b36f35d55}
+
+
+Definition at line 223 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+neutral\+Energy.
+
+
+\begin{DoxyCode}
+224 \{
+225   \textcolor{keywordflow}{return} m_neutralEnergy;
+226 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Set\+Charged\+Energy@{Set\+Charged\+Energy}}
+\index{Set\+Charged\+Energy@{Set\+Charged\+Energy}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Set\+Charged\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Charged\+Energy (
+\begin{DoxyParamCaption}
+\item[{float}]{charged\+Energy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_a1f969b8e09dbeb0ac7a7a261a11af285}
+
+
+Definition at line 279 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+charged\+Energy.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Extract\+Recluster\+Results().
+
+
+\begin{DoxyCode}
+280 \{
+281   m_chargedEnergy = chargedEnergy;
+282 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Set\+Chi@{Set\+Chi}}
+\index{Set\+Chi@{Set\+Chi}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Set\+Chi}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Chi (
+\begin{DoxyParamCaption}
+\item[{float}]{chi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_a8607699ffb080f3b3ea8671ad385292f}
+
+
+Definition at line 244 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+chi.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Extract\+Recluster\+Results().
+
+
+\begin{DoxyCode}
+245 \{
+246   m_chi = chi;
+247 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Set\+Chi2@{Set\+Chi2}}
+\index{Set\+Chi2@{Set\+Chi2}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Set\+Chi2}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Chi2 (
+\begin{DoxyParamCaption}
+\item[{float}]{chi2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_ac5fdc565b9b62b45b702b227c5ea3a30}
+
+
+Definition at line 251 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+chi2.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Extract\+Recluster\+Results().
+
+
+\begin{DoxyCode}
+252 \{
+253   m_chi2 = chi2;
+254 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Set\+Chi2\+Per\+Dof@{Set\+Chi2\+Per\+Dof}}
+\index{Set\+Chi2\+Per\+Dof@{Set\+Chi2\+Per\+Dof}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Set\+Chi2\+Per\+Dof}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Chi2\+Per\+Dof (
+\begin{DoxyParamCaption}
+\item[{float}]{chi2\+Per\+Dof}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_a53c92b0152c901d4f06cb3d07492ee33}
+
+
+Definition at line 265 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+chi2\+Per\+Dof.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Extract\+Recluster\+Results().
+
+
+\begin{DoxyCode}
+266 \{
+267   m_chi2PerDof = chi2PerDof;
+268 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Set\+Chi\+Per\+Dof@{Set\+Chi\+Per\+Dof}}
+\index{Set\+Chi\+Per\+Dof@{Set\+Chi\+Per\+Dof}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Set\+Chi\+Per\+Dof}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Chi\+Per\+Dof (
+\begin{DoxyParamCaption}
+\item[{float}]{chi\+Per\+Dof}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_aca0bb11e6b84e05121aa3f52e50a2137}
+
+
+Definition at line 258 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+chi\+Per\+Dof.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Extract\+Recluster\+Results().
+
+
+\begin{DoxyCode}
+259 \{
+260   m_chiPerDof = chiPerDof;
+261 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Set\+Chi\+Worst\+Association@{Set\+Chi\+Worst\+Association}}
+\index{Set\+Chi\+Worst\+Association@{Set\+Chi\+Worst\+Association}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Set\+Chi\+Worst\+Association}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Chi\+Worst\+Association (
+\begin{DoxyParamCaption}
+\item[{float}]{chi\+Worst\+Association}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_aff3d30973b35fd6136feabeab644388a}
+
+
+Definition at line 286 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+chi\+Worst\+Association.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Extract\+Recluster\+Results().
+
+
+\begin{DoxyCode}
+287 \{
+288   m_chiWorstAssociation = chiWorstAssociation;
+289 \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!Set\+Neutral\+Energy@{Set\+Neutral\+Energy}}
+\index{Set\+Neutral\+Energy@{Set\+Neutral\+Energy}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{Set\+Neutral\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}void arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Neutral\+Energy (
+\begin{DoxyParamCaption}
+\item[{float}]{neutral\+Energy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classarbor__content_1_1ReclusterResult_aa4045314fd1b33dc438f3cf0a50b4a08}
+
+
+Definition at line 272 of file Recluster\+Helper.\+h.
+
+
+
+References m\+\_\+neutral\+Energy.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Extract\+Recluster\+Results().
+
+
+\begin{DoxyCode}
+273 \{
+274   m_neutralEnergy = neutralEnergy;
+275 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!m\+\_\+charged\+Energy@{m\+\_\+charged\+Energy}}
+\index{m\+\_\+charged\+Energy@{m\+\_\+charged\+Energy}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{m\+\_\+charged\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::m\+\_\+charged\+Energy\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ReclusterResult_ae3452877a38775e2f2f7eecbac04b4e9}
+
+
+Definition at line 121 of file Recluster\+Helper.\+h.
+
+
+
+Referenced by Get\+Charged\+Energy(), and Set\+Charged\+Energy().
+
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!m\+\_\+chi@{m\+\_\+chi}}
+\index{m\+\_\+chi@{m\+\_\+chi}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{m\+\_\+chi}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::m\+\_\+chi\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ReclusterResult_aedca411c3ec83078b4c1008f403d72c1}
+
+
+Definition at line 116 of file Recluster\+Helper.\+h.
+
+
+
+Referenced by Get\+Chi(), and Set\+Chi().
+
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!m\+\_\+chi2@{m\+\_\+chi2}}
+\index{m\+\_\+chi2@{m\+\_\+chi2}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{m\+\_\+chi2}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::m\+\_\+chi2\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ReclusterResult_a52986d7ff55d979b385218aa4eed925d}
+
+
+Definition at line 117 of file Recluster\+Helper.\+h.
+
+
+
+Referenced by Get\+Chi2(), and Set\+Chi2().
+
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!m\+\_\+chi2\+Per\+Dof@{m\+\_\+chi2\+Per\+Dof}}
+\index{m\+\_\+chi2\+Per\+Dof@{m\+\_\+chi2\+Per\+Dof}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{m\+\_\+chi2\+Per\+Dof}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::m\+\_\+chi2\+Per\+Dof\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ReclusterResult_a27418ab4d4a8c64235fd7fff1b6ffe94}
+
+
+Definition at line 119 of file Recluster\+Helper.\+h.
+
+
+
+Referenced by Get\+Chi2\+Per\+Dof(), and Set\+Chi2\+Per\+Dof().
+
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!m\+\_\+chi\+Per\+Dof@{m\+\_\+chi\+Per\+Dof}}
+\index{m\+\_\+chi\+Per\+Dof@{m\+\_\+chi\+Per\+Dof}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{m\+\_\+chi\+Per\+Dof}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::m\+\_\+chi\+Per\+Dof\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ReclusterResult_adec3f0831fb8c772e44ca7730a883ce7}
+
+
+Definition at line 118 of file Recluster\+Helper.\+h.
+
+
+
+Referenced by Get\+Chi\+Per\+Dof(), and Set\+Chi\+Per\+Dof().
+
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!m\+\_\+chi\+Worst\+Association@{m\+\_\+chi\+Worst\+Association}}
+\index{m\+\_\+chi\+Worst\+Association@{m\+\_\+chi\+Worst\+Association}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{m\+\_\+chi\+Worst\+Association}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::m\+\_\+chi\+Worst\+Association\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ReclusterResult_afdc1b47be755f6a47bf5f4007171d48a}
+
+
+Definition at line 122 of file Recluster\+Helper.\+h.
+
+
+
+Referenced by Get\+Chi\+Worst\+Association(), and Set\+Chi\+Worst\+Association().
+
+\index{arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}!m\+\_\+neutral\+Energy@{m\+\_\+neutral\+Energy}}
+\index{m\+\_\+neutral\+Energy@{m\+\_\+neutral\+Energy}!arbor\+\_\+content\+::\+Recluster\+Result@{arbor\+\_\+content\+::\+Recluster\+Result}}
+\subsubsection[{m\+\_\+neutral\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Result\+::m\+\_\+neutral\+Energy\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1ReclusterResult_aed07a2768fa4cc68acb166353704292b}
+
+
+Definition at line 120 of file Recluster\+Helper.\+h.
+
+
+
+Referenced by Get\+Neutral\+Energy(), and Set\+Neutral\+Energy().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Recluster\+Helper.\+h}\end{DoxyCompactItemize}

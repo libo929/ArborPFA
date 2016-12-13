@@ -1,0 +1,281 @@
+\section{arbor\+\_\+content\+:\+:Sdhcal\+Quadratic\+Energy\+Function Class Reference}
+\label{classarbor__content_1_1SdhcalQuadraticEnergyFunction}\index{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function@{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function}}
+
+
+\doxyref{Sdhcal\+Quadratic\+Energy\+Function}{p.}{classarbor__content_1_1SdhcalQuadraticEnergyFunction} class.  
+
+
+
+
+{\ttfamily \#include $<$Energy\+Correction\+Plugins.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Sdhcal\+Quadratic\+Energy\+Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1SdhcalQuadraticEnergyFunction}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Sdhcal\+Quadratic\+Energy\+Function} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Make\+Energy\+Corrections} (const pandora\+::\+Cluster $\ast$const p\+Cluster, float \&corrected\+Energy) const 
+\begin{DoxyCompactList}\small\item\em Make energy correction on this given cluster. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Read settings from the xml handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Float\+Vector {\bf m\+\_\+sdhcal\+Thresholds}
+\begin{DoxyCompactList}\small\item\em The sdhcal threshold values. \end{DoxyCompactList}\item 
+pandora\+::\+Float\+Vector {\bf m\+\_\+energy\+Constant\+Parameters}
+\begin{DoxyCompactList}\small\item\em The energy constant parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Sdhcal\+Quadratic\+Energy\+Function}{p.}{classarbor__content_1_1SdhcalQuadraticEnergyFunction} class. 
+
+Definition at line 76 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function@{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function}!Sdhcal\+Quadratic\+Energy\+Function@{Sdhcal\+Quadratic\+Energy\+Function}}
+\index{Sdhcal\+Quadratic\+Energy\+Function@{Sdhcal\+Quadratic\+Energy\+Function}!arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function@{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function}}
+\subsubsection[{Sdhcal\+Quadratic\+Energy\+Function}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function\+::\+Sdhcal\+Quadratic\+Energy\+Function (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1SdhcalQuadraticEnergyFunction_a424ba10ed904e25065f63a175a22f330}
+
+
+Default constructor. 
+
+
+
+Definition at line 113 of file Energy\+Correction\+Plugins.\+cc.
+
+
+
+References m\+\_\+energy\+Constant\+Parameters, and m\+\_\+sdhcal\+Thresholds.
+
+
+\begin{DoxyCode}
+114   \{
+115     m_energyConstantParameters.push\_back(0.0385315);
+116     m_energyConstantParameters.push\_back(4.22584e-05);
+117     m_energyConstantParameters.push\_back(-7.54657e-09);
+118     m_energyConstantParameters.push\_back(0.0784297);
+119     m_energyConstantParameters.push\_back(-5.69439e-05);
+120     m_energyConstantParameters.push\_back(-4.95924e-08);
+121     m_energyConstantParameters.push\_back(0.127212);
+122     m_energyConstantParameters.push\_back(4.56414e-05);
+123     m_energyConstantParameters.push\_back(1.41142e-08);
+124 
+125     m_sdhcalThresholds.push\_back(1);
+126     m_sdhcalThresholds.push\_back(2);
+127     m_sdhcalThresholds.push\_back(3);
+128   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function@{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function}!Make\+Energy\+Corrections@{Make\+Energy\+Corrections}}
+\index{Make\+Energy\+Corrections@{Make\+Energy\+Corrections}!arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function@{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function}}
+\subsubsection[{Make\+Energy\+Corrections}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function\+::\+Make\+Energy\+Corrections (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{float \&}]{corrected\+Energy}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1SdhcalQuadraticEnergyFunction_a092eec609dd8c3fa8420591a5fa804c0}
+
+
+Make energy correction on this given cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the cluster address to correct the energy \\
+\hline
+{\em corrected\+Energy} & the energy to correct \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 132 of file Energy\+Correction\+Plugins.\+cc.
+
+
+
+References m\+\_\+energy\+Constant\+Parameters, and m\+\_\+sdhcal\+Thresholds.
+
+
+\begin{DoxyCode}
+133   \{
+134     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} NHadronicHit  = 0;
+135     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} NHadronicHit1 = 0;
+136     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} NHadronicHit2 = 0;
+137     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} NHadronicHit3 = 0;
+138 
+139     pandora::CaloHitList clusterCaloHitList;
+140     pCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+141 
+142     \textcolor{keywordtype}{float} emEnergy = 0.f;
+143     \textcolor{keywordtype}{float} otherEnergy = 0.f;
+144 
+145     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList.begin(), endIter = 
+      clusterCaloHitList.end() ;
+146         endIter != iter ; ++iter)
+147     \{
+148       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit = *iter;
+149 
+150       \textcolor{comment}{// Ecal case. Get the calibrated hit energy}
+151       \textcolor{keywordflow}{if}(pandora::ECAL == pCaloHit->GetHitType())
+152       \{
+153         emEnergy += pCaloHit->GetElectromagneticEnergy();
+154         \textcolor{keywordflow}{continue};
+155       \}
+156       \textcolor{comment}{// SDHCAL case. Do thresholds counting}
+157       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pandora::HCAL == pCaloHit->GetHitType())
+158       \{
+159         \textcolor{keywordflow}{if}(fabs(m_sdhcalThresholds.at(0) - pCaloHit->GetInputEnergy()) < 
+      std::numeric\_limits<float>::epsilon())
+160           NHadronicHit1++;
+161         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(fabs(m_sdhcalThresholds.at(1) - pCaloHit->GetInputEnergy()) < 
+      std::numeric\_limits<float>::epsilon())
+162           NHadronicHit2++;
+163         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(fabs(m_sdhcalThresholds.at(2) - pCaloHit->GetInputEnergy()) < 
+      std::numeric\_limits<float>::epsilon())
+164           NHadronicHit3++;
+165         \textcolor{keywordflow}{else}
+166         \{
+167           otherEnergy += pCaloHit->GetInputEnergy();
+168           \textcolor{keywordflow}{continue};
+169         \}
+170 
+171         NHadronicHit++;
+172       \}
+173       \textcolor{comment}{// Other hit types ... should never happen}
+174       \textcolor{keywordflow}{else}
+175       \{
+176         otherEnergy += pCaloHit->GetInputEnergy();
+177       \}
+178     \}
+179 
+180     \textcolor{comment}{// estimate of sdhcal energy}
+181     \textcolor{keyword}{const} \textcolor{keywordtype}{float} alpha(m_energyConstantParameters.at(0) + 
+      m_energyConstantParameters.at(1)*NHadronicHit + m_energyConstantParameters.at(2)*NHadronicHit*NHadronicHit)
+      ;
+182     \textcolor{keyword}{const} \textcolor{keywordtype}{float} beta(m_energyConstantParameters.at(3) + 
+      m_energyConstantParameters.at(4)*NHadronicHit + m_energyConstantParameters.at(5)*NHadronicHit*NHadronicHit)
+      ;
+183     \textcolor{keyword}{const} \textcolor{keywordtype}{float} gamma(m_energyConstantParameters.at(6) + 
+      m_energyConstantParameters.at(7)*NHadronicHit + m_energyConstantParameters.at(8)*NHadronicHit*NHadronicHit)
+      ;
+184     \textcolor{keyword}{const} \textcolor{keywordtype}{float} hadEnergy(NHadronicHit1*alpha + NHadronicHit2*beta + NHadronicHit3*gamma);
+185 
+186     correctedEnergy = emEnergy + hadEnergy + otherEnergy;
+187 
+188     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+189   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function@{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function@{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1SdhcalQuadraticEnergyFunction_a88325161deef9857aa53f70083bf912c}
+
+
+Read settings from the xml handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xml\+Handle} & the xml handle to read settings from \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 193 of file Energy\+Correction\+Plugins.\+cc.
+
+
+
+References m\+\_\+energy\+Constant\+Parameters, and m\+\_\+sdhcal\+Thresholds.
+
+
+\begin{DoxyCode}
+194   \{
+195     pandora::FloatVector energyConstantParameters;
+196     pandora::StatusCode statusCode = pandora::XmlHelper::ReadVectorOfValues(xmlHandle,
+197         \textcolor{stringliteral}{"EnergyConstantParameters"}, energyConstantParameters);
+198 
+199     \textcolor{keywordflow}{if}(statusCode == pandora::STATUS\_CODE\_SUCCESS)
+200     \{
+201       m_energyConstantParameters = energyConstantParameters;
+202     \}
+203     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(statusCode != pandora::STATUS\_CODE\_NOT\_FOUND)
+204     \{
+205       \textcolor{keywordflow}{return} statusCode;
+206     \}
+207 
+208     \textcolor{keywordflow}{if}(9 != m_energyConstantParameters.size())
+209       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+210 
+211     pandora::FloatVector sdhcalThresholds;
+212     statusCode = pandora::XmlHelper::ReadVectorOfValues(xmlHandle,
+213         \textcolor{stringliteral}{"SdhcalThresholds"}, sdhcalThresholds);
+214 
+215     \textcolor{keywordflow}{if}(statusCode == pandora::STATUS\_CODE\_SUCCESS)
+216     \{
+217       m_sdhcalThresholds = sdhcalThresholds;
+218     \}
+219     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(statusCode != pandora::STATUS\_CODE\_NOT\_FOUND)
+220     \{
+221       \textcolor{keywordflow}{return} statusCode;
+222     \}
+223 
+224     \textcolor{keywordflow}{if}(3 != m_sdhcalThresholds.size())
+225       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+226 
+227     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+228   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function@{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function}!m\+\_\+energy\+Constant\+Parameters@{m\+\_\+energy\+Constant\+Parameters}}
+\index{m\+\_\+energy\+Constant\+Parameters@{m\+\_\+energy\+Constant\+Parameters}!arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function@{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function}}
+\subsubsection[{m\+\_\+energy\+Constant\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Float\+Vector arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function\+::m\+\_\+energy\+Constant\+Parameters\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1SdhcalQuadraticEnergyFunction_a9556fff63d1c02028df4946adfdb84a5}
+
+
+The energy constant parameters. 
+
+
+
+Definition at line 102 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Make\+Energy\+Corrections(), Read\+Settings(), and Sdhcal\+Quadratic\+Energy\+Function().
+
+\index{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function@{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function}!m\+\_\+sdhcal\+Thresholds@{m\+\_\+sdhcal\+Thresholds}}
+\index{m\+\_\+sdhcal\+Thresholds@{m\+\_\+sdhcal\+Thresholds}!arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function@{arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function}}
+\subsubsection[{m\+\_\+sdhcal\+Thresholds}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Float\+Vector arbor\+\_\+content\+::\+Sdhcal\+Quadratic\+Energy\+Function\+::m\+\_\+sdhcal\+Thresholds\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1SdhcalQuadraticEnergyFunction_ada58c69622c1385e6b7dffcb2ff58ac8}
+
+
+The sdhcal threshold values. 
+
+
+
+Definition at line 101 of file Energy\+Correction\+Plugins.\+h.
+
+
+
+Referenced by Make\+Energy\+Corrections(), Read\+Settings(), and Sdhcal\+Quadratic\+Energy\+Function().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Energy\+Correction\+Plugins.\+h}\item 
+{\bf Energy\+Correction\+Plugins.\+cc}\end{DoxyCompactItemize}

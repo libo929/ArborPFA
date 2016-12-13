@@ -1,0 +1,180 @@
+\section{arbor\+\_\+content\+:\+:Track\+Factory Class Reference}
+\label{classarbor__content_1_1TrackFactory}\index{arbor\+\_\+content\+::\+Track\+Factory@{arbor\+\_\+content\+::\+Track\+Factory}}
+
+
+\doxyref{Track\+Factory}{p.}{classarbor__content_1_1TrackFactory} class.  
+
+
+
+
+{\ttfamily \#include $<$Object\+Factories.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Track\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1TrackFactory}
+\end{center}
+\end{figure}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Pandora\+Api\+::\+Track\+::\+Parameters $\ast$ {\bf New\+Parameters} () const 
+\begin{DoxyCompactList}\small\item\em Create new parameters instance on the heap (memory-\/management to be controlled by user) \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Read} (Pandora\+Api\+::\+Track\+::\+Parameters \&parameters, pandora\+::\+File\+Reader \&file\+Reader) const 
+\begin{DoxyCompactList}\small\item\em Read any additional (derived class only) object parameters from file using the specified file reader. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Write} (const pandora\+::\+Track $\ast$const p\+Track, pandora\+::\+File\+Writer \&file\+Writer) const 
+\begin{DoxyCompactList}\small\item\em Persist any additional (derived class only) object parameters using the specified file writer. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Create} (const Pandora\+Api\+::\+Track\+::\+Parameters \&parameters, const pandora\+::\+Track $\ast$\&p\+Track) const 
+\begin{DoxyCompactList}\small\item\em Create an object with the given parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Track\+Factory}{p.}{classarbor__content_1_1TrackFactory} class. 
+
+Definition at line 86 of file Object\+Factories.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Track\+Factory@{arbor\+\_\+content\+::\+Track\+Factory}!Create@{Create}}
+\index{Create@{Create}!arbor\+\_\+content\+::\+Track\+Factory@{arbor\+\_\+content\+::\+Track\+Factory}}
+\subsubsection[{Create}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Track\+Factory\+::\+Create (
+\begin{DoxyParamCaption}
+\item[{const Pandora\+Api\+::\+Track\+::\+Parameters \&}]{parameters, }
+\item[{const pandora\+::\+Track $\ast$\&}]{p\+Track}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackFactory_a6381f7a5970b719cf74acbadf3d5a8a7}
+
+
+Create an object with the given parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & the parameters to pass in constructor \\
+\hline
+{\em p\+Object} & to receive the address of the object created \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file Object\+Factories.\+cc.
+
+
+\begin{DoxyCode}
+112   \{
+113     pTrack = NULL;
+114     \textcolor{keyword}{const} arbor_content::Track *pArborTrack = NULL;
+115 
+116     \textcolor{keywordflow}{try}
+117     \{
+118       pArborTrack = \textcolor{keyword}{new} arbor_content::Track(parameters);
+119 
+120       \textcolor{keywordflow}{if}(NULL == pArborTrack)
+121         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+122     \}
+123     \textcolor{keywordflow}{catch}(pandora::StatusCodeException &statusCodeException)
+124     \{
+125       std::cout << \textcolor{stringliteral}{"TrackFactory: failed to create a arbor\_content::Track object : "} << statusCodeException
+      .ToString() << std::endl;
+126 
+127       \textcolor{keywordflow}{if}(NULL != pArborTrack)
+128         \textcolor{keyword}{delete} pArborTrack;
+129 
+130       \textcolor{keywordflow}{return} statusCodeException.GetStatusCode();
+131     \}
+132 
+133     pTrack = pArborTrack;
+134 
+135     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+136   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Track\+Factory@{arbor\+\_\+content\+::\+Track\+Factory}!New\+Parameters@{New\+Parameters}}
+\index{New\+Parameters@{New\+Parameters}!arbor\+\_\+content\+::\+Track\+Factory@{arbor\+\_\+content\+::\+Track\+Factory}}
+\subsubsection[{New\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}Pandora\+Api\+::\+Track\+::\+Parameters $\ast$ arbor\+\_\+content\+::\+Track\+Factory\+::\+New\+Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackFactory_a1b2fbaed39629336107bbeec68423715}
+
+
+Create new parameters instance on the heap (memory-\/management to be controlled by user) 
+
+\begin{DoxyReturn}{Returns}
+the address of the new parameters instance 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file Object\+Factories.\+cc.
+
+
+\begin{DoxyCode}
+89   \{
+90     \textcolor{keywordflow}{return} \textcolor{keyword}{new} PandoraApi::Track::Parameters();
+91   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Track\+Factory@{arbor\+\_\+content\+::\+Track\+Factory}!Read@{Read}}
+\index{Read@{Read}!arbor\+\_\+content\+::\+Track\+Factory@{arbor\+\_\+content\+::\+Track\+Factory}}
+\subsubsection[{Read}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Track\+Factory\+::\+Read (
+\begin{DoxyParamCaption}
+\item[{Pandora\+Api\+::\+Track\+::\+Parameters \&}]{parameters, }
+\item[{pandora\+::\+File\+Reader \&}]{file\+Reader}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackFactory_a7994799b92286f3870c54650f03a454e}
+
+
+Read any additional (derived class only) object parameters from file using the specified file reader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameters} & the parameters to pass in constructor \\
+\hline
+{\em file\+Reader} & the file reader, used to extract any additional parameters from file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file Object\+Factories.\+cc.
+
+
+\begin{DoxyCode}
+96   \{
+97     \textcolor{comment}{/* nop */}
+98     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+99   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Track\+Factory@{arbor\+\_\+content\+::\+Track\+Factory}!Write@{Write}}
+\index{Write@{Write}!arbor\+\_\+content\+::\+Track\+Factory@{arbor\+\_\+content\+::\+Track\+Factory}}
+\subsubsection[{Write}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Track\+Factory\+::\+Write (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Track $\ast$const}]{p\+Track, }
+\item[{pandora\+::\+File\+Writer \&}]{file\+Writer}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1TrackFactory_acb1b8e216676d296ca704f0465de52eb}
+
+
+Persist any additional (derived class only) object parameters using the specified file writer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the address of the object to persist \\
+\hline
+{\em file\+Writer} & the file writer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 103 of file Object\+Factories.\+cc.
+
+
+\begin{DoxyCode}
+104   \{
+105     \textcolor{comment}{/* nop */}
+106     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+107   \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Object\+Factories.\+h}\item 
+{\bf Object\+Factories.\+cc}\end{DoxyCompactItemize}

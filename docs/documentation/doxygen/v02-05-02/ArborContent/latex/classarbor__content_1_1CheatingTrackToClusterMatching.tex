@@ -1,0 +1,206 @@
+\section{arbor\+\_\+content\+:\+:Cheating\+Track\+To\+Cluster\+Matching Class Reference}
+\label{classarbor__content_1_1CheatingTrackToClusterMatching}\index{arbor\+\_\+content\+::\+Cheating\+Track\+To\+Cluster\+Matching@{arbor\+\_\+content\+::\+Cheating\+Track\+To\+Cluster\+Matching}}
+
+
+\doxyref{Cheating\+Track\+To\+Cluster\+Matching}{p.}{classarbor__content_1_1CheatingTrackToClusterMatching} class.  
+
+
+
+
+{\ttfamily \#include $<$Cheating\+Track\+To\+Cluster\+Matching.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Cheating\+Track\+To\+Cluster\+Matching\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1CheatingTrackToClusterMatching}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1CheatingTrackToClusterMatching_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Cheating\+Track\+To\+Cluster\+Matching}{p.}{classarbor__content_1_1CheatingTrackToClusterMatching} class. 
+
+Definition at line 19 of file Cheating\+Track\+To\+Cluster\+Matching.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Cheating\+Track\+To\+Cluster\+Matching@{arbor\+\_\+content\+::\+Cheating\+Track\+To\+Cluster\+Matching}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Cheating\+Track\+To\+Cluster\+Matching@{arbor\+\_\+content\+::\+Cheating\+Track\+To\+Cluster\+Matching}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}Status\+Code arbor\+\_\+content\+::\+Cheating\+Track\+To\+Cluster\+Matching\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CheatingTrackToClusterMatching_af005724999524e5253e59624dbfba342}
+
+
+Definition at line 140 of file Cheating\+Track\+To\+Cluster\+Matching.\+cc.
+
+
+\begin{DoxyCode}
+141   \{
+142     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+143   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Cheating\+Track\+To\+Cluster\+Matching@{arbor\+\_\+content\+::\+Cheating\+Track\+To\+Cluster\+Matching}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Cheating\+Track\+To\+Cluster\+Matching@{arbor\+\_\+content\+::\+Cheating\+Track\+To\+Cluster\+Matching}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}Status\+Code arbor\+\_\+content\+::\+Cheating\+Track\+To\+Cluster\+Matching\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CheatingTrackToClusterMatching_ac667b26b91114d82f3677459606c8a05}
+
+
+Definition at line 18 of file Cheating\+Track\+To\+Cluster\+Matching.\+cc.
+
+
+\begin{DoxyCode}
+19   \{
+20     \textcolor{comment}{// Read current lists}
+21     \textcolor{keyword}{const} TrackList *pCurrentTrackList = NULL;
+22     PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, 
+      pCurrentTrackList));
+23 
+24     \textcolor{keyword}{const} ClusterList *pClusterList = NULL;
+25     PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, pClusterList
+      ));
+26 
+27     \textcolor{comment}{// Clear any existing track - cluster associations}
+28     PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::RemoveCurrentTrackClusterAssociations(*\textcolor{keyword}{this}));
+29 
+30     \textcolor{comment}{// Construct a map from mc particle to tracks}
+31     \textcolor{keyword}{typedef} std::map<const MCParticle*, TrackList> TracksPerMCParticle;
+32     TracksPerMCParticle tracksPerMCParticle;
+33 
+34     \textcolor{keywordflow}{for} (TrackList::const\_iterator iter = pCurrentTrackList->begin(), iterEnd = pCurrentTrackList->end(); 
+      iter != iterEnd; ++iter)
+35     \{
+36       \textcolor{keywordflow}{try}
+37       \{
+38         \textcolor{keyword}{const} Track *\textcolor{keyword}{const} pTrack = *iter;
+39         \textcolor{keyword}{const} MCParticle *\textcolor{keyword}{const} pMCParticle(pTrack->GetMainMCParticle());
+40 
+41         TracksPerMCParticle::iterator itTracksPerMCParticle(tracksPerMCParticle.find(pMCParticle));
+42 
+43         \textcolor{keywordflow}{if} (tracksPerMCParticle.end() == itTracksPerMCParticle)
+44         \{
+45           TrackList trackList;
+46           trackList.insert(pTrack);
+47 
+48           \textcolor{keywordflow}{if} (!tracksPerMCParticle.insert(TracksPerMCParticle::value\_type(pMCParticle, trackList)).second)
+49             \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+50         \}
+51         \textcolor{keywordflow}{else}
+52         \{
+53           itTracksPerMCParticle->second.insert(pTrack);
+54         \}
+55       \}
+56       \textcolor{keywordflow}{catch} (StatusCodeException &)
+57       \{
+58       \}
+59     \}
+60 
+61     \textcolor{comment}{// Construct a map from mc particle to clusters}
+62     \textcolor{keyword}{typedef} std::map<const MCParticle*, ClusterList> ClustersPerMCParticle;
+63     ClustersPerMCParticle clustersPerMCParticle;
+64 
+65     \textcolor{keywordflow}{for} (ClusterList::const\_iterator iter = pClusterList->begin(), iterEnd = pClusterList->end(); iter != 
+      iterEnd; ++iter)
+66     \{
+67       \textcolor{keywordflow}{try}
+68       \{
+69         \textcolor{keyword}{const} Cluster *\textcolor{keyword}{const} pCluster = *iter;
+70         \textcolor{keyword}{const} MCParticle *\textcolor{keyword}{const} pMCParticle(MCParticleHelper::GetMainMCParticle(pCluster));
+71 
+72         ClustersPerMCParticle::iterator itClustersPerMCParticle(clustersPerMCParticle.find(pMCParticle));
+73 
+74         \textcolor{keywordflow}{if} (clustersPerMCParticle.end() == itClustersPerMCParticle)
+75         \{
+76           ClusterList clusterList;
+77           clusterList.insert(pCluster);
+78 
+79           \textcolor{keywordflow}{if} (!clustersPerMCParticle.insert(ClustersPerMCParticle::value\_type(pMCParticle, clusterList)).
+      second)
+80             \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+81         \}
+82         \textcolor{keywordflow}{else}
+83         \{
+84           itClustersPerMCParticle->second.insert(pCluster);
+85         \}
+86       \}
+87       \textcolor{keywordflow}{catch} (StatusCodeException &)
+88       \{
+89       \}
+90     \}
+91 
+92     std::cout << \textcolor{stringliteral}{"N mc tracks   = "} << tracksPerMCParticle.size() << std::endl;
+93     std::cout << \textcolor{stringliteral}{"N mc clusters = "} << clustersPerMCParticle.size() << std::endl;
+94 
+95     \textcolor{comment}{// Make the track to cluster associations}
+96     \textcolor{keywordflow}{for} (TracksPerMCParticle::const\_iterator iter = tracksPerMCParticle.begin(), iterEnd = 
+      tracksPerMCParticle.end(); iter != iterEnd; ++iter)
+97     \{
+98       \textcolor{keyword}{const} MCParticle *\textcolor{keyword}{const} pMCParticle = iter->first;
+99       \textcolor{keyword}{const} TrackList &trackList = iter->second;
+100 
+101       ClustersPerMCParticle::const\_iterator itClustersPerMCParticle(clustersPerMCParticle.find(pMCParticle)
+      );
+102 
+103       \textcolor{keywordflow}{if} (clustersPerMCParticle.end() == itClustersPerMCParticle)
+104         \textcolor{keywordflow}{continue};
+105 
+106       \textcolor{keyword}{const} ClusterList &clusterList = itClustersPerMCParticle->second;
+107 
+108       \textcolor{keywordflow}{if} (trackList.empty() || clusterList.empty())
+109         \textcolor{keywordflow}{continue};
+110 
+111       \textcolor{keywordflow}{for} (TrackList::const\_iterator itTrack = trackList.begin(), itTrackEnd = trackList.end(); itTrack != 
+      itTrackEnd; ++itTrack)
+112       \{
+113         \textcolor{comment}{// If the mc particle is associated with multiple clusters, can only associate to highest energy
+       cluster (clusters should be merged)}
+114         \textcolor{keyword}{const} Cluster *pHighestEnergyCluster = NULL;
+115         \textcolor{keywordtype}{float} highestEnergy(-std::numeric\_limits<float>::max());
+116 
+117         \textcolor{keywordflow}{for} (ClusterList::const\_iterator itCluster = clusterList.begin(), itClusterEnd = clusterList.end();
+       itCluster != itClusterEnd; ++itCluster)
+118         \{
+119           \textcolor{keyword}{const} \textcolor{keywordtype}{float} clusterEnergy((*itCluster)->GetHadronicEnergy());
+120 
+121           \textcolor{keywordflow}{if} (clusterEnergy > highestEnergy)
+122           \{
+123             highestEnergy = clusterEnergy;
+124             pHighestEnergyCluster = *itCluster;
+125           \}
+126         \}
+127 
+128         \textcolor{keywordflow}{if} (NULL == pHighestEnergyCluster)
+129           \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+130 
+131         PANDORA\_RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::AddTrackClusterAssociation(*\textcolor{keyword}{
+      this}, *itTrack, pHighestEnergyCluster));
+132       \}
+133     \}
+134 
+135     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+136   \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Cheating\+Track\+To\+Cluster\+Matching.\+h}\item 
+{\bf Cheating\+Track\+To\+Cluster\+Matching.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,250 @@
+\section{arbor\+\_\+content\+:\+:Particle\+Id\+Helper Class Reference}
+\label{classarbor__content_1_1ParticleIdHelper}\index{arbor\+\_\+content\+::\+Particle\+Id\+Helper@{arbor\+\_\+content\+::\+Particle\+Id\+Helper}}
+
+
+\doxyref{Particle\+Id\+Helper}{p.}{classarbor__content_1_1ParticleIdHelper} class.  
+
+
+
+
+{\ttfamily \#include $<$Particle\+Id\+Plugins.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Starting\+Layer\+Settings}
+\begin{DoxyCompactList}\small\item\em \doxyref{Starting\+Layer\+Settings}{p.}{classarbor__content_1_1ParticleIdHelper_1_1StartingLayerSettings} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static pandora\+::\+Status\+Code {\bf Get\+Starting\+Pseudo\+Layer} (const pandora\+::\+Pandora \&pandora, const pandora\+::\+Cluster $\ast$const p\+Cluster, const {\bf Starting\+Layer\+Settings} \&settings, unsigned int \&starting\+Pseudo\+Layer)
+\begin{DoxyCompactList}\small\item\em Get the starting pseudo layer of the target cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Particle\+Id\+Helper}{p.}{classarbor__content_1_1ParticleIdHelper} class. 
+
+Definition at line 40 of file Particle\+Id\+Plugins.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Particle\+Id\+Helper@{arbor\+\_\+content\+::\+Particle\+Id\+Helper}!Get\+Starting\+Pseudo\+Layer@{Get\+Starting\+Pseudo\+Layer}}
+\index{Get\+Starting\+Pseudo\+Layer@{Get\+Starting\+Pseudo\+Layer}!arbor\+\_\+content\+::\+Particle\+Id\+Helper@{arbor\+\_\+content\+::\+Particle\+Id\+Helper}}
+\subsubsection[{Get\+Starting\+Pseudo\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Get\+Starting\+Pseudo\+Layer (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{const {\bf Starting\+Layer\+Settings} \&}]{settings, }
+\item[{unsigned int \&}]{starting\+Pseudo\+Layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ParticleIdHelper_a8f73ce2523b3b2b77f90ea3743909fda}
+
+
+Get the starting pseudo layer of the target cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access content \\
+\hline
+{\em p\+Cluster} & the target cluster address \\
+\hline
+{\em settings} & the input settings to calculate the starting pseudo layer \\
+\hline
+{\em starting\+Pseudo\+Layer} & the starting pseudo layer to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file Particle\+Id\+Plugins.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Contains\+Hit\+Type(), arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Centroid(), arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Closest\+Distance\+To\+Line(), arbor\+\_\+content\+::\+Geometry\+Helper\+::\+Get\+Distance\+To\+Helix(), arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+low\+Energy\+Cluster\+Cut, arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+max\+Forward\+Pseudo\+Layer, arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+min\+Fit\+Hit\+Distance\+Coarse, arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+min\+Fit\+Hit\+Distance\+Fine, arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+min\+N\+Interacting\+Layers, and arbor\+\_\+content\+::\+Particle\+Id\+Helper\+::\+Starting\+Layer\+Settings\+::m\+\_\+min\+Pseudo\+Layer\+N\+Hits.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Arbor\+Em\+Shower\+Id\+::\+Is\+Match(), and arbor\+\_\+content\+::\+Theta\+Energy\+Function\+::\+Make\+Energy\+Corrections().
+
+
+\begin{DoxyCode}
+52   \{
+53     startingPseudoLayer = std::numeric\_limits<unsigned int>::max();
+54 
+55     \textcolor{keywordflow}{if}(pCluster->GetNCaloHits() == 0)
+56       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+57 
+58     pandora::CaloHitList clusterCaloHitList, nonIsolatedCaloHitList;
+59     pCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+60     pandora::ClusterFitPointList clusterFitPointList;
+61     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} innerPseudoLayer(std::numeric\_limits<unsigned int>::max());
+62 
+63     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = clusterCaloHitList.begin(), endIter = 
+      clusterCaloHitList.end() ;
+64         endIter != iter ; ++iter)
+65     \{
+66       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*iter);
+67 
+68       \textcolor{keywordflow}{if}(pCaloHit->IsIsolated())
+69         \textcolor{keywordflow}{continue};
+70 
+71       nonIsolatedCaloHitList.insert(pCaloHit);
+72       clusterFitPointList.push\_back(pandora::ClusterFitPoint(pCaloHit));
+73 
+74       \textcolor{keywordflow}{if}(pCaloHit->GetPseudoLayer() < innerPseudoLayer)
+75         innerPseudoLayer = pCaloHit->GetPseudoLayer();
+76     \}
+77 
+78     \textcolor{keywordflow}{if}(clusterFitPointList.empty())
+79     \{
+80 \textcolor{comment}{//      std::cout << "ParticleIdHelper::GetStartingPseudoLayer: non isolated hit list empty " << std::endl;}
+81       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+82     \}
+83 
+84     \textcolor{keywordtype}{bool} lowEnergyEmCluster(pCluster->GetElectromagneticEnergy() < settings.m\_lowEnergyClusterCut.Get()
+85         && !ClusterHelper::ContainsHitType(pCluster, pandora::HCAL)
+86     && pCluster->GetAssociatedTrackList().empty());
+87 
+88     \textcolor{keywordflow}{if}(lowEnergyEmCluster)
+89     \{
+90       startingPseudoLayer = innerPseudoLayer;
+91 \textcolor{comment}{//      std::cout << "ParticleIdHelper::GetStartingPseudoLayer: (low) starting pseudo layer = " <<
+       startingPseudoLayer << std::endl;}
+92       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+93     \}
+94 
+95     \textcolor{keyword}{const} pandora::OrderedCaloHitList &orderedCaloHitList(pCluster->GetOrderedCaloHitList());
+96 
+97     pandora::CartesianVector centroid(0.f, 0.f, 0.f);
+98     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ClusterHelper::GetCentroid(pCluster, centroid));
+99 
+100     pandora::ClusterFitResult fitResult;
+101     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pandora::ClusterFitHelper::FitPoints(
+      clusterFitPointList, fitResult));
+102 
+103     \textcolor{keywordflow}{if}(!fitResult.IsFitSuccessful())
+104     \{
+105       std::cout << \textcolor{stringliteral}{"ParticleIdHelper::GetStartingPseudoLayer: invalid fit"} << std::endl;
+106       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+107     \}
+108 
+109     \textcolor{keywordtype}{bool} chargedCluster(pCluster->GetAssociatedTrackList().size() == 1);
+110     pandora::Helix *pHelix(NULL);
+111     \textcolor{keyword}{const} \textcolor{keywordtype}{float} bField(pandora.GetPlugins()->GetBFieldPlugin()->GetBField(pandora::CartesianVector(0.f, 0.f
+      , 0.f)));
+112 
+113     \textcolor{keywordflow}{if}(chargedCluster)
+114     \{
+115       \textcolor{keyword}{const} pandora::Track *\textcolor{keyword}{const} pTrack(*pCluster->GetAssociatedTrackList().begin());
+116       \textcolor{keyword}{const} pandora::CartesianVector trackMomentum(pTrack->GetTrackStateAtCalorimeter().GetMomentum());
+117       \textcolor{keyword}{const} pandora::CartesianVector trackProjection(pTrack->GetTrackStateAtCalorimeter().GetPosition());
+118       \textcolor{keyword}{const} \textcolor{keywordtype}{int} trackCharge(pTrack->GetCharge());
+119 
+120       pHelix = \textcolor{keyword}{new} pandora::Helix(trackProjection, trackMomentum, trackCharge, bField);
+121     \}
+122 
+123     \textcolor{keyword}{const} pandora::CartesianVector clusterDirection(fitResult.GetDirection());
+124     \textcolor{keywordtype}{bool} startingLayerFound(\textcolor{keyword}{false});
+125     \textcolor{keyword}{const} pandora::GeometryManager *\textcolor{keyword}{const} pGeometryManager(pandora.GetGeometry());
+126 
+127     \textcolor{keywordflow}{try}
+128     \{
+129       \textcolor{comment}{// walk along the ordered calo hit list and find the shower start layer}
+130       \textcolor{keywordflow}{for}(pandora::OrderedCaloHitList::const\_iterator layerIter = orderedCaloHitList.begin(), layerEndIter 
+      = orderedCaloHitList.end() ;
+131           layerEndIter != layerIter ; ++layerIter)
+132       \{
+133         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pseudoLayer(layerIter->first);
+134         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nInteractionLayers(0);
+135 
+136         \textcolor{keywordflow}{for}(pandora::OrderedCaloHitList::const\_iterator layerIter2 = layerIter, layerEndIter2 = 
+      orderedCaloHitList.end() ;
+137             layerEndIter2 != layerIter2 ; ++layerIter2)
+138         \{
+139           \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pseudoLayer2(layerIter2->first);
+140 
+141           \textcolor{keywordflow}{if}(pseudoLayer == pseudoLayer2)
+142             \textcolor{keywordflow}{continue};
+143 
+144           \textcolor{keywordflow}{if}(pseudoLayer2 > pseudoLayer + settings.m\_maxForwardPseudoLayer.Get())
+145             \textcolor{keywordflow}{break};
+146 
+147           \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nPseudoLayerHits(0);
+148 
+149           \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = layerIter2->second->begin(), endIter = layerIter2
+      ->second->end() ;
+150               endIter != iter ; ++iter)
+151           \{
+152             \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*iter);
+153 
+154             \textcolor{keywordtype}{float} distanceToFit(std::numeric\_limits<float>::max());
+155             \textcolor{keyword}{const} pandora::Granularity granularity(pGeometryManager->GetHitTypeGranularity(pCaloHit->
+      GetHitType()));
+156             \textcolor{keyword}{const} \textcolor{keywordtype}{float} minFitHitDistance(granularity <= pandora::FINE ?
+157                 settings.m\_minFitHitDistanceFine.Get() : settings.m\_minFitHitDistanceCoarse.Get());
+158 
+159             \textcolor{keywordflow}{if}(pHelix)
+160             \{
+161               \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != 
+      GeometryHelper::GetDistanceToHelix(*pHelix, pCaloHit->GetPositionVector(), distanceToFit))
+162                 \textcolor{keywordflow}{continue};
+163             \}
+164             \textcolor{keywordflow}{else}
+165             \{
+166               \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != 
+      GeometryHelper::GetClosestDistanceToLine(centroid, clusterDirection, pCaloHit->GetPositionVector(), 
+      distanceToFit))
+167                 \textcolor{keywordflow}{continue};
+168             \}
+169 
+170             \textcolor{keywordflow}{if}(distanceToFit > minFitHitDistance)
+171               \textcolor{keywordflow}{continue};
+172 
+173             ++nPseudoLayerHits;
+174           \}
+175 
+176           \textcolor{keywordflow}{if}(nPseudoLayerHits > settings.m\_minPseudoLayerNHits.Get())
+177             ++nInteractionLayers;
+178         \}
+179 
+180         \textcolor{comment}{//        std::cout << "    => Pseudo layer " << pseudoLayer << ", n interacting layers = " <<
+       nInteractionLayers << std::endl;}
+181 
+182         \textcolor{keywordflow}{if}(nInteractionLayers > settings.m\_minNInteractingLayers.Get())
+183         \{
+184           startingPseudoLayer = pseudoLayer;
+185           startingLayerFound = \textcolor{keyword}{true};
+186           \textcolor{keywordflow}{break};
+187         \}
+188       \}
+189     \}
+190     \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} pandora::StatusCodeException &exception)
+191     \{
+192       \textcolor{keywordflow}{if}(pHelix) \textcolor{keyword}{delete} pHelix;
+193 
+194       std::cout << \textcolor{stringliteral}{"ParticleIdHelper::GetStartingPseudoLayer: caught exception in loop : "} << exception.
+      ToString() << std::endl;
+195       \textcolor{keywordflow}{return} exception.GetStatusCode();
+196     \}
+197 
+198     \textcolor{keywordflow}{if}(pHelix) \textcolor{keyword}{delete} pHelix;
+199 
+200     \textcolor{keywordflow}{if}(!startingLayerFound)
+201     \{
+202 \textcolor{comment}{//      std::cout << "ParticleIdHelper::GetStartingPseudoLayer: starting layer not found !" << std::endl;}
+203       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_NOT\_FOUND;
+204     \}
+205 
+206 \textcolor{comment}{//    std::cout << "ParticleIdHelper::GetStartingPseudoLayer: starting pseudo layer = " <<
+       startingPseudoLayer << std::endl;}
+207 
+208     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+209   \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Particle\+Id\+Plugins.\+h}\item 
+{\bf Particle\+Id\+Plugins.\+cc}\end{DoxyCompactItemize}

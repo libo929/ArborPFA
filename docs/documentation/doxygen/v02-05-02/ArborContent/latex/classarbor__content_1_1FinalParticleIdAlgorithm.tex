@@ -1,0 +1,252 @@
+\section{arbor\+\_\+content\+:\+:Final\+Particle\+Id\+Algorithm Class Reference}
+\label{classarbor__content_1_1FinalParticleIdAlgorithm}\index{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm@{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm}}
+
+
+\doxyref{Final\+Particle\+Id\+Algorithm}{p.}{classarbor__content_1_1FinalParticleIdAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$Final\+Particle\+Id\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Final\+Particle\+Id\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1FinalParticleIdAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1FinalParticleIdAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\item 
+bool {\bf Contains\+Sibling\+Track} (const pandora\+::\+Track\+List \&track\+List) const 
+\begin{DoxyCompactList}\small\item\em Whether the track list contains sibling tracks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\+\_\+force\+Muon\+Tagging}
+\item 
+bool {\bf m\+\_\+force\+Electron\+Tagging}
+\item 
+bool {\bf m\+\_\+force\+Photon\+Tagging}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Final\+Particle\+Id\+Algorithm}{p.}{classarbor__content_1_1FinalParticleIdAlgorithm} class. 
+
+Definition at line 41 of file Final\+Particle\+Id\+Algorithm.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm@{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm}!Contains\+Sibling\+Track@{Contains\+Sibling\+Track}}
+\index{Contains\+Sibling\+Track@{Contains\+Sibling\+Track}!arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm@{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm}}
+\subsubsection[{Contains\+Sibling\+Track}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm\+::\+Contains\+Sibling\+Track (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Track\+List \&}]{track\+List}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1FinalParticleIdAlgorithm_a681e489260c93c97a4eb0344ba877b38}
+
+
+Whether the track list contains sibling tracks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em track\+List} & the input track list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file Final\+Particle\+Id\+Algorithm.\+cc.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+102   \{
+103     \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator iter = trackList.begin(), iterEnd = trackList.end(); iter != 
+      iterEnd; ++iter)
+104     \{
+105       \textcolor{keywordflow}{if} (!(*iter)->GetSiblingTrackList().empty())
+106       \{
+107         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+108       \}
+109     \}
+110 
+111     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+112   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm@{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm@{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1FinalParticleIdAlgorithm_a54c34568b7f21d032f395d2da96ce27f}
+
+
+Definition at line 116 of file Final\+Particle\+Id\+Algorithm.\+cc.
+
+
+
+References m\+\_\+force\+Electron\+Tagging, m\+\_\+force\+Muon\+Tagging, and m\+\_\+force\+Photon\+Tagging.
+
+
+\begin{DoxyCode}
+117   \{
+118     m_forceMuonTagging = \textcolor{keyword}{false};
+119     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+120         \textcolor{stringliteral}{"ForceMuonTagging"}, m_forceMuonTagging));
+121 
+122     m_forceElectronTagging = \textcolor{keyword}{false};
+123     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+124         \textcolor{stringliteral}{"ForceElectronTagging"}, m_forceElectronTagging));
+125 
+126     m_forcePhotonTagging = \textcolor{keyword}{false};
+127     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+128         \textcolor{stringliteral}{"ForcePhotonTagging"}, m_forcePhotonTagging));
+129 
+130     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+131   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm@{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm@{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1FinalParticleIdAlgorithm_a7e9e1d93b1902e1acee7d54508cb1fe1}
+
+
+Definition at line 36 of file Final\+Particle\+Id\+Algorithm.\+cc.
+
+
+
+References Contains\+Sibling\+Track(), m\+\_\+force\+Electron\+Tagging, m\+\_\+force\+Muon\+Tagging, and m\+\_\+force\+Photon\+Tagging.
+
+
+\begin{DoxyCode}
+37   \{
+38     \textcolor{keyword}{const} pandora::PfoList *pPfoList = NULL;
+39     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, 
+      pPfoList));
+40 
+41     \textcolor{keywordflow}{for} (pandora::PfoList::const\_iterator iter = pPfoList->begin(), iterEnd = pPfoList->end();
+42         iter != iterEnd; ++iter)
+43     \{
+44       \textcolor{keyword}{const} pandora::ParticleFlowObject *\textcolor{keyword}{const} pPfo = *iter;
+45 
+46       \textcolor{keyword}{const} pandora::TrackList &trackList(pPfo->GetTrackList());
+47       \textcolor{keyword}{const} pandora::ClusterList &clusterList(pPfo->GetClusterList());
+48       \textcolor{keyword}{const} \textcolor{keywordtype}{bool} neutralPfo(trackList.empty());
+49       \textcolor{keyword}{const} \textcolor{keywordtype}{int} charge(pPfo->GetCharge());
+50 
+51       \textcolor{comment}{// Consider only pfos with a single cluster and no track sibling relationships}
+52       \textcolor{keywordflow}{if} ((clusterList.size() != 1) || this->ContainsSiblingTrack(trackList))
+53         \textcolor{keywordflow}{continue};
+54 
+55       \textcolor{keywordflow}{if}(!neutralPfo && charge == 0)
+56         \textcolor{keywordflow}{continue};
+57 
+58       \textcolor{comment}{// whether to force electron pid}
+59       \textcolor{keywordflow}{if}( (std::abs(pPfo->GetParticleId()) == pandora::E\_MINUS) && !
+      m_forceElectronTagging )
+60         \textcolor{keywordflow}{continue};
+61 
+62       \textcolor{comment}{// whether to force muon pid}
+63       \textcolor{keywordflow}{if}( (std::abs(pPfo->GetParticleId()) == pandora::MU\_MINUS) && !
+      m_forceMuonTagging )
+64         \textcolor{keywordflow}{continue};
+65 
+66       \textcolor{comment}{// whether to force photon pid}
+67       \textcolor{keywordflow}{if}( (std::abs(pPfo->GetParticleId()) == pandora::PHOTON) && !
+      m_forcePhotonTagging )
+68         \textcolor{keywordflow}{continue};
+69 
+70       \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pCluster(*clusterList.begin());
+71       \textcolor{keyword}{const} pandora::ParticleId *\textcolor{keyword}{const} pParticleId(PandoraContentApi::GetPlugins(*this)->GetParticleId());
+72 
+73       PandoraContentApi::ParticleFlowObject::Metadata metadata;
+74 
+75       \textcolor{keywordflow}{if}(pParticleId->IsElectron(pCluster))
+76       \{
+77         metadata.m\_particleId = (charge > 0) ? pandora::E\_PLUS : pandora::E\_MINUS;
+78       \}
+79       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pParticleId->IsMuon(pCluster))
+80       \{
+81         metadata.m\_particleId = (charge > 0) ? pandora::MU\_PLUS : pandora::MU\_MINUS;
+82       \}
+83       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(charge == 0 && pParticleId->IsPhoton(pCluster))
+84       \{
+85         metadata.m\_particleId = pandora::PHOTON;
+86       \}
+87 
+88       \textcolor{keywordflow}{if}(metadata.m\_particleId.IsInitialized())
+89       \{
+90         metadata.m\_mass = pandora::PdgTable::GetParticleMass(metadata.m\_particleId.Get());
+91         metadata.m\_energy = std::sqrt(metadata.m\_mass.Get() * metadata.m\_mass.Get() + pPfo->GetMomentum().
+      GetMagnitudeSquared());
+92         PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::AlterMetadata(*\textcolor{keyword}{this}, 
+      pPfo, metadata));
+93       \}
+94     \}
+95 
+96     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+97   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm@{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm}!m\+\_\+force\+Electron\+Tagging@{m\+\_\+force\+Electron\+Tagging}}
+\index{m\+\_\+force\+Electron\+Tagging@{m\+\_\+force\+Electron\+Tagging}!arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm@{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm}}
+\subsubsection[{m\+\_\+force\+Electron\+Tagging}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm\+::m\+\_\+force\+Electron\+Tagging\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1FinalParticleIdAlgorithm_a45f1d58566fe674fc5083d2fdf36da9f}
+
+
+Definition at line 66 of file Final\+Particle\+Id\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm@{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm}!m\+\_\+force\+Muon\+Tagging@{m\+\_\+force\+Muon\+Tagging}}
+\index{m\+\_\+force\+Muon\+Tagging@{m\+\_\+force\+Muon\+Tagging}!arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm@{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm}}
+\subsubsection[{m\+\_\+force\+Muon\+Tagging}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm\+::m\+\_\+force\+Muon\+Tagging\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1FinalParticleIdAlgorithm_a9c29d5f5e597db544c705cf33e2ce9d8}
+
+
+Definition at line 65 of file Final\+Particle\+Id\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm@{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm}!m\+\_\+force\+Photon\+Tagging@{m\+\_\+force\+Photon\+Tagging}}
+\index{m\+\_\+force\+Photon\+Tagging@{m\+\_\+force\+Photon\+Tagging}!arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm@{arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm}}
+\subsubsection[{m\+\_\+force\+Photon\+Tagging}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Final\+Particle\+Id\+Algorithm\+::m\+\_\+force\+Photon\+Tagging\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1FinalParticleIdAlgorithm_a3bcc57b0686c87c573dc5b84ae5eb1c9}
+
+
+Definition at line 67 of file Final\+Particle\+Id\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Final\+Particle\+Id\+Algorithm.\+h}\item 
+{\bf Final\+Particle\+Id\+Algorithm.\+cc}\end{DoxyCompactItemize}

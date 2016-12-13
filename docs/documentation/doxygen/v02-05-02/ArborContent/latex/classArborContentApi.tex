@@ -1,0 +1,1126 @@
+\section{Arbor\+Content\+Api Class Reference}
+\label{classArborContentApi}\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+
+
+\doxyref{Arbor\+Content\+Api}{p.}{classArborContentApi} class.  
+
+
+
+
+{\ttfamily \#include $<$Arbor\+Content\+Api.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Calo\+Hit\+Metadata}
+\begin{DoxyCompactList}\small\item\em \doxyref{Calo\+Hit\+Metadata}{p.}{classArborContentApi_1_1CaloHitMetadata} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static pandora\+::\+Status\+Code {\bf Alter\+Metadata} (const pandora\+::\+Algorithm \&algorithm, const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit, const {\bf Calo\+Hit\+Metadata} \&calo\+Hit\+Metadata)
+\begin{DoxyCompactList}\small\item\em Alter calo hit meta data. \end{DoxyCompactList}\item 
+static bool {\bf Is\+Connected} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit1, const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit2)
+\begin{DoxyCompactList}\small\item\em Whether the two calo hits are connected (backward or forward directions) \end{DoxyCompactList}\item 
+static bool {\bf Is\+Connected} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit1, const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit2, {\bf arbor\+\_\+content\+::\+Connector\+Direction} direction)
+\begin{DoxyCompactList}\small\item\em Whether the two calo hits are connected in the given direction. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Find\+Connector} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit1, const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit2, const {\bf arbor\+\_\+content\+::\+Connector} $\ast$\&p\+Connector)
+\begin{DoxyCompactList}\small\item\em Find a connector that links the two calo hits. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Find\+Connector} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit1, const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit2, {\bf arbor\+\_\+content\+::\+Connector\+Direction} direction, const {\bf arbor\+\_\+content\+::\+Connector} $\ast$\&p\+Connector)
+\begin{DoxyCompactList}\small\item\em Find a connector that links the two calo hits in a given direction. \end{DoxyCompactList}\item 
+static bool {\bf Has\+Any\+Connection} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit)
+\begin{DoxyCompactList}\small\item\em Whether the calo hit has at least one connection. \end{DoxyCompactList}\item 
+static const \\*
+{\bf arbor\+\_\+content\+::\+Connector\+List} \& {\bf Get\+Connector\+List} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit)
+\begin{DoxyCompactList}\small\item\em Get the global connector list (backward and forward) of the calo hit. \end{DoxyCompactList}\item 
+static const \\*
+{\bf arbor\+\_\+content\+::\+Connector\+List} \& {\bf Get\+Connector\+List} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit, {\bf arbor\+\_\+content\+::\+Connector\+Direction} direction)
+\begin{DoxyCompactList}\small\item\em Get the connector list of a calo hit for a given direction. \end{DoxyCompactList}\item 
+static bool {\bf Is\+Seed} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit)
+\begin{DoxyCompactList}\small\item\em Whether the calo hit is a seed calo hit in the tree. \end{DoxyCompactList}\item 
+static bool {\bf Is\+Leaf} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit)
+\begin{DoxyCompactList}\small\item\em Whether the calo hit is a leaf calo hit in the tree. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Connect} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit1, const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit2, {\bf arbor\+\_\+content\+::\+Connector\+Direction} direction, float reference\+Length=1.f)
+\begin{DoxyCompactList}\small\item\em Connect the two calo hits in a given direction. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Connect} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit1, const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit2, {\bf arbor\+\_\+content\+::\+Connector\+Direction} direction, const {\bf arbor\+\_\+content\+::\+Connector} $\ast$\&p\+Connector, float reference\+Length=1.f)
+\begin{DoxyCompactList}\small\item\em Connect the two calo hits in a given direction. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Remove\+Connection\+Between} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit1, const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit2)
+\begin{DoxyCompactList}\small\item\em  . \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Remove\+And\+Delete\+Connector} (const {\bf arbor\+\_\+content\+::\+Connector} $\ast$const p\+Connector)
+\begin{DoxyCompactList}\small\item\em  . \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Remove\+And\+Delete\+All\+Connections} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit)
+\begin{DoxyCompactList}\small\item\em Remove and delete all the connections of the calo hit. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Tag} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit, {\bf arbor\+\_\+content\+::\+Hit\+Tag} tag, bool value)
+\begin{DoxyCompactList}\small\item\em Set the calo hit tag. \end{DoxyCompactList}\item 
+static bool {\bf Is\+Tagged} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit, {\bf arbor\+\_\+content\+::\+Hit\+Tag} tag)
+\begin{DoxyCompactList}\small\item\em Whether the calo hit has been tagged. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Reset\+Tags} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit)
+\begin{DoxyCompactList}\small\item\em Reset the calo hit tags. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Initialize\+Reclustering} (const pandora\+::\+Algorithm \&algorithm, const pandora\+::\+Track\+List \&input\+Track\+List, const pandora\+::\+Cluster\+List \&input\+Cluster\+List, std\+::string \&original\+Clusters\+List\+Name)
+\begin{DoxyCompactList}\small\item\em Initialize Arbor re-\/clustering. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Run\+Reclustering\+Algorithm} (const pandora\+::\+Algorithm \&algorithm, const std\+::string \&clustering\+Algorithm\+Name, const pandora\+::\+Cluster\+List $\ast$\&p\+New\+Cluster\+List, std\+::string \&new\+Cluster\+List\+Name)
+\begin{DoxyCompactList}\small\item\em Run a re-\/clustering algorithm. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Post\+Run\+Reclustering\+Algorithm} (const pandora\+::\+Algorithm \&algorithm, const std\+::string \&cluster\+List\+Name)
+\begin{DoxyCompactList}\small\item\em Function to call just after a re-\/clustering algorithm and potential association algorithms. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf End\+Reclustering} (const pandora\+::\+Algorithm \&algorithm, const std\+::string \&selected\+Cluster\+List\+Name)
+\begin{DoxyCompactList}\small\item\em End the re-\/clustering procedure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static pandora\+::\+Status\+Code {\bf Remove\+Connector} (const {\bf arbor\+\_\+content\+::\+Connector} $\ast$const p\+Connector)
+\begin{DoxyCompactList}\small\item\em  . \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static T $\ast$ {\bf Modifiable} (const T $\ast$const p\+T)
+\begin{DoxyCompactList}\small\item\em Alter the object (const\+\_\+cast$<$\+T$\ast$$>$) for internal modification through the A\+P\+I. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Arbor\+Content\+Api}{p.}{classArborContentApi} class. 
+
+Definition at line 44 of file Arbor\+Content\+Api.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Alter\+Metadata@{Alter\+Metadata}}
+\index{Alter\+Metadata@{Alter\+Metadata}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Alter\+Metadata}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Alter\+Metadata (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit, }
+\item[{const {\bf Calo\+Hit\+Metadata} \&}]{calo\+Hit\+Metadata}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a5e9730cb4ba0710d981bdd0dbaff0527}
+
+
+Alter calo hit meta data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & to access internal content \\
+\hline
+{\em p\+Calo\+Hit} & to modify \\
+\hline
+{\em calo\+Hit\+Metadata} & the input meta data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 37 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References Arbor\+Content\+Api\+::\+Calo\+Hit\+Metadata\+::m\+\_\+density, Arbor\+Content\+Api\+::\+Calo\+Hit\+Metadata\+::m\+\_\+surrounding\+Energy, and Modifiable().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Calo\+Hit\+Preparation\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+38 \{
+39   \textcolor{comment}{// alter pandora calo hit meta data}
+40   \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pPandoraCaloHit(pCaloHit);
+41   \textcolor{keyword}{const} PandoraContentApi::CaloHit::Metadata pandoraCaloHitMetadata(caloHitMetadata);
+42 
+43   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::AlterMetadata(algorithm, 
+      pPandoraCaloHit, pandoraCaloHitMetadata));
+44 
+45   \textcolor{keywordflow}{if}(caloHitMetadata.m\_surroundingEnergy.IsInitialized())
+46     ArborContentApi::Modifiable(pCaloHit)->m\_surroundingEnergy = caloHitMetadata.m\_surroundingEnergy.Get();
+47 
+48   \textcolor{keywordflow}{if}(caloHitMetadata.m\_density.IsInitialized())
+49     ArborContentApi::Modifiable(pCaloHit)->m\_density = caloHitMetadata.m\_density.Get();
+50 
+51   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+52 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Connect@{Connect}}
+\index{Connect@{Connect}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Connect}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Connect (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit1, }
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit2, }
+\item[{{\bf arbor\+\_\+content\+::\+Connector\+Direction}}]{direction, }
+\item[{float}]{reference\+Length = {\ttfamily 1.f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_aa4302189eeda7e63c33fa1b18623c506}
+
+
+Connect the two calo hits in a given direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit1} & the first calo hit to connect \\
+\hline
+{\em p\+Calo\+Hit2} & the second calo hit to connect \\
+\hline
+{\em direction} & the direction of the connection (F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N means that p\+Calo\+Hit1 will be the \char`\"{}from\char`\"{}) \\
+\hline
+{\em reference\+Length} & the reference length assigned to the connector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 120 of file Arbor\+Content\+Api.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Connect\+Backward(), arbor\+\_\+content\+::\+Track\+Driven\+Seeding\+Tool\+::\+Connect\+Calo\+Hits(), arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Connect\+Forward(), and arbor\+\_\+content\+::\+Connector\+Seeding\+Tool\+::\+Process().
+
+
+\begin{DoxyCode}
+122 \{
+123   \textcolor{keyword}{const} arbor_content::Connector *pConnector = NULL;
+124   \textcolor{keywordflow}{return} ArborContentApi::Connect(pCaloHit1, pCaloHit2, direction, pConnector, referenceLength);
+125 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Connect@{Connect}}
+\index{Connect@{Connect}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Connect}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Connect (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit1, }
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit2, }
+\item[{{\bf arbor\+\_\+content\+::\+Connector\+Direction}}]{direction, }
+\item[{const {\bf arbor\+\_\+content\+::\+Connector} $\ast$\&}]{p\+Connector, }
+\item[{float}]{reference\+Length = {\ttfamily 1.f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a6864e19b49f2fa81d74e47037d70519d}
+
+
+Connect the two calo hits in a given direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit1} & the first calo hit to connect \\
+\hline
+{\em p\+Calo\+Hit2} & the second calo hit to connect \\
+\hline
+{\em direction} & the direction of the connection (F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N means that p\+Calo\+Hit1 will be the \char`\"{}from\char`\"{}) \\
+\hline
+{\em p\+Connector} & the connector address to receive \\
+\hline
+{\em reference\+Length} & the reference length assigned to the connector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 129 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Add\+Connector(), arbor\+\_\+content\+::\+B\+A\+C\+K\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, arbor\+\_\+content\+::\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, arbor\+\_\+content\+::\+Calo\+Hit\+::m\+\_\+p\+Calo\+Hit\+Meta\+Data, and Modifiable().
+
+
+\begin{DoxyCode}
+131 \{
+132   pConnector = NULL;
+133 
+134   arbor_content::CaloHit *\textcolor{keyword}{const} pCaloHitFrom = direction == 
+      arbor_content::BACKWARD_DIRECTION ? ArborContentApi::Modifiable(pCaloHit2) : 
+      ArborContentApi::Modifiable(pCaloHit1);
+135   arbor_content::CaloHit *\textcolor{keyword}{const} pCaloHitTo = direction == 
+      arbor_content::BACKWARD_DIRECTION ? ArborContentApi::Modifiable(pCaloHit1) : 
+      ArborContentApi::Modifiable(pCaloHit2);
+136 
+137   pConnector = \textcolor{keyword}{new} arbor_content::Connector(pCaloHitFrom, pCaloHitTo, referenceLength);
+138 
+139   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pCaloHitFrom->
+      m_pCaloHitMetaData->AddConnector(pConnector, arbor_content::FORWARD_DIRECTION));
+140   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pCaloHitTo->
+      m_pCaloHitMetaData->AddConnector(pConnector, arbor_content::BACKWARD_DIRECTION));
+141 
+142   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+143 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!End\+Reclustering@{End\+Reclustering}}
+\index{End\+Reclustering@{End\+Reclustering}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{End\+Reclustering}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+End\+Reclustering (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const std\+::string \&}]{selected\+Cluster\+List\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a3ebb6caf25976d0e186e2f0db0219fa5}
+
+
+End the re-\/clustering procedure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the parent algorithm that run the re-\/clustering \\
+\hline
+{\em selected\+Cluster\+List\+Name} & the name of the selected cluster list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 294 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References Modifiable().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Energy\+Excess\+Reclustering\+Algorithm\+::\+Run(), and arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+295 \{
+296   \textcolor{keyword}{const} pandora::CaloHitList *pCaloHitList = NULL;
+297   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(algorithm, 
+      pCaloHitList));
+298 
+299   \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = pCaloHitList->begin(), endIter = pCaloHitList->end() ;
+300       endIter != iter ; ++iter)
+301   \{
+302     \textcolor{keyword}{const} arbor_content::CaloHit *\textcolor{keyword}{const} pCaloHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }
+      arbor_content::CaloHit *const\textcolor{keyword}{>}(*iter);
+303 
+304     \textcolor{keywordflow}{if}(NULL == pCaloHit)
+305       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+306 
+307     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::Modifiable(pCaloHit)->EndReclustering(selectedClusterListName));
+308   \}
+309 
+310   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::EndReclustering(algorithm, 
+      selectedClusterListName));
+311 
+312   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+313 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Find\+Connector@{Find\+Connector}}
+\index{Find\+Connector@{Find\+Connector}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Find\+Connector}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Find\+Connector (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit1, }
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit2, }
+\item[{const {\bf arbor\+\_\+content\+::\+Connector} $\ast$\&}]{p\+Connector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_aead1bd98155781e402064397963d2749}
+
+
+Find a connector that links the two calo hits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit1} & the first calo hit \\
+\hline
+{\em p\+Calo\+Hit2} & the second calo hit \\
+\hline
+{\em p\+Connector} & the connector address to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Find\+Connector(), and arbor\+\_\+content\+::\+Calo\+Hit\+::m\+\_\+p\+Calo\+Hit\+Meta\+Data.
+
+
+\begin{DoxyCode}
+71 \{
+72   \textcolor{keywordflow}{return} pCaloHit1->m_pCaloHitMetaData->FindConnector(pCaloHit2, pConnector);
+73 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Find\+Connector@{Find\+Connector}}
+\index{Find\+Connector@{Find\+Connector}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Find\+Connector}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Find\+Connector (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit1, }
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit2, }
+\item[{{\bf arbor\+\_\+content\+::\+Connector\+Direction}}]{direction, }
+\item[{const {\bf arbor\+\_\+content\+::\+Connector} $\ast$\&}]{p\+Connector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a11644ac7f6b2d1ecb1a10f29dde66951}
+
+
+Find a connector that links the two calo hits in a given direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit1} & the first calo hit \\
+\hline
+{\em p\+Calo\+Hit2} & the second calo hit \\
+\hline
+{\em direction} & the direction in which the two calo hits are connected \\
+\hline
+{\em p\+Connector} & the connector address to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Find\+Connector(), and arbor\+\_\+content\+::\+Calo\+Hit\+::m\+\_\+p\+Calo\+Hit\+Meta\+Data.
+
+
+\begin{DoxyCode}
+79 \{
+80   \textcolor{keywordflow}{return} pCaloHit1->m_pCaloHitMetaData->FindConnector(pCaloHit2, direction, pConnector);
+81 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Get\+Connector\+List@{Get\+Connector\+List}}
+\index{Get\+Connector\+List@{Get\+Connector\+List}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Get\+Connector\+List}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf arbor\+\_\+content\+::\+Connector\+List} \& Arbor\+Content\+Api\+::\+Get\+Connector\+List (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a0912e894fcb5e0da62809f1efc68c3f4}
+
+
+Get the global connector list (backward and forward) of the calo hit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the calo hit to get the connector list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Connector\+List the connector list (std\+::set$<$const Connector$\ast$$>$) 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Get\+Connector\+List(), and arbor\+\_\+content\+::\+Calo\+Hit\+::m\+\_\+p\+Calo\+Hit\+Meta\+Data.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Build\+Calo\+Hit\+List(), arbor\+\_\+content\+::\+Branch\+::\+Build\+From\+Calo\+Hit(), arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::\+Clean\+Calo\+Hits(), arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Get\+Connector\+List(), arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Get\+Mean\+Direction(), and arbor\+\_\+content\+::\+Connector\+Seeding\+Tool\+::\+Process().
+
+
+\begin{DoxyCode}
+93 \{
+94   \textcolor{keywordflow}{return} pCaloHit->m_pCaloHitMetaData->GetConnectorList();
+95 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Get\+Connector\+List@{Get\+Connector\+List}}
+\index{Get\+Connector\+List@{Get\+Connector\+List}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Get\+Connector\+List}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf arbor\+\_\+content\+::\+Connector\+List} \& Arbor\+Content\+Api\+::\+Get\+Connector\+List (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit, }
+\item[{{\bf arbor\+\_\+content\+::\+Connector\+Direction}}]{direction}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a9147b4e7a792b67cc7248347f049a835}
+
+
+Get the connector list of a calo hit for a given direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the calo hit to get the connector list \\
+\hline
+{\em direction} & the direction of the connector list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Connector\+List the connector list (std\+::set$<$const Connector$\ast$$>$) 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Get\+Connector\+List(), and arbor\+\_\+content\+::\+Calo\+Hit\+::m\+\_\+p\+Calo\+Hit\+Meta\+Data.
+
+
+\begin{DoxyCode}
+100 \{
+101   \textcolor{keywordflow}{return} pCaloHit->m_pCaloHitMetaData->GetConnectorList(direction);
+102 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Has\+Any\+Connection@{Has\+Any\+Connection}}
+\index{Has\+Any\+Connection@{Has\+Any\+Connection}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Has\+Any\+Connection}]{\setlength{\rightskip}{0pt plus 5cm}bool Arbor\+Content\+Api\+::\+Has\+Any\+Connection (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a783668e6716b7ed6f42e227a9911b7ed}
+
+
+Whether the calo hit has at least one connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the calo hit to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 85 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Has\+Any\+Connection(), and arbor\+\_\+content\+::\+Calo\+Hit\+::m\+\_\+p\+Calo\+Hit\+Meta\+Data.
+
+
+\begin{DoxyCode}
+86 \{
+87   \textcolor{keywordflow}{return} pCaloHit->m_pCaloHitMetaData->HasAnyConnection();
+88 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Initialize\+Reclustering@{Initialize\+Reclustering}}
+\index{Initialize\+Reclustering@{Initialize\+Reclustering}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Initialize\+Reclustering}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Initialize\+Reclustering (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const pandora\+::\+Track\+List \&}]{input\+Track\+List, }
+\item[{const pandora\+::\+Cluster\+List \&}]{input\+Cluster\+List, }
+\item[{std\+::string \&}]{original\+Clusters\+List\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a24ea367f3fb46687de16cee61f1a898a}
+
+
+Initialize Arbor re-\/clustering. 
+
+Save calo hit meta data and create a new one for each calo hit
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the parent algorithm that initializes the re-\/clustering \\
+\hline
+{\em input\+Track\+List} & the list of tracks used for re-\/clustering \\
+\hline
+{\em input\+Cluster\+List} & the list of cluster used for re-\/clustering \\
+\hline
+{\em original\+Clusters\+List\+Name} & the list of the original cluster to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 234 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References Modifiable().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Energy\+Excess\+Reclustering\+Algorithm\+::\+Run(), and arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+236 \{
+237   \textcolor{comment}{// Initialize re-clustering within pandora}
+238   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::InitializeReclustering(
+      algorithm, inputTrackList, inputClusterList, originalClustersListName));
+239 
+240   \textcolor{comment}{// Current calo hit list here is the one for re-clustering}
+241   \textcolor{comment}{// Get it, save and create new meta data for each}
+242   \textcolor{keyword}{const} pandora::CaloHitList *pCaloHitList = NULL;
+243   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(algorithm, 
+      pCaloHitList));
+244 
+245   \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = pCaloHitList->begin(), endIter = pCaloHitList->end() ;
+246       endIter != iter ; ++iter)
+247   \{
+248     \textcolor{keyword}{const} arbor_content::CaloHit *\textcolor{keyword}{const} pCaloHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }
+      arbor_content::CaloHit *const\textcolor{keyword}{>}(*iter);
+249 
+250     \textcolor{keywordflow}{if}(NULL == pCaloHit)
+251       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+252 
+253     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::Modifiable(pCaloHit)->SaveReclusterMetaData(originalClustersListName));
+254   \}
+255 
+256   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+257 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Is\+Connected@{Is\+Connected}}
+\index{Is\+Connected@{Is\+Connected}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Is\+Connected}]{\setlength{\rightskip}{0pt plus 5cm}bool Arbor\+Content\+Api\+::\+Is\+Connected (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit1, }
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a29f000399d75d1bda028772a16209c22}
+
+
+Whether the two calo hits are connected (backward or forward directions) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit1} & the first calo hit \\
+\hline
+{\em p\+Calo\+Hit2} & the second calo hit\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Is\+Connected(), and arbor\+\_\+content\+::\+Calo\+Hit\+::m\+\_\+p\+Calo\+Hit\+Meta\+Data.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Connect\+Backward(), arbor\+\_\+content\+::\+Track\+Driven\+Seeding\+Tool\+::\+Connect\+Calo\+Hits(), arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Connect\+Forward(), arbor\+\_\+content\+::\+Branch\+::\+Is\+Valid(), arbor\+\_\+content\+::\+Connector\+Seeding\+Tool\+::\+Process(), arbor\+\_\+content\+::\+Branch\+::push\+\_\+back(), and arbor\+\_\+content\+::\+Branch\+::push\+\_\+front().
+
+
+\begin{DoxyCode}
+57 \{
+58   \textcolor{keywordflow}{return} pCaloHit1->m_pCaloHitMetaData->IsConnected(pCaloHit2);
+59 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Is\+Connected@{Is\+Connected}}
+\index{Is\+Connected@{Is\+Connected}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Is\+Connected}]{\setlength{\rightskip}{0pt plus 5cm}bool Arbor\+Content\+Api\+::\+Is\+Connected (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit1, }
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit2, }
+\item[{{\bf arbor\+\_\+content\+::\+Connector\+Direction}}]{direction}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a05565589d830fc28199ae866231e179e}
+
+
+Whether the two calo hits are connected in the given direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit1} & the first calo hit \\
+\hline
+{\em p\+Calo\+Hit2} & the second calo hit \\
+\hline
+{\em direction} & the direction in which the calo hits may be connected\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Is\+Connected(), and arbor\+\_\+content\+::\+Calo\+Hit\+::m\+\_\+p\+Calo\+Hit\+Meta\+Data.
+
+
+\begin{DoxyCode}
+64 \{
+65   \textcolor{keywordflow}{return} pCaloHit1->m_pCaloHitMetaData->IsConnected(pCaloHit2, direction);
+66 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Is\+Leaf@{Is\+Leaf}}
+\index{Is\+Leaf@{Is\+Leaf}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Is\+Leaf}]{\setlength{\rightskip}{0pt plus 5cm}bool Arbor\+Content\+Api\+::\+Is\+Leaf (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a8ae854708d8e754188246c80d1870687}
+
+
+Whether the calo hit is a leaf calo hit in the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the calo hit to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 113 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Is\+Leaf(), and arbor\+\_\+content\+::\+Calo\+Hit\+::m\+\_\+p\+Calo\+Hit\+Meta\+Data.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Extract\+Leaf\+Calo\+Hit\+List(), and arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Extract\+Seed\+Calo\+Hit\+List().
+
+
+\begin{DoxyCode}
+114 \{
+115   \textcolor{keywordflow}{return} pCaloHit->m_pCaloHitMetaData->IsLeaf();
+116 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Is\+Seed@{Is\+Seed}}
+\index{Is\+Seed@{Is\+Seed}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Is\+Seed}]{\setlength{\rightskip}{0pt plus 5cm}bool Arbor\+Content\+Api\+::\+Is\+Seed (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a2de8e2c53719f3235a956fdf8cfe652e}
+
+
+Whether the calo hit is a seed calo hit in the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the calo hit to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Is\+Seed(), and arbor\+\_\+content\+::\+Calo\+Hit\+::m\+\_\+p\+Calo\+Hit\+Meta\+Data.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Extract\+Leaf\+Calo\+Hit\+List(), arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Extract\+Seed\+Calo\+Hit\+List(), and arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Split\+Tree\+From\+Cluster().
+
+
+\begin{DoxyCode}
+107 \{
+108   \textcolor{keywordflow}{return} pCaloHit->m_pCaloHitMetaData->IsSeed();
+109 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Is\+Tagged@{Is\+Tagged}}
+\index{Is\+Tagged@{Is\+Tagged}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Is\+Tagged}]{\setlength{\rightskip}{0pt plus 5cm}bool Arbor\+Content\+Api\+::\+Is\+Tagged (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit, }
+\item[{{\bf arbor\+\_\+content\+::\+Hit\+Tag}}]{tag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_ace6421a7c3058920173b4a9e580386b3}
+
+
+Whether the calo hit has been tagged. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the calo hit to test \\
+\hline
+{\em tag} & the reconstruction tag to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+Definition at line 215 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+::m\+\_\+hit\+Tag\+Map.
+
+
+\begin{DoxyCode}
+216 \{
+217   \textcolor{keywordflow}{return} pCaloHit->m_hitTagMap.test(tag);
+218 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Modifiable@{Modifiable}}
+\index{Modifiable@{Modifiable}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Modifiable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template {\bf arbor\+\_\+content\+::\+Connector} $\ast$ Arbor\+Content\+Api\+::\+Modifiable (
+\begin{DoxyParamCaption}
+\item[{const T $\ast$const}]{p\+T}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classArborContentApi_a0cf7d1b9b39a60c537b70118a2d2c45f}
+
+
+Alter the object (const\+\_\+cast$<$\+T$\ast$$>$) for internal modification through the A\+P\+I. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+T} & the object to alter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T$\ast$ the altered object 
+\end{DoxyReturn}
+
+
+Definition at line 318 of file Arbor\+Content\+Api.\+cc.
+
+
+
+Referenced by Alter\+Metadata(), Connect(), End\+Reclustering(), Initialize\+Reclustering(), Post\+Run\+Reclustering\+Algorithm(), Remove\+And\+Delete\+Connector(), Remove\+Connector(), Reset\+Tags(), and Tag().
+
+
+\begin{DoxyCode}
+319 \{
+320   \textcolor{keywordflow}{return} \textcolor{keyword}{const\_cast<}T*\textcolor{keyword}{>}(pT);
+321 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Post\+Run\+Reclustering\+Algorithm@{Post\+Run\+Reclustering\+Algorithm}}
+\index{Post\+Run\+Reclustering\+Algorithm@{Post\+Run\+Reclustering\+Algorithm}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Post\+Run\+Reclustering\+Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Post\+Run\+Reclustering\+Algorithm (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const std\+::string \&}]{cluster\+List\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a099cddec92ba34f46cb5a6ec6bd80f3a}
+
+
+Function to call just after a re-\/clustering algorithm and potential association algorithms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the parent algorithm that run the re-\/clustering algorithm \\
+\hline
+{\em cluster\+List\+Name} & the name of the cluster list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 271 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References Modifiable().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Energy\+Excess\+Reclustering\+Algorithm\+::\+Run(), and arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+272 \{
+273   \textcolor{comment}{// Get the current re-clustering calo hit list}
+274   \textcolor{comment}{// Save meta data for each calo hit}
+275   \textcolor{keyword}{const} pandora::CaloHitList *pCaloHitList = NULL;
+276   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(algorithm, 
+      pCaloHitList));
+277 
+278   \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = pCaloHitList->begin(), endIter = pCaloHitList->end() ;
+279       endIter != iter ; ++iter)
+280   \{
+281     \textcolor{keyword}{const} arbor_content::CaloHit *\textcolor{keyword}{const} pCaloHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }
+      arbor_content::CaloHit *const\textcolor{keyword}{>}(*iter);
+282 
+283     \textcolor{keywordflow}{if}(NULL == pCaloHit)
+284       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+285 
+286     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::Modifiable(pCaloHit)->SaveReclusterMetaData(clusterListName));
+287   \}
+288 
+289   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+290 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Remove\+And\+Delete\+All\+Connections@{Remove\+And\+Delete\+All\+Connections}}
+\index{Remove\+And\+Delete\+All\+Connections@{Remove\+And\+Delete\+All\+Connections}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Remove\+And\+Delete\+All\+Connections}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Remove\+And\+Delete\+All\+Connections (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a18147f12023ff599d6330cda53ee6b04}
+
+
+Remove and delete all the connections of the calo hit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the calo hit to remove all connections \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 183 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+B\+A\+C\+K\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, arbor\+\_\+content\+::\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Get\+Connector\+List(), arbor\+\_\+content\+::\+Calo\+Hit\+::m\+\_\+p\+Calo\+Hit\+Meta\+Data, and Remove\+And\+Delete\+Connector().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Clean\+And\+Delete\+Cluster(), arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Remove\+Connections(), arbor\+\_\+content\+::\+Nearby\+Track\+Photon\+Removal\+Alg\+::\+Remove\+Nearby\+Photon\+Hits(), and arbor\+\_\+content\+::\+Calo\+Hit\+::$\sim$\+Calo\+Hit().
+
+
+\begin{DoxyCode}
+184 \{
+185   arbor_content::ConnectorList backwardConnectorList(pCaloHit->
+      m_pCaloHitMetaData->GetConnectorList(arbor_content::BACKWARD_DIRECTION));
+186   arbor_content::ConnectorList forwardConnectorList(pCaloHit->m_pCaloHitMetaData->
+      GetConnectorList(arbor_content::FORWARD_DIRECTION));
+187 
+188   \textcolor{keywordflow}{for}(arbor\_content::ConnectorList::const\_iterator iter = backwardConnectorList.begin(), endIter = 
+      backwardConnectorList.end() ;
+189       endIter != iter ; ++iter)
+190   \{
+191     \textcolor{keyword}{const} arbor_content::Connector *\textcolor{keyword}{const} pConnector = *iter;
+192     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::RemoveAndDeleteConnector(pConnector));
+193   \}
+194 
+195   \textcolor{keywordflow}{for}(arbor\_content::ConnectorList::const\_iterator iter = forwardConnectorList.begin(), endIter = 
+      forwardConnectorList.end() ;
+196       endIter != iter ; ++iter)
+197   \{
+198     \textcolor{keyword}{const} arbor_content::Connector *\textcolor{keyword}{const} pConnector = *iter;
+199     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::RemoveAndDeleteConnector(pConnector));
+200   \}
+201 
+202   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+203 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Remove\+And\+Delete\+Connector@{Remove\+And\+Delete\+Connector}}
+\index{Remove\+And\+Delete\+Connector@{Remove\+And\+Delete\+Connector}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Remove\+And\+Delete\+Connector}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Remove\+And\+Delete\+Connector (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Connector} $\ast$const}]{p\+Connector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a043893b3c84d269751858236dca6ca1e}
+
+
+ . 
+
+Remove the connection between the two calo hits and delete the connector
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Connector} & the connector to remove and delete \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 173 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References Modifiable(), and Remove\+Connector().
+
+
+
+Referenced by Remove\+And\+Delete\+All\+Connections(), and Remove\+Connection\+Between().
+
+
+\begin{DoxyCode}
+174 \{
+175   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::RemoveConnector(pConnector));
+176   \textcolor{keyword}{delete} ArborContentApi::Modifiable(pConnector);
+177 
+178   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+179 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Remove\+Connection\+Between@{Remove\+Connection\+Between}}
+\index{Remove\+Connection\+Between@{Remove\+Connection\+Between}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Remove\+Connection\+Between}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Remove\+Connection\+Between (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit1, }
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a7cd0708e981530ab2d6c03fd7d293b35}
+
+
+ . 
+
+Remove and delete the connection between the two calo hits.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit1} & the first calo hit to disconnect \\
+\hline
+{\em p\+Calo\+Hit2} & the second calo hit to disconnect \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 147 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Find\+Connector(), arbor\+\_\+content\+::\+Calo\+Hit\+::m\+\_\+p\+Calo\+Hit\+Meta\+Data, and Remove\+And\+Delete\+Connector().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::\+Clean\+Calo\+Hits().
+
+
+\begin{DoxyCode}
+148 \{
+149   \textcolor{keywordflow}{if}(NULL == pCaloHit1 || NULL == pCaloHit2)
+150     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+151 
+152   \textcolor{keyword}{const} arbor_content::Connector *pConnector = NULL;
+153   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, pCaloHit1->
+      m_pCaloHitMetaData->FindConnector(pCaloHit2, pConnector));
+154 
+155   \textcolor{keywordflow}{return} ArborContentApi::RemoveAndDeleteConnector(pConnector);
+156 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Remove\+Connector@{Remove\+Connector}}
+\index{Remove\+Connector@{Remove\+Connector}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Remove\+Connector}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Remove\+Connector (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Connector} $\ast$const}]{p\+Connector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classArborContentApi_ac26edfbe194b1ebc600ba8275c6a8f4d}
+
+
+ . 
+
+Remove the connection. Destructor not called, the connector responsibility is forwarded to the caller
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Connector} & the connector to remove \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 160 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Connector\+::\+Get\+From(), arbor\+\_\+content\+::\+Connector\+::\+Get\+To(), and Modifiable().
+
+
+
+Referenced by Remove\+And\+Delete\+Connector().
+
+
+\begin{DoxyCode}
+161 \{
+162   \textcolor{keywordflow}{if}(NULL == pConnector)
+163     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+164 
+165   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::Modifiable(pConnector->GetFrom())->m\_pCaloHitMetaData->RemoveConnector(pConnector));
+166   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      ArborContentApi::Modifiable(pConnector->GetTo())->m\_pCaloHitMetaData->RemoveConnector(pConnector));
+167 
+168   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+169 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Reset\+Tags@{Reset\+Tags}}
+\index{Reset\+Tags@{Reset\+Tags}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Reset\+Tags}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Reset\+Tags (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a3982c53694dfd9df3a1f2efbeff0b95a}
+
+
+Reset the calo hit tags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the calo hit to reset tags \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 222 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References Modifiable().
+
+
+\begin{DoxyCode}
+223 \{
+224   \textcolor{keywordflow}{if}(NULL == pCaloHit)
+225     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+226 
+227   ArborContentApi::Modifiable(pCaloHit)->m\_hitTagMap.reset();
+228 
+229   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+230 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Run\+Reclustering\+Algorithm@{Run\+Reclustering\+Algorithm}}
+\index{Run\+Reclustering\+Algorithm@{Run\+Reclustering\+Algorithm}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Run\+Reclustering\+Algorithm}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Run\+Reclustering\+Algorithm (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const std\+::string \&}]{clustering\+Algorithm\+Name, }
+\item[{const pandora\+::\+Cluster\+List $\ast$\&}]{p\+New\+Cluster\+List, }
+\item[{std\+::string \&}]{new\+Cluster\+List\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a3ff39c17c534117c38893e755e454580}
+
+
+Run a re-\/clustering algorithm. 
+
+Must be called only to run a clustering algorithm in a re-\/clustering process
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the parent algorithm running the (re)clustering algorithm \\
+\hline
+{\em clustering\+Algorithm\+Name} & the name of the clustering algorithm \\
+\hline
+{\em p\+New\+Cluster\+List} & the list of created clusters to receive \\
+\hline
+{\em new\+Cluster\+List\+Name} & the cluster list name to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 261 of file Arbor\+Content\+Api.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Energy\+Excess\+Reclustering\+Algorithm\+::\+Run(), and arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+263 \{
+264   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::RunClusteringAlgorithm(
+      algorithm, clusteringAlgorithmName, pNewClusterList, newClusterListName));
+265 
+266   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+267 \}
+\end{DoxyCode}
+\index{Arbor\+Content\+Api@{Arbor\+Content\+Api}!Tag@{Tag}}
+\index{Tag@{Tag}!Arbor\+Content\+Api@{Arbor\+Content\+Api}}
+\subsubsection[{Tag}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code Arbor\+Content\+Api\+::\+Tag (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit, }
+\item[{{\bf arbor\+\_\+content\+::\+Hit\+Tag}}]{tag, }
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classArborContentApi_a26313d87db8ae492f7d85c9b246d67df}
+
+
+Set the calo hit tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Calo\+Hit} & the calo hit to tag \\
+\hline
+{\em tag} & the reconstruction tag to apply \\
+\hline
+{\em value} & the tag value to assign \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 207 of file Arbor\+Content\+Api.\+cc.
+
+
+
+References Modifiable().
+
+
+\begin{DoxyCode}
+208 \{
+209   ArborContentApi::Modifiable(pCaloHit)->m\_hitTagMap.set(tag, value);
+210   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+211 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Arbor\+Content\+Api.\+h}\item 
+{\bf Arbor\+Content\+Api.\+cc}\end{DoxyCompactItemize}

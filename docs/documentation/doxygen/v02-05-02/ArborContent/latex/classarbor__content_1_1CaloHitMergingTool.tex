@@ -1,0 +1,474 @@
+\section{arbor\+\_\+content\+:\+:Calo\+Hit\+Merging\+Tool Class Reference}
+\label{classarbor__content_1_1CaloHitMergingTool}\index{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}}
+
+
+\doxyref{Calo\+Hit\+Merging\+Tool}{p.}{classarbor__content_1_1CaloHitMergingTool} class.  
+
+
+
+
+{\ttfamily \#include $<$Calo\+Hit\+Merging\+Tool.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Calo\+Hit\+Merging\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1CaloHitMergingTool}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1CaloHitMergingTool_1_1Factory} class for instantiating algorithm tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Read settings from the xml handle. \end{DoxyCompactList}\item 
+virtual pandora\+::\+Status\+Code {\bf Merge\+Calo\+Hits} (const pandora\+::\+Algorithm \&algorithm, const pandora\+::\+Calo\+Hit\+List \&calo\+Hit\+List, const pandora\+::\+Cluster\+Vector \&cluster\+Vector)
+\begin{DoxyCompactList}\small\item\em Merge the calo hit list in provided cluster list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ int, float $>$ {\bf Pid\+To\+Distance\+Map}
+\begin{DoxyCompactList}\small\item\em The pid flag to max merging distance map typedef. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Find\+Calo\+Hit\+Cluster\+Merging} (const pandora\+::\+Algorithm \&algorithm, const pandora\+::\+Calo\+Hit\+List \&calo\+Hit\+List, const pandora\+::\+Cluster\+Vector \&cluster\+Vector, {\bf Calo\+Hit\+To\+Cluster\+Map} \&calo\+Hit\+To\+Cluster\+Map) const 
+\begin{DoxyCompactList}\small\item\em Find a possible parent cluster for each hit. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Merge\+Calo\+Hits} (const pandora\+::\+Algorithm \&algorithm, const {\bf Calo\+Hit\+To\+Cluster\+Map} \&calo\+Hit\+To\+Cluster\+Map) const 
+\begin{DoxyCompactList}\small\item\em Merge the calo hits in their target cluster. \end{DoxyCompactList}\item 
+float {\bf Get\+Max\+Calo\+Hit\+Distance} (const pandora\+::\+Algorithm \&algorithm, const pandora\+::\+Calo\+Hit $\ast$const p\+Calo\+Hit, const pandora\+::\+Cluster $\ast$const p\+Cluster) const 
+\begin{DoxyCompactList}\small\item\em Get the maximum distance to merge the calo hit into that cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf m\+\_\+max\+Calo\+Hit\+Distance\+Fine}
+\begin{DoxyCompactList}\small\item\em The max distance to merge a hit in a cluster (fine granularity) \end{DoxyCompactList}\item 
+float {\bf m\+\_\+max\+Calo\+Hit\+Distance\+Coarse}
+\begin{DoxyCompactList}\small\item\em The max distance to merge a hit in a cluster (coarse granularity) \end{DoxyCompactList}\item 
+{\bf Pid\+To\+Distance\+Map} {\bf m\+\_\+max\+Calo\+Hit\+Distance\+Fine\+Map}
+\begin{DoxyCompactList}\small\item\em The map of cluster pid -\/$>$ max distance to merge a hit in a cluster (fine granularity) \end{DoxyCompactList}\item 
+{\bf Pid\+To\+Distance\+Map} {\bf m\+\_\+max\+Calo\+Hit\+Distance\+Coarse\+Map}
+\begin{DoxyCompactList}\small\item\em The map of cluster pid -\/$>$ max distance to merge a hit in a cluster (coarse granularity) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Calo\+Hit\+Merging\+Tool}{p.}{classarbor__content_1_1CaloHitMergingTool} class. 
+
+Definition at line 42 of file Calo\+Hit\+Merging\+Tool.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}!Pid\+To\+Distance\+Map@{Pid\+To\+Distance\+Map}}
+\index{Pid\+To\+Distance\+Map@{Pid\+To\+Distance\+Map}!arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}}
+\subsubsection[{Pid\+To\+Distance\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<$int, float$>$ {\bf arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool\+::\+Pid\+To\+Distance\+Map}\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitMergingTool_a8ba05e9cb9f5e261dc15749ded5b76eb}
+
+
+The pid flag to max merging distance map typedef. 
+
+
+
+Definition at line 101 of file Calo\+Hit\+Merging\+Tool.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}!Find\+Calo\+Hit\+Cluster\+Merging@{Find\+Calo\+Hit\+Cluster\+Merging}}
+\index{Find\+Calo\+Hit\+Cluster\+Merging@{Find\+Calo\+Hit\+Cluster\+Merging}!arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}}
+\subsubsection[{Find\+Calo\+Hit\+Cluster\+Merging}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool\+::\+Find\+Calo\+Hit\+Cluster\+Merging (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const pandora\+::\+Calo\+Hit\+List \&}]{calo\+Hit\+List, }
+\item[{const pandora\+::\+Cluster\+Vector \&}]{cluster\+Vector, }
+\item[{{\bf Calo\+Hit\+To\+Cluster\+Map} \&}]{calo\+Hit\+To\+Cluster\+Map}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitMergingTool_a7d2d0562083cfda103a54dac3f35d8bb}
+
+
+Find a possible parent cluster for each hit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the algorithm calling this function \\
+\hline
+{\em calo\+Hit\+List} & the input calo hit list \\
+\hline
+{\em cluster\+Vector} & the input cluster list \\
+\hline
+{\em calo\+Hit\+To\+Cluster\+Map} & the map of calo hit to cluster to merge \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file Calo\+Hit\+Merging\+Tool.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Closest\+Distance\+Approach(), and Get\+Max\+Calo\+Hit\+Distance().
+
+
+
+Referenced by Merge\+Calo\+Hits().
+
+
+\begin{DoxyCode}
+55   \{
+56     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator hitIter = caloHitList.begin(), hitEndIter = caloHitList.end() 
+      ;
+57         hitEndIter != hitIter ; ++hitIter)
+58     \{
+59       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*hitIter);
+60 
+61       \textcolor{keywordtype}{float} bestDistanceToHit(std::numeric\_limits<float>::max());
+62       \textcolor{keyword}{const} pandora::Cluster *pBestCluster = NULL;
+63 
+64       \textcolor{keywordflow}{for}(pandora::ClusterVector::const\_iterator clusterIter = clusterVector.begin(), clusterEndIter = 
+      clusterVector.end() ;
+65           clusterEndIter != clusterIter ; ++clusterIter)
+66       \{
+67         \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pCluster(*clusterIter);
+68 
+69         \textcolor{comment}{// Get calo hit closest distance approach}
+70         \textcolor{keywordtype}{float} caloHitDistance(std::numeric\_limits<float>::max());
+71 
+72         \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != 
+      ClusterHelper::GetClosestDistanceApproach(pCluster, pCaloHit->GetPositionVector(), caloHitDistance))
+73           \textcolor{keywordflow}{continue};
+74 
+75         \textcolor{keyword}{const} \textcolor{keywordtype}{float} maxCaloHitDistance(this->GetMaxCaloHitDistance(algorithm, pCaloHit, pCluster));
+76 
+77         \textcolor{keywordflow}{if}(caloHitDistance < maxCaloHitDistance && caloHitDistance < bestDistanceToHit)
+78         \{
+79           bestDistanceToHit = caloHitDistance;
+80           pBestCluster = pCluster;
+81         \}
+82       \}
+83 
+84       \textcolor{keywordflow}{if}(NULL != pBestCluster)
+85         caloHitToClusterMap[pCaloHit] = pBestCluster;
+86     \}
+87 
+88     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+89   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}!Get\+Max\+Calo\+Hit\+Distance@{Get\+Max\+Calo\+Hit\+Distance}}
+\index{Get\+Max\+Calo\+Hit\+Distance@{Get\+Max\+Calo\+Hit\+Distance}!arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}}
+\subsubsection[{Get\+Max\+Calo\+Hit\+Distance}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool\+::\+Get\+Max\+Calo\+Hit\+Distance (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const pandora\+::\+Calo\+Hit $\ast$const}]{p\+Calo\+Hit, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitMergingTool_aa1acfa877095dfa707bdce9a0536df88}
+
+
+Get the maximum distance to merge the calo hit into that cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the algorithm calling this function \\
+\hline
+{\em p\+Calo\+Hit} & the calo hit to merge \\
+\hline
+{\em p\+Cluster} & the potential cluster to merge the calo hit in\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float the maximum distance to merge the calo hit into that cluster 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file Calo\+Hit\+Merging\+Tool.\+cc.
+
+
+
+References m\+\_\+max\+Calo\+Hit\+Distance\+Coarse, m\+\_\+max\+Calo\+Hit\+Distance\+Coarse\+Map, m\+\_\+max\+Calo\+Hit\+Distance\+Fine, and m\+\_\+max\+Calo\+Hit\+Distance\+Fine\+Map.
+
+
+
+Referenced by Find\+Calo\+Hit\+Cluster\+Merging().
+
+
+\begin{DoxyCode}
+110   \{
+111     \textcolor{keyword}{const} pandora::Granularity &granularity(PandoraContentApi::GetGeometry(algorithm)->
+      GetHitTypeGranularity(pCaloHit->GetHitType()));
+112     \textcolor{keyword}{const} \textcolor{keywordtype}{int} pidFlag(pCluster->IsPhotonFast(algorithm.GetPandora()) ? pandora::PHOTON : pCluster->
+      GetParticleIdFlag());
+113 
+114     \textcolor{comment}{// default distance for all clusters}
+115     \textcolor{keywordtype}{float} maxCaloHitDistance((granularity <= pandora::FINE) ? 
+      m_maxCaloHitDistanceFine : m_maxCaloHitDistanceCoarse);
+116 
+117     \textcolor{comment}{// then proceed by particle flag}
+118     \textcolor{keywordflow}{if}(pidFlag != 0)
+119     \{
+120       \textcolor{keywordflow}{if}(granularity <= pandora::FINE)
+121       \{
+122         PidToDistanceMap::const\_iterator findIter = m_maxCaloHitDistanceFineMap.find(pidFlag);
+123 
+124         \textcolor{keywordflow}{if}(m_maxCaloHitDistanceFineMap.end() != findIter)
+125           maxCaloHitDistance = findIter->second;
+126       \}
+127       \textcolor{keywordflow}{else}
+128       \{
+129         PidToDistanceMap::const\_iterator findIter = 
+      m_maxCaloHitDistanceCoarseMap.find(pidFlag);
+130 
+131         \textcolor{keywordflow}{if}(m_maxCaloHitDistanceCoarseMap.end() != findIter)
+132           maxCaloHitDistance = findIter->second;
+133       \}
+134     \}
+135 
+136     \textcolor{keywordflow}{return} maxCaloHitDistance;
+137   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}!Merge\+Calo\+Hits@{Merge\+Calo\+Hits}}
+\index{Merge\+Calo\+Hits@{Merge\+Calo\+Hits}!arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}}
+\subsubsection[{Merge\+Calo\+Hits}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool\+::\+Merge\+Calo\+Hits (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const pandora\+::\+Calo\+Hit\+List \&}]{calo\+Hit\+List, }
+\item[{const pandora\+::\+Cluster\+Vector \&}]{cluster\+Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classarbor__content_1_1CaloHitMergingTool_a2a15f7192c16a3b4602aa35c76e2e26a}
+
+
+Merge the calo hit list in provided cluster list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the algorithm calling this function \\
+\hline
+{\em calo\+Hit\+List} & the calo hits to merge \\
+\hline
+{\em cluster\+Vector} & the cluster list to enlarge with calo hits \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 43 of file Calo\+Hit\+Merging\+Tool.\+cc.
+
+
+
+References Find\+Calo\+Hit\+Cluster\+Merging().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Fragment\+Removal\+Algorithm\+::\+Run(), and arbor\+\_\+content\+::\+Surrounding\+Hits\+Merging\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+44   \{
+45     CaloHitToClusterMap caloHitToClusterMap;
+46     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      FindCaloHitClusterMerging(algorithm, caloHitList, clusterVector, caloHitToClusterMap));
+47     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      MergeCaloHits(algorithm, caloHitToClusterMap));
+48 
+49     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+50   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}!Merge\+Calo\+Hits@{Merge\+Calo\+Hits}}
+\index{Merge\+Calo\+Hits@{Merge\+Calo\+Hits}!arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}}
+\subsubsection[{Merge\+Calo\+Hits}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool\+::\+Merge\+Calo\+Hits (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const {\bf Calo\+Hit\+To\+Cluster\+Map} \&}]{calo\+Hit\+To\+Cluster\+Map}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitMergingTool_a45cdbe92fe1863a4f4f23b8ca0d385d0}
+
+
+Merge the calo hits in their target cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the algorithm calling this function \\
+\hline
+{\em calo\+Hit\+To\+Cluster\+Map} & the calo hit to cluster map to perform the merging \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 93 of file Calo\+Hit\+Merging\+Tool.\+cc.
+
+
+\begin{DoxyCode}
+94   \{
+95     \textcolor{keywordflow}{for}(CaloHitToClusterMap::const\_iterator iter = caloHitToClusterMap.begin(), endIter = 
+      caloHitToClusterMap.end() ;
+96         endIter != iter ; ++iter)
+97     \{
+98       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(iter->first);
+99       \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pCluster(iter->second);
+100 
+101       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::AddToCluster(algorithm,
+       pCluster, pCaloHit));
+102     \}
+103 
+104     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+105   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classarbor__content_1_1CaloHitMergingTool_a3373e47cda4ba978b0b0c5b74148f3a8}
+
+
+Read settings from the xml handle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xml\+Handle} & the xml handle to settings \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file Calo\+Hit\+Merging\+Tool.\+cc.
+
+
+
+References m\+\_\+max\+Calo\+Hit\+Distance\+Coarse, m\+\_\+max\+Calo\+Hit\+Distance\+Coarse\+Map, m\+\_\+max\+Calo\+Hit\+Distance\+Fine, and m\+\_\+max\+Calo\+Hit\+Distance\+Fine\+Map.
+
+
+\begin{DoxyCode}
+142   \{
+143     m_maxCaloHitDistanceFine = 200.f;
+144     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+145         \textcolor{stringliteral}{"MaxCaloHitDistanceFine"}, m_maxCaloHitDistanceFine));
+146 
+147     m_maxCaloHitDistanceCoarse = 500.f;
+148     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+149         \textcolor{stringliteral}{"MaxCaloHitDistanceCoarse"}, m_maxCaloHitDistanceCoarse));
+150 
+151     pandora::StringVector stringVector;
+152     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadVectorOfValues(xmlHandle,
+153         \textcolor{stringliteral}{"MaxPidCaloHitDistanceFine"}, stringVector));
+154 
+155     \textcolor{keywordflow}{for}(pandora::StringVector::const\_iterator iter = stringVector.begin(), endIter = stringVector.end() ; 
+      endIter != iter ; ++iter)
+156     \{
+157       pandora::StringVector pidDistanceSeparated;
+158       \textcolor{keyword}{const} std::string delimiter = \textcolor{stringliteral}{":"};
+159       pandora::XmlHelper::TokenizeString(*iter, pidDistanceSeparated, delimiter);
+160 
+161       \textcolor{keywordflow}{if} (pidDistanceSeparated.size() != 2)
+162         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+163 
+164       \textcolor{keywordtype}{int} pid(0);
+165       \textcolor{keywordtype}{float} distance(0.f);
+166 
+167       \textcolor{keywordflow}{if} (!pandora::StringToType(pidDistanceSeparated.at(0), pid) || !pandora::StringToType(
+      pidDistanceSeparated.at(1), distance))
+168         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+169 
+170       m_maxCaloHitDistanceFineMap.insert(PidToDistanceMap::value\_type(pid, distance));
+171     \}
+172 
+173     stringVector.clear();
+174     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadVectorOfValues(xmlHandle,
+175         \textcolor{stringliteral}{"MaxPidCaloHitDistanceCoarse"}, stringVector));
+176 
+177     \textcolor{keywordflow}{for}(pandora::StringVector::const\_iterator iter = stringVector.begin(), endIter = stringVector.end() ; 
+      endIter != iter ; ++iter)
+178     \{
+179       pandora::StringVector pidDistanceSeparated;
+180       \textcolor{keyword}{const} std::string delimiter = \textcolor{stringliteral}{":"};
+181       pandora::XmlHelper::TokenizeString(*iter, pidDistanceSeparated, delimiter);
+182 
+183       \textcolor{keywordflow}{if} (pidDistanceSeparated.size() != 2)
+184         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+185 
+186       \textcolor{keywordtype}{int} pid(0);
+187       \textcolor{keywordtype}{float} distance(0.f);
+188 
+189       \textcolor{keywordflow}{if} (!pandora::StringToType(pidDistanceSeparated.at(0), pid) || !pandora::StringToType(
+      pidDistanceSeparated.at(1), distance))
+190         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+191 
+192       m_maxCaloHitDistanceCoarseMap.insert(PidToDistanceMap::value\_type(pid, distance));
+193     \}
+194 
+195 
+196     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+197   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}!m\+\_\+max\+Calo\+Hit\+Distance\+Coarse@{m\+\_\+max\+Calo\+Hit\+Distance\+Coarse}}
+\index{m\+\_\+max\+Calo\+Hit\+Distance\+Coarse@{m\+\_\+max\+Calo\+Hit\+Distance\+Coarse}!arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}}
+\subsubsection[{m\+\_\+max\+Calo\+Hit\+Distance\+Coarse}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool\+::m\+\_\+max\+Calo\+Hit\+Distance\+Coarse\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitMergingTool_a4ab0a54131c1ef44f1dd3bbb7efa8a01}
+
+
+The max distance to merge a hit in a cluster (coarse granularity) 
+
+
+
+Definition at line 103 of file Calo\+Hit\+Merging\+Tool.\+h.
+
+
+
+Referenced by Get\+Max\+Calo\+Hit\+Distance(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}!m\+\_\+max\+Calo\+Hit\+Distance\+Coarse\+Map@{m\+\_\+max\+Calo\+Hit\+Distance\+Coarse\+Map}}
+\index{m\+\_\+max\+Calo\+Hit\+Distance\+Coarse\+Map@{m\+\_\+max\+Calo\+Hit\+Distance\+Coarse\+Map}!arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}}
+\subsubsection[{m\+\_\+max\+Calo\+Hit\+Distance\+Coarse\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pid\+To\+Distance\+Map} arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool\+::m\+\_\+max\+Calo\+Hit\+Distance\+Coarse\+Map\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitMergingTool_a2552722f25d5415215bbbbd85b038e89}
+
+
+The map of cluster pid -\/$>$ max distance to merge a hit in a cluster (coarse granularity) 
+
+
+
+Definition at line 105 of file Calo\+Hit\+Merging\+Tool.\+h.
+
+
+
+Referenced by Get\+Max\+Calo\+Hit\+Distance(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}!m\+\_\+max\+Calo\+Hit\+Distance\+Fine@{m\+\_\+max\+Calo\+Hit\+Distance\+Fine}}
+\index{m\+\_\+max\+Calo\+Hit\+Distance\+Fine@{m\+\_\+max\+Calo\+Hit\+Distance\+Fine}!arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}}
+\subsubsection[{m\+\_\+max\+Calo\+Hit\+Distance\+Fine}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool\+::m\+\_\+max\+Calo\+Hit\+Distance\+Fine\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitMergingTool_ab4e71100a8a6962a0f81d2488d65a7da}
+
+
+The max distance to merge a hit in a cluster (fine granularity) 
+
+
+
+Definition at line 102 of file Calo\+Hit\+Merging\+Tool.\+h.
+
+
+
+Referenced by Get\+Max\+Calo\+Hit\+Distance(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}!m\+\_\+max\+Calo\+Hit\+Distance\+Fine\+Map@{m\+\_\+max\+Calo\+Hit\+Distance\+Fine\+Map}}
+\index{m\+\_\+max\+Calo\+Hit\+Distance\+Fine\+Map@{m\+\_\+max\+Calo\+Hit\+Distance\+Fine\+Map}!arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool@{arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool}}
+\subsubsection[{m\+\_\+max\+Calo\+Hit\+Distance\+Fine\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pid\+To\+Distance\+Map} arbor\+\_\+content\+::\+Calo\+Hit\+Merging\+Tool\+::m\+\_\+max\+Calo\+Hit\+Distance\+Fine\+Map\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1CaloHitMergingTool_aee427e9447c682fdc295a6fd50376b24}
+
+
+The map of cluster pid -\/$>$ max distance to merge a hit in a cluster (fine granularity) 
+
+
+
+Definition at line 104 of file Calo\+Hit\+Merging\+Tool.\+h.
+
+
+
+Referenced by Get\+Max\+Calo\+Hit\+Distance(), and Read\+Settings().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Calo\+Hit\+Merging\+Tool.\+h}\item 
+{\bf Calo\+Hit\+Merging\+Tool.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,190 @@
+\section{arbor\+\_\+content\+:\+:Simple\+Region\+Clustering\+Algorithm Class Reference}
+\label{classarbor__content_1_1SimpleRegionClusteringAlgorithm}\index{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm}}
+
+
+\doxyref{Simple\+Region\+Clustering\+Algorithm}{p.}{classarbor__content_1_1SimpleRegionClusteringAlgorithm} class.  
+
+
+
+
+{\ttfamily \#include $<$Simple\+Region\+Clustering\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Simple\+Region\+Clustering\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1SimpleRegionClusteringAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1SimpleRegionClusteringAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf m\+\_\+theta\+Angle}
+\item 
+float {\bf m\+\_\+phi\+Angle}
+\item 
+float {\bf m\+\_\+distance}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Simple\+Region\+Clustering\+Algorithm}{p.}{classarbor__content_1_1SimpleRegionClusteringAlgorithm} class. 
+
+Definition at line 43 of file Simple\+Region\+Clustering\+Algorithm.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1SimpleRegionClusteringAlgorithm_ac45a64f38c1c40885f7cc2830d6a731c}
+
+
+Definition at line 81 of file Simple\+Region\+Clustering\+Algorithm.\+cc.
+
+
+
+References m\+\_\+distance, m\+\_\+phi\+Angle, and m\+\_\+theta\+Angle.
+
+
+\begin{DoxyCode}
+82   \{
+83     m_thetaAngle = M\_PI/2;
+84     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+85         \textcolor{stringliteral}{"ThetaAngle"}, m_thetaAngle));
+86 
+87     m_phiAngle = 0;
+88     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+89         \textcolor{stringliteral}{"PhiAngle"}, m_phiAngle));
+90 
+91     m_distance = 500.f;
+92     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+93         \textcolor{stringliteral}{"Distance"}, m_distance));
+94 
+95     \textcolor{keywordflow}{if}(m_distance < 0.f)
+96       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+97 
+98     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+99   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1SimpleRegionClusteringAlgorithm_a7b6bbcd1e660c599f6764cffd9b04343}
+
+
+Definition at line 36 of file Simple\+Region\+Clustering\+Algorithm.\+cc.
+
+
+
+References m\+\_\+distance, m\+\_\+phi\+Angle, and m\+\_\+theta\+Angle.
+
+
+\begin{DoxyCode}
+37   \{
+38     \textcolor{keyword}{const} pandora::CaloHitList *pCaloHitList = NULL;
+39     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, 
+      pCaloHitList));
+40 
+41     pandora::CaloHitList clusterCaloHitList;
+42 
+43     pandora::CartesianVector clusteringDirection(
+44         std::sin(m_thetaAngle) * std::cos(m_phiAngle),
+45         std::sin(m_thetaAngle) * std::sin(m_phiAngle),
+46         std::cos(m_thetaAngle)
+47     );
+48 
+49     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = pCaloHitList->begin(), endIter = pCaloHitList->end() ;
+50         endIter !=iter ; ++iter)
+51     \{
+52       \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*iter);
+53 
+54       \textcolor{keywordflow}{if}(!PandoraContentApi::IsAvailable(*\textcolor{keyword}{this}, pCaloHit))
+55         \textcolor{keywordflow}{continue};
+56 
+57       \textcolor{keyword}{const} pandora::CartesianVector &position(pCaloHit->GetPositionVector());
+58       \textcolor{keyword}{const} \textcolor{keywordtype}{float} angle(position.GetOpeningAngle(clusteringDirection));
+59       \textcolor{keyword}{const} \textcolor{keywordtype}{float} distance(position.GetMagnitude()*std::sin(angle));
+60 
+61       \textcolor{keywordflow}{if}(distance > m_distance)
+62         \textcolor{keywordflow}{continue};
+63 
+64       clusterCaloHitList.insert(pCaloHit);
+65     \}
+66 
+67     \textcolor{keywordflow}{if}(!clusterCaloHitList.empty())
+68     \{
+69       \textcolor{keyword}{const} pandora::Cluster *pCluster = NULL;
+70       PandoraContentApi::ClusterParameters clusterParameters;
+71       clusterParameters.m\_caloHitList = clusterCaloHitList;
+72 
+73       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::Cluster::Create(*\textcolor{keyword}{this}, 
+      clusterParameters, pCluster));
+74     \}
+75 
+76     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+77   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm}!m\+\_\+distance@{m\+\_\+distance}}
+\index{m\+\_\+distance@{m\+\_\+distance}!arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm}}
+\subsubsection[{m\+\_\+distance}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm\+::m\+\_\+distance\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1SimpleRegionClusteringAlgorithm_a12c15312db4d69047a72f69e06a6e447}
+
+
+Definition at line 63 of file Simple\+Region\+Clustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm}!m\+\_\+phi\+Angle@{m\+\_\+phi\+Angle}}
+\index{m\+\_\+phi\+Angle@{m\+\_\+phi\+Angle}!arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm}}
+\subsubsection[{m\+\_\+phi\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm\+::m\+\_\+phi\+Angle\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1SimpleRegionClusteringAlgorithm_a7b38c3e19f3b6b558521551937666742}
+
+
+Definition at line 62 of file Simple\+Region\+Clustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+\index{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm}!m\+\_\+theta\+Angle@{m\+\_\+theta\+Angle}}
+\index{m\+\_\+theta\+Angle@{m\+\_\+theta\+Angle}!arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm@{arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm}}
+\subsubsection[{m\+\_\+theta\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Simple\+Region\+Clustering\+Algorithm\+::m\+\_\+theta\+Angle\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1SimpleRegionClusteringAlgorithm_a653e0598e7c8e3814182ffed7760ec81}
+
+
+Definition at line 61 of file Simple\+Region\+Clustering\+Algorithm.\+h.
+
+
+
+Referenced by Read\+Settings(), and Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Simple\+Region\+Clustering\+Algorithm.\+h}\item 
+{\bf Simple\+Region\+Clustering\+Algorithm.\+cc}\end{DoxyCompactItemize}

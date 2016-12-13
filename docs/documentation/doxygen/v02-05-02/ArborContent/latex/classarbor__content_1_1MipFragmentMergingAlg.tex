@@ -1,0 +1,1104 @@
+\section{arbor\+\_\+content\+:\+:Mip\+Fragment\+Merging\+Alg Class Reference}
+\label{classarbor__content_1_1MipFragmentMergingAlg}\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+
+
+\doxyref{Mip\+Fragment\+Merging\+Alg}{p.}{classarbor__content_1_1MipFragmentMergingAlg} class.  
+
+
+
+
+{\ttfamily \#include $<$Mip\+Fragment\+Merging\+Alg.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Mip\+Fragment\+Merging\+Alg\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1MipFragmentMergingAlg}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1MipFragmentMergingAlg_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ const \\*
+pandora\+::\+Cluster $\ast$, const \\*
+pandora\+::\+Cluster $\ast$ $>$ {\bf Cluster\+To\+Cluster\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\item 
+pandora\+::\+Status\+Code {\bf Read\+Settings} (const pandora\+::\+Ti\+Xml\+Handle xml\+Handle)
+\item 
+pandora\+::\+Status\+Code {\bf Find\+Mip\+Fragments} (const pandora\+::\+Cluster\+Vector \&cluster\+Vector, {\bf Cluster\+To\+Cluster\+Map} \&cluster\+To\+Cluster\+Map) const 
+\begin{DoxyCompactList}\small\item\em Find mip cluster fragments and their most probable parent cluster. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Find\+Charged\+Mip\+Fragments} (const pandora\+::\+Cluster\+Vector \&cluster\+Vector, {\bf Cluster\+To\+Cluster\+Map} \&cluster\+To\+Cluster\+Map)
+\item 
+bool {\bf Is\+Mip\+Fragment} (const pandora\+::\+Cluster $\ast$const p\+Cluster) const 
+\begin{DoxyCompactList}\small\item\em Whether the cluster is a mip fragment. \end{DoxyCompactList}\item 
+bool {\bf Is\+Possible\+Parent} (const pandora\+::\+Cluster $\ast$const p\+Cluster) const 
+\begin{DoxyCompactList}\small\item\em Whether the cluster is a possible parent cluster to merge a mip in. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Find\+Mip\+Parent\+Cluster} (const pandora\+::\+Cluster $\ast$const p\+Mip\+Cluster, const pandora\+::\+Cluster\+Vector \&cluster\+Vector, const pandora\+::\+Cluster $\ast$\&p\+Parent\+Cluster) const 
+\begin{DoxyCompactList}\small\item\em Find the best possible parent cluster for the target mip cluster. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Merge\+Clusters} ({\bf Cluster\+To\+Cluster\+Map} \&cluster\+To\+Cluster\+Map) const 
+\begin{DoxyCompactList}\small\item\em Merge mip clusters into their parent. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Tidy\+Cluster\+Map} (const pandora\+::\+Cluster $\ast$const p\+Replace\+Cluster, const pandora\+::\+Cluster $\ast$const p\+Remove\+Cluster, {\bf Cluster\+To\+Cluster\+Map} \&cluster\+To\+Cluster\+Map) const 
+\begin{DoxyCompactList}\small\item\em Tidy the cluster map by replacing occurrences of clusters that will be deleted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\+\_\+discriminate\+Photon\+Pid}
+\begin{DoxyCompactList}\small\item\em Whether to discriminate photons. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+max\+Mip\+Transverse\+Ratio}
+\begin{DoxyCompactList}\small\item\em The min transverse ratio to consider a mip. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+max\+N\+Hits\+Per\+Layer}
+\begin{DoxyCompactList}\small\item\em The max number of hits per layer to consider a mip. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+min\+N\+Hits\+Per\+Layer}
+\begin{DoxyCompactList}\small\item\em The min number of hits per layer to consider a mip. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+min\+Parent\+Cluster\+Energy}
+\begin{DoxyCompactList}\small\item\em The min parent cluster energy for a potential merging. \end{DoxyCompactList}\item 
+unsigned int {\bf m\+\_\+min\+Daughter\+Cluster\+N\+Hits}
+\begin{DoxyCompactList}\small\item\em The min number of hits to consider a mip. \end{DoxyCompactList}\item 
+unsigned int {\bf m\+\_\+min\+Parent\+Cluster\+N\+Hits}
+\begin{DoxyCompactList}\small\item\em The min number of hits to consider a parent cluster. \end{DoxyCompactList}\item 
+unsigned int {\bf m\+\_\+min\+Daughter\+Cluster\+N\+Pseudo\+Layers}
+\begin{DoxyCompactList}\small\item\em The min number of pseudo layer to consider a mip. \end{DoxyCompactList}\item 
+unsigned int {\bf m\+\_\+min\+Inner\+Pseudo\+Layer}
+\begin{DoxyCompactList}\small\item\em The min inner pseudo layer id to consider a mip. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+max\+Mip\+Backward\+Angle}
+\begin{DoxyCompactList}\small\item\em The max backward angle between a parent cluster and the mip. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+max\+Mip\+Backward\+Distance}
+\begin{DoxyCompactList}\small\item\em The max backward distance between the parent cluster and the start of mip. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer}
+\begin{DoxyCompactList}\small\item\em The max pseudo layer between two clusters. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer2}
+\begin{DoxyCompactList}\small\item\em The max pseudo layer between two clusters. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer3}
+\begin{DoxyCompactList}\small\item\em The max pseudo layer between two clusters. \end{DoxyCompactList}\item 
+unsigned int {\bf m\+\_\+min\+Parent\+Cluster\+Backward\+N\+Hits}
+\begin{DoxyCompactList}\small\item\em The min number of hits within the R\+O\+I to consider a parent cluster. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+min\+Mip\+N\+Efficient\+Layer\+Fraction}
+\begin{DoxyCompactList}\small\item\em The min numer of efficient pseudo layer to consider a mip. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+min\+Mip\+Chi2}
+\item 
+unsigned int {\bf m\+\_\+n\+Parent\+Fit\+Pseudo\+Layers}
+\item 
+float {\bf m\+\_\+max\+Cosine\+Direction}
+\item 
+float {\bf m\+\_\+max\+Cosine\+Direction2}
+\item 
+float {\bf m\+\_\+max\+Cosine\+Direction3}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Mip\+Fragment\+Merging\+Alg}{p.}{classarbor__content_1_1MipFragmentMergingAlg} class. 
+
+Definition at line 41 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!Cluster\+To\+Cluster\+Map@{Cluster\+To\+Cluster\+Map}}
+\index{Cluster\+To\+Cluster\+Map@{Cluster\+To\+Cluster\+Map}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{Cluster\+To\+Cluster\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<$const pandora\+::\+Cluster $\ast$, const pandora\+::\+Cluster $\ast$$>$ {\bf arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::\+Cluster\+To\+Cluster\+Map}\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a7ba537a2d29367ecddf739780b584350}
+
+
+Definition at line 57 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!Find\+Charged\+Mip\+Fragments@{Find\+Charged\+Mip\+Fragments}}
+\index{Find\+Charged\+Mip\+Fragments@{Find\+Charged\+Mip\+Fragments}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{Find\+Charged\+Mip\+Fragments}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::\+Find\+Charged\+Mip\+Fragments (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster\+Vector \&}]{cluster\+Vector, }
+\item[{{\bf Cluster\+To\+Cluster\+Map} \&}]{cluster\+To\+Cluster\+Map}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_aea5f31de2217248ffe1af7cb12022e2c}
+
+
+Definition at line 268 of file Mip\+Fragment\+Merging\+Alg.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Chi\+Cluster\+Merging(), Is\+Mip\+Fragment(), m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer, m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer2, m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer3, m\+\_\+max\+Cosine\+Direction, m\+\_\+max\+Cosine\+Direction2, m\+\_\+max\+Cosine\+Direction3, and m\+\_\+n\+Parent\+Fit\+Pseudo\+Layers.
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+269   \{
+270     pandora::ClusterList associatedDaughterClusterList;
+271 
+272     \textcolor{keywordflow}{for}(pandora::ClusterVector::const\_iterator iIter = clusterVector.begin(), iEndIter = clusterVector.end(
+      ) ;
+273         iEndIter != iIter ; ++iIter)
+274     \{
+275       \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pParentCluster(*iIter);
+276 
+277       \textcolor{comment}{// mip fragment ?}
+278       \textcolor{keywordflow}{if}(!this->IsMipFragment(pParentCluster))
+279         \textcolor{keywordflow}{continue};
+280 
+281       \textcolor{keywordflow}{if}(pParentCluster->GetAssociatedTrackList().empty())
+282         \textcolor{keywordflow}{continue};
+283 
+284       \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} parentOuterPseudoLayer(pParentCluster->GetOuterPseudoLayer());
+285 
+286       pandora::ClusterFitResult parentClusterFitResult;
+287 
+288       \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != pandora::ClusterFitHelper::FitEnd(pParentCluster, 
+      m_nParentFitPseudoLayers, parentClusterFitResult))
+289         \textcolor{keywordflow}{continue};
+290 
+291       \textcolor{keywordflow}{if}(!parentClusterFitResult.IsFitSuccessful())
+292         \textcolor{keywordflow}{continue};
+293 
+294       \textcolor{keyword}{const} pandora::CartesianVector &parentClusterDirection(parentClusterFitResult.GetDirection());
+295       \textcolor{keyword}{const} pandora::CartesianVector parentEndPoint(pParentCluster->GetCentroid(parentOuterPseudoLayer));
+296 
+297       \textcolor{keywordflow}{for}(pandora::ClusterVector::const\_iterator jIter = clusterVector.begin(), jEndIter = clusterVector.
+      end() ;
+298           jEndIter != jIter ; ++jIter)
+299       \{
+300         \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pDaughterCluster(*jIter);
+301 
+302         \textcolor{keywordflow}{if}(pDaughterCluster == pParentCluster)
+303           \textcolor{keywordflow}{continue};
+304 
+305         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} daughterInnerPseudoLayer(pDaughterCluster->GetInnerPseudoLayer());
+306 
+307         \textcolor{keywordflow}{if}(daughterInnerPseudoLayer <= parentOuterPseudoLayer)
+308           \textcolor{keywordflow}{continue};
+309 
+310         \textcolor{keywordflow}{if}(associatedDaughterClusterList.find(pDaughterCluster) != associatedDaughterClusterList.end())
+311           \textcolor{keywordflow}{continue};
+312 
+313         \textcolor{keywordtype}{float} oldChi(0.f), newChi(0.f);
+314 
+315         \textcolor{keywordflow}{if}(pandora::STATUS\_CODE\_SUCCESS != ClusterHelper::GetChiClusterMerging(this->GetPandora(), 
+      pParentCluster, pDaughterCluster, oldChi, newChi))
+316           \textcolor{keywordflow}{continue};
+317 
+318         \textcolor{comment}{// check for track cluster E-p compatibility improvement}
+319         \textcolor{keywordflow}{if}(oldChi*oldChi < newChi*newChi)
+320           \textcolor{keywordflow}{continue};
+321 
+322         \textcolor{keyword}{const} pandora::CartesianVector daughterStartPoint(pDaughterCluster->GetCentroid(
+      daughterInnerPseudoLayer));
+323         \textcolor{keyword}{const} \textcolor{keywordtype}{float} cosineDirection( (daughterStartPoint-parentEndPoint).GetCosOpeningAngle(
+      parentClusterDirection) );
+324         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pseudoLayerDifference(daughterInnerPseudoLayer-parentOuterPseudoLayer);
+325         \textcolor{keywordtype}{bool} possibleAssociation(\textcolor{keyword}{false});
+326 
+327         \textcolor{keywordflow}{if}((pseudoLayerDifference < m_maxClusterSeparationPseudoLayer) && (cosineDirection > 
+      m_maxCosineDirection))
+328         \{
+329           possibleAssociation = \textcolor{keyword}{true};
+330         \}
+331         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((pseudoLayerDifference < m_maxClusterSeparationPseudoLayer2) && (cosineDirection > 
+      m_maxCosineDirection2))
+332         \{
+333           possibleAssociation = \textcolor{keyword}{true};
+334         \}
+335         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((pseudoLayerDifference < m_maxClusterSeparationPseudoLayer3) && (cosineDirection > 
+      m_maxCosineDirection3))
+336         \{
+337           possibleAssociation = \textcolor{keyword}{true};
+338         \}
+339 
+340         \textcolor{keywordflow}{if}(possibleAssociation)
+341         \{
+342           \textcolor{keywordflow}{if}(!associatedDaughterClusterList.insert(pDaughterCluster).second)
+343             \textcolor{keywordflow}{continue};
+344 
+345           clusterToClusterMap[pDaughterCluster] = pParentCluster;
+346         \}
+347       \}
+348     \}
+349 
+350     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+351   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!Find\+Mip\+Fragments@{Find\+Mip\+Fragments}}
+\index{Find\+Mip\+Fragments@{Find\+Mip\+Fragments}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{Find\+Mip\+Fragments}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::\+Find\+Mip\+Fragments (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster\+Vector \&}]{cluster\+Vector, }
+\item[{{\bf Cluster\+To\+Cluster\+Map} \&}]{cluster\+To\+Cluster\+Map}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a1249db1ec7c0fe22ec6aaea50088c60a}
+
+
+Find mip cluster fragments and their most probable parent cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cluster\+Vector} & the input cluster list \\
+\hline
+{\em cluster\+To\+Cluster\+Map} & the map of mip cluster to parent cluster to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file Mip\+Fragment\+Merging\+Alg.\+cc.
+
+
+
+References Find\+Mip\+Parent\+Cluster(), and Is\+Mip\+Fragment().
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+72   \{
+73     \textcolor{keywordflow}{for}(pandora::ClusterVector::const\_reverse\_iterator iIter = clusterVector.rbegin(), iEndIter = 
+      clusterVector.rend() ;
+74         iEndIter != iIter ; ++iIter)
+75     \{
+76       \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pDaughterCluster(*iIter);
+77 
+78       \textcolor{comment}{// mip fragment ?}
+79       \textcolor{keywordflow}{if}(!this->IsMipFragment(pDaughterCluster))
+80         \textcolor{keywordflow}{continue};
+81 
+82       \textcolor{keywordflow}{if}(!pDaughterCluster->GetAssociatedTrackList().empty())
+83         \textcolor{keywordflow}{continue};
+84 
+85       \textcolor{keyword}{const} pandora::Cluster *pBestCluster(NULL);
+86 
+87       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      FindMipParentCluster(pDaughterCluster, clusterVector, pBestCluster));
+88 
+89       \textcolor{keywordflow}{if}(NULL != pBestCluster)
+90         clusterToClusterMap[pDaughterCluster] = pBestCluster;
+91     \}
+92 
+93     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+94   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!Find\+Mip\+Parent\+Cluster@{Find\+Mip\+Parent\+Cluster}}
+\index{Find\+Mip\+Parent\+Cluster@{Find\+Mip\+Parent\+Cluster}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{Find\+Mip\+Parent\+Cluster}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::\+Find\+Mip\+Parent\+Cluster (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Mip\+Cluster, }
+\item[{const pandora\+::\+Cluster\+Vector \&}]{cluster\+Vector, }
+\item[{const pandora\+::\+Cluster $\ast$\&}]{p\+Parent\+Cluster}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a162a042a8096dca36be278ffa6235a96}
+
+
+Find the best possible parent cluster for the target mip cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Mip\+Cluster} & the mip cluster address \\
+\hline
+{\em cluster\+Vector} & the input list of potential parent cluster \\
+\hline
+{\em p\+Parent\+Cluster} & the parent cluster address to receive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 98 of file Mip\+Fragment\+Merging\+Alg.\+cc.
+
+
+
+References Is\+Possible\+Parent(), m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer, m\+\_\+max\+Mip\+Backward\+Angle, m\+\_\+max\+Mip\+Backward\+Distance, and m\+\_\+min\+Parent\+Cluster\+Backward\+N\+Hits.
+
+
+
+Referenced by Find\+Mip\+Fragments().
+
+
+\begin{DoxyCode}
+99   \{
+100     pParentCluster = NULL;
+101 
+102     \textcolor{keyword}{const} pandora::CartesianVector mipInnerCentroid(pMipCluster->GetCentroid(pMipCluster->
+      GetInnerPseudoLayer()));
+103     \textcolor{keyword}{const} pandora::CartesianVector mipBackwardDirection(pMipCluster->GetFitToAllHitsResult().GetDirection()
+       * -1.f);
+104     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} maxBackwardPseudoLayer(pMipCluster->GetInnerPseudoLayer() >= 
+      m_maxClusterSeparationPseudoLayer ? 0 : pMipCluster->GetInnerPseudoLayer()-
+      m_maxClusterSeparationPseudoLayer);
+105 
+106     \textcolor{keywordtype}{float} bestDistanceToCluster(std::numeric\_limits<float>::max());
+107     \textcolor{keywordtype}{float} bestAngleWithMip(std::numeric\_limits<float>::max());
+108 
+109     \textcolor{keywordflow}{for}(pandora::ClusterVector::const\_reverse\_iterator jIter = clusterVector.rbegin(), jEndIter = 
+      clusterVector.rend() ;
+110         jEndIter != jIter ; ++jIter)
+111     \{
+112       \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pCluster(*jIter);
+113 
+114       \textcolor{keywordflow}{if}(pCluster == pMipCluster)
+115         \textcolor{keywordflow}{continue};
+116 
+117       \textcolor{keywordflow}{if}(!this->IsPossibleParent(pCluster))
+118         \textcolor{keywordflow}{continue};
+119 
+120       \textcolor{keyword}{const} pandora::OrderedCaloHitList &orderedCaloHitList(pCluster->GetOrderedCaloHitList());
+121       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nHitsInRoi(0);
+122       pandora::CartesianVector centroidInRoi(0.f, 0.f, 0.f);
+123 
+124       \textcolor{keywordflow}{for}(pandora::OrderedCaloHitList::const\_reverse\_iterator layerIter = orderedCaloHitList.rbegin(), 
+      layerEndIter = orderedCaloHitList.rend() ;
+125           layerEndIter != layerIter ; ++layerIter)
+126       \{
+127         \textcolor{keywordflow}{if}(layerIter->first <= maxBackwardPseudoLayer)
+128           \textcolor{keywordflow}{break};
+129 
+130         \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iterI = layerIter->second->begin(), endIterI = layerIter->
+      second->end() ;
+131             endIterI != iterI ; ++iterI)
+132         \{
+133           \textcolor{keyword}{const} pandora::CaloHit *\textcolor{keyword}{const} pCaloHit(*iterI);
+134 
+135           \textcolor{keyword}{const} pandora::CartesianVector differenceVector(pCaloHit->GetPositionVector()-mipInnerCentroid);
+136           \textcolor{keyword}{const} \textcolor{keywordtype}{float} distanceToHit(differenceVector.GetMagnitude());
+137           \textcolor{keyword}{const} \textcolor{keywordtype}{float} angleWithMip(differenceVector.GetOpeningAngle(mipBackwardDirection));
+138 
+139           \textcolor{keywordflow}{if}(distanceToHit > m_maxMipBackwardDistance || angleWithMip > 
+      m_maxMipBackwardAngle)
+140             \textcolor{keywordflow}{continue};
+141 
+142           ++nHitsInRoi;
+143           centroidInRoi += pCaloHit->GetPositionVector();
+144         \}
+145       \}
+146 
+147       \textcolor{keywordflow}{if}(nHitsInRoi < m_minParentClusterBackwardNHits)
+148         \textcolor{keywordflow}{continue};
+149 
+150       centroidInRoi = centroidInRoi * (1.f/nHitsInRoi);
+151       \textcolor{keyword}{const} \textcolor{keywordtype}{float} angleWithMip((centroidInRoi - mipInnerCentroid).GetOpeningAngle(mipBackwardDirection));
+152       \textcolor{keyword}{const} \textcolor{keywordtype}{float} distanceToCluster((mipInnerCentroid - centroidInRoi).GetMagnitude());
+153 
+154       \textcolor{keywordflow}{if}(distanceToCluster < bestDistanceToCluster && angleWithMip < bestAngleWithMip)
+155       \{
+156         bestDistanceToCluster = distanceToCluster;
+157         bestAngleWithMip = angleWithMip;
+158         pParentCluster = pCluster;
+159       \}
+160     \}
+161 
+162     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+163   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!Is\+Mip\+Fragment@{Is\+Mip\+Fragment}}
+\index{Is\+Mip\+Fragment@{Is\+Mip\+Fragment}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{Is\+Mip\+Fragment}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::\+Is\+Mip\+Fragment (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_aebc4cc7842b0d8cde908f5a56ce3562a}
+
+
+Whether the cluster is a mip fragment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the target cluster address\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool whether the cluster is a mip cluster fragment 
+\end{DoxyReturn}
+
+
+Definition at line 212 of file Mip\+Fragment\+Merging\+Alg.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Cluster\+Pca\+::\+Get\+Transverse\+Ratio(), m\+\_\+discriminate\+Photon\+Pid, m\+\_\+max\+Mip\+Transverse\+Ratio, m\+\_\+max\+N\+Hits\+Per\+Layer, m\+\_\+min\+Daughter\+Cluster\+N\+Hits, m\+\_\+min\+Daughter\+Cluster\+N\+Pseudo\+Layers, m\+\_\+min\+Mip\+N\+Efficient\+Layer\+Fraction, and m\+\_\+min\+N\+Hits\+Per\+Layer.
+
+
+
+Referenced by Find\+Charged\+Mip\+Fragments(), and Find\+Mip\+Fragments().
+
+
+\begin{DoxyCode}
+213   \{
+214     \textcolor{keywordflow}{if}(NULL == pCluster)
+215       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+216 
+217     \textcolor{keywordflow}{if}(pCluster->GetNCaloHits() < m_minDaughterClusterNHits)
+218       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+219 
+220     \textcolor{keywordflow}{if}(m_discriminatePhotonPid && pCluster->IsPhotonFast(this->GetPandora()))
+221       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+222 
+223     \textcolor{keywordflow}{try}
+224     \{
+225       ClusterPca clusterPca(pCluster);
+226 
+227       \textcolor{keywordflow}{if}(clusterPca.GetTransverseRatio() > m_maxMipTransverseRatio)
+228         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+229     \}
+230     \textcolor{keywordflow}{catch}(pandora::StatusCodeException &exception)
+231     \{
+232       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+233     \}
+234 
+235     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nPseudoLayers(pCluster->GetOuterPseudoLayer() - pCluster->GetInnerPseudoLayer() + 1)
+      ;
+236     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nTouchedPseudoLayers(pCluster->GetOrderedCaloHitList().size());
+237     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nCaloHits(pCluster->GetNCaloHits());
+238     \textcolor{keyword}{const} \textcolor{keywordtype}{float} nHitsPerLayer(static\_cast<float>(nCaloHits) / static\_cast<float>(nTouchedPseudoLayers));
+239     \textcolor{keyword}{const} \textcolor{keywordtype}{float} efficientLayers(static\_cast<float>(nTouchedPseudoLayers)/static\_cast<float>(nPseudoLayers))
+      ;
+240 
+241     \textcolor{keywordflow}{if}(nPseudoLayers < m_minDaughterClusterNPseudoLayers)
+242       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+243 
+244     \textcolor{keywordflow}{if}(nHitsPerLayer > m_maxNHitsPerLayer || nHitsPerLayer < m_minNHitsPerLayer)
+245       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+246 
+247     \textcolor{keywordflow}{if}(efficientLayers < m_minMipNEfficientLayerFraction)
+248       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+249 
+250     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+251   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!Is\+Possible\+Parent@{Is\+Possible\+Parent}}
+\index{Is\+Possible\+Parent@{Is\+Possible\+Parent}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{Is\+Possible\+Parent}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::\+Is\+Possible\+Parent (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a63c5428468e7de4f968d86e8c1ad56d7}
+
+
+Whether the cluster is a possible parent cluster to merge a mip in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cluster} & the target address cluster\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool whether the cluster is a possible parent cluster 
+\end{DoxyReturn}
+
+
+Definition at line 255 of file Mip\+Fragment\+Merging\+Alg.\+cc.
+
+
+
+References m\+\_\+discriminate\+Photon\+Pid, m\+\_\+min\+Parent\+Cluster\+Energy, and m\+\_\+min\+Parent\+Cluster\+N\+Hits.
+
+
+
+Referenced by Find\+Mip\+Parent\+Cluster().
+
+
+\begin{DoxyCode}
+256   \{
+257     \textcolor{keywordflow}{if}(pCluster->GetHadronicEnergy() < m_minParentClusterEnergy || pCluster->GetNCaloHits() < 
+      m_minParentClusterNHits)
+258       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+259 
+260     \textcolor{keywordflow}{if}(m_discriminatePhotonPid && pCluster->GetParticleIdFlag() == pandora::PHOTON)
+261       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+262 
+263     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+264   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!Merge\+Clusters@{Merge\+Clusters}}
+\index{Merge\+Clusters@{Merge\+Clusters}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{Merge\+Clusters}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::\+Merge\+Clusters (
+\begin{DoxyParamCaption}
+\item[{{\bf Cluster\+To\+Cluster\+Map} \&}]{cluster\+To\+Cluster\+Map}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a8e87d59a7adf07c57f5ca4244bcd0188}
+
+
+Merge mip clusters into their parent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cluster\+To\+Cluster\+Map} & the cluster map to process \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file Mip\+Fragment\+Merging\+Alg.\+cc.
+
+
+
+References Tidy\+Cluster\+Map().
+
+
+
+Referenced by Run().
+
+
+\begin{DoxyCode}
+168   \{
+169     \textcolor{keywordflow}{for}(ClusterToClusterMap::iterator iter = clusterToClusterMap.begin(), endIter = clusterToClusterMap.end
+      () ;
+170         endIter != iter ; ++iter)
+171     \{
+172       \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pDaughterCluster(iter->first);
+173       \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pParentCluster(iter->second);
+174 
+175       \textcolor{keywordflow}{if}((NULL == pDaughterCluster) || (NULL == pParentCluster))
+176         \textcolor{keywordflow}{continue};
+177 
+178       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      TidyClusterMap(pParentCluster, pDaughterCluster, clusterToClusterMap));
+179       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::MergeAndDeleteClusters(
+      *\textcolor{keyword}{this}, pParentCluster, pDaughterCluster));
+180 
+181       (iter->second) = NULL;
+182     \}
+183 
+184     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+185   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!Read\+Settings@{Read\+Settings}}
+\index{Read\+Settings@{Read\+Settings}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{Read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::\+Read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Ti\+Xml\+Handle}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_ae6aeb18d6dedbcc19ec7f804bde2c4a6}
+
+
+Definition at line 355 of file Mip\+Fragment\+Merging\+Alg.\+cc.
+
+
+
+References m\+\_\+discriminate\+Photon\+Pid, m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer, m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer2, m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer3, m\+\_\+max\+Cosine\+Direction, m\+\_\+max\+Cosine\+Direction2, m\+\_\+max\+Cosine\+Direction3, m\+\_\+max\+Mip\+Backward\+Angle, m\+\_\+max\+Mip\+Backward\+Distance, m\+\_\+max\+Mip\+Transverse\+Ratio, m\+\_\+max\+N\+Hits\+Per\+Layer, m\+\_\+min\+Daughter\+Cluster\+N\+Hits, m\+\_\+min\+Daughter\+Cluster\+N\+Pseudo\+Layers, m\+\_\+min\+Inner\+Pseudo\+Layer, m\+\_\+min\+Mip\+Chi2, m\+\_\+min\+Mip\+N\+Efficient\+Layer\+Fraction, m\+\_\+min\+N\+Hits\+Per\+Layer, m\+\_\+min\+Parent\+Cluster\+Backward\+N\+Hits, m\+\_\+min\+Parent\+Cluster\+Energy, m\+\_\+min\+Parent\+Cluster\+N\+Hits, and m\+\_\+n\+Parent\+Fit\+Pseudo\+Layers.
+
+
+\begin{DoxyCode}
+356   \{
+357     m_discriminatePhotonPid = \textcolor{keyword}{true};
+358     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+359         \textcolor{stringliteral}{"DiscriminatePhotonPid"}, m_discriminatePhotonPid));
+360 
+361     m_maxMipTransverseRatio = 0.05f;
+362     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+363         \textcolor{stringliteral}{"MaxMipTransverseRatio"}, m_maxMipTransverseRatio));
+364 
+365     m_minDaughterClusterNHits = 5;
+366     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+367         \textcolor{stringliteral}{"MinDaughterClusterNHits"}, m_minDaughterClusterNHits));
+368 
+369     m_maxNHitsPerLayer = 2.f;
+370     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+371         \textcolor{stringliteral}{"MaxNHitsPerLayer"}, m_maxNHitsPerLayer));
+372 
+373     m_minNHitsPerLayer = 0.7;
+374     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+375         \textcolor{stringliteral}{"MinNHitsPerLayer"}, m_minNHitsPerLayer));
+376 
+377     m_minParentClusterEnergy = 0.3f;
+378     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+379         \textcolor{stringliteral}{"MinParentClusterEnergy"}, m_minParentClusterEnergy));
+380 
+381     m_minParentClusterNHits = 5;
+382     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+383         \textcolor{stringliteral}{"MinParentClusterNHits"}, m_minParentClusterNHits));
+384 
+385     m_minDaughterClusterNPseudoLayers = 4;
+386     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+387         \textcolor{stringliteral}{"MinDaughterClusterNPseudoLayers"}, m_minDaughterClusterNPseudoLayers));
+388 
+389     m_minInnerPseudoLayer = 5;
+390     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+391         \textcolor{stringliteral}{"MinInnerPseudoLayer"}, m_minInnerPseudoLayer));
+392 
+393     m_maxMipBackwardAngle = 0.35;
+394     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+395         \textcolor{stringliteral}{"MaxMipBackwardAngle"}, m_maxMipBackwardAngle));
+396 
+397     m_maxMipBackwardDistance = 600.f;
+398     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+399         \textcolor{stringliteral}{"MaxMipBackwardDistance"}, m_maxMipBackwardDistance));
+400 
+401     m_maxClusterSeparationPseudoLayer = 10;
+402     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+403         \textcolor{stringliteral}{"MaxClusterSeparationPseudoLayer"}, m_maxClusterSeparationPseudoLayer));
+404 
+405     m_maxClusterSeparationPseudoLayer2 = 15;
+406     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+407         \textcolor{stringliteral}{"MaxClusterSeparationPseudoLayer2"}, m_maxClusterSeparationPseudoLayer2));
+408 
+409     m_maxClusterSeparationPseudoLayer3 = 20;
+410     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+411         \textcolor{stringliteral}{"MaxClusterSeparationPseudoLayer3"}, m_maxClusterSeparationPseudoLayer3));
+412 
+413     m_minParentClusterBackwardNHits = 5;
+414     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+415         \textcolor{stringliteral}{"MinParentClusterBackwardNHits"}, m_minParentClusterBackwardNHits));
+416 
+417     m_minMipNEfficientLayerFraction = 0.8f;
+418     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+419         \textcolor{stringliteral}{"MinMipNEfficientLayerFraction"}, m_minMipNEfficientLayerFraction));
+420 
+421     m_minMipChi2 = 1.f;
+422     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+423         \textcolor{stringliteral}{"MinMipChi2"}, m_minMipChi2));
+424 
+425     m_nParentFitPseudoLayers = 5;
+426     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+427         \textcolor{stringliteral}{"NParentFitPseudoLayers"}, m_nParentFitPseudoLayers));
+428 
+429     m_maxCosineDirection = 0.85;
+430     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+431         \textcolor{stringliteral}{"MaxCosineDirection"}, m_maxCosineDirection));
+432 
+433     m_maxCosineDirection2 = 0.9;
+434     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+435         \textcolor{stringliteral}{"MaxCosineDirection2"}, m_maxCosineDirection2));
+436 
+437     m_maxCosineDirection3 = 0.95;
+438     PANDORA\_RETURN\_RESULT\_IF\_AND\_IF(pandora::STATUS\_CODE\_SUCCESS, pandora::STATUS\_CODE\_NOT\_FOUND, !=, 
+      pandora::XmlHelper::ReadValue(xmlHandle,
+439         \textcolor{stringliteral}{"MaxCosineDirection3"}, m_maxCosineDirection3));
+440 
+441     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+442   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_aeff831761c4f9baccfd5089f24824c4e}
+
+
+Definition at line 42 of file Mip\+Fragment\+Merging\+Alg.\+cc.
+
+
+
+References Find\+Charged\+Mip\+Fragments(), Find\+Mip\+Fragments(), Merge\+Clusters(), and arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+Clusters\+By\+Inner\+Layer().
+
+
+\begin{DoxyCode}
+43   \{
+44     \textcolor{keyword}{const} pandora::ClusterList *pClusterList = NULL;
+45     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::GetCurrentList(*\textcolor{keyword}{this}, 
+      pClusterList));
+46 
+47     \textcolor{keywordflow}{if}(pClusterList->empty())
+48       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+49 
+50     pandora::ClusterVector clusterVector(pClusterList->begin(), pClusterList->end());
+51     std::sort(clusterVector.begin(), clusterVector.end(), 
+      SortingHelper::SortClustersByInnerLayer);
+52 
+53     ClusterToClusterMap mipToParentClusterMap;
+54     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      FindMipFragments(clusterVector, mipToParentClusterMap));
+55     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      MergeClusters(mipToParentClusterMap));
+56 
+57     \textcolor{comment}{// clear content and perform second step}
+58     clusterVector.clear(); mipToParentClusterMap.clear();
+59     clusterVector.insert(clusterVector.end(), pClusterList->begin(), pClusterList->end());
+60     std::sort(clusterVector.begin(), clusterVector.end(), 
+      SortingHelper::SortClustersByInnerLayer);
+61     std::sort(clusterVector.begin(), clusterVector.end(), SortingHelper::SortClusterByOmegaTracks(&this->
+      GetPandora()));
+62 
+63     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      FindChargedMipFragments(clusterVector, mipToParentClusterMap));
+64     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, this->
+      MergeClusters(mipToParentClusterMap));
+65 
+66     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+67   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!Tidy\+Cluster\+Map@{Tidy\+Cluster\+Map}}
+\index{Tidy\+Cluster\+Map@{Tidy\+Cluster\+Map}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{Tidy\+Cluster\+Map}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::\+Tidy\+Cluster\+Map (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Replace\+Cluster, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Remove\+Cluster, }
+\item[{{\bf Cluster\+To\+Cluster\+Map} \&}]{cluster\+To\+Cluster\+Map}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_ad287466868370bf2574eacb21aba81e6}
+
+
+Tidy the cluster map by replacing occurrences of clusters that will be deleted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Replace\+Cluster} & the cluster address to replace \\
+\hline
+{\em p\+Remove\+Cluster} & the cluster address to remove from the map \\
+\hline
+{\em cluster\+To\+Cluster\+Map} & the target cluster map \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 189 of file Mip\+Fragment\+Merging\+Alg.\+cc.
+
+
+
+Referenced by Merge\+Clusters().
+
+
+\begin{DoxyCode}
+190   \{
+191     \textcolor{keywordflow}{if}((NULL == pReplaceCluster) || (NULL == pRemoveCluster))
+192       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+193 
+194     \textcolor{keywordflow}{if}(pReplaceCluster == pRemoveCluster)
+195       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+196 
+197     \textcolor{keywordflow}{for}(ClusterToClusterMap::iterator iter = clusterToClusterMap.begin(), endIter = clusterToClusterMap.end
+      () ;
+198         endIter != iter ; ++iter)
+199     \{
+200       \textcolor{keywordflow}{if}(iter->first == pRemoveCluster)
+201         \textcolor{keywordflow}{continue};
+202 
+203       \textcolor{keywordflow}{if}(iter->second == pRemoveCluster)
+204         iter->second = pReplaceCluster;
+205     \}
+206 
+207     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+208   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+discriminate\+Photon\+Pid@{m\+\_\+discriminate\+Photon\+Pid}}
+\index{m\+\_\+discriminate\+Photon\+Pid@{m\+\_\+discriminate\+Photon\+Pid}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+discriminate\+Photon\+Pid}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+discriminate\+Photon\+Pid\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a38fb4be295e4176dc0dd24fa00a11d81}
+
+
+Whether to discriminate photons. 
+
+
+
+Definition at line 117 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Is\+Mip\+Fragment(), Is\+Possible\+Parent(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer@{m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer}}
+\index{m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer@{m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a5b50f0141911db448861c8ea9d6ae223}
+
+
+The max pseudo layer between two clusters. 
+
+
+
+Definition at line 128 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Find\+Charged\+Mip\+Fragments(), Find\+Mip\+Parent\+Cluster(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer2@{m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer2}}
+\index{m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer2@{m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer2}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer2}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer2\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a6a52384cc21259a4d4e7519d7987c681}
+
+
+The max pseudo layer between two clusters. 
+
+
+
+Definition at line 129 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Find\+Charged\+Mip\+Fragments(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer3@{m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer3}}
+\index{m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer3@{m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer3}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer3}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+max\+Cluster\+Separation\+Pseudo\+Layer3\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_afabf25129c7e966531d5a0298290de42}
+
+
+The max pseudo layer between two clusters. 
+
+
+
+Definition at line 130 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Find\+Charged\+Mip\+Fragments(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+max\+Cosine\+Direction@{m\+\_\+max\+Cosine\+Direction}}
+\index{m\+\_\+max\+Cosine\+Direction@{m\+\_\+max\+Cosine\+Direction}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+max\+Cosine\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+max\+Cosine\+Direction\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_afd685e17224c3ddddd5c9e2f8505b666}
+
+
+Definition at line 135 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Find\+Charged\+Mip\+Fragments(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+max\+Cosine\+Direction2@{m\+\_\+max\+Cosine\+Direction2}}
+\index{m\+\_\+max\+Cosine\+Direction2@{m\+\_\+max\+Cosine\+Direction2}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+max\+Cosine\+Direction2}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+max\+Cosine\+Direction2\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a352af7873c768877efbe25205257c6c7}
+
+
+Definition at line 136 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Find\+Charged\+Mip\+Fragments(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+max\+Cosine\+Direction3@{m\+\_\+max\+Cosine\+Direction3}}
+\index{m\+\_\+max\+Cosine\+Direction3@{m\+\_\+max\+Cosine\+Direction3}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+max\+Cosine\+Direction3}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+max\+Cosine\+Direction3\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a80366e7017debc12b3cbb70acb6644cb}
+
+
+Definition at line 137 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Find\+Charged\+Mip\+Fragments(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+max\+Mip\+Backward\+Angle@{m\+\_\+max\+Mip\+Backward\+Angle}}
+\index{m\+\_\+max\+Mip\+Backward\+Angle@{m\+\_\+max\+Mip\+Backward\+Angle}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+max\+Mip\+Backward\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+max\+Mip\+Backward\+Angle\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_ae22ec882e4d6f51ad2cf8b8316ccf672}
+
+
+The max backward angle between a parent cluster and the mip. 
+
+
+
+Definition at line 126 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Find\+Mip\+Parent\+Cluster(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+max\+Mip\+Backward\+Distance@{m\+\_\+max\+Mip\+Backward\+Distance}}
+\index{m\+\_\+max\+Mip\+Backward\+Distance@{m\+\_\+max\+Mip\+Backward\+Distance}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+max\+Mip\+Backward\+Distance}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+max\+Mip\+Backward\+Distance\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a3ee5b5518a302318861b9601e18d103b}
+
+
+The max backward distance between the parent cluster and the start of mip. 
+
+
+
+Definition at line 127 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Find\+Mip\+Parent\+Cluster(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+max\+Mip\+Transverse\+Ratio@{m\+\_\+max\+Mip\+Transverse\+Ratio}}
+\index{m\+\_\+max\+Mip\+Transverse\+Ratio@{m\+\_\+max\+Mip\+Transverse\+Ratio}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+max\+Mip\+Transverse\+Ratio}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+max\+Mip\+Transverse\+Ratio\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a7e80c445ac405036e0e58de1a597ea63}
+
+
+The min transverse ratio to consider a mip. 
+
+
+
+Definition at line 118 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Is\+Mip\+Fragment(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+max\+N\+Hits\+Per\+Layer@{m\+\_\+max\+N\+Hits\+Per\+Layer}}
+\index{m\+\_\+max\+N\+Hits\+Per\+Layer@{m\+\_\+max\+N\+Hits\+Per\+Layer}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+max\+N\+Hits\+Per\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+max\+N\+Hits\+Per\+Layer\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_ac6cd47bd0eb49942e2b77b3fd35f0ebf}
+
+
+The max number of hits per layer to consider a mip. 
+
+
+
+Definition at line 119 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Is\+Mip\+Fragment(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+min\+Daughter\+Cluster\+N\+Hits@{m\+\_\+min\+Daughter\+Cluster\+N\+Hits}}
+\index{m\+\_\+min\+Daughter\+Cluster\+N\+Hits@{m\+\_\+min\+Daughter\+Cluster\+N\+Hits}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+min\+Daughter\+Cluster\+N\+Hits}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+min\+Daughter\+Cluster\+N\+Hits\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a1df0c399156981390609efdb85074239}
+
+
+The min number of hits to consider a mip. 
+
+
+
+Definition at line 122 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Is\+Mip\+Fragment(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+min\+Daughter\+Cluster\+N\+Pseudo\+Layers@{m\+\_\+min\+Daughter\+Cluster\+N\+Pseudo\+Layers}}
+\index{m\+\_\+min\+Daughter\+Cluster\+N\+Pseudo\+Layers@{m\+\_\+min\+Daughter\+Cluster\+N\+Pseudo\+Layers}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+min\+Daughter\+Cluster\+N\+Pseudo\+Layers}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+min\+Daughter\+Cluster\+N\+Pseudo\+Layers\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_af0ae9d558e7fc4760abd2c0a4fb973fe}
+
+
+The min number of pseudo layer to consider a mip. 
+
+
+
+Definition at line 124 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Is\+Mip\+Fragment(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+min\+Inner\+Pseudo\+Layer@{m\+\_\+min\+Inner\+Pseudo\+Layer}}
+\index{m\+\_\+min\+Inner\+Pseudo\+Layer@{m\+\_\+min\+Inner\+Pseudo\+Layer}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+min\+Inner\+Pseudo\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+min\+Inner\+Pseudo\+Layer\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a4f6db975726c639a07d0e0ab247d937e}
+
+
+The min inner pseudo layer id to consider a mip. 
+
+
+
+Definition at line 125 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+min\+Mip\+Chi2@{m\+\_\+min\+Mip\+Chi2}}
+\index{m\+\_\+min\+Mip\+Chi2@{m\+\_\+min\+Mip\+Chi2}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+min\+Mip\+Chi2}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+min\+Mip\+Chi2\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a105fe9a0696f40259554ec64c2406780}
+
+
+Definition at line 133 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+min\+Mip\+N\+Efficient\+Layer\+Fraction@{m\+\_\+min\+Mip\+N\+Efficient\+Layer\+Fraction}}
+\index{m\+\_\+min\+Mip\+N\+Efficient\+Layer\+Fraction@{m\+\_\+min\+Mip\+N\+Efficient\+Layer\+Fraction}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+min\+Mip\+N\+Efficient\+Layer\+Fraction}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+min\+Mip\+N\+Efficient\+Layer\+Fraction\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a95ae14c154f098bd924709d4a812d2fc}
+
+
+The min numer of efficient pseudo layer to consider a mip. 
+
+
+
+Definition at line 132 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Is\+Mip\+Fragment(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+min\+N\+Hits\+Per\+Layer@{m\+\_\+min\+N\+Hits\+Per\+Layer}}
+\index{m\+\_\+min\+N\+Hits\+Per\+Layer@{m\+\_\+min\+N\+Hits\+Per\+Layer}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+min\+N\+Hits\+Per\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+min\+N\+Hits\+Per\+Layer\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_aed7e1d3c5143ea95b003a5122080b628}
+
+
+The min number of hits per layer to consider a mip. 
+
+
+
+Definition at line 120 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Is\+Mip\+Fragment(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+min\+Parent\+Cluster\+Backward\+N\+Hits@{m\+\_\+min\+Parent\+Cluster\+Backward\+N\+Hits}}
+\index{m\+\_\+min\+Parent\+Cluster\+Backward\+N\+Hits@{m\+\_\+min\+Parent\+Cluster\+Backward\+N\+Hits}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+min\+Parent\+Cluster\+Backward\+N\+Hits}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+min\+Parent\+Cluster\+Backward\+N\+Hits\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_aa45d25b16db47aa1c1465a967bc61ab1}
+
+
+The min number of hits within the R\+O\+I to consider a parent cluster. 
+
+
+
+Definition at line 131 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Find\+Mip\+Parent\+Cluster(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+min\+Parent\+Cluster\+Energy@{m\+\_\+min\+Parent\+Cluster\+Energy}}
+\index{m\+\_\+min\+Parent\+Cluster\+Energy@{m\+\_\+min\+Parent\+Cluster\+Energy}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+min\+Parent\+Cluster\+Energy}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+min\+Parent\+Cluster\+Energy\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a72194c8485acee4337c7459a143760d9}
+
+
+The min parent cluster energy for a potential merging. 
+
+
+
+Definition at line 121 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Is\+Possible\+Parent(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+min\+Parent\+Cluster\+N\+Hits@{m\+\_\+min\+Parent\+Cluster\+N\+Hits}}
+\index{m\+\_\+min\+Parent\+Cluster\+N\+Hits@{m\+\_\+min\+Parent\+Cluster\+N\+Hits}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+min\+Parent\+Cluster\+N\+Hits}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+min\+Parent\+Cluster\+N\+Hits\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_a02fbd050f8d270a4d3abc779ab512dd3}
+
+
+The min number of hits to consider a parent cluster. 
+
+
+
+Definition at line 123 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Is\+Possible\+Parent(), and Read\+Settings().
+
+\index{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}!m\+\_\+n\+Parent\+Fit\+Pseudo\+Layers@{m\+\_\+n\+Parent\+Fit\+Pseudo\+Layers}}
+\index{m\+\_\+n\+Parent\+Fit\+Pseudo\+Layers@{m\+\_\+n\+Parent\+Fit\+Pseudo\+Layers}!arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg@{arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg}}
+\subsubsection[{m\+\_\+n\+Parent\+Fit\+Pseudo\+Layers}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int arbor\+\_\+content\+::\+Mip\+Fragment\+Merging\+Alg\+::m\+\_\+n\+Parent\+Fit\+Pseudo\+Layers\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1MipFragmentMergingAlg_acbf9ee9542a49dd74b401f3c6dbda044}
+
+
+Definition at line 134 of file Mip\+Fragment\+Merging\+Alg.\+h.
+
+
+
+Referenced by Find\+Charged\+Mip\+Fragments(), and Read\+Settings().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Mip\+Fragment\+Merging\+Alg.\+h}\item 
+{\bf Mip\+Fragment\+Merging\+Alg.\+cc}\end{DoxyCompactItemize}

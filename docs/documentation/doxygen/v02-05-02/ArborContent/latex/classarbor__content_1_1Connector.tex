@@ -1,0 +1,475 @@
+\section{arbor\+\_\+content\+:\+:Connector Class Reference}
+\label{classarbor__content_1_1Connector}\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+
+
+\doxyref{Connector}{p.}{classarbor__content_1_1Connector} class.  
+
+
+
+
+{\ttfamily \#include $<$Connector.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$ {\bf Get\+From} () const 
+\begin{DoxyCompactList}\small\item\em Get the 'from' calo hit. \end{DoxyCompactList}\item 
+const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$ {\bf Get\+To} () const 
+\begin{DoxyCompactList}\small\item\em Get the 'to' calo hit. \end{DoxyCompactList}\item 
+const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$ {\bf Get} ({\bf Connector\+Direction} direction) const 
+\begin{DoxyCompactList}\small\item\em Get the 'to' or 'from' calo hit (from (to) for B\+A\+C\+K\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N (F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N)) \end{DoxyCompactList}\item 
+float {\bf Get\+Length} () const 
+\begin{DoxyCompactList}\small\item\em Get the connector length. \end{DoxyCompactList}\item 
+float {\bf Get\+Reference\+Length} () const 
+\begin{DoxyCompactList}\small\item\em Get the reference length. \end{DoxyCompactList}\item 
+float {\bf Get\+Normalized\+Length} () const 
+\begin{DoxyCompactList}\small\item\em Get the normalized length. \end{DoxyCompactList}\item 
+pandora\+::\+Cartesian\+Vector {\bf Get\+Vector} ({\bf Connector\+Direction} direction={\bf F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N}) const 
+\begin{DoxyCompactList}\small\item\em Get the connector vector depending on the asked direction. \end{DoxyCompactList}\item 
+bool {\bf Is\+From} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit) const 
+\begin{DoxyCompactList}\small\item\em Whether the calo hit is the 'from' calo hit of this connector. \end{DoxyCompactList}\item 
+bool {\bf Is\+To} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Calo\+Hit) const 
+\begin{DoxyCompactList}\small\item\em Whether the calo hit is the 'to' calo hit of this connector. \end{DoxyCompactList}\item 
+float {\bf Get\+Opening\+Angle} (const {\bf Connector} $\ast$const p\+Connector) const 
+\begin{DoxyCompactList}\small\item\em Get the opening angle with an other connector (radian) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Connector} (const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+From\+Calo\+Hit, const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+To\+Calo\+Hit, float reference\+Length=1.f)
+\begin{DoxyCompactList}\small\item\em Constructor with two calo hits and a reference length. \end{DoxyCompactList}\item 
+{\bf $\sim$\+Connector} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf Calo\+Hit} $\ast$ {\bf m\+\_\+p\+From\+Calo\+Hit}
+\begin{DoxyCompactList}\small\item\em The 'from' calo hit of this connector. \end{DoxyCompactList}\item 
+const {\bf Calo\+Hit} $\ast$ {\bf m\+\_\+p\+To\+Calo\+Hit}
+\begin{DoxyCompactList}\small\item\em The 'to' calo hit of this connector. \end{DoxyCompactList}\item 
+float {\bf m\+\_\+reference\+Length}
+\begin{DoxyCompactList}\small\item\em The reference length on connector creation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Calo\+Hit}
+\item 
+class {\bf \+::\+Arbor\+Content\+Api}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Connector}{p.}{classarbor__content_1_1Connector} class. 
+
+Definition at line 43 of file Connector.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!Connector@{Connector}}
+\index{Connector@{Connector}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{Connector}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Connector\+::\+Connector (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+From\+Calo\+Hit, }
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+To\+Calo\+Hit, }
+\item[{float}]{reference\+Length = {\ttfamily 1.f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1Connector_ab622276209c32cd8d87148aa7a31560f}
+
+
+Constructor with two calo hits and a reference length. 
+
+
+
+Definition at line 34 of file Connector.\+cc.
+
+
+\begin{DoxyCode}
+34                                                                                                            
+                                     :
+35       m_pFromCaloHit(pFromCaloHit),
+36       m_pToCaloHit(pToCaloHit),
+37       m_referenceLength(referenceLength)
+38   \{
+39     \textcolor{comment}{/* nop */}
+40   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!````~Connector@{$\sim$\+Connector}}
+\index{````~Connector@{$\sim$\+Connector}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{$\sim$\+Connector}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Connector\+::$\sim$\+Connector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1Connector_a9056119698c53d83e63de869c1fc9089}
+
+
+Destructor. 
+
+
+
+Definition at line 44 of file Connector.\+cc.
+
+
+
+References m\+\_\+p\+From\+Calo\+Hit, and m\+\_\+p\+To\+Calo\+Hit.
+
+
+\begin{DoxyCode}
+45   \{
+46     m_pFromCaloHit = NULL;
+47     m_pToCaloHit = NULL;
+48   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!Get@{Get}}
+\index{Get@{Get}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$ arbor\+\_\+content\+::\+Connector\+::\+Get (
+\begin{DoxyParamCaption}
+\item[{{\bf Connector\+Direction}}]{direction}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1Connector_ae22a73d5b4ddac522863eac98778efbd}
+
+
+Get the 'to' or 'from' calo hit (from (to) for B\+A\+C\+K\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N (F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N)) 
+
+
+
+Definition at line 66 of file Connector.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+B\+A\+C\+K\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, Get\+From(), and Get\+To().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Build\+Calo\+Hit\+List(), and arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Get\+Mean\+Direction().
+
+
+\begin{DoxyCode}
+67   \{
+68     \textcolor{keywordflow}{return} direction == BACKWARD_DIRECTION ? this->GetFrom() : this->GetTo();
+69   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!Get\+From@{Get\+From}}
+\index{Get\+From@{Get\+From}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{Get\+From}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Calo\+Hit} $\ast$ arbor\+\_\+content\+::\+Connector\+::\+Get\+From (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1Connector_af328d602fbef9f44bdf68d1056c923df}
+
+
+Get the 'from' calo hit. 
+
+
+
+Definition at line 52 of file Connector.\+cc.
+
+
+
+References m\+\_\+p\+From\+Calo\+Hit.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::\+Clean\+Calo\+Hits(), arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Connect\+Backward(), Get(), Get\+Length(), Get\+Opening\+Angle(), Get\+Vector(), arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Is\+Connected(), Is\+From(), arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Process(), arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Remove\+Connector(), and Arbor\+Content\+Api\+::\+Remove\+Connector().
+
+
+\begin{DoxyCode}
+53   \{
+54     \textcolor{keywordflow}{return} m_pFromCaloHit;
+55   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!Get\+Length@{Get\+Length}}
+\index{Get\+Length@{Get\+Length}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{Get\+Length}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+::\+Get\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1Connector_aa1963482686e6d3a29326f1ceb2885b0}
+
+
+Get the connector length. 
+
+
+
+Definition at line 73 of file Connector.\+cc.
+
+
+
+References Get\+From(), and Get\+To().
+
+
+
+Referenced by Get\+Normalized\+Length().
+
+
+\begin{DoxyCode}
+74   \{
+75     \textcolor{keywordflow}{return} (this->GetFrom()->GetPositionVector() - this->GetTo()->GetPositionVector()).GetMagnitude();
+76   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!Get\+Normalized\+Length@{Get\+Normalized\+Length}}
+\index{Get\+Normalized\+Length@{Get\+Normalized\+Length}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{Get\+Normalized\+Length}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+::\+Get\+Normalized\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1Connector_a663fb0e912d92e3a2a9332afe56652c0}
+
+
+Get the normalized length. 
+
+
+
+Definition at line 87 of file Connector.\+cc.
+
+
+
+References Get\+Length(), and m\+\_\+reference\+Length.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::\+Get\+Order\+Parameter().
+
+
+\begin{DoxyCode}
+88   \{
+89     \textcolor{keywordflow}{return} (this->GetLength() / m_referenceLength);
+90   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!Get\+Opening\+Angle@{Get\+Opening\+Angle}}
+\index{Get\+Opening\+Angle@{Get\+Opening\+Angle}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{Get\+Opening\+Angle}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+::\+Get\+Opening\+Angle (
+\begin{DoxyParamCaption}
+\item[{const {\bf Connector} $\ast$const}]{p\+Connector}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1Connector_af0080139bd248ce7b6a7c308b4722c3d}
+
+
+Get the opening angle with an other connector (radian) 
+
+
+
+Definition at line 116 of file Connector.\+cc.
+
+
+
+References Get\+From(), and Get\+To().
+
+
+\begin{DoxyCode}
+117   \{
+118     \textcolor{keyword}{const} pandora::CartesianVector direction(GetTo()->GetPositionVector() - 
+      GetFrom()->GetPositionVector());
+119     \textcolor{keyword}{const} pandora::CartesianVector otherDirection(pConnector->GetTo()->GetPositionVector() - pConnector->
+      GetTo()->GetPositionVector());
+120 
+121     \textcolor{keywordflow}{return} direction.GetOpeningAngle(otherDirection);
+122   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!Get\+Reference\+Length@{Get\+Reference\+Length}}
+\index{Get\+Reference\+Length@{Get\+Reference\+Length}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{Get\+Reference\+Length}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+::\+Get\+Reference\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1Connector_adcca9a7d9c4e02de7092f330dfb167f2}
+
+
+Get the reference length. 
+
+
+
+Definition at line 80 of file Connector.\+cc.
+
+
+
+References m\+\_\+reference\+Length.
+
+
+\begin{DoxyCode}
+81   \{
+82     \textcolor{keywordflow}{return} m_referenceLength;
+83   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!Get\+To@{Get\+To}}
+\index{Get\+To@{Get\+To}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{Get\+To}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Calo\+Hit} $\ast$ arbor\+\_\+content\+::\+Connector\+::\+Get\+To (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1Connector_a7a60c13e4156a53fae4462d71eb16ef1}
+
+
+Get the 'to' calo hit. 
+
+
+
+Definition at line 59 of file Connector.\+cc.
+
+
+
+References m\+\_\+p\+To\+Calo\+Hit.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Connect\+Forward(), Get(), Get\+Length(), Get\+Opening\+Angle(), Get\+Vector(), arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Is\+Connected(), Is\+To(), arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Process(), arbor\+\_\+content\+::\+Calo\+Hit\+Meta\+Data\+::\+Remove\+Connector(), and Arbor\+Content\+Api\+::\+Remove\+Connector().
+
+
+\begin{DoxyCode}
+60   \{
+61     \textcolor{keywordflow}{return} m_pToCaloHit;
+62   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!Get\+Vector@{Get\+Vector}}
+\index{Get\+Vector@{Get\+Vector}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{Get\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Cartesian\+Vector arbor\+\_\+content\+::\+Connector\+::\+Get\+Vector (
+\begin{DoxyParamCaption}
+\item[{{\bf Connector\+Direction}}]{direction = {\ttfamily {\bf F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N}}}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1Connector_af9326c89e4ea5c3c8420c77996080b17}
+
+
+Get the connector vector depending on the asked direction. 
+
+
+
+Definition at line 94 of file Connector.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, Get\+From(), and Get\+To().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Connect\+Backward(), arbor\+\_\+content\+::\+Connector\+Alignment\+Tool\+::\+Connect\+Forward(), and arbor\+\_\+content\+::\+Connector\+Cleaning\+Tool\+::\+Get\+Order\+Parameter().
+
+
+\begin{DoxyCode}
+95   \{
+96     pandora::CartesianVector vector = GetTo()->GetPositionVector() - GetFrom()->GetPositionVector();
+97     \textcolor{keywordflow}{return} direction == FORWARD_DIRECTION ? vector : vector * -1.f;
+98   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!Is\+From@{Is\+From}}
+\index{Is\+From@{Is\+From}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{Is\+From}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Connector\+::\+Is\+From (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1Connector_ad90534ec84b1323e057fdb7aae1c2c47}
+
+
+Whether the calo hit is the 'from' calo hit of this connector. 
+
+
+
+Definition at line 102 of file Connector.\+cc.
+
+
+
+References Get\+From().
+
+
+\begin{DoxyCode}
+103   \{
+104     \textcolor{keywordflow}{return} (pCaloHit == this->GetFrom());
+105   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!Is\+To@{Is\+To}}
+\index{Is\+To@{Is\+To}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{Is\+To}]{\setlength{\rightskip}{0pt plus 5cm}bool arbor\+\_\+content\+::\+Connector\+::\+Is\+To (
+\begin{DoxyParamCaption}
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Calo\+Hit}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1Connector_a18f34e1e4ff25f5713564bec92d4086b}
+
+
+Whether the calo hit is the 'to' calo hit of this connector. 
+
+
+
+Definition at line 109 of file Connector.\+cc.
+
+
+
+References Get\+To().
+
+
+\begin{DoxyCode}
+110   \{
+111     \textcolor{keywordflow}{return} (pCaloHit == this->GetTo());
+112   \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!\+::\+Arbor\+Content\+Api@{\+::\+Arbor\+Content\+Api}}
+\index{\+::\+Arbor\+Content\+Api@{\+::\+Arbor\+Content\+Api}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{\+::\+Arbor\+Content\+Api}]{\setlength{\rightskip}{0pt plus 5cm}friend class \+::{\bf Arbor\+Content\+Api}\hspace{0.3cm}{\ttfamily [friend]}}\label{classarbor__content_1_1Connector_a59a7d6cd207154a3c7effd0e703d1878}
+
+
+Definition at line 115 of file Connector.\+h.
+
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!Calo\+Hit@{Calo\+Hit}}
+\index{Calo\+Hit@{Calo\+Hit}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{Calo\+Hit}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Calo\+Hit}\hspace{0.3cm}{\ttfamily [friend]}}\label{classarbor__content_1_1Connector_acde4485b92c105c70975342cb6a8b432}
+
+
+Definition at line 114 of file Connector.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!m\+\_\+p\+From\+Calo\+Hit@{m\+\_\+p\+From\+Calo\+Hit}}
+\index{m\+\_\+p\+From\+Calo\+Hit@{m\+\_\+p\+From\+Calo\+Hit}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{m\+\_\+p\+From\+Calo\+Hit}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Calo\+Hit}$\ast$ arbor\+\_\+content\+::\+Connector\+::m\+\_\+p\+From\+Calo\+Hit\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1Connector_abdc073c61d95a01c2ff75830eadd6fad}
+
+
+The 'from' calo hit of this connector. 
+
+
+
+Definition at line 109 of file Connector.\+h.
+
+
+
+Referenced by Get\+From(), and $\sim$\+Connector().
+
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!m\+\_\+p\+To\+Calo\+Hit@{m\+\_\+p\+To\+Calo\+Hit}}
+\index{m\+\_\+p\+To\+Calo\+Hit@{m\+\_\+p\+To\+Calo\+Hit}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{m\+\_\+p\+To\+Calo\+Hit}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Calo\+Hit}$\ast$ arbor\+\_\+content\+::\+Connector\+::m\+\_\+p\+To\+Calo\+Hit\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1Connector_a9901a1fee71c2c95871a20b5c7778309}
+
+
+The 'to' calo hit of this connector. 
+
+
+
+Definition at line 110 of file Connector.\+h.
+
+
+
+Referenced by Get\+To(), and $\sim$\+Connector().
+
+\index{arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}!m\+\_\+reference\+Length@{m\+\_\+reference\+Length}}
+\index{m\+\_\+reference\+Length@{m\+\_\+reference\+Length}!arbor\+\_\+content\+::\+Connector@{arbor\+\_\+content\+::\+Connector}}
+\subsubsection[{m\+\_\+reference\+Length}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Connector\+::m\+\_\+reference\+Length\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1Connector_acfa81c640ac2b2768e9b5cbfb30b77f0}
+
+
+The reference length on connector creation. 
+
+
+
+Definition at line 111 of file Connector.\+h.
+
+
+
+Referenced by Get\+Normalized\+Length(), and Get\+Reference\+Length().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Connector.\+h}\item 
+{\bf Connector.\+cc}\end{DoxyCompactItemize}

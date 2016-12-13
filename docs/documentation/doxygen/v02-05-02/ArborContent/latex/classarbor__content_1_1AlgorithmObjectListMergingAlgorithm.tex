@@ -1,0 +1,84 @@
+\section{arbor\+\_\+content\+:\+:Algorithm\+Object\+List\+Merging\+Algorithm$<$ T $>$ Class Template Reference}
+\label{classarbor__content_1_1AlgorithmObjectListMergingAlgorithm}\index{arbor\+\_\+content\+::\+Algorithm\+Object\+List\+Merging\+Algorithm$<$ T $>$@{arbor\+\_\+content\+::\+Algorithm\+Object\+List\+Merging\+Algorithm$<$ T $>$}}
+
+
+{\ttfamily \#include $<$List\+Merging\+Algorithm.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Algorithm\+Object\+List\+Merging\+Algorithm$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classarbor__content_1_1AlgorithmObjectListMergingAlgorithm}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classarbor__content_1_1AlgorithmObjectListMergingAlgorithm_1_1Factory} class for instantiating algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Run} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class arbor\+\_\+content\+::\+Algorithm\+Object\+List\+Merging\+Algorithm$<$ T $>$}
+
+
+
+Definition at line 76 of file List\+Merging\+Algorithm.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Algorithm\+Object\+List\+Merging\+Algorithm@{arbor\+\_\+content\+::\+Algorithm\+Object\+List\+Merging\+Algorithm}!Run@{Run}}
+\index{Run@{Run}!arbor\+\_\+content\+::\+Algorithm\+Object\+List\+Merging\+Algorithm@{arbor\+\_\+content\+::\+Algorithm\+Object\+List\+Merging\+Algorithm}}
+\subsubsection[{Run}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ template pandora\+::\+Status\+Code {\bf arbor\+\_\+content\+::\+Algorithm\+Object\+List\+Merging\+Algorithm}$<$ T $>$\+::Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classarbor__content_1_1AlgorithmObjectListMergingAlgorithm_a19852863298557f06822a38708535b94}
+
+
+Implements {\bf arbor\+\_\+content\+::\+List\+Merging\+Algorithm$<$ T $>$} \doxyref{}{p.}{classarbor__content_1_1ListMergingAlgorithm_a110c7fb750c502a0c5ede077e16b27be}.
+
+
+
+Definition at line 81 of file List\+Merging\+Algorithm.\+cc.
+
+
+\begin{DoxyCode}
+82 \{
+83   std::string temporaryListName;
+84   \textcolor{keyword}{const} std::MANAGED\_CONTAINER<const T *> *pList = NULL;
+85 
+86   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::CreateTemporaryListAndSetCurrent(*\textcolor{keyword}{this}, pList, temporaryListName));
+87 
+88   \textcolor{keywordflow}{for}(pandora::StringVector::iterator iter = ListMergingAlgorithm<T>::m\_inputListNames.begin(), endIter = 
+      ListMergingAlgorithm<T>::m\_inputListNames.end() ;
+89       endIter != iter ; ++iter)
+90   \{
+91     \textcolor{keyword}{const} pandora::StatusCode statusCode(PandoraContentApi::SaveList<T>(*\textcolor{keyword}{this}, *iter, temporaryListName));
+92 
+93     \textcolor{keywordflow}{if}(statusCode == pandora::STATUS\_CODE\_NOT\_FOUND)
+94       \textcolor{keywordflow}{continue};
+95 
+96     \textcolor{keywordflow}{if}(statusCode != pandora::STATUS\_CODE\_SUCCESS)
+97       \textcolor{keywordflow}{return} statusCode;
+98   \}
+99 
+100   PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::SaveList<T>(*\textcolor{keyword}{this}, 
+      ListMergingAlgorithm<T>::m\_outputListName));
+101 
+102   \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+103 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf List\+Merging\+Algorithm.\+h}\item 
+{\bf List\+Merging\+Algorithm.\+cc}\end{DoxyCompactItemize}

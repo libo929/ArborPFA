@@ -1,0 +1,239 @@
+\section{arbor\+\_\+content\+:\+:Track Class Reference}
+\label{classarbor__content_1_1Track}\index{arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}}
+
+
+\doxyref{Track}{p.}{classarbor__content_1_1Track} class.  
+
+
+
+
+{\ttfamily \#include $<$Track.\+h$>$}
+
+Inheritance diagram for arbor\+\_\+content\+:\+:Track\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classarbor__content_1_1Track}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Track} (const Pandora\+Api\+::\+Track\+::\+Parameters \&parameters)
+\begin{DoxyCompactList}\small\item\em Constructor with track parameters. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+Track} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const {\bf Track\+List} \& {\bf Get\+Nearby\+Track\+List} () const 
+\begin{DoxyCompactList}\small\item\em Get the nearby track list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pandora\+::\+Status\+Code {\bf Add\+Nearby\+Track} (const {\bf Track} $\ast$p\+Nearby\+Track)
+\begin{DoxyCompactList}\small\item\em Add a nearby track. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Remove\+Nearby\+Track} (const {\bf Track} $\ast$p\+Nearby\+Track)
+\begin{DoxyCompactList}\small\item\em Remove a nearby track. \end{DoxyCompactList}\item 
+pandora\+::\+Status\+Code {\bf Remove\+All\+Nearby\+Tracks} ()
+\begin{DoxyCompactList}\small\item\em Remove all nearby tracks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Track\+List} {\bf m\+\_\+nearby\+Track\+List}
+\begin{DoxyCompactList}\small\item\em The list of nearby tracks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Track}{p.}{classarbor__content_1_1Track} class. 
+
+Definition at line 48 of file Track.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}!Track@{Track}}
+\index{Track@{Track}!arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}}
+\subsubsection[{Track}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Track\+::\+Track (
+\begin{DoxyParamCaption}
+\item[{const Pandora\+Api\+::\+Track\+::\+Parameters \&}]{parameters}
+\end{DoxyParamCaption}
+)}\label{classarbor__content_1_1Track_a674c2b522c74b2e1cce85076f8765551}
+
+
+Constructor with track parameters. 
+
+
+
+Definition at line 36 of file Track.\+cc.
+
+
+\begin{DoxyCode}
+36                                                           :
+37     pandora::Track(parameters)
+38   \{
+39     \textcolor{comment}{/* nop */}
+40   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}!````~Track@{$\sim$\+Track}}
+\index{````~Track@{$\sim$\+Track}!arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}}
+\subsubsection[{$\sim$\+Track}]{\setlength{\rightskip}{0pt plus 5cm}arbor\+\_\+content\+::\+Track\+::$\sim$\+Track (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classarbor__content_1_1Track_ad3fe11ba9afe907f40e03cdd468b9a7b}
+
+
+Destructor. 
+
+
+
+Definition at line 44 of file Track.\+cc.
+
+
+\begin{DoxyCode}
+45   \{
+46     \textcolor{comment}{/* nop */}
+47   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}!Add\+Nearby\+Track@{Add\+Nearby\+Track}}
+\index{Add\+Nearby\+Track@{Add\+Nearby\+Track}!arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}}
+\subsubsection[{Add\+Nearby\+Track}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Track\+::\+Add\+Nearby\+Track (
+\begin{DoxyParamCaption}
+\item[{const {\bf Track} $\ast$}]{p\+Nearby\+Track}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classarbor__content_1_1Track_a33832ba2b75030c3f7391e8f121bccba}
+
+
+Add a nearby track. 
+
+
+
+Definition at line 58 of file Track.\+cc.
+
+
+
+References m\+\_\+nearby\+Track\+List.
+
+
+\begin{DoxyCode}
+59   \{
+60     \textcolor{keywordflow}{if}(NULL == pNearbyTrack)
+61       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+62 
+63     \textcolor{keywordflow}{if}(!m_nearbyTrackList.insert(pNearbyTrack).second)
+64       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_ALREADY\_PRESENT;
+65 
+66     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+67   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}!Get\+Nearby\+Track\+List@{Get\+Nearby\+Track\+List}}
+\index{Get\+Nearby\+Track\+List@{Get\+Nearby\+Track\+List}!arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}}
+\subsubsection[{Get\+Nearby\+Track\+List}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Track\+List} \& arbor\+\_\+content\+::\+Track\+::\+Get\+Nearby\+Track\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classarbor__content_1_1Track_acaa5ee42885bd4b5ab29ed826f13e748}
+
+
+Get the nearby track list. 
+
+
+
+Definition at line 51 of file Track.\+cc.
+
+
+
+References m\+\_\+nearby\+Track\+List.
+
+
+\begin{DoxyCode}
+52   \{
+53     \textcolor{keywordflow}{return} m_nearbyTrackList;
+54   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}!Remove\+All\+Nearby\+Tracks@{Remove\+All\+Nearby\+Tracks}}
+\index{Remove\+All\+Nearby\+Tracks@{Remove\+All\+Nearby\+Tracks}!arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}}
+\subsubsection[{Remove\+All\+Nearby\+Tracks}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Track\+::\+Remove\+All\+Nearby\+Tracks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classarbor__content_1_1Track_aadcca582b2d87ccfb318dd7977f2858d}
+
+
+Remove all nearby tracks. 
+
+
+
+Definition at line 88 of file Track.\+cc.
+
+
+
+References m\+\_\+nearby\+Track\+List.
+
+
+\begin{DoxyCode}
+89   \{
+90     m_nearbyTrackList.clear();
+91     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+92   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}!Remove\+Nearby\+Track@{Remove\+Nearby\+Track}}
+\index{Remove\+Nearby\+Track@{Remove\+Nearby\+Track}!arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}}
+\subsubsection[{Remove\+Nearby\+Track}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Track\+::\+Remove\+Nearby\+Track (
+\begin{DoxyParamCaption}
+\item[{const {\bf Track} $\ast$}]{p\+Nearby\+Track}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classarbor__content_1_1Track_a3164a1eb5c1b9f96f80d5816febd2fd8}
+
+
+Remove a nearby track. 
+
+
+
+Definition at line 71 of file Track.\+cc.
+
+
+
+References m\+\_\+nearby\+Track\+List.
+
+
+\begin{DoxyCode}
+72   \{
+73     \textcolor{keywordflow}{if}(NULL == pNearbyTrack)
+74       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+75 
+76     TrackList::iterator findIter = std::find(m_nearbyTrackList.begin(), 
+      m_nearbyTrackList.end(), pNearbyTrack);
+77 
+78     \textcolor{keywordflow}{if}(m_nearbyTrackList.end() == findIter)
+79       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_NOT\_FOUND;
+80 
+81     m_nearbyTrackList.erase(findIter);
+82 
+83     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+84   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}!m\+\_\+nearby\+Track\+List@{m\+\_\+nearby\+Track\+List}}
+\index{m\+\_\+nearby\+Track\+List@{m\+\_\+nearby\+Track\+List}!arbor\+\_\+content\+::\+Track@{arbor\+\_\+content\+::\+Track}}
+\subsubsection[{m\+\_\+nearby\+Track\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Track\+List} arbor\+\_\+content\+::\+Track\+::m\+\_\+nearby\+Track\+List\hspace{0.3cm}{\ttfamily [private]}}\label{classarbor__content_1_1Track_a356e1c7673964d0533b0e4e475286c57}
+
+
+The list of nearby tracks. 
+
+
+
+Definition at line 85 of file Track.\+h.
+
+
+
+Referenced by Add\+Nearby\+Track(), Get\+Nearby\+Track\+List(), Remove\+All\+Nearby\+Tracks(), and Remove\+Nearby\+Track().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Track.\+h}\item 
+{\bf Track.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,428 @@
+\section{arbor\+\_\+content\+:\+:Recluster\+Helper Class Reference}
+\label{classarbor__content_1_1ReclusterHelper}\index{arbor\+\_\+content\+::\+Recluster\+Helper@{arbor\+\_\+content\+::\+Recluster\+Helper}}
+
+
+\doxyref{Recluster\+Helper}{p.}{classarbor__content_1_1ReclusterHelper} class.  
+
+
+
+
+{\ttfamily \#include $<$Recluster\+Helper.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float {\bf Get\+Track\+Cluster\+Compatibility} (const pandora\+::\+Pandora \&pandora, const pandora\+::\+Cluster $\ast$const p\+Cluster, const pandora\+::\+Track\+List \&track\+List, float energy\+Resolution\+Factor=1.f)
+\begin{DoxyCompactList}\small\item\em Evaluate the compatibility of a cluster with its associated tracks. \end{DoxyCompactList}\item 
+static float {\bf Get\+Track\+Cluster\+Compatibility} (const pandora\+::\+Pandora \&pandora, const float cluster\+Energy, const float track\+Energy, float energy\+Resolution\+Factor=1.f)
+\begin{DoxyCompactList}\small\item\em Evaluate the compatibility of a cluster with its associated tracks. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Extract\+Recluster\+Results} (const pandora\+::\+Pandora \&pandora, const pandora\+::\+Cluster\+List \&cluster\+List, {\bf Recluster\+Result} \&recluster\+Result)
+\begin{DoxyCompactList}\small\item\em Extract the recluster result. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Split\+Tree\+From\+Cluster} (const pandora\+::\+Algorithm \&algorithm, const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const p\+Seed\+Calo\+Hit, const pandora\+::\+Cluster $\ast$const p\+Original\+Cluster, const pandora\+::\+Cluster $\ast$\&p\+Separated\+Tree\+Cluster, const std\+::string \&original\+Cluster\+List\+Name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Create a separated tree cluster from a seed calo hit contained in an original cluster. \end{DoxyCompactList}\item 
+static pandora\+::\+Status\+Code {\bf Split\+Cluster\+Into\+Tree\+Clusters} (const pandora\+::\+Algorithm \&algorithm, const pandora\+::\+Cluster $\ast$const p\+Cluster, pandora\+::\+Cluster\+Vector \&tree\+Cluster\+Vector)
+\begin{DoxyCompactList}\small\item\em Create a cluster list for each tree contained in the cluster Possible only if the cluster contains more than one tree (more than one seed calo hit) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Recluster\+Helper}{p.}{classarbor__content_1_1ReclusterHelper} class. 
+
+Definition at line 128 of file Recluster\+Helper.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{arbor\+\_\+content\+::\+Recluster\+Helper@{arbor\+\_\+content\+::\+Recluster\+Helper}!Extract\+Recluster\+Results@{Extract\+Recluster\+Results}}
+\index{Extract\+Recluster\+Results@{Extract\+Recluster\+Results}!arbor\+\_\+content\+::\+Recluster\+Helper@{arbor\+\_\+content\+::\+Recluster\+Helper}}
+\subsubsection[{Extract\+Recluster\+Results}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Extract\+Recluster\+Results (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const pandora\+::\+Cluster\+List \&}]{cluster\+List, }
+\item[{{\bf Recluster\+Result} \&}]{recluster\+Result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ReclusterHelper_a7ccd05ef055993c23f2a0d05386274da}
+
+
+Extract the recluster result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the pandora instance to access content \\
+\hline
+{\em cluster\+List} & the newly created clusters after a reclustering step \\
+\hline
+{\em recluster\+Result} & the recluster results \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 72 of file Recluster\+Helper.\+cc.
+
+
+
+References Get\+Track\+Cluster\+Compatibility(), arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Charged\+Energy(), arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Chi(), arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Chi2(), arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Chi2\+Per\+Dof(), arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Chi\+Per\+Dof(), arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Chi\+Worst\+Association(), and arbor\+\_\+content\+::\+Recluster\+Result\+::\+Set\+Neutral\+Energy().
+
+
+
+Referenced by arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+73   \{
+74     \textcolor{keywordflow}{if}(clusterList.empty())
+75       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+76 
+77     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nDof(0);
+78     \textcolor{keywordtype}{float} chi(0.f), chi2(0.f), neutralEnergy(0.f), chargedEnergy(0.f), chiWorstAssociation(0.f);
+79 
+80     \textcolor{keywordflow}{for}(pandora::ClusterList::const\_iterator iter = clusterList.begin(), endIter = clusterList.end() ; 
+      endIter != iter ; ++iter)
+81     \{
+82       \textcolor{keyword}{const} pandora::Cluster *\textcolor{keyword}{const} pCluster = *iter;
+83 
+84       \textcolor{keyword}{const} \textcolor{keywordtype}{float} clusterEnergy(pCluster->GetCorrectedHadronicEnergy(pandora));
+85       \textcolor{keyword}{const} pandora::TrackList &trackList(pCluster->GetAssociatedTrackList());
+86       \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nTracks(trackList.size());
+87 
+88       \textcolor{keywordflow}{if}(nTracks == 0)
+89       \{
+90         neutralEnergy += clusterEnergy;
+91         \textcolor{keywordflow}{continue};
+92       \}
+93 
+94       chargedEnergy += clusterEnergy;
+95 
+96       \textcolor{keyword}{const} \textcolor{keywordtype}{float} newChi(ReclusterHelper::GetTrackClusterCompatibility(pandora, pCluster, trackList));
+97 
+98       chi += newChi;
+99       chi2 += newChi * newChi;
+100 
+101       ++nDof;
+102 
+103       \textcolor{keywordflow}{if}( (newChi * newChi) > chiWorstAssociation*chiWorstAssociation )
+104         chiWorstAssociation = newChi;
+105     \}
+106 
+107     \textcolor{keywordflow}{if}(0 == nDof)
+108       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+109 
+110     reclusterResult.SetChi(chi);
+111     reclusterResult.SetChi2(chi2);
+112     reclusterResult.SetChiPerDof(chi / nDof);
+113     reclusterResult.SetChi2PerDof(chi2 / nDof);
+114     reclusterResult.SetNeutralEnergy(neutralEnergy);
+115     reclusterResult.SetChargedEnergy(chargedEnergy);
+116     reclusterResult.SetChiWorstAssociation(chiWorstAssociation);
+117 
+118     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+119   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Helper@{arbor\+\_\+content\+::\+Recluster\+Helper}!Get\+Track\+Cluster\+Compatibility@{Get\+Track\+Cluster\+Compatibility}}
+\index{Get\+Track\+Cluster\+Compatibility@{Get\+Track\+Cluster\+Compatibility}!arbor\+\_\+content\+::\+Recluster\+Helper@{arbor\+\_\+content\+::\+Recluster\+Helper}}
+\subsubsection[{Get\+Track\+Cluster\+Compatibility}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Get\+Track\+Cluster\+Compatibility (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{const pandora\+::\+Track\+List \&}]{track\+List, }
+\item[{float}]{energy\+Resolution\+Factor = {\ttfamily 1.f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ReclusterHelper_acefc10cd154fbebd5e1b087b14348938}
+
+
+Evaluate the compatibility of a cluster with its associated tracks. 
+
+Reclustering can be used to split up a cluster and produce more favourable track/cluster matches.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the associated pandora instance \\
+\hline
+{\em p\+Cluster} & address of the cluster \\
+\hline
+{\em track\+List} & address of the list of tracks associated with the cluster \\
+\hline
+{\em energy\+Resolution\+Factory} & the number of sigmas of resolution in the chi computation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the chi value for the suitability of the track/cluster associations 
+\end{DoxyReturn}
+
+
+Definition at line 35 of file Recluster\+Helper.\+cc.
+
+
+
+Referenced by arbor\+\_\+content\+::\+Track\+Cluster\+Association\+Algorithm\+::\+Build\+Possible\+Associations(), arbor\+\_\+content\+::\+Track\+Cluster\+Association\+Algorithm\+::\+Calculate\+Association\+Constraints(), Extract\+Recluster\+Results(), arbor\+\_\+content\+::\+Cluster\+Helper\+::\+Get\+Chi\+Cluster\+Merging(), arbor\+\_\+content\+::\+Sorting\+Helper\+::\+Sort\+By\+Track\+Cluster\+Compatibility\+::operator()(), arbor\+\_\+content\+::\+Unassociated\+Track\+Recovery\+Alg\+::\+Perform\+Possible\+Track\+Cluster\+Associations(), arbor\+\_\+content\+::\+Performance\+Monitoring\+Algorithm\+::\+Run(), arbor\+\_\+content\+::\+Cluster\+Fragment\+Merging\+Algorithm\+::\+Run(), arbor\+\_\+content\+::\+Looping\+Track\+Association\+Algorithm\+::\+Run(), arbor\+\_\+content\+::\+Energy\+Excess\+Reclustering\+Algorithm\+::\+Run(), and arbor\+\_\+content\+::\+Missing\+Energy\+Reclustering\+Algorithm\+::\+Run().
+
+
+\begin{DoxyCode}
+37   \{
+38     \textcolor{keywordtype}{float} trackEnergySum(0.);
+39 
+40     \textcolor{keywordflow}{for} (pandora::TrackList::const\_iterator trackIter = trackList.begin(), trackIterEnd = trackList.end(); 
+      trackIter != trackIterEnd; ++trackIter)
+41       trackEnergySum += (*trackIter)->GetEnergyAtDca();
+42 
+43     \textcolor{keyword}{const} \textcolor{keywordtype}{float} hadronicEnergyResolution(pandora.GetSettings()->GetHadronicEnergyResolution());
+44 
+45     \textcolor{keywordflow}{if} ((trackEnergySum < std::numeric\_limits<float>::epsilon()) || (hadronicEnergyResolution <
+       std::numeric\_limits<float>::epsilon()))
+46       \textcolor{keywordflow}{throw} pandora::StatusCodeException(pandora::STATUS\_CODE\_FAILURE);
+47 
+48     \textcolor{keyword}{const} \textcolor{keywordtype}{float} sigmaE(hadronicEnergyResolution * trackEnergySum / std::sqrt(trackEnergySum));
+49     \textcolor{keyword}{const} \textcolor{keywordtype}{float} chi((pCluster->GetTrackComparisonEnergy(pandora) - trackEnergySum) / (
+      energyResolutionFactor * sigmaE));
+50 
+51     \textcolor{keywordflow}{return} chi;
+52   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Helper@{arbor\+\_\+content\+::\+Recluster\+Helper}!Get\+Track\+Cluster\+Compatibility@{Get\+Track\+Cluster\+Compatibility}}
+\index{Get\+Track\+Cluster\+Compatibility@{Get\+Track\+Cluster\+Compatibility}!arbor\+\_\+content\+::\+Recluster\+Helper@{arbor\+\_\+content\+::\+Recluster\+Helper}}
+\subsubsection[{Get\+Track\+Cluster\+Compatibility}]{\setlength{\rightskip}{0pt plus 5cm}float arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Get\+Track\+Cluster\+Compatibility (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Pandora \&}]{pandora, }
+\item[{const float}]{cluster\+Energy, }
+\item[{const float}]{track\+Energy, }
+\item[{float}]{energy\+Resolution\+Factor = {\ttfamily 1.f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ReclusterHelper_acfec8383d01946b6cc3b2a3146879a3b}
+
+
+Evaluate the compatibility of a cluster with its associated tracks. 
+
+Reclustering can be used to split up a cluster and produce more favourable track/cluster matches.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pandora} & the associated pandora instance \\
+\hline
+{\em cluster\+Energy} & the cluster energy \\
+\hline
+{\em track\+Energy} & the sum of the energies of the associated tracks \\
+\hline
+{\em energy\+Resolution\+Factory} & the number of sigmas of resolution in the chi computation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the chi value for the suitability of the track/cluster associations 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file Recluster\+Helper.\+cc.
+
+
+\begin{DoxyCode}
+58   \{
+59     \textcolor{keyword}{const} \textcolor{keywordtype}{float} hadronicEnergyResolution(pandora.GetSettings()->GetHadronicEnergyResolution());
+60 
+61     \textcolor{keywordflow}{if} ((trackEnergy < std::numeric\_limits<float>::epsilon()) || (hadronicEnergyResolution <
+       std::numeric\_limits<float>::epsilon()))
+62       \textcolor{keywordflow}{throw} pandora::StatusCodeException(pandora::STATUS\_CODE\_FAILURE);
+63 
+64     \textcolor{keyword}{const} \textcolor{keywordtype}{float} sigmaE(hadronicEnergyResolution * trackEnergy / std::sqrt(trackEnergy));
+65     \textcolor{keyword}{const} \textcolor{keywordtype}{float} chi((clusterEnergy - trackEnergy) / (energyResolutionFactor * sigmaE));
+66 
+67     \textcolor{keywordflow}{return} chi;
+68   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Helper@{arbor\+\_\+content\+::\+Recluster\+Helper}!Split\+Cluster\+Into\+Tree\+Clusters@{Split\+Cluster\+Into\+Tree\+Clusters}}
+\index{Split\+Cluster\+Into\+Tree\+Clusters@{Split\+Cluster\+Into\+Tree\+Clusters}!arbor\+\_\+content\+::\+Recluster\+Helper@{arbor\+\_\+content\+::\+Recluster\+Helper}}
+\subsubsection[{Split\+Cluster\+Into\+Tree\+Clusters}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Split\+Cluster\+Into\+Tree\+Clusters (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Cluster, }
+\item[{pandora\+::\+Cluster\+Vector \&}]{tree\+Cluster\+Vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ReclusterHelper_ad8089ad7a72584d155f20d3edca225c7}
+
+
+Create a cluster list for each tree contained in the cluster Possible only if the cluster contains more than one tree (more than one seed calo hit) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the algorithm instance used to access pandora content \\
+\hline
+{\em p\+Cluster} & the cluster to split \\
+\hline
+{\em tree\+Cluster\+Vector} & the split list of tree clusters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 187 of file Recluster\+Helper.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Build\+Calo\+Hit\+List(), arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Extract\+Seed\+Calo\+Hit\+List(), and arbor\+\_\+content\+::\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N.
+
+
+\begin{DoxyCode}
+189   \{
+190     \textcolor{keywordflow}{if}(NULL == pCluster)
+191       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+192 
+193     pandora::CaloHitList clusterCaloHitList;
+194     pandora::CaloHitList seedCaloHitList;
+195     pCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+196 
+197     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      CaloHitHelper::ExtractSeedCaloHitList(&clusterCaloHitList, seedCaloHitList, \textcolor{keyword}{false}));
+198 
+199     \textcolor{comment}{// if only one seed in the original cluster, can't create a separate tree from this cluster}
+200     \textcolor{keywordflow}{if}(seedCaloHitList.size() <= 1)
+201       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_NOT\_ALLOWED;
+202 
+203     pandora::ClusterList reclusterClusterList;
+204     reclusterClusterList.insert(pCluster);
+205 
+206     std::string originalClusterListName;
+207     std::string fragmentsClustersListName;
+208 
+209     \textcolor{comment}{// fragment the cluster}
+210     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::InitializeFragmentation(
+      algorithm, reclusterClusterList, originalClusterListName, fragmentsClustersListName));
+211 
+212     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = seedCaloHitList.begin(), endIter = seedCaloHitList.end(
+      ) ;
+213         endIter != iter ; ++iter)
+214     \{
+215       \textcolor{keyword}{const} arbor_content::CaloHit *\textcolor{keyword}{const} pCaloHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }
+      arbor_content::CaloHit *const\textcolor{keyword}{>}(*iter);
+216 
+217       \textcolor{keywordflow}{if}(NULL == pCaloHit)
+218         \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+219 
+220       pandora::CaloHitList treeCaloHitList;
+221       treeCaloHitList.insert(pCaloHit);
+222       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      CaloHitHelper::BuildCaloHitList(pCaloHit, FORWARD_DIRECTION, treeCaloHitList));
+223 
+224       \textcolor{comment}{// create a separated tree cluster}
+225       PandoraContentApi::ClusterParameters clusterParameters;
+226       clusterParameters.m\_caloHitList = treeCaloHitList;
+227       \textcolor{keyword}{const} pandora::Cluster *pTreeCluster = NULL;
+228 
+229       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::Cluster::Create(
+      algorithm, clusterParameters, pTreeCluster));
+230 
+231       treeClusterVector.push\_back(pTreeCluster);
+232     \}
+233 
+234     \textcolor{comment}{// save fragmented clusters}
+235     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::EndFragmentation(
+      algorithm, fragmentsClustersListName, originalClusterListName));
+236 
+237     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+238   \}
+\end{DoxyCode}
+\index{arbor\+\_\+content\+::\+Recluster\+Helper@{arbor\+\_\+content\+::\+Recluster\+Helper}!Split\+Tree\+From\+Cluster@{Split\+Tree\+From\+Cluster}}
+\index{Split\+Tree\+From\+Cluster@{Split\+Tree\+From\+Cluster}!arbor\+\_\+content\+::\+Recluster\+Helper@{arbor\+\_\+content\+::\+Recluster\+Helper}}
+\subsubsection[{Split\+Tree\+From\+Cluster}]{\setlength{\rightskip}{0pt plus 5cm}pandora\+::\+Status\+Code arbor\+\_\+content\+::\+Recluster\+Helper\+::\+Split\+Tree\+From\+Cluster (
+\begin{DoxyParamCaption}
+\item[{const pandora\+::\+Algorithm \&}]{algorithm, }
+\item[{const {\bf arbor\+\_\+content\+::\+Calo\+Hit} $\ast$const}]{p\+Seed\+Calo\+Hit, }
+\item[{const pandora\+::\+Cluster $\ast$const}]{p\+Original\+Cluster, }
+\item[{const pandora\+::\+Cluster $\ast$\&}]{p\+Separated\+Tree\+Cluster, }
+\item[{const std\+::string \&}]{original\+Cluster\+List\+Name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classarbor__content_1_1ReclusterHelper_abbb0ece8d637fcbe717bbf16312fc197}
+
+
+Create a separated tree cluster from a seed calo hit contained in an original cluster. 
+
+Possible only if the original cluster contains more than one tree (more than one seed calo hit). Calo hits of the newly created tree cluster are removed from the original one
+
+
+\begin{DoxyParams}{Parameters}
+{\em algorithm} & the algorithm instance used to access pandora content \\
+\hline
+{\em p\+Seed\+Calo\+Hit} & the seed calo hit pointer to build the separated tree from \\
+\hline
+{\em p\+Original\+Cluster} & the original cluster pointer from which to separate the tree \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 123 of file Recluster\+Helper.\+cc.
+
+
+
+References arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Build\+Calo\+Hit\+List(), arbor\+\_\+content\+::\+Calo\+Hit\+Helper\+::\+Extract\+Seed\+Calo\+Hit\+List(), arbor\+\_\+content\+::\+F\+O\+R\+W\+A\+R\+D\+\_\+\+D\+I\+R\+E\+C\+T\+I\+O\+N, and Arbor\+Content\+Api\+::\+Is\+Seed().
+
+
+\begin{DoxyCode}
+125   \{
+126     \textcolor{keywordflow}{if}(NULL == pOriginalCluster || NULL == pSeedCaloHit)
+127       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+128 
+129     \textcolor{keywordflow}{if}(!ArborContentApi::IsSeed(pSeedCaloHit))
+130       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_INVALID\_PARAMETER;
+131 
+132     pandora::CaloHitList clusterCaloHitList;
+133     pandora::CaloHitList seedCaloHitList;
+134     pOriginalCluster->GetOrderedCaloHitList().GetCaloHitList(clusterCaloHitList);
+135 
+136     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      CaloHitHelper::ExtractSeedCaloHitList(&clusterCaloHitList, seedCaloHitList, \textcolor{keyword}{false}));
+137 
+138     \textcolor{comment}{// if only one seed in the original cluster, can't create a separate tree from this cluster}
+139     \textcolor{keywordflow}{if}(seedCaloHitList.size() <= 1)
+140       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_NOT\_ALLOWED;
+141 
+142     \textcolor{comment}{// seed calo hit must be contained in the original cluster}
+143     \textcolor{keywordflow}{if}(seedCaloHitList.end() == seedCaloHitList.find(pSeedCaloHit))
+144       \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_FAILURE;
+145 
+146     pandora::CaloHitList treeCaloHitList;
+147     treeCaloHitList.insert(pSeedCaloHit);
+148     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      CaloHitHelper::BuildCaloHitList(pSeedCaloHit, FORWARD_DIRECTION, treeCaloHitList));
+149 
+150     \textcolor{comment}{// remove all the hits from the original cluster}
+151     \textcolor{keywordflow}{for}(pandora::CaloHitList::const\_iterator iter = treeCaloHitList.begin(), endIter = treeCaloHitList.end(
+      ) ;
+152         endIter != iter ; ++iter)
+153     \{
+154       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::RemoveFromCluster(
+      algorithm, pOriginalCluster, *iter));
+155     \}
+156 
+157     \textcolor{comment}{// create the separated tree cluster}
+158     PandoraContentApi::ClusterParameters clusterParameters;
+159     clusterParameters.m\_caloHitList = treeCaloHitList;
+160     pSeparatedTreeCluster = NULL;
+161 
+162     std::string clusterListName;
+163     std::string temporaryClusterListName;
+164     \textcolor{keyword}{const} pandora::ClusterList *pTemporaryClusterList = NULL;
+165 
+166     \textcolor{comment}{// in order to create a separate tree cluster, cluster creation must be enabled by pandora sdk first}
+167     \textcolor{keywordflow}{if}(originalClusterListName.empty())
+168     \{
+169       PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::GetCurrentListName<pandora::Cluster>(algorithm, clusterListName));
+170     \}
+171     \textcolor{keywordflow}{else}
+172     \{
+173       clusterListName = originalClusterListName;
+174     \}
+175 
+176     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::CreateTemporaryListAndSetCurrent(algorithm, pTemporaryClusterList, temporaryClusterListName));
+177 
+178     \textcolor{comment}{// create the tree cluster and save it}
+179     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, PandoraContentApi::Cluster::Create(algorithm
+      , clusterParameters, pSeparatedTreeCluster));
+180     PANDORA\_RETURN\_RESULT\_IF(pandora::STATUS\_CODE\_SUCCESS, !=, 
+      PandoraContentApi::SaveList<pandora::Cluster>(algorithm, temporaryClusterListName, clusterListName));
+181 
+182     \textcolor{keywordflow}{return} pandora::STATUS\_CODE\_SUCCESS;
+183   \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Recluster\+Helper.\+h}\item 
+{\bf Recluster\+Helper.\+cc}\end{DoxyCompactItemize}
