@@ -25,19 +25,7 @@ SET( MarlinArbor_version          "v01-04-01" )
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmakemodules)
 
 ### DEPENDENCIES ############################################################
-
-FIND_PACKAGE( ILCUTIL COMPONENTS ILCSOFT_CMAKE_MODULES QUIET )
-
 INCLUDE( ExternalProject )
-
-# load default settings from ILCSOFT_CMAKE_MODULES
-IF( ILCUTIL_FOUND )
-	MESSAGE( STATUS "ArborPFA will be built with ILCSOFT" )
-	INCLUDE( ilcsoft_default_settings )
-ELSE()
-	MESSAGE( STATUS "ArborPFA will be built standalonly" )
-ENDIF()
-
 INCLUDE( PandoraCMakeSettings )
 
 OPTION( PANDORA_MONITORING "Build PandoraMonitoring library (requires ROOT)" OFF )
@@ -101,7 +89,7 @@ IF( PANDORA_MONITORING )
         DEPENDS PandoraSDK PandoraMonitoring
         GIT_REPOSITORY ${ArborContent_repository}
         GIT_TAG ${ArborContent_version}
-        CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=1"
+        CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=ON"
         LIST_SEPARATOR %
     )
     
@@ -110,7 +98,7 @@ IF( PANDORA_MONITORING )
         DEPENDS PandoraSDK PandoraMonitoring ArborContent
         GIT_REPOSITORY ${MarlinArbor_repository}
         GIT_TAG ${MarlinArbor_version}
-        CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=1"
+        CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=ON"
         LIST_SEPARATOR %
     )
     ENDIF()
@@ -119,7 +107,7 @@ ELSE()
         DEPENDS PandoraSDK
         GIT_REPOSITORY ${ArborContent_repository}
         GIT_TAG ${ArborContent_version}
-        CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=0"
+        CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=OFF"
         LIST_SEPARATOR %
     )
     
@@ -128,7 +116,7 @@ ELSE()
         DEPENDS PandoraSDK ArborContent
         GIT_REPOSITORY ${MarlinArbor_repository}
         GIT_TAG ${MarlinArbor_version}
-        CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=0"
+        CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=OFF"
         LIST_SEPARATOR %
     )
     ENDIF()
