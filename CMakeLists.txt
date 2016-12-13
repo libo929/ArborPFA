@@ -40,6 +40,22 @@ MESSAGE( STATUS "MARLIN_ARBOR: ${MARLIN_ARBOR}" )
 OPTION( USE_CXX11 "Whether to use cpp 11 features" OFF )
 MESSAGE( STATUS "USE_CXX11: ${USE_CXX11}" )
 
+OPTION( USE_PANDORA_MASTER "Whether to use the PandoraSDK and PandoraMonitoring master branches" OFF )
+MESSAGE( STATUS "USE_PANDORA_MASTER: ${USE_PANDORA_MASTER}" )
+
+OPTION( USE_ARBOR_MASTER "Whether to use the ArborContent and MarlinArbor master branches" OFF )
+MESSAGE( STATUS "USE_ARBOR_MASTER: ${USE_ARBOR_MASTER}" )
+
+IF( USE_PANDORA_MASTER )
+	SET( PandoraSDK_version           "master" )
+	SET( PandoraMonitoring_version    "master" )
+ENDIF()
+
+IF( USE_ARBOR_MASTER )
+	SET( ArborContent_version         "master" )
+	SET( MarlinArbor_version          "master" )
+ENDIF()
+
 # ----- download settings ----------------------------------------------------
 SET( PandoraSDK_repository          "https://github.com/PandoraPFA/PandoraSDK.git" )
 SET( PandoraMonitoring_repository   "https://github.com/PandoraPFA/PandoraMonitoring.git" )
