@@ -66,6 +66,8 @@ SET( common_cmake_args
      "-DCMAKE_MODULE_PATH=${CMAKE_MODULE_PATH_FIXED}"
      "-DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}"
      "-DINSTALL_DOC=${INSTALL_DOC}"
+     "-DPandoraSDK_BUILD_DOCS=${INSTALL_DOC}"
+     "-DPandoraMonitoring_BUILD_DOCS=${INSTALL_DOC}"
 )
 # ----------------------------------------------------------------------------
 
