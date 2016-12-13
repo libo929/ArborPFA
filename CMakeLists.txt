@@ -70,8 +70,6 @@ SET( common_cmake_args
      "-DCMAKE_MODULE_PATH=${CMAKE_MODULE_PATH_FIXED}"
      "-DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}"
      "-DINSTALL_DOC=${INSTALL_DOC}"
-     "-DPandoraSDK_BUILD_DOCS=${INSTALL_DOC}"
-     "-DPandoraMonitoring_BUILD_DOCS=${INSTALL_DOC}"
      "-DUSE_CXX11=${USE_CXX11}"
 )
 # ----------------------------------------------------------------------------
@@ -79,7 +77,7 @@ SET( common_cmake_args
 ExternalProject_Add( PandoraSDK
     GIT_REPOSITORY ${PandoraSDK_repository}
     GIT_TAG ${PandoraSDK_version}
-    CMAKE_ARGS ${common_cmake_args}
+    CMAKE_ARGS ${common_cmake_args} "-DPandoraSDK_BUILD_DOCS=${INSTALL_DOC}"
     LIST_SEPARATOR %
 )
 
@@ -88,7 +86,7 @@ IF( PANDORA_MONITORING )
         DEPENDS PandoraSDK
         GIT_REPOSITORY ${PandoraMonitoring_repository}
         GIT_TAG ${PandoraMonitoring_version}
-        CMAKE_ARGS ${common_cmake_args}
+        CMAKE_ARGS ${common_cmake_args} "-DPandoraMonitoring_BUILD_DOCS=${INSTALL_DOC}"
         LIST_SEPARATOR %
     )
 
@@ -96,7 +94,7 @@ IF( PANDORA_MONITORING )
         DEPENDS PandoraSDK PandoraMonitoring
         GIT_REPOSITORY ${ArborContent_repository}
         GIT_TAG ${ArborContent_version}
-        CMAKE_ARGS ${common_cmake_args} -DPANDORA_MONITORING=1
+        CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=1"
         LIST_SEPARATOR %
     )
     
@@ -105,7 +103,7 @@ IF( PANDORA_MONITORING )
         DEPENDS PandoraSDK PandoraMonitoring ArborContent
         GIT_REPOSITORY ${MarlinArbor_repository}
         GIT_TAG ${MarlinArbor_version}
-        CMAKE_ARGS ${common_cmake_args} -DPANDORA_MONITORING=1
+        CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=1"
         LIST_SEPARATOR %
     )
     ENDIF()
@@ -114,7 +112,7 @@ ELSE()
         DEPENDS PandoraSDK
         GIT_REPOSITORY ${ArborContent_repository}
         GIT_TAG ${ArborContent_version}
-        CMAKE_ARGS ${common_cmake_args}
+        CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=0"
         LIST_SEPARATOR %
     )
     
@@ -123,7 +121,7 @@ ELSE()
         DEPENDS PandoraSDK ArborContent
         GIT_REPOSITORY ${MarlinArbor_repository}
         GIT_TAG ${MarlinArbor_version}
-        CMAKE_ARGS ${common_cmake_args}
+        CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=0"
         LIST_SEPARATOR %
     )
     ENDIF()
