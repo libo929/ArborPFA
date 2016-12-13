@@ -26,11 +26,18 @@ LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmakemodules)
 
 ### DEPENDENCIES ############################################################
 
-FIND_PACKAGE( ILCUTIL COMPONENTS ILCSOFT_CMAKE_MODULES REQUIRED )
+FIND_PACKAGE( ILCUTIL COMPONENTS ILCSOFT_CMAKE_MODULES QUIET )
+
+INCLUDE( ExternalProject )
 
 # load default settings from ILCSOFT_CMAKE_MODULES
-INCLUDE( ilcsoft_default_settings )
-INCLUDE( ExternalProject )
+IF( ILCUTIL_FOUND )
+	MESSAGE( STATUS "ArborPFA will be built with ILCSOFT" )
+	INCLUDE( ilcsoft_default_settings )
+ELSE()
+	MESSAGE( STATUS "ArborPFA will be built standalonly" )
+ENDIF()
+
 INCLUDE( PandoraCMakeSettings )
 
 OPTION( PANDORA_MONITORING "Build PandoraMonitoring library (requires ROOT)" OFF )
@@ -130,4 +137,4 @@ ENDIF()
 
 
 # display some variables and write them to cache
-DISPLAY_STD_VARIABLES()
+PANDORA_DISPLAY_STD_VARIABLES()
