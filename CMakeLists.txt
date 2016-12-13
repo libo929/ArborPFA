@@ -37,9 +37,13 @@ OPTION( PANDORA_MONITORING "Build PandoraMonitoring library (requires ROOT)" OFF
 MESSAGE( STATUS "PANDORA_MONITORING: ${PANDORA_MONITORING}" )
 
 OPTION( INSTALL_DOC "Set to OFF to skip build/install Documentation" OFF )
+MESSAGE( STATUS "INSTALL_DOC: ${INSTALL_DOC}" )
 
 OPTION( MARLIN_ARBOR "Build MarlinArbor library (lcio and marlin)" OFF )
 MESSAGE( STATUS "MARLIN_ARBOR: ${MARLIN_ARBOR}" )
+
+OPTION( USE_CXX11 "Whether to use cpp 11 features" OFF )
+MESSAGE( STATUS "USE_CXX11: ${USE_CXX11}" )
 
 # ----- download settings ----------------------------------------------------
 SET( PandoraSDK_repository          "https://github.com/PandoraPFA/PandoraSDK.git" )
@@ -68,6 +72,7 @@ SET( common_cmake_args
      "-DINSTALL_DOC=${INSTALL_DOC}"
      "-DPandoraSDK_BUILD_DOCS=${INSTALL_DOC}"
      "-DPandoraMonitoring_BUILD_DOCS=${INSTALL_DOC}"
+     "-DUSE_CXX11=${USE_CXX11}"
 )
 # ----------------------------------------------------------------------------
 
