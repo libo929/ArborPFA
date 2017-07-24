@@ -28,13 +28,13 @@ LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmakemodules)
 INCLUDE( ExternalProject )
 INCLUDE( PandoraCMakeSettings )
 
-OPTION( PANDORA_MONITORING "Build PandoraMonitoring library (requires ROOT)" OFF )
+OPTION( PANDORA_MONITORING "Build PandoraMonitoring library (requires ROOT)" ON )
 MESSAGE( STATUS "PANDORA_MONITORING: ${PANDORA_MONITORING}" )
 
 OPTION( INSTALL_DOC "Set to OFF to skip build/install Documentation" OFF )
 MESSAGE( STATUS "INSTALL_DOC: ${INSTALL_DOC}" )
 
-OPTION( MARLIN_ARBOR "Build MarlinArbor library (lcio and marlin)" OFF )
+OPTION( MARLIN_ARBOR "Build MarlinArbor library (lcio and marlin)" ON )
 MESSAGE( STATUS "MARLIN_ARBOR: ${MARLIN_ARBOR}" )
 
 OPTION( USE_CXX11 "Whether to use cpp 11 features" OFF )
@@ -43,7 +43,7 @@ MESSAGE( STATUS "USE_CXX11: ${USE_CXX11}" )
 OPTION( USE_PANDORA_MASTER "Whether to use the PandoraSDK and PandoraMonitoring master branches" OFF )
 MESSAGE( STATUS "USE_PANDORA_MASTER: ${USE_PANDORA_MASTER}" )
 
-OPTION( USE_ARBOR_MASTER "Whether to use the ArborContent and MarlinArbor master branches" OFF )
+OPTION( USE_ARBOR_MASTER "Whether to use the ArborContent and MarlinArbor master branches" ON )
 MESSAGE( STATUS "USE_ARBOR_MASTER: ${USE_ARBOR_MASTER}" )
 
 IF( USE_PANDORA_MASTER )
@@ -59,8 +59,8 @@ ENDIF()
 # ----- download settings ----------------------------------------------------
 SET( PandoraSDK_repository          "https://github.com/PandoraPFA/PandoraSDK.git" )
 SET( PandoraMonitoring_repository   "https://github.com/PandoraPFA/PandoraMonitoring.git" )
-SET( ArborContent_repository        "https://github.com/ArborPFA/ArborContent.git" )
-SET( MarlinArbor_repository         "https://github.com/ArborPFA/MarlinArbor.git" )
+SET( ArborContent_repository        "https://github.com/libo929/ArborContent.git" )
+SET( MarlinArbor_repository         "https://github.com/libo929/MarlinArbor.git" )
 # ----------------------------------------------------------------------------
 
 # In order to pass semicolon-separated lists over the command line to all packages,
