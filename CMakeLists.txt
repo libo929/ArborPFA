@@ -146,3 +146,4 @@ ENDIF()
 
 # display some variables and write them to cache
 PANDORA_DISPLAY_STD_VARIABLES()
+INSTALL( FILES "ChangeLog.txt" DESTINATION "docs" OPTIONAL )
