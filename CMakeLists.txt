@@ -67,6 +67,10 @@ SET( MarlinArbor_repository         "https://github.com/libo929/MarlinArbor.git"
 # we need to separate list elements with '%' instead of the standard cmake list separator ';'
 # The list separator needs also to be redefined in the ExternalProject_Add calls by setting
 # the variable LIST_SEPARATOR
+
+# Link to the specified PandoraSDK package, instead of the one from ILCSoft
+LIST( FILTER CMAKE_PREFIX_PATH EXCLUDE REGEX "Pandora" )
+
 FOREACH( _path ${CMAKE_PREFIX_PATH} )
     SET( CMAKE_PREFIX_PATH_FIXED ${CMAKE_PREFIX_PATH_FIXED}%${_path} )
 ENDFOREACH()
