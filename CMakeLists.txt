@@ -69,7 +69,7 @@ SET( MarlinArbor_repository         "https://github.com/libo929/MarlinArbor.git"
 # the variable LIST_SEPARATOR
 
 # Link to the specified PandoraSDK package, instead of the one from ILCSoft
-LIST( FILTER CMAKE_PREFIX_PATH EXCLUDE REGEX "Pandora" )
+#LIST( FILTER CMAKE_PREFIX_PATH EXCLUDE REGEX "Pandora" )
 
 FOREACH( _path ${CMAKE_PREFIX_PATH} )
     SET( CMAKE_PREFIX_PATH_FIXED ${CMAKE_PREFIX_PATH_FIXED}%${_path} )
@@ -89,21 +89,21 @@ SET( common_cmake_args
 )
 # ----------------------------------------------------------------------------
 
-ExternalProject_Add( PandoraSDK
-    GIT_REPOSITORY ${PandoraSDK_repository}
-    GIT_TAG ${PandoraSDK_version}
-    CMAKE_ARGS ${common_cmake_args} "-DPandoraSDK_BUILD_DOCS=${INSTALL_DOC}"
-    LIST_SEPARATOR %
-)
+#ExternalProject_Add( PandoraSDK
+#    GIT_REPOSITORY ${PandoraSDK_repository}
+#    GIT_TAG ${PandoraSDK_version}
+#    CMAKE_ARGS ${common_cmake_args} "-DPandoraSDK_BUILD_DOCS=${INSTALL_DOC}"
+#    LIST_SEPARATOR %
+#)
 
 IF( PANDORA_MONITORING )
-    ExternalProject_Add( PandoraMonitoring
-        DEPENDS PandoraSDK
-        GIT_REPOSITORY ${PandoraMonitoring_repository}
-        GIT_TAG ${PandoraMonitoring_version}
-        CMAKE_ARGS ${common_cmake_args} "-DPandoraMonitoring_BUILD_DOCS=${INSTALL_DOC}"
-        LIST_SEPARATOR %
-    )
+#    ExternalProject_Add( PandoraMonitoring
+#        DEPENDS PandoraSDK
+#        GIT_REPOSITORY ${PandoraMonitoring_repository}
+#        GIT_TAG ${PandoraMonitoring_version}
+#        CMAKE_ARGS ${common_cmake_args} "-DPandoraMonitoring_BUILD_DOCS=${INSTALL_DOC}"
+#        LIST_SEPARATOR %
+#    )
 
     ExternalProject_Add( ArborContent
         DEPENDS PandoraSDK PandoraMonitoring
