@@ -15,11 +15,17 @@ SET( ${PROJECT_NAME}_VERSION_MINOR 5 )
 SET( ${PROJECT_NAME}_VERSION_PATCH 2 )
 
 # versions of ArborPFA subpackages
-SET( ArborContent_version         "v01-05-01" )
-SET( MarlinArbor_version          "v01-04-02" )
+SET( ArborContent_version         "newDev" )
+SET( MarlinArbor_version          "newDev" )
 
 ### DEPENDENCIES ############################################################
 INCLUDE( ExternalProject )
+
+FIND_PATH(pandora_cmake_path "PandoraCMakeSettings.cmake" "/projects/soft/ilcsoft/ilcsoft_v01-19-03/PandoraPFANew/v03-01-02/cmakemodules")
+IF (pandora_cmake_path)
+   LIST(APPEND CMAKE_MODULE_PATH ${pandora_cmake_path})
+ENDIF()
+INCLUDE(PandoraCMakeSettings)
 
 OPTION( INSTALL_DOC "Set to OFF to skip build/install Documentation" OFF )
 MESSAGE( STATUS "INSTALL_DOC: ${INSTALL_DOC}" )
@@ -27,7 +33,7 @@ MESSAGE( STATUS "INSTALL_DOC: ${INSTALL_DOC}" )
 OPTION( MARLIN_ARBOR "Build MarlinArbor library (lcio and marlin)" ON )
 MESSAGE( STATUS "MARLIN_ARBOR: ${MARLIN_ARBOR}" )
 
-OPTION( USE_ARBOR_MASTER "Whether to use the ArborContent and MarlinArbor master branches" ON )
+OPTION( USE_ARBOR_MASTER "Whether to use the ArborContent and MarlinArbor master branches" OFF )
 MESSAGE( STATUS "USE_ARBOR_MASTER: ${USE_ARBOR_MASTER}" )
 
 IF( USE_ARBOR_MASTER )
@@ -86,6 +92,7 @@ ELSE()
         GIT_TAG ${ArborContent_version}
         CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=OFF"
         LIST_SEPARATOR %
+		SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ArborPFA
     )
     
     IF( MARLIN_ARBOR )
@@ -94,9 +101,13 @@ ELSE()
         GIT_TAG ${MarlinArbor_version}
         CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=OFF"
         LIST_SEPARATOR %
+		SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/MarlinArbor
     )
     ENDIF()
 ENDIF()
 
+
 # display some variables and write them to cache
+PANDORA_DISPLAY_STD_VARIABLES()
+
 INSTALL( FILES "ChangeLog.txt" DESTINATION "docs" OPTIONAL )
