@@ -21,7 +21,13 @@ SET( MarlinArbor_version          "newDev" )
 ### DEPENDENCIES ############################################################
 INCLUDE( ExternalProject )
 
-FIND_PATH(pandora_cmake_path "PandoraCMakeSettings.cmake" "/projects/soft/ilcsoft/ilcsoft_v01-19-03/PandoraPFANew/v03-01-02/cmakemodules")
+FOREACH( _path ${CMAKE_PREFIX_PATH} )                                                                                    
+   FIND_PATH(pandora_cmake_path "PandoraCMakeSettings.cmake" ${_path}/cmakemodules)
+   IF (pandora_cmake_path)
+      BREAK()
+   ENDIF()
+ENDFOREACH() 
+
 IF (pandora_cmake_path)
    LIST(APPEND CMAKE_MODULE_PATH ${pandora_cmake_path})
 ENDIF()
@@ -77,7 +83,7 @@ IF( PANDORA_MONITORING )
         GIT_TAG ${ArborContent_version}
         CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=ON"
         LIST_SEPARATOR %
-	SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ArborPFA
+        SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ArborPFA
     )
     
 ELSE()
