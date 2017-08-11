@@ -51,13 +51,6 @@ SET( MarlinArbor_repository         "https://github.com/libo929/MarlinArbor.git"
 # The list separator needs also to be redefined in the ExternalProject_Add calls by setting
 # the variable LIST_SEPARATOR
 
-# Link to the specified PandoraSDK package, instead of the one from ILCSoft
-#LIST( FILTER CMAKE_PREFIX_PATH EXCLUDE REGEX "Pandora" )
-
-#FIND_PACKAGE( ILCUTIL COMPONENTS ILCSOFT_CMAKE_MODULES REQUIRED )
-
-#FIND_PACKAGE( PandoraSDK 03.00.00 REQUIRED )
-
 FOREACH( _path ${CMAKE_PREFIX_PATH} )
     SET( CMAKE_PREFIX_PATH_FIXED ${CMAKE_PREFIX_PATH_FIXED}%${_path} )
 ENDFOREACH()
@@ -84,6 +77,7 @@ IF( PANDORA_MONITORING )
         GIT_TAG ${ArborContent_version}
         CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=ON"
         LIST_SEPARATOR %
+	SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ArborPFA
     )
     
 ELSE()
