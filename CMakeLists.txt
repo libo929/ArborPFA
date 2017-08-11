@@ -91,6 +91,7 @@ ELSE()
     
     IF( MARLIN_ARBOR )
         ExternalProject_Add( MarlinArbor
+        DEPENDS ArborContent
         GIT_REPOSITORY ${MarlinArbor_repository}
         GIT_TAG ${MarlinArbor_version}
         CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=OFF"
