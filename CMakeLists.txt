@@ -36,6 +36,9 @@ INCLUDE(PandoraCMakeSettings)
 OPTION( INSTALL_DOC "Set to OFF to skip build/install Documentation" OFF )
 MESSAGE( STATUS "INSTALL_DOC: ${INSTALL_DOC}" )
 
+OPTION( PANDORA_MONITORING "Build monitor to view the event display" ON )
+MESSAGE( STATUS "PANDORA_MONITORING: ${PANDORA_MONITORING}" )
+
 OPTION( MARLIN_ARBOR "Build MarlinArbor library (lcio and marlin)" ON )
 MESSAGE( STATUS "MARLIN_ARBOR: ${MARLIN_ARBOR}" )
 
@@ -85,6 +88,17 @@ IF( PANDORA_MONITORING )
         LIST_SEPARATOR %
         SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ArborPFA
     )
+
+    IF( MARLIN_ARBOR )
+        ExternalProject_Add( MarlinArbor
+        DEPENDS ArborContent
+        GIT_REPOSITORY ${MarlinArbor_repository}
+        GIT_TAG ${MarlinArbor_version}
+        CMAKE_ARGS ${common_cmake_args} "-DPANDORA_MONITORING=ON"
+        LIST_SEPARATOR %
+		SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/MarlinArbor
+    )
+    ENDIF()
     
 ELSE()
     ExternalProject_Add( ArborContent
